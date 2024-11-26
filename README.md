@@ -25,4 +25,4 @@ poetry install
 ### notebooks/powerplant
 - DataGenerate.ipynb : making a dataset with Power Plant Glossary
 
-    - ![process.png](public/process.png)
+    ![process.png](public/process.png)
