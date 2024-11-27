@@ -1,2 +1,8 @@
 data/raw/ filter=lfs diff=lfs merge=lfs -text
 data/preprocessed/ filter=lfs diff=lfs merge=lfs -text
+data/preprocessed/PowerPlant_Glossary.json filter=lfs diff=lfs merge=lfs -text
+data/preprocessed/PowerPlant_Glossary_ver2.json filter=lfs diff=lfs merge=lfs -text
+data/raw/한국남부발전(주)_발전용어집_20230228.csv filter=lfs diff=lfs merge=lfs -text
+data/raw/한국서부발전(주)_발전용어집_20240823.csv filter=lfs diff=lfs merge=lfs -text
+data/raw/한국수력원자력(주)_원전[[:space:]]표준[[:space:]]용어집_20190905.csv filter=lfs diff=lfs merge=lfs -text
+data/raw/한국중부발전(주)_발전용어집_20230828.csv filter=lfs diff=lfs merge=lfs -text
