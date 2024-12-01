@@ -1,6 +1,7 @@
 from config.config import UsedConfig, HFConfig, URLConfig, ModelConfig
-from langchain.llms.huggingface_endpoint import HuggingFaceEndpoint
-from langchain_community.chat_models.huggingface import ChatHuggingFace
+# from langchain.llms.huggingface_endpoint import HuggingFaceEndpoint
+# from langchain_community.chat_models.huggingface import ChatHuggingFace
+from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
 
 LLM = ChatHuggingFace(
