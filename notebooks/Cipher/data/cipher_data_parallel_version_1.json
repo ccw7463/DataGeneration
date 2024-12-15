@@ -1,0 +1,1442 @@
+[
+    {
+        "instruction": "ZAP Root CA 인증서를 브라우저의 신뢰할 수 있는 루트 인증서 목록에 수동으로 설치하는 방법을 알려주세요.",
+        "output": "ZAP Root CA 인증서를 브라우저의 신뢰할 수 있는 루트 인증서 목록에 수동으로 설치하려면 다음 단계를 따르세요:\n\n1. ZAP을 실행하고 \"Tools\" 메뉴에서 \"Options\"를 선택합니다.\n2. \"Dynamic SSL Certificates\" 섹션을 찾아 \"Generate\" 버튼을 클릭하여 ZAP Root CA 인증서를 생성합니다.\n3. 생성된 인증서를 \"Save\" 버튼을 클릭하여 로컬 파일로 저장합니다.\n4. 브라우저를 열고 설정 메뉴로 이동합니다.\n5. \"Privacy & Security\" 또는 \"Advanced\" 섹션을 찾아 \"Certificates\" 또는 \"Manage Certificates\"를 선택합니다.\n6. \"Authorities\" 탭을 선택하고 \"Import\" 버튼을 클릭합니다.\n7. 저장한 ZAP Root CA 인증서 파일을 선택하고 브라우저의 신뢰할 수 있는 루트 인증서 목록에 추가합니다.\n8. 모든 단계를 완료한 후 브라우저를 재시작합니다."
+    },
+    {
+        "instruction": "ZAP에서 생성된 인증서는 모두 동일한 서버 이름으로 서명되나요?",
+        "output": "네, ZAP에서 생성된 모든 인증서는 동일한 서버 이름으로 서명됩니다."
+    },
+    {
+        "instruction": "루트 CA 인증서를 저장할 때, 텍스트 형식으로 저장되나요?",
+        "output": "네, 루트 CA 인증서를 저장할 때 텍스트 형식으로 저장됩니다. 옵션 대화상자에서 보이는 원시 바이트(16진수로 인코딩된)를 파일로 저장하는 것과 같습니다. 이 파일은 .CER 확장자를 가지며, 대화상자에서 보이는 것처럼 간단한 텍스트 형식입니다."
+    },
+    {
+        "instruction": "ZAP에서 생성된 Root CA certificate의 Location identifier는 어떻게 구성되어 있나요?",
+        "output": "ZAP에서 생성된 Root CA certificate의 Location identifier는 두 개의 32비트 해시 코드로 구성된 헥사데시멀 숫자입니다. 이 두 해시 코드는 사용자의 이름과 사용자의 홈 디렉토리에서 생성됩니다."
+    },
+    {
+        "instruction": "ZAP Root CA 인증서를 신뢰할 수 있는 루트 CA 목록에 추가한 후에도 브라우저가 여전히 인증서 오류를 발생시키면 어떻게 해야 하나요?",
+        "output": "ZAP Root CA 인증서를 신뢰할 수 있는 루트 CA 목록에 추가한 후에도 브라우저가 여전히 인증서 오류를 발생시키면, iOS 10.3 이상의 경우 추가적인 설정이 필요할 수 있습니다. 설정에서 일반 > 정보 > 인증서 신뢰 설정으로 이동한 후, \"루트 인증서에 대한 전체 신뢰 사용\" 항목에서 해당 인증서에 대한 신뢰를 켜야 합니다. 이 설정을 통해 인증서 오류를 해결할 수 있습니다."
+    },
+    {
+        "instruction": "ZAP 인스턴스마다 고유의 루트 인증서를 사용하는데, 이 루트 인증서를 여러 대의 기기에서 사용하려면 루트 인증서를 가져올 수 있나요?",
+        "output": "네, 루트 인증서를 가져와서 여러 대의 기기에서 사용할 수 있습니다."
+    },
+    {
+        "instruction": "ZAP Root CA 인증서를 설치한 후에 인증서가 제대로 설치되었는지 확인하려면 어떻게 해야 하나요?",
+        "output": "인터넷 옵션으로 이동합니다.\n콘텐츠 탭을 클릭합니다.\n인증서를 클릭합니다.\n신뢰할 수 있는 루트 인증서 탭을 클릭합니다.\nZAP Root CA가 있는지 확인합니다."
+    },
+    {
+        "instruction": "자체 생성된 Root CA 인증서를 신뢰할 수 있는 루트 인증서 목록에 추가할 때, 이 인증서를 가진 모든 사람이 시스템(브라우저)에 데이터를 침투시킬 수 있는 위험이 있습니까?",
+        "output": "네, 자체 생성된 Root CA 인증서를 신뢰할 수 있는 루트 인증서 목록에 추가할 때, 이 인증서를 가진 모든 사람이 시스템(브라우저)에 데이터를 침투시킬 수 있는 위험이 있습니다."
+    },
+    {
+        "instruction": "서버 인증서에 CRL Distribution Point를 추가하지 않았을 때, schannel이 인증서 해지 여부를 확인하지 못해 TLS 핸드셰이크가 실패하는 이유는 무엇인가요?",
+        "output": "schannel은 기본적으로 인증서에 포함된 CRL Distribution Point를 통해 Certificate Revocation List(CRL)을 확인하려고 합니다. 만약 CRL Distribution Point가 없거나 잘못 구성되어 있으면, schannel은 인증서가 해지되었는지 여부를 확인할 수 없습니다. 이로 인해 TLS 핸드셰이크 과정에서 신뢰할 수 없는 인증서로 간주되어 핸드셰이크가 실패하게 됩니다."
+    },
+    {
+        "instruction": "ZAP에서 생성한 Root CA certificate를 다른 ZAP 인스턴스로 가져오려면 어떤 방법이 있나요?",
+        "output": "ZAP에서 생성한 Root CA certificate를 다른 ZAP 인스턴스로 가져오려면 두 가지 방법이 있습니다.\n\n첫 번째 방법은 ZAP의 홈 디렉토리에서 'config.xml' 파일을 복사한 후, 다른 PC에서 'import' 버튼을 눌러 가져오는 방법입니다.\n\n두 번째 방법은 명령줄(command line) 옵션을 사용하는 것입니다.\n* -certfulldump <path> 옵션을 사용하여 한 ZAP 인스턴스에서 인증서를 내보낸 후,\n* -certload <path> 옵션을 사용하여 다른 ZAP 인스턴스로 인증서를 로드할 수 있습니다.\n\n또한, pem 파일 형식으로 저장된 인증서와 비암호화된 개인 키를 포함한 파일도 가져올 수 있습니다."
+    },
+    {
+        "instruction": "ZAP에서 SSL 연결을 투명하게 복호화하려면 어떤 절차가 필요한가요?",
+        "output": "ZAP에서 SSL 연결을 투명하게 복호화하기 위해서는 'manipulator in the middle' 접근 방식이 필요합니다. 이를 위해 ZAP는 각 요청을 서버로 보내기 전에 암호화하고, 각 응답을 받으면 이를 복호화합니다. 이 과정은 이미 브라우저에서 수행되므로, ZAP는 중간에서 전송을 가로채고 복호화할 수 있도록 해야 합니다."
+    },
+    {
+        "instruction": "ZAP Root CA 인증서를 Firefox에 설치하려면 어떻게 해야 하나요?",
+        "output": "Firefox 브라우저를 열고, 우선 환경설정으로 이동합니다. 그 다음 고급 탭을 클릭하고, 암호화/인증서 탭을 선택합니다. 인증서 보기를 클릭한 후, 권한 탭을 선택합니다. 여기서 가져오기를 클릭하고, 저장된 zap_root_ca.cer 파일을 선택합니다. 마법사에서 이 인증서를 웹 사이트 식별에 사용할 수 있도록 선택한 후, 마법사를 완료합니다."
+    },
+    {
+        "instruction": "서버 인증서의 Root CA 인증서를 확인하려고 하는데, PEM 형식으로 보이는 인증서를 더블 클릭했을 때 아무런 반응이 없습니다. 이 문제를 해결하기 위해 어떻게 해야 할까요?",
+        "output": "시스템의 기본 뷰어가 \".CER\" 파일을 지원하지 않을 수 있습니다. 인증서를 확인하려면 텍스트 편집기를 사용해 PEM 형식의 인증서를 열어보세요. 또는, ZAP 옵션 다이얼로그에서 인증서를 직접 볼 수 있는 기능을 사용해보세요."
+    },
+    {
+        "instruction": "spider Job의 maxDepth 파라미터는 어떤 역할을 하나요?",
+        "output": "maxDepth 파라미터는 스파이더가 탐색할 수 있는 트리의 최대 깊이를 설정합니다. 기본값은 5입니다."
+    },
+    {
+        "instruction": "이 자동화 프레임워크에서 spider Job은 모던 애플리케이션을 효과적으로 처리할 수 있나요?",
+        "output": "이 자동화 프레임워크에서 spider Job은 모던 애플리케이션을 효과적으로 처리할 수 없습니다."
+    },
+    {
+        "instruction": "이 애드온에서 사용하는 공통 라이브러리의 보안 취약점은 무엇인가요?",
+        "output": "이 애드온에서 사용하는 공통 라이브러리의 보안 취약점은 다음과 같습니다:\n\n1. **Dependency Vulnerabilities**: 공통 라이브러리가 사용하는 의존성(dependency)들이 최신 버전이 아닐 경우, 알려진 취약점(vulnerability)이 있을 수 있습니다.\n2. **Code Injection**: 라이브러리가 외부 입력을 제대로 검증하지 않으면, 코드 인젝션(code injection) 공격에 취약할 수 있습니다.\n3. **Insecure Data Storage**: 라이브러리가 민감한 데이터를 안전하게 저장하지 않으면, 데이터 유출(data leakage)의 위험이 있습니다.\n4. **Lack of Input Validation**: 입력 값을 충분히 검증하지 않으면, 다양한 공격 벡터(attack vector)가 열릴 수 있습니다.\n5. **Insufficient Logging and Monitoring**: 로깅(logging)과 모니터링(monitoring)이 부족하면, 보안 사건(security incident)을 신속하게 감지하고 대응하기 어려울 수 있습니다."
+    },
+    {
+        "instruction": "ViewState를 디코딩하는 방법을 알려주세요.",
+        "output": "ViewState를 디코딩하려면, 먼저 해당 ViewState 값을 확인한 후, 이를 디코딩할 수 있는 도구나 스크립트를 사용해야 합니다. 예를 들어, Burp Suite와 같은 웹 애플리케이션 보안 테스트 도구를 사용하면 Request/Response 패널에서 ViewState를 디코딩하고 편집할 수 있습니다. 또한, 온라인에서 제공되는 ViewState 디코더 도구를 사용할 수도 있습니다."
+    },
+    {
+        "instruction": "SVN Digger Files를 사용하여 ZAP forced browsing을 수행하려면 어떻게 해야 하나요?",
+        "output": "SVN Digger Files를 다운로드한 후, ZAP(Zed Attack Proxy) 도구에서 Forced Browse 기능을 사용할 때 이 파일들을 업로드하면 됩니다. 이를 통해 더 효과적인 디렉토리 및 파일 열람이 가능합니다."
+    },
+    {
+        "instruction": "강제로 열린 브라우저 탭에서 마우스 오른쪽 버튼을 클릭했을 때 \"Resend…\" 옵션을 선택하면 요청을 다시 보낼 수 있는 *Resend dialog*가 나타납니다.",
+        "output": "강제로 열린 브라우저 탭에서 마우스 오른쪽 버튼을 클릭하면 나타나는 메뉴에서 \"Resend…\" 옵션을 선택하면, 요청을 수정한 후 다시 보낼 수 있는 *Resend dialog*가 나타납니다."
+    },
+    {
+        "instruction": "이 요청에 대해 새로운 알림을 수동으로 기록하려면 어떻게 해야 하나요?",
+        "output": "\"New Alert…\" 옵션을 선택하면 *Add Alert dialog*가 나타나며, 이를 통해 이 요청에 대해 새로운 *alert*를 수동으로 기록할 수 있습니다."
+    },
+    {
+        "instruction": "현재 진행 중인 스캔 목록을 확인하려면 어디를 클릭해야 하나요?",
+        "output": "'Current scans' 값 위에 마우스를 올리면 팝업 창에서 현재 진행 중인 스캔 목록을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "특정 URL을 프록시에서 제외하려면 어떻게 해야 하나요?",
+        "output": "특정 URL을 프록시에서 제외하려면, \"Forced Browse\" 탭에서 선택한 노드를 마우스 오른쪽 버튼으로 클릭한 후 \"Exclude from\" 메뉴에서 \"Proxy\"를 선택하면 됩니다. 이렇게 하면 선택한 노드는 프록시를 통해 여전히 처리되지만 어떤 탭에도 표시되지 않습니다. 나중에 다시 포함시키려면 *Session Properties* 대화 상자를 통해 설정할 수 있습니다."
+    },
+    {
+        "instruction": "강제로 열린 브라우저 탭에서 마우스 오른쪽 버튼을 클릭했을 때 나타나는 메뉴에서 어떤 기능을 사용할 수 있나요?",
+        "output": "강제로 열린 브라우저 탭에서 마우스 오른쪽 버튼을 클릭하면 메뉴가 나타나며, 이 메뉴를 통해 한 개 이상의 행에 대해 다양한 기능을 사용할 수 있습니다."
+    },
+    {
+        "instruction": "특정 노트를 스캐너에서 제외하려면 어떻게 해야 하나요?",
+        "output": "특정 노트를 스캐너에서 제외하려면, \"Forced Browse\" 탭에서 해당 노트를 마우스 오른쪽 버튼으로 클릭한 후 \"Exclude from\" 메뉴에서 \"Scanner\"를 선택하면 됩니다. 나중에 다시 포함시키려면 *Session Properties* 대화상자를 통해 설정할 수 있습니다."
+    },
+    {
+        "instruction": "이 페이지에서 CSRF 테스트 폼을 생성하는 방법은 무엇인가요?",
+        "output": "이 페이지에서 CSRF 테스트 폼을 생성하려면, 마우스 오른쪽 버튼을 클릭하여 나타나는 메뉴에서 \"Generate anti CSRF test form\" 옵션을 선택하면 됩니다."
+    },
+    {
+        "instruction": "선택한 노드의 URL을 기본 브라우저에서 열 수 있나요?",
+        "output": "네, 선택한 노드의 URL을 기본 브라우저에서 열 수 있습니다. \"Open URL in Browser\" 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "이 탭에서 특정 웹사이트를 제외하려면 어떻게 해야 하나요?",
+        "output": "이 탭에서 특정 웹사이트를 제외하려면, 마우스 오른쪽 버튼을 클릭하여 \"Exclude from\" 메뉴를 선택한 후, 원하는 옵션을 선택하면 됩니다."
+    },
+    {
+        "instruction": "특정 노드를 Spider에서 제외하려면 어떻게 해야 하나요?",
+        "output": "특정 노드를 Spider에서 제외하려면, 해당 노드를 마우스 오른쪽 버튼으로 클릭한 후 \"Exclude from\" 메뉴에서 \"Spider\"를 선택하면 됩니다. 나중에 다시 포함시키려면 *Session Properties* 대화상자를 통해 설정할 수 있습니다."
+    },
+    {
+        "instruction": "선택한 URL을 클립보드에 복사하려면 어떻게 해야 하나요?",
+        "output": "강제 탭에서 마우스 오른쪽 버튼을 클릭한 후 \"Copy\"를 선택하면 됩니다."
+    },
+    {
+        "instruction": "알림이 발생했을 때 증거가 일치하는 경우에만 규칙을 적용하려면 어떻게 해야 하나요?",
+        "output": "알림이 발생했을 때 증거가 일치하는 경우에만 규칙을 적용하려면, Evidence 항목에 해당 증거를 지정하면 됩니다."
+    },
+    {
+        "instruction": "알림의 증거를 정규 표현식으로 필터링할 수 있나요?",
+        "output": "네, 설정 시 알림의 증거를 정규 표현식(regex)으로 필터링할 수 있습니다. 설정하지 않으면 지정된 증거가 알림의 증거와 정확히 일치해야 합니다."
+    },
+    {
+        "instruction": "URL이 정규 표현식인지 여부를 설정하려면 어떻게 해야 하나요?",
+        "output": "\"URL is Regex?\" 옵션을 설정하면 됩니다. 이 옵션을 설정하면 지정된 URL이 정규 표현식으로 취급되어 알림의 URL과 비교됩니다. 설정하지 않으면 지정된 URL이 알림의 URL과 정확히 일치해야 합니다."
+    },
+    {
+        "instruction": "특정 메서드에 대한 알림만 필터링하고 싶은데, 이 설정에서 어떻게 지정할 수 있나요?",
+        "output": "이 설정에서 \"Method\" 필드를 사용하여 특정 메서드에 대한 알림만 필터링할 수 있습니다. 원하는 메서드를 지정하면, 해당 메서드와 일치하는 알림만 적용됩니다."
+    },
+    {
+        "instruction": "글로벌 얼럿 필터를 추가할 때 어떤 필드들을 설정해야 하나요?",
+        "output": "글로벌 얼럿 필터를 추가할 때는 다음과 같은 필드들을 설정해야 합니다:\n\n    - 필터 이름: 필터의 이름을 지정합니다.\n    - 필터 조건: 얼럿을 필터링할 조건을 설정합니다.\n    - 필터 동작: 필터가 적용될 동작을 선택합니다.\n    - 필터 범위: 필터가 적용될 범위를 지정합니다.\n    - 필터 우선순위: 여러 필터가 있을 경우 적용될 우선순위를 설정합니다."
+    },
+    {
+        "instruction": "현재 설치된 액티브 및 패시브 알림 규칙 중에서 특정 알림 유형을 선택하려면 어떻게 해야 하나요?",
+        "output": "현재 설치된 액티브 및 패시브 알림 규칙 중에서 특정 알림 유형을 선택하려면 Alert Type 풀다운 메뉴를 사용하면 됩니다."
+    },
+    {
+        "instruction": "특정 파라미터가 일치할 때만 알림 필터 규칙을 적용하려면 어떻게 설정해야 하나요?",
+        "output": "알림 필터 규칙을 특정 파라미터가 일치할 때만 적용하려면, Parameter 항목에 해당 파라미터를 지정하면 됩니다."
+    },
+    {
+        "instruction": "알림 필터 대화상자에서 새로운 위험 수준을 어떻게 설정할 수 있나요?",
+        "output": "알림 필터 대화상자에서 새로운 위험 수준을 설정하려면, 규칙에서 정의한 기준과 일치하는 알림이 발생했을 때 적용할 새로운 위험 수준(New Risk Level)을 지정하면 됩니다."
+    },
+    {
+        "instruction": "현재 필터가 적용되는 경고의 수를 'Test' 버튼을 통해 확인할 수 있나요?",
+        "output": "네, 'Test' 버튼을 통해 현재 필터가 적용되는 경고의 수를 확인할 수 있습니다. 단, 필터가 비활성화된 경우에는 'Test' 버튼이 비활성화됩니다."
+    },
+    {
+        "instruction": "알림 필터 대화 상자에서 파라미터를 정규식으로 설정하려면 어떻게 해야 하나요?",
+        "output": "알림 필터 대화 상자에서 \"Parameter is Regex?\" 옵션을 설정하면, 지정된 파라미터가 알림의 파라미터와 비교될 때 정규식(regex) 표현식으로 처리됩니다. 이 옵션을 설정하지 않으면 지정된 파라미터는 알림의 파라미터와 정확히 일치해야 합니다."
+    },
+    {
+        "instruction": "알림에서 공격이 정규 표현식으로 처리되도록 설정할 수 있나요?",
+        "output": "네, 설정할 수 있습니다. \"Attack is Regex?\" 옵션을 설정하면 알림의 공격이 정규 표현식(regex)으로 처리됩니다. 이 옵션을 설정하지 않으면 지정된 공격이 알림의 공격과 정확히 일치해야 합니다."
+    },
+    {
+        "instruction": "특정 공격이 감지된 경우에만 규칙을 적용하려면 어떻게 해야 하나요?",
+        "output": "특정 공격이 감지된 경우에만 규칙을 적용하려면, \"Attack\" 필드에 해당 공격을 지정하면 됩니다. 이렇게 하면 이 규칙은 감지된 알림의 공격이 정확히 일치할 때만 적용됩니다."
+    },
+    {
+        "instruction": "URL이 지정된 경우, 이 규칙은 발생한 경고의 URL과 일치할 때 적용됩니까?",
+        "output": "네, URL이 지정된 경우, 이 규칙은 발생한 경고의 URL과 일치할 때 적용됩니다."
+    },
+    {
+        "instruction": "필터를 적용하면 해당 필터가 적용되는 모든 기존 알림에 실제로 필터가 적용되나요?",
+        "output": "네, 필터를 적용하면 해당 필터가 적용되는 모든 기존 알림에 실제로 필터가 적용됩니다."
+    },
+    {
+        "instruction": "이 규칙을 설정하면 주어진 컨텍스트에 대해 발생하는 모든 알림에 이 규칙이 적용됩니까?",
+        "output": "네, 이 규칙을 설정하면 주어진 컨텍스트에 대해 발생하는 모든 알림(alert)에 이 규칙이 적용됩니다."
+    },
+    {
+        "instruction": "특정 경고에서 경고 필터를 생성할 때만 Scope를 수정할 수 있나요?",
+        "output": "네, 맞습니다. Scope는 특정 경고에서 경고 필터를 생성할 때만 수정할 수 있습니다."
+    },
+    {
+        "instruction": "ZAP 브라우저 확장 프로그램을 수동으로 설치하고 구성하는 방법을 알려주세요.",
+        "output": "ZAP 브라우저 확장 프로그램을 수동으로 설치하려면 다음 단계를 따르세요:\n\n1. Firefox 사용자는 [Firefox Add-Ons](https://addons.mozilla.org/en-GB/firefox/addon/zap-browser-extension/)에서, Chrome 사용자는 [Chrome Web Store](https://chrome.google.com/webstore/detail/zap-browser-extension/oeadiegekjdlhpooeidmimgnmbfllehp)에서 ZAP 브라우저 확장 프로그램을 설치합니다.\n\n2. 설치가 완료되면 Firefox 또는 Chrome에서 확장 프로그램 버튼을 클릭합니다.\n\n3. 'ZAP Browser Extension'을 선택하고 확장 프로그램 환경설정 화면을 엽니다.\n\n4. 환경설정 화면에서 다음 항목을 구성합니다:\n   - ZAP API URL: 기본값은 `http://zap/` 입니다. 필요에 따라 ZAP이 수신 대기하는 호스트와 포트를 사용할 수 있습니다. 예를 들어, `http://localhost:8080`\n   - ZAP API Key: 이는 ZAP API 옵션 화면에서 찾을 수 있습니다. ZAP에서 API Key를 비활성화한 경우 이 항목을 비워둘 수 있지만, 신뢰할 수 있는 환경에서만 권장됩니다."
+    },
+    {
+        "instruction": "브라우저 확장 프로그램이 ZAP와 안전하게 통신하도록 하려면 어떤 방법을 사용해야 하나요?",
+        "output": "브라우저 확장 프로그램이 ZAP와 안전하게 통신하도록 하기 위해서는 두 가지 방법을 사용할 수 있습니다. 첫째, 브라우저가 시작될 때 설정 세부 사항을 확장 프로그램에 전달하는 방법이 있습니다. 둘째, 브라우저가 이미 실행 중일 때 설정 세부 사항을 전달하는 방법이 있습니다. 이 두 방법 모두 브라우저 확장 프로그램이 ZAP와 안전하게 통신할 수 있도록 보장합니다."
+    },
+    {
+        "instruction": "ZAP에서 Firefox나 Chrome을 실행할 때, 자동으로 ZAP 브라우저 확장 프로그램이 추가되는데, 이 확장 프로그램은 콜백 URL을 통해 브라우저에서 ZAP으로 데이터를 전송할 수 있습니까?",
+        "output": "네, ZAP에서 Firefox나 Chrome을 실행할 때 자동으로 ZAP 브라우저 확장 프로그램이 추가되며, 이 확장 프로그램은 콜백 URL을 통해 브라우저에서 ZAP으로 데이터를 전송할 수 있습니다."
+    },
+    {
+        "instruction": "최근 1년간의 Risk Summary Chart와 No. of Bug Occurrences Count를 비교해보면 어떤 점이 개선되었나요?",
+        "output": "최근 1년간의 Risk Summary Chart와 No. of Bug Occurrences Count를 비교해보면, Risk Summary Chart에서 전체적인 리스크 수준이 감소한 것을 확인할 수 있습니다. 특히, 중요한 취약점(Critical Vulnerabilities)과 높은 리스크(High Risk) 항목의 비율이 줄어들었습니다. 또한, No. of Bug Occurrences Count에서도 버그 발생 횟수가 전반적으로 감소한 것을 알 수 있습니다. 이는 보안 패치와 정기적인 업데이트가 효과적으로 이루어지고 있음을 나타내며, 시스템의 안정성과 보안성이 향상되었음을 의미합니다."
+    },
+    {
+        "instruction": "이 보고서에서 발견된 취약점 중 가장 심각한 것은 무엇인가요?",
+        "output": "이 보고서에서 발견된 취약점 중 가장 심각한 것은 Critical 등급의 SQL Injection 취약점입니다."
+    },
+    {
+        "instruction": "특정 노드에서 \"login.jsp\" 파일을 찾기 위해 Bean Shell Console에서 어떤 명령어를 사용해야 하나요?",
+        "output": "특정 노드에서 \"login.jsp\" 파일을 찾기 위해서는 다음과 같은 명령어를 사용할 수 있습니다:\n\n```\nt = Tree();\nspecificNode = sites.getRoot().findChild(\"특정 노드 이름\");\nt.find(specificNode, \"login.jsp\");\n```"
+    },
+    {
+        "instruction": "Bean Shell Console을 사용하여 HTTP 요청을 보내려면 어떻게 해야 하나요?",
+        "output": "Bean Shell Console을 사용하여 HTTP 요청을 보내려면, 먼저 ZAP의 내부 구조를 익혀야 합니다. 그런 다음, sender 객체를 사용하여 HTTP 요청을 생성하고 전송할 수 있습니다. sender 객체는 Manual Request Editor와 동일한 인스턴스를 사용하므로, ZAP 설정에서 설정된 프록시 설정을 자동으로 사용합니다. 예를 들어, 간단한 HTTP 요청을 보내려면 다음과 같은 코드를 사용할 수 있습니다:\n\n```java\nsender.sendRequest(\"https://example.com\", new byte[0], true);\n```\n\n이 코드는 \"https://example.com\"으로 GET 요청을 보냅니다. POST 요청을 보내려면, 요청 본문과 함께 추가적인 설정이 필요합니다."
+    },
+    {
+        "instruction": "BeanShell Console에서 HttpSender 인스턴스를 사용하여 HTTP 요청을 보내는 방법은 무엇인가요?",
+        "output": "BeanShell Console에서 HttpSender 인스턴스를 사용하여 HTTP 요청을 보내려면, 다음과 같은 스크립트를 작성할 수 있습니다. 예를 들어, GET 요청을 보내는 방법은 다음과 같습니다:\n\n```java\nimport org.parosproxy.paros.network.HttpMessage;\nimport org.parosproxy.paros.network.HttpRequestHeader;\n\n// HTTP 요청 헤더 생성\nHttpRequestHeader header = new HttpRequestHeader();\nheader.setMethod(HttpRequestHeader.GET);\nheader.setURI(new URI(\"http://example.com\"));\n\n// HTTP 메시지 생성\nHttpMessage message = new HttpMessage(header, null);\n\n// HttpSender 인스턴스를 사용하여 요청 전송\nsender.sendAndReceive(message, true);\n```\n\n이 스크립트는 BeanShell Console의 상단 인터랙티브 콘솔에 입력할 수 있으며, `sender` 객체를 통해 HTTP 요청을 전송합니다. POST 요청이나 다른 유형의 요청을 보내려면, `HttpRequestHeader.POST`와 같이 적절한 메서드를 설정하고, 필요한 경우 요청 본문을 추가하면 됩니다."
+    },
+    {
+        "instruction": "Bean Shell Console을 통해 웹 애플리케이션을 분석할 때, ZAP 함수와 데이터 셋을 사용하는 스크립트를 작성하는 방법은 무엇인가요?",
+        "output": "Bean Shell Console을 통해 웹 애플리케이션을 분석할 때, ZAP 함수와 데이터 셋을 사용하는 스크립트를 작성하려면 다음 단계를 따르세요.\n\n1. OWASP ZAP을 실행하고 Bean Shell Console을 엽니다.\n2. Bean Shell Console에서 스크립트를 작성할 준비를 합니다.\n3. ZAP의 API를 통해 제공되는 함수와 데이터 셋을 활용하여 스크립트를 작성합니다.\n4. 예를 들어, 특정 URL의 응답 코드를 확인하는 스크립트를 작성할 수 있습니다.\n\n```java\nimport org.zaproxy.zap.extension.script.ScriptVars;\n\nString url = \"http://example.com\";\nHttpMessage msg = ScriptVars.sendRequest(url);\nint responseCode = msg.getResponseHeader().getStatusCode();\nprint(\"Response Code: \" + responseCode);\n```\n\n5. 작성한 스크립트를 Bean Shell Console에 입력하고 실행합니다.\n6. 스크립트 실행 결과를 확인하고, 필요에 따라 스크립트를 수정하거나 추가 기능을 구현합니다."
+    },
+    {
+        "instruction": "Bean Shell Console에서 변수를 삭제하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "Bean Shell Console에서 변수를 삭제하려면 `unset` 명령어를 사용합니다. 예를 들어, `t`라는 변수를 삭제하려면 `unset(\"t\");`와 같이 입력하면 됩니다."
+    },
+    {
+        "instruction": "이 애플리케이션의 Display Name을 어떻게 설정하나요?",
+        "output": "Options Applications screen에서 설정할 수 있습니다."
+    },
+    {
+        "instruction": "ZAP에서 특정 URL을 대상으로 스캔을 실행하려면 어떤 파라미터를 사용해야 하나요?",
+        "output": "ZAP에서 특정 URL을 대상으로 스캔을 실행하려면 '-u %url%' 파라미터를 사용해야 합니다."
+    },
+    {
+        "instruction": "스크립트를 실행할 때 *Capture Output* 옵션을 체크해야 하나요?",
+        "output": "네, 스크립트를 실행할 때는 항상 *Capture Output* 옵션을 체크해야 합니다. 이 옵션을 사용하면 명령어가 실행되고 생성된 모든 출력이 *Output tab*에 표시됩니다. 이는 특히 UI가 없는 스크립트나 명령어를 실행할 때 유용합니다. 또한, 문제 해결을 위해서도 유용하며, 예상대로 동작하지 않는 애플리케이션의 명령어를 복사하여 명령 줄 프롬프트에서 실행해볼 수 있습니다."
+    },
+    {
+        "instruction": "새로운 애플리케이션을 추가하려면 어떻게 해야 하나요?",
+        "output": "새로운 애플리케이션을 추가하려면 Options Applications screen에서 직접 설정할 수 있습니다. 기본적으로 사용 가능한 애플리케이션은 없으므로, 사용하고자 하는 모든 애플리케이션을 추가해야 합니다."
+    },
+    {
+        "instruction": "여러 명령어를 한 번에 실행하려면 스크립트나 배치 파일을 만들어야 하나요?",
+        "output": "네, 여러 명령어를 한 번에 실행하려면 스크립트나 배치 파일을 만들어야 합니다."
+    },
+    {
+        "instruction": "특정 노드에 대한 출력 내용이 *History tab* 기록에 추가되는지 확인하려면 어떻게 해야 하나요?",
+        "output": "*Options Applications screen*에서 *Output to Note* 옵션을 체크하면, 해당 노드의 *History tab* 기록에 출력 내용이 추가됩니다.\n    단, *Sites tab*에서 일부 노드는 *History tab* 기록이 없으므로 이 옵션이 적용되지 않습니다."
+    },
+    {
+        "instruction": "OpenAPI 정의 파일을 명시적으로 추가하는 방법은 무엇인가요?",
+        "output": "OpenAPI 정의 파일을 명시적으로 추가하려면 URL이나 로컬 파일을 통해 추가하는 것이 권장됩니다."
+    },
+    {
+        "instruction": "OpenAPI 정의를 파일로 가져오려면 apiFile 파라미터에 어떤 값을 설정해야 하나요?",
+        "output": "apiFile 파라미터에 OpenAPI 정의가 포함된 로컬 파일의 경로를 문자열 형태로 설정하면 됩니다."
+    },
+    {
+        "instruction": "펄저 탭에서 행을 오른쪽 클릭하면 히스토리 탭과 동일한 옵션이 포함된 메뉴가 나타납니까?",
+        "output": "네, 펄저 탭에서 행을 오른쪽 클릭하면 히스토리 탭과 동일한 옵션이 포함된 메뉴가 나타납니다."
+    },
+    {
+        "instruction": "HTTP Fuzzer 결과를 수동으로 평가해야 하나요?",
+        "output": "네, HTTP Fuzzer 결과는 수동으로 평가해야 합니다."
+    },
+    {
+        "instruction": "푸저 탭에서 특정 문자열을 검색하려면 어떻게 해야 하나요?",
+        "output": "푸저 탭에서 특정 문자열을 검색하려면 'Search' 탭을 사용하면 됩니다."
+    },
+    {
+        "instruction": "ZAP의 Telemetry 콜이 수집하는 정보에는 어떤 것들이 포함되나요?",
+        "output": "ZAP의 Telemetry 콜은 사용 중인 애드온과 ZAP 내부 통계를 보고합니다. 이 콜은 ZAP이 사용 중인 사이트의 세부 정보, 취약점의 세부 정보 또는 개인 식별 정보(PII)를 수집하지 않습니다."
+    },
+    {
+        "instruction": "ZAP 2.12.0 버전부터 Check for Updates 기능이 필수인 이유는 무엇인가요?",
+        "output": "ZAP 2.12.0 버전부터 Check for Updates 기능이 필수인 이유는 ZAP core에서 이 기능을 사용하기 때문입니다."
+    },
+    {
+        "instruction": "ZAP의 최신 뉴스 항목을 확인하려면 어떻게 해야 하나요?",
+        "output": "ZAP의 최신 뉴스 항목을 확인하려면 News call을 사용하면 됩니다. 이는 ZAP 데스크톱 Quick Start 패널에 표시됩니다."
+    },
+    {
+        "instruction": "이 애드온이 모든 \"calls home\"에 사용되나요?",
+        "output": "네, 이 애드온은 모든 \"calls home\"에 사용됩니다."
+    },
+    {
+        "instruction": "커맨드 라인 옵션에서 `-notel`을 지정하면 텔레메트리 콜은 발생하지 않나요?",
+        "output": "네, 커맨드 라인 옵션에서 `-notel`을 지정하면 텔레메트리 콜(telemetry calls)은 발생하지 않습니다."
+    },
+    {
+        "instruction": "Call Home 옵션 패널에서 텔레메트리 지원을 켜고 끌 수 있나요?",
+        "output": "네, Call Home 옵션 패널에서 텔레메트리 지원을 켜고 끌 수 있습니다."
+    },
+    {
+        "instruction": "Replacer의 Enable 설정을 해야만 규칙이 적용되나요?",
+        "output": "네, Replacer의 Enable 설정을 해야만 규칙이 적용됩니다. If not set then the rule will not apply."
+    },
+    {
+        "instruction": "정규 표현식을 사용하여 문자열을 매칭할 때, 헥사데시멀 바이트는 어떻게 표현되나요?",
+        "output": "헥사데시멀 바이트는 \"\\x00\"에서 \"\\xFF\"로 표현됩니다. 예를 들어, \"abc\\x01\\x02\\x03def\"와 같이 사용할 수 있습니다."
+    },
+    {
+        "instruction": "특정 선택 부분을 대체할 Replacement String에서 Hexadecimal bytes를 어떻게 표현해야 하나요?",
+        "output": "Hexadecimal bytes는 \"\\x00 - \\xFF\"로 표현됩니다."
+    },
+    {
+        "instruction": "특정 Request Header가 없을 경우 추가할 수 있나요?",
+        "output": "네, 특정 Request Header가 없을 경우 추가할 수 있습니다. 이 경우 'Match String'이 header name으로 사용되며, 해당 header가 없고 replacement text가 비어있지 않다면 header가 추가됩니다."
+    },
+    {
+        "instruction": "특정 이니셔티에이터에 대해서만 규칙을 적용하려면 어떻게 설정해야 하나요?",
+        "output": "Initiators 탭에서 규칙을 적용할 이니셔티에이터를 지정하면 됩니다. 각 ZAP 컴포넌트가 메시지를 보내고 받을 수 있으므로, 규칙이 정확히 언제 적용될지 매우 세밀하게 제어할 수 있습니다."
+    },
+    {
+        "instruction": "이 소프트웨어에서 사용되는 Match Type의 종류는 무엇인가요?",
+        "output": "이 소프트웨어에서 사용되는 Match Type의 종류는 명시되어 있지 않습니다. 추가적인 정보가 필요합니다."
+    },
+    {
+        "instruction": "특정 Response Header가 존재하지 않을 때, 해당 Header를 추가하고 값을 설정하려면 어떻게 해야 하나요?",
+        "output": "특정 Response Header가 존재하지 않을 때, 해당 Header를 추가하고 값을 설정하려면 'Match String'을 해당 Header의 이름으로 설정하고, 'Replacement Text'에 원하는 값을 입력하면 됩니다. 이 경우, Header가 존재하지 않으므로, 해당 Header가 추가되고 값이 설정됩니다."
+    },
+    {
+        "instruction": "랜덤 UUID를 생성하려면 어떤 토큰을 사용해야 하나요?",
+        "output": "랜덤 UUID를 생성하려면 {{UUID}} 토큰을 사용해야 합니다."
+    },
+    {
+        "instruction": "특정 도메인에서 오는 메시지에만 인증 자격 증명을 제공하려면 URL Replacer를 어떻게 설정해야 하나요?",
+        "output": "URL Replacer의 정규 표현식을 특정 도메인으로 설정하여 해당 도메인에서 오는 메시지에만 인증 자격 증명을 제공할 수 있습니다. 예를 들어, \"example.com\" 도메인에서 오는 메시지에만 인증 자격 증명을 제공하려면, URL Replacer의 정규 표현식을 \"https?://(www\\.)?example\\.com/\"로 설정하면 됩니다."
+    },
+    {
+        "instruction": "요청 본문에서 'Match String'이 문자열이나 정규 표현식으로 존재할 때, 이를 대체 텍스트로 변경하는 방법은 무엇인가요?",
+        "output": "요청 본문에서 'Match String'이 문자열이나 정규 표현식(regex expression)으로 존재할 때, 이를 대체 텍스트로 변경하려면 'Match String'을 대체 텍스트로 설정하면 됩니다."
+    },
+    {
+        "instruction": "Replacer를 사용하여 request와 response에서 string을 어떻게 교체할 수 있나요?",
+        "output": "Replacer는 request와 response에서 string을 교체하는 간단한 방법을 제공합니다. Options를 통해 접근할 수 있으며, 기본적으로 '<ctrl> R' 단축키를 사용하여 빠르게 접근할 수 있습니다. Replacer Options 패널을 통해 필요한 만큼의 교체 규칙을 정의할 수 있습니다. 각 규칙은 교체할 string과 교체될 string으로 정의됩니다."
+    },
+    {
+        "instruction": "응답 헤더에 \"Set-Cookie\"라는 문자열이 포함되면 이를 빈 문자열로 대체하려고 합니다.",
+        "output": "응답 헤더에 \"Set-Cookie\"라는 문자열이 포함되면 이를 빈 문자열로 대체하려면, 'Match String'에 \"Set-Cookie\"를 입력하고, 대체 텍스트를 빈 문자열로 설정하면 됩니다."
+    },
+    {
+        "instruction": "요청 헤더에서 특정 문자열을 정규표현식으로 매칭하여 대체하려면 어떻게 해야 하나요?",
+        "output": "요청 헤더에서 특정 문자열을 정규표현식으로 매칭하여 대체하려면, 'Match String'을 정규표현식으로 설정하고, 이 정규표현식이 요청 헤더에 존재하면 대체 텍스트로 바꿔줍니다."
+    },
+    {
+        "instruction": "이 Replacer의 Description에 대해 설명해주세요.",
+        "output": "Replacer의 Description은 해당 규칙을 식별할 수 있도록 돕는 설명입니다. 이 설명을 통해 사용자는 특정 규칙이 어떤 역할을 하는지, 어떤 상황에서 적용되는지 쉽게 이해할 수 있습니다. 예를 들어, 특정 문자열을 다른 문자열로 대체하는 규칙인 경우, Description에는 어떤 문자열을 어떻게 대체하는지에 대한 정보가 포함될 수 있습니다."
+    },
+    {
+        "instruction": "응답 본문에서 특정 문자열이나 정규 표현식을 찾아 다른 텍스트로 대체하려면 어떻게 해야 하나요?",
+        "output": "응답 본문에서 특정 문자열이나 정규 표현식을 찾아 다른 텍스트로 대체하려면 'Match Type'의 'Response Body String' 옵션을 사용하면 됩니다. 이 경우 'Match String'이 응답 본문에 존재하면 대체 텍스트로 교체됩니다."
+    },
+    {
+        "instruction": "파일 내에서 특정 문자열을 찾아 대체하려면 Match String을 어떻게 설정해야 하나요?",
+        "output": "Match String을 설정할 때는 파일 내에서 찾아 대체하려는 특정 문자열을 입력하면 됩니다. 예를 들어, \"oldText\"를 \"newText\"로 대체하려면 Match String을 \"oldText\"로 설정하면 됩니다."
+    },
+    {
+        "instruction": "이 add-on에서 Verification request를 자동으로 식별하는 방법은 무엇인가요?",
+        "output": "이 add-on에서 Verification request를 자동으로 식별하는 방법은 다음과 같습니다:\n    1. Session Management Method를 [Auto-Detect Session Management Method]로 설정합니다.\n    2. Verification Strategy를 \"Poll every Request or Response\"로 설정합니다.\n    3. URL을 지정하지 않습니다.\n\n    이렇게 설정하면, 이 규칙은 유효한 session management token이 제공될 때와 제공되지 않을 때 요청이 다르게 동작하는지 확인하여 Verification request를 식별합니다. 또한, 사용자 이름이 포함된 응답이 선호됩니다. 이 규칙은 단순히 요청을 관찰하는 것이 아니라, 유효한 session token이 있을 때와 없을 때의 요청을 비교하기 위해 실제로 요청을 수행합니다."
+    },
+    {
+        "instruction": "인라인 스크립트를 추가하고 실행하는 방법에 대해 설명해주세요.",
+        "output": "인라인 스크립트를 추가하고 실행하는 방법은 다음과 같습니다. 먼저 YAML 계획에 스크립트 내용을 포함시키고, 스크립트의 타입, 엔진, 이름, 그리고 실제 스크립트 내용을 지정합니다. 예를 들어, ECMAScript와 Graal.js 엔진을 사용하는 간단한 독립형 인라인 스크립트를 추가하고 실행하는 방법은 다음과 같습니다:\n\n```yaml\n- type: script\n  parameters:\n    action: \"add\"\n    type: \"standalone\"\n    engine: \"ECMAScript : Graal.js\"\n    name: \"inline-test\"\n    inline: |\n      print(\"This is a simple example\")\n      print(\"Of a multi-line script\")\n- type: script\n  parameters:\n    action: \"run\"\n    type: \"standalone\"\n    name: \"inline-test\"\n```\n\n위의 예제에서는 먼저 스크립트를 추가하고, 그 다음에 해당 스크립트를 실행하는 방식입니다."
+    },
+    {
+        "instruction": "ZAP에서 특정 스크립트를 제거하려면 어떻게 해야 하나요?",
+        "output": "ZAP에서 특정 스크립트를 제거하려면 \"remove\" 액션을 사용하여 스크립트의 이름을 지정하면 됩니다."
+    },
+    {
+        "instruction": "현재 실행 중인 계획이 있는지 확인하고, 있다면 해당 계획에 정보 메시지를 추가하는 스크립트를 작성하려고 합니다. 이 스크립트가 보안에 미치는 영향은 무엇인가요?",
+        "output": "이 스크립트는 현재 실행 중인 계획을 확인하고, 있다면 해당 계획에 정보 메시지를 추가하는 기능을 수행합니다. 보안 측면에서 고려해야 할 몇 가지 사항이 있습니다.\n\n1. **권한 부여**: 스크립트가 실행 중인 계획에 접근하고 수정할 수 있는 권한이 있는지 확인해야 합니다. 불필요한 권한을 부여받지 않도록 해야 합니다.\n2. **데이터 노출**: 스크립트가 추가하는 정보 메시지가 민감한 정보를 포함하지 않도록 해야 합니다. 예를 들어, 개인 정보나 비즈니스 비밀과 같은 정보가 노출되지 않도록 주의해야 합니다.\n3. **로그 관리**: 스크립트가 생성하는 로그나 메시지가 적절히 관리되고 있는지 확인해야 합니다. 로그에 민감한 정보가 기록되지 않도록 해야 합니다.\n4. **스크립트 검증**: 스크립트가 신뢰할 수 있는 소스에서 제공되었는지, 그리고 악의적인 코드가 포함되지 않았는지 검증해야 합니다.\n5. **접근 제어**: 스크립트를 실행할 수 있는 사용자나 시스템이 제한되어 있는지 확인해야 합니다. 불필요한 접근을 차단하여 보안을 강화해야 합니다.\n\n이러한 사항들을 고려하여 스크립트를 작성하고 실행함으로써 보안 위협을 최소화할 수 있습니다."
+    },
+    {
+        "instruction": "스크립트 자동화 프레임워크에서 'inline' 파라미터와 'file' 파라미터를 동시에 사용할 수 있나요?",
+        "output": "스크립트 자동화 프레임워크에서 'inline' 파라미터와 'file' 파라미터를 동시에 사용할 수 없습니다. 두 파라미터 중 하나만 제공해야 합니다."
+    },
+    {
+        "instruction": "특정 스크립트를 disable 하려면 어떻게 해야 하나요?",
+        "output": "특정 스크립트를 disable 하려면, 스크립트가 이미 ZAP에 추가되어 있어야 합니다. 그런 다음, 'disable' action을 사용하여 스크립트를 disable 할 수 있습니다. 이때, name 파라미터는 필수로 지정해야 하며, 이는 ZAP에 있는 스크립트의 이름입니다."
+    },
+    {
+        "instruction": "특정 스크립트를 ZAP에 추가할 때, 파일 확장자에 따라 기본 스크립트 엔진을 사용하지 않고 다른 엔진을 지정하려면 어떻게 해야 하나요?",
+        "output": "특정 스크립트를 ZAP에 추가할 때, 파일 확장자에 따라 기본 스크립트 엔진을 사용하지 않고 다른 엔진을 지정하려면 'engine' 파라미터를 사용하여 기본 엔진을 오버라이드하면 됩니다."
+    },
+    {
+        "instruction": "특정 스크립트를 활성화하려면 어떻게 해야 하나요?",
+        "output": "특정 스크립트를 활성화하려면 'enable' 액션을 사용하여 스크립트를 활성화할 수 있습니다. 이때, 스크립트는 이미 ZAP에 추가되어 있어야 하며, 'name' 파라미터를 필수로 포함해야 합니다."
+    },
+    {
+        "instruction": "스크립트 자동화 프레임워크에서 'run' 액션을 사용할 때, 'targeted' 타입의 스크립트를 실행하려면 어떤 정보를 반드시 제공해야 하나요?",
+        "output": "'run' 액션을 사용할 때, 'targeted' 타입의 스크립트를 실행하려면 반드시 제공해야 하는 정보는 type, name, 그리고 target입니다."
+    },
+    {
+        "instruction": "스크립트 자동화 프레임워크에서 스크립트 작업을 통해 실행할 수 있는 다양한 액션에는 어떤 것들이 포함되나요?",
+        "output": "스크립트 자동화 프레임워크에서 스크립트 작업을 통해 실행할 수 있는 다양한 액션에는 파일 전송, 데이터베이스 쿼리 실행, API 호출, 시스템 명령어 실행, 로그 파일 생성 및 관리 등이 포함됩니다."
+    },
+    {
+        "instruction": "이 애드온은 Automation Framework를 지원하나요?",
+        "output": "네, 이 애드온은 Automation Framework를 지원합니다."
+    },
+    {
+        "instruction": "헤더 기반 세션 관리를 사용할 때, JSON 인증 응답 데이터를 헤더 값으로 설정하려면 어떻게 해야 하나요?",
+        "output": "헤더 기반 세션 관리를 사용할 때, JSON 인증 응답 데이터를 헤더 값으로 설정하려면 `{%json:path.to.data%}` 토큰을 사용하면 됩니다. 예를 들어, `header: {%json:path.to.data%}` 형식으로 설정하면 됩니다."
+    },
+    {
+        "instruction": "헤더 기반 세션 관리를 Automation Framework에서 설정하려면 어떻게 해야 하나요?",
+        "output": "Automation Framework의 환경 설정 섹션에서 다음과 같이 구성할 수 있습니다:\n\n```\nsessionManagement:\nmethod: \"headers\"\nparameters:\nAuthorization: \"Bearer: {%json:AuthenticationResult.AccessToken%}\"\n```"
+    },
+    {
+        "instruction": "이 보고서에서 \"Cross Site Scripting (Reflected)\" 취약점의 riskdesc가 무엇인가요?",
+        "output": "이 보고서에서 \"Cross Site Scripting (Reflected)\" 취약점의 riskdesc는 \"High (Medium)\"입니다."
+    },
+    {
+        "instruction": "이 도구는 어떤 종류의 보안 테스트에 사용될 수 있나요?",
+        "output": "이 도구는 강제 브라우징(Forced Browse) 또는 Fuzzer 애드온과 함께 사용되어 디렉토리 이름을 목록으로 제공하므로, 웹 애플리케이션의 디렉토리 구조를 탐색하고 숨겨진 디렉토리나 파일을 찾는 데 사용될 수 있습니다. 이를 통해 웹 애플리케이션의 보안 취약점을 발견하는 데 도움이 됩니다."
+    },
+    {
+        "instruction": "Selenium을 사용하여 Chrome Headless 브라우저를 실행하려면 어떤 설정이 필요한가요?",
+        "output": "Chrome Headless 브라우저를 실행하려면 ChromeDriver가 시스템의 PATH에 포함되어 있어야 합니다. ChromeDriver가 PATH에 없는 경우, 옵션에서 설정할 수 있습니다. Chrome Headless 브라우저는 GUI 없이 Chrome을 시작합니다."
+    },
+    {
+        "instruction": "Selenium 스크립트를 통해 브라우저를 제어할 때, 특정 URL에 접근하고 폼을 채우는 방법은 무엇인가요?",
+        "output": "Selenium 스크립트를 통해 브라우저를 제어할 때, 특정 URL에 접근하고 폼을 채우는 방법은 다음과 같습니다. 먼저, Selenium WebDriver를 사용하여 브라우저를 열고 특정 URL에 접근합니다. 예를 들어, `driver.get(\"http://example.com\")`와 같은 명령어를 사용합니다. 그런 다음, 폼 요소를 찾아 값을 입력합니다. 예를 들어, `driver.find_element_by_name(\"username\").send_keys(\"user123\")`와 같은 명령어를 사용하여 폼을 채울 수 있습니다."
+    },
+    {
+        "instruction": "ZAP에서 제공하는 번들 WebDriver가 특정 브라우저와 호환되지 않을 때 어떻게 해결해야 하나요?",
+        "output": "ZAP에서 제공하는 번들 WebDriver가 특정 브라우저와 호환되지 않을 경우, 옵션 패널에서 해당 브라우저에 대한 번들 WebDriver가 없다는 메시지를 확인할 수 있습니다. 이 경우, 해당 브라우저의 최신 버전을 사용하는 것이 좋습니다. 또한, 'Bundled' 버튼을 사용하여 번들 WebDriver를 재설정할 수 있습니다. 만약 여전히 문제가 해결되지 않는다면, 해당 브라우저에 대한 WebDriver를 수동으로 설치하거나, ZAP add-ons을 통해 추가 브라우저를 사용할 수 있습니다."
+    },
+    {
+        "instruction": "DOM XSS Active Scan Rule의 최신 버전은 몇 버전인가요?",
+        "output": "DOM XSS Active Scan Rule의 최신 버전은 8 버전입니다."
+    },
+    {
+        "instruction": "DOM XSS Active Scan Rule의 최신 버전에서는 어떤 브라우저가 지원되나요?",
+        "output": "DOM XSS Active Scan Rule의 최신 버전에서는 Firefox가 지원됩니다."
+    },
+    {
+        "instruction": "DOM XSS Active Scan Rule에 대한 자세한 설명을 찾고 있습니다.",
+        "output": "DOM XSS Active Scan Rule은 DOM 기반의 Cross-Site Scripting(XSS) 취약점을 탐지하기 위한 규칙입니다. 이 규칙은 OWASP ZAP(Zed Attack Proxy)의 확장 기능으로, 웹 애플리케이션의 클라이언트 측 스크립트를 분석하여 XSS 공격에 노출될 수 있는 부분을 식별합니다. 자세한 소스 코드와 구현 방법은 GitHub의 <https://github.com/zaproxy/zap-extensions/tree/main/addOns/domxss>에서 확인할 수 있습니다."
+    },
+    {
+        "instruction": "DOM XSS Active Scan Rule에 대해 설명해주세요.",
+        "output": "DOM XSS Active Scan Rule은 OWASP ZAP(Zed Attack Proxy)의 개발팀과 Aabha Biyani에 의해 개발된 규칙입니다. 이 규칙은 DOM 기반의 Cross-Site Scripting(XSS) 취약점을 탐지하기 위해 사용됩니다. DOM XSS는 웹 페이지의 DOM 환경에서 발생하는 XSS 공격으로, 서버 측이 아닌 클라이언트 측에서 스크립트가 실행되는 경우를 말합니다. 이 규칙은 웹 애플리케이션의 다양한 입력 벡터를 분석하여 잠재적인 DOM XSS 취약점을 식별하고, 이를 통해 웹 애플리케이션의 보안을 강화하는 데 도움을 줍니다."
+    },
+    {
+        "instruction": "DOM XSS Active Scan Rule에 대해 설명해주세요.",
+        "output": "DOM XSS Active Scan Rule은 웹 애플리케이션의 DOM(Document Object Model) 기반 XSS(Cross-Site Scripting) 취약점을 탐지하기 위한 규칙입니다. 이 규칙은 웹 페이지가 로드된 후, 클라이언트 측에서 발생할 수 있는 XSS 공격을 식별하기 위해 활성화됩니다. 버전 5에서는 2.7.0 버전을 위해 업데이트되었습니다."
+    },
+    {
+        "instruction": "DOM XSS Active Scan Rule의 버전 6에서 추가된 XSS Polyglot에 대해 설명해주세요.",
+        "output": "XSS Polyglot은 여러 종류의 브라우저와 환경에서 동일하게 작동하는 XSS(Cross-Site Scripting) 공격 코드를 의미합니다. DOM XSS Active Scan Rule 버전 6에서 추가된 XSS Polyglot은 다양한 브라우저와 환경에서 일관되게 취약점을 탐지할 수 있도록 설계되었습니다. 이를 통해 보안 검사의 정확성과 효율성을 높일 수 있습니다."
+    },
+    {
+        "instruction": "DOM XSS Active Scan Rule의 버전 9에서 어떤 브라우저를 기본으로 사용하도록 설정되어 있나요?",
+        "output": "DOM XSS Active Scan Rule의 버전 9에서는 구성 규칙에 브라우저가 지정되지 않은 경우 default browser를 사용하도록 설정되어 있습니다."
+    },
+    {
+        "instruction": "URL 파라미터를 공격하는 옵션이 추가된 이유는 무엇인가요?",
+        "output": "URL 파라미터를 공격하는 옵션이 추가된 이유는 웹 애플리케이션의 보안 취약점을 더 철저히 검사하기 위함입니다. URL 파라미터는 자주 사용되는 데이터 전달 방식으로, 이를 통해 발생할 수 있는 XSS(Cross-Site Scripting) 등의 공격을 방지하기 위해 필요한 옵션입니다."
+    },
+    {
+        "instruction": "ZAP 브라우저 확장 기능을 직접 설치하려면 어떻게 해야 하나요?",
+        "output": "ZAP 브라우저 확장 기능을 직접 설치하려면 Firefox의 경우 Mozilla 애드온 스토어에서 \"ZAP Browser Extension\"을 검색하여 설치하면 됩니다. Chrome의 경우 Chrome 웹 스토어에서 \"ZAP Browser Extension\"을 검색하여 설치하면 됩니다. 설치 후에는 확장 기능의 옵션 페이지에서 호스트와 API 키를 업데이트해야 할 수도 있습니다."
+    },
+    {
+        "instruction": "Windows WebDrivers 추가 기능에서 제공하는 ChromeDriver의 버전은 무엇인가요?",
+        "output": "Windows WebDrivers 추가 기능에서 제공하는 ChromeDriver의 버전은 118.0.5993.70입니다."
+    },
+    {
+        "instruction": "이 도구는 어떤 종류의 보안 테스트에 사용될 수 있나요?",
+        "output": "이 도구는 Forced Browse 또는 Fuzzer 애드온과 함께 사용되어 디렉토리 이름을 강제로 열람하거나 탐색하는 데 사용될 수 있습니다. 예를 들어, 웹 애플리케이션의 숨겨진 디렉토리나 파일을 찾는 데 유용합니다."
+    },
+    {
+        "instruction": "SOCKS Proxy 설정이 활성화되어 있는지 확인하려면 어떻게 해야 하나요?",
+        "output": "SOCKS Proxy 설정이 활성화되어 있는지 확인하려면, 해당 설정이 `selected`로 되어 있는지 확인하면 됩니다. 기본적으로는 `unselected`로 설정되어 있지만, SOCKS proxy 시스템 속성이 정의된 경우에는 `selected`로 설정됩니다."
+    },
+    {
+        "instruction": "HTTP Proxy의 Store Password 옵션을 비활성화하면 시작할 때마다 비밀번호를 입력해야 하나요?",
+        "output": "네, HTTP Proxy의 Store Password 옵션을 비활성화하면 시작할 때마다 비밀번호를 입력해야 합니다."
+    },
+    {
+        "instruction": "HTTP Proxy 인증 정보를 사용하려면 어떻게 설정해야 하나요?",
+        "output": "HTTP Proxy의 Authenticate 옵션을 활성화하여 설정할 수 있습니다."
+    },
+    {
+        "instruction": "SOCKS Proxy 인증 정보를 어떻게 설정하나요?",
+        "output": "SOCKS Proxy 인증 정보를 설정하려면, 인증 자격 증명을 구성할 수 있는 필드를 사용하면 됩니다."
+    },
+    {
+        "instruction": "HTTP Proxy의 User Name을 설정하지 않으면 기본값은 무엇인가요?",
+        "output": "HTTP Proxy의 User Name을 설정하지 않으면 기본값은 none입니다."
+    },
+    {
+        "instruction": "기본 사용자 에이전트가 무엇인가요?",
+        "output": "기본 사용자 에이전트는 HTTP 메시지를 생성할 때 사용되는 사용자 에이전트(User Agent)입니다. 예를 들어, 스파이더 메시지나 HTTP 프록시에 대한 CONNECT 요청 시 사용됩니다."
+    },
+    {
+        "instruction": "HTTP Proxy의 Port 번호를 기본값인 8090에서 다른 값으로 변경하려면 어떻게 해야 하나요?",
+        "output": "HTTP Proxy의 Port 번호를 변경하려면 설정 파일이나 환경 변수를 통해 새로운 값을 지정하면 됩니다. 예를 들어, 설정 파일에서 `HTTP_PROXY_PORT` 값을 변경하거나, 환경 변수로 `HTTP_PROXY_PORT`를 설정할 수 있습니다. 구체적인 방법은 사용 중인 소프트웨어나 시스템의 문서를 참고하세요."
+    },
+    {
+        "instruction": "안전하지 않은 SSL/TLS 재협상을 허용하면 보안에 취약해지나요?",
+        "output": "네, 안전하지 않은 SSL/TLS 재협상을 허용하면 보안에 취약해질 수 있습니다. 이 옵션은 CVE-2009-3555와 같은 취약점을 유발할 수 있으며, 공격자가 중간자 공격(Man-In-The-Middle, MITM)을 수행할 가능성이 증가합니다. 따라서 이 옵션을 사용할 때는 신중하게 고려해야 합니다."
+    },
+    {
+        "instruction": "HTTP Proxy에서 제외해야 할 호스트 목록을 확인하려면 어떻게 해야 하나요?",
+        "output": "HTTP Proxy의 Exclusions 항목을 확인하면 됩니다. 이 항목에는 제외해야 할 호스트 목록이 정규 표현식 형태로 포함되어 있습니다."
+    },
+    {
+        "instruction": "SOCKS Proxy의 비밀번호가 설정 파일에 평문으로 저장되는 것이 보안에 미치는 영향은 무엇인가요?",
+        "output": "SOCKS Proxy의 비밀번호가 설정 파일에 평문으로 저장되면, 해당 파일에 접근할 수 있는 사용자는 쉽게 비밀번호를 확인할 수 있습니다. 이는 비밀번호가 유출될 위험을 증가시키며, 공격자가 이를 통해 네트워크 트래픽을 가로채거나 조작할 수 있는 가능성을 높입니다. 따라서, 비밀번호는 반드시 암호화되어 저장되어야 하며, 설정 파일의 접근 권한을 엄격히 관리해야 합니다."
+    },
+    {
+        "instruction": "SOCKS Proxy 설정이 기본적으로 모든 ZAP 연결에 적용되는지 확인하려면 어떻게 해야 하나요?",
+        "output": "SOCKS Proxy 탭을 열어 설정을 확인하면 됩니다. 기본적으로 SOCKS Proxy 설정은 모든 ZAP 연결에 적용되며, HTTP Proxy 설정보다 우선합니다."
+    },
+    {
+        "instruction": "글로벌 HTTP 상태를 사용하면 쿠키와 HTTP 인증을 추적할 수 있나요?",
+        "output": "네, 글로벌 HTTP 상태를 사용하면 쿠키와 HTTP 인증을 추적할 수 있습니다."
+    },
+    {
+        "instruction": "연결 및 읽기 타임아웃을 설정하려면 어떻게 해야 하나요?",
+        "output": "연결 및 읽기 타임아웃을 설정하려면 \"Timeout (in seconds)\" 옵션을 조정하면 됩니다. 기본값은 20초이며, 더 느린 애플리케이션을 테스트하려면 이 값을 높여야 합니다."
+    },
+    {
+        "instruction": "HTTP Proxy 설정을 활성화하려면 어떻게 해야 하나요?",
+        "output": "HTTP Proxy 설정을 활성화하려면 \"Enabled\" 옵션을 선택하면 됩니다."
+    },
+    {
+        "instruction": "일반 연결 옵션을 설정하려면 어디서 설정할 수 있나요?",
+        "output": "일반 연결 옵션을 설정하려면 \"Connection\" 탭의 \"General\" 섹션에서 설정할 수 있습니다."
+    },
+    {
+        "instruction": "SOCKS Proxy의 Host를 기본값인 localhost에서 다른 값으로 변경하려면 어떻게 해야 하나요?",
+        "output": "SOCKS Proxy의 Host를 기본값인 localhost에서 다른 값으로 변경하려면, 설정 파일이나 애플리케이션의 설정 옵션에서 Host 항목을 찾아 원하는 호스트 이름이나 주소로 변경하면 됩니다."
+    },
+    {
+        "instruction": "SOCKS Proxy의 버전을 5로 설정하려면 어떻게 해야 하나요?",
+        "output": "SOCKS Proxy의 버전을 기본값인 5로 설정하려면 별도의 작업이 필요 없습니다. 기본적으로 버전이 5로 설정되어 있기 때문입니다."
+    },
+    {
+        "instruction": "HTTP Proxy의 Host 주소를 어떻게 설정하나요?",
+        "output": "HTTP Proxy의 Host 주소는 기본값으로 `localhost`가 설정되어 있습니다. 이를 변경하려면 HTTP Proxy 설정에서 Host 항목을 찾아 원하는 호스트 이름이나 주소로 변경하면 됩니다."
+    },
+    {
+        "instruction": "DNS 캐시 설정을 변경한 후에도 즉시 적용되지 않는 이유는 무엇인가요?",
+        "output": "DNS 캐시 설정을 변경한 후에도 즉시 적용되지 않는 이유는 변경 사항이 재시작 후에 적용되기 때문입니다."
+    },
+    {
+        "instruction": "SOCKS Proxy의 DNS를 사용하도록 설정했을 때, 호스트 이름이 해결되지 않아 연결이 실패하면 어떻게 해결해야 하나요?",
+        "output": "SOCKS Proxy의 DNS 설정을 비활성화하고, 로컬 시스템의 DNS 설정을 사용하도록 변경하면 됩니다. 또한, `hosts` 파일에 정의된 이름을 사용하는 경우, 해당 이름이 SOCKS Proxy에서 해결될 수 있도록 네트워크 환경을 점검해야 합니다."
+    },
+    {
+        "instruction": "SOCKS Proxy의 기본 포트 번호가 맞나요?",
+        "output": "네, SOCKS Proxy의 기본 포트 번호는 `1080`입니다."
+    },
+    {
+        "instruction": "SOCKS Proxy 인증에 사용되는 기본 사용자 이름을 알고 싶습니다.",
+        "output": "SOCKS Proxy 인증에 사용되는 기본 사용자 이름은 없습니다."
+    },
+    {
+        "instruction": "HTTP Proxy 연결 설정 중 Password 항목이 비밀번호를 평문으로 저장한다는 것인가요?",
+        "output": "네, HTTP Proxy 연결 설정 중 Password 항목은 비밀번호를 평문(clear text)으로 저장할 수 있습니다."
+    },
+    {
+        "instruction": "HTTP Proxy의 Realm을 변경하려면 어떻게 해야 하나요?",
+        "output": "HTTP Proxy의 Realm을 변경하려면 프록시 설정에서 인증 영역을 수정하면 됩니다. 일반적으로 프록시 서버의 설정 파일이나 관리 콘솔에서 Realm 값을 변경할 수 있습니다. 예를 들어, Apache HTTP Server의 경우 `httpd.conf` 파일에서 `ProxyAuth` 디렉티브를 사용하여 Realm을 설정할 수 있습니다."
+    },
+    {
+        "instruction": "HTTP Proxy 설정이 필요한 상황에서 어떻게 설정해야 하나요?",
+        "output": "HTTP Proxy 설정은 주로 기업 환경에서 필요합니다. Connection 탭에서 외부로 나가는 HTTP Proxy를 구성할 수 있습니다. 이 탭을 통해 Proxy 서버의 주소와 포트 번호를 입력하고, 필요시 인증 정보를 추가하여 설정할 수 있습니다."
+    },
+    {
+        "instruction": "SSL/TLS 버전 중 어떤 것이 기본적으로 활성화되어 있나요?",
+        "output": "모든 지원되는 프로토콜이 기본적으로 활성화되어 있습니다."
+    },
+    {
+        "instruction": "Requester 탭에서 HTTP 요청과 응답에서 특정 문자열을 검색하는 방법은 무엇인가요?",
+        "output": "Requester 탭의 하단 부분에 있는 푸터를 사용하여 HTTP 요청과 응답에서 특정 문자열을 검색할 수 있습니다. 푸터에는 대소문자를 구분하지 않는 일치 항목의 수가 표시되며, 이를 통해 문자열을 순차적으로 검색할 수 있습니다."
+    },
+    {
+        "instruction": "클라이언트 인증서를 설정하려면 어떻게 해야 하나요?",
+        "output": "Network add-on의 Options 메뉴에서 [Client Certificates]를 선택하여 클라이언트 인증서를 설정할 수 있습니다. 이 옵션을 통해 PKCS#11과 PKCS#12도 함께 구성할 수 있습니다."
+    },
+    {
+        "instruction": "'runOnlyIfModern' 파라미터를 'True'로 설정했을 때, [passiveScan-wait](/docs/desktop/addons/automation-framework/job-pscanwait/) 작업을 실행해야 하나요?",
+        "output": "'runOnlyIfModern' 파라미터를 'True'로 설정했을 때, [passiveScan-wait](/docs/desktop/addons/automation-framework/job-pscanwait/) 작업을 반드시 실행해야 합니다."
+    },
+    {
+        "instruction": "Ajax Spider Automation Framework Support 기능을 지원하나요?",
+        "output": "네, 이 애드온은 Automation Framework를 지원합니다."
+    },
+    {
+        "instruction": "이 플러그인은 어떤 종류의 SQL Injection 공격을 탐지할 수 있나요?",
+        "output": "이 플러그인은 SQLMap에서 파생된 코드를 사용하여 다양한 종류의 SQL Injection 공격을 탐지할 수 있습니다. 예를 들어, 기본적인 에러 기반 SQL Injection, 블라인드 SQL Injection, 타임 기반 SQL Injection 등 다양한 공격 유형을 탐지할 수 있습니다."
+    },
+    {
+        "instruction": "특정 노드에 대해 명시적으로 허용된 규칙을 설정하려면 어떻게 해야 하나요?",
+        "output": "특정 노드에 대해 명시적으로 허용된 규칙을 설정하려면, 해당 노드의 규칙을 **Allowed**로 설정하면 됩니다."
+    },
+    {
+        "instruction": "현재 설정된 ChromeDriver의 경로를 확인하려면 어떤 API를 사용해야 하나요?",
+        "output": "optionChromeDriverPath API를 사용하여 현재 설정된 ChromeDriver의 경로를 확인할 수 있습니다."
+    },
+    {
+        "instruction": "Selenium API를 사용하여 WebDriver와 바이너리의 경로를 설정하고 확인하는 방법은 무엇인가요?",
+        "output": "Selenium API를 사용하여 WebDriver와 바이너리의 경로를 설정하고 확인하려면, 다음과 같은 방법을 사용할 수 있습니다.\n\n먼저, WebDriver의 경로를 설정하려면 `set_driver_path` 메서드를 사용합니다. 예를 들어, ChromeDriver의 경로를 설정하려면 다음과 같이 합니다:\n\n```python\nfrom selenium import webdriver\n\nwebdriver.Chrome(executable_path='/path/to/chromedriver')\n```\n\n바이너리의 경로를 설정하려면, WebDriver 객체를 생성할 때 `service` 객체를 사용하여 설정할 수 있습니다. 예를 들어, Chrome 바이너리의 경로를 설정하려면 다음과 같이 합니다:\n\n```python\nfrom selenium import webdriver\nfrom selenium.webdriver.chrome.service import Service\n\nservice = Service(executable_path='/path/to/chromedriver', chrome_binary_path='/path/to/chrome')\ndriver = webdriver.Chrome(service=service)\n```\n\n경로를 확인하려면, WebDriver 객체의 `capabilities` 속성을 통해 확인할 수 있습니다. 예를 들어, ChromeDriver의 경로를 확인하려면 다음과 같이 합니다:\n\n```python\ndriver = webdriver.Chrome(executable_path='/path/to/chromedriver')\nprint(driver.capabilities['chrome']['chromedriverVersion'])\n```\n\n이와 같은 방법으로 Selenium API를 사용하여 WebDriver와 바이너리의 경로를 설정하고 확인할 수 있습니다."
+    },
+    {
+        "instruction": "알림이 없는 경우에도 보고서를 생성할 수 있도록 설정하려면 어떻게 해야 하나요?",
+        "output": "\"Generate If No Alerts\" 체크박스를 선택하면 됩니다."
+    },
+    {
+        "instruction": "템플릿 탭에서 보고서 양식 필드를 수정할 수 있나요?",
+        "output": "네, 템플릿 탭에서 보고서 양식 필드를 수정할 수 있습니다."
+    },
+    {
+        "instruction": "템플릿 디렉토리를 변경하면 어떤 일이 발생하나요?",
+        "output": "템플릿 디렉토리를 변경하면 새로운 보고서를 설계할 때 템플릿이 로드되는 위치가 변경됩니다. 기본적으로 ZAP 홈 디렉토리의 \"reports\" 폴더가 사용되지만, 변경하면 지정된 디렉토리에서 템플릿을 로드하게 됩니다. 이는 로컬 소스 코드 보고서 디렉토리를 사용하여 새로운 보고서를 설계할 때 유용할 수 있습니다."
+    },
+    {
+        "instruction": "보안 보고서의 범위 탭에서 사용자 계정 필드를 어디에서 설정할 수 있나요?",
+        "output": "보안 보고서의 범위 탭에서 사용자 계정 필드는 Scope Fields 섹션에서 설정할 수 있습니다."
+    },
+    {
+        "instruction": "선택한 템플릿에 정의된 테마가 있는지 확인하고 싶습니다.",
+        "output": "선택한 템플릿에 정의된 테마가 있는지 확인할 수 있습니다. 템플릿에 테마가 정의되어 있다면, 여기서 선택할 수 있습니다."
+    },
+    {
+        "instruction": "ZAP에서 생성한 보고서를 기본 프로그램으로 열려면 어떻게 해야 하나요?",
+        "output": "\"Display Report\" 옵션을 선택하면 ZAP이 운영체제의 기본 프로그램을 사용하여 보고서를 열도록 시도합니다."
+    },
+    {
+        "instruction": "보안 보고서 생성 시 옵션 탭에서 설정할 수 있는 필드는 무엇인가요?",
+        "output": "보안 보고서 생성 시 옵션 탭에서 설정할 수 있는 필드는 다음과 같습니다:\n\n    - 보고서 형식 (Report Format)\n    - 보고서 언어 (Report Language)\n    - 보고서 기간 (Report Period)\n    - 보고서 수신자 (Report Recipients)\n    - 보고서 주기 (Report Frequency)\n    - 보고서 포함 내용 (Report Inclusions)"
+    },
+    {
+        "instruction": "보안 보고서 이름 패턴을 어떻게 설정해야 하나요?",
+        "output": "보안 보고서 이름 패턴은 \"Report Name Pattern\" 필드에서 설정할 수 있습니다. 이 필드에 원하는 패턴을 입력하면, 해당 패턴에 따라 보고서 이름이 자동으로 생성됩니다."
+    },
+    {
+        "instruction": "모든 컨텍스트를 포함하는 대신, 특정 컨텍스트에서만 알림과 정보를 포함하는 보고서를 생성할 수 있나요?",
+        "output": "네, 가능합니다. \"Contexts\" 목록에서 원하는 컨텍스트를 하나 이상 선택하여 해당 컨텍스트에서만 알림과 정보를 포함하는 보고서를 생성할 수 있습니다. Shift 또는 Control 키를 사용하여 여러 컨텍스트를 선택하거나 선택 해제할 수 있습니다."
+    },
+    {
+        "instruction": "특정 템플릿을 HTML 형식으로 생성할 수 있나요?",
+        "output": "네, 특정 템플릿을 HTML 형식으로 생성할 수 있습니다. Template 풀다운 메뉴에서 원하는 템플릿을 선택하고, 해당 템플릿이 HTML 형식으로 제공되는지 확인하면 됩니다."
+    },
+    {
+        "instruction": "특정 리스크를 포함한 알림만 보고서에 포함시키려면 어떻게 해야 하나요?",
+        "output": "\"Include Risks\" 필터 필드를 사용하여 특정 리스크를 포함한 알림만 보고서에 포함시킬 수 있습니다."
+    },
+    {
+        "instruction": "보안 보고서에 포함될 설명을 작성하려고 합니다. 보고서의 Description 필드에 어떤 내용을 포함해야 하나요?",
+        "output": "보안 보고서의 Description 필드에는 보고서의 목적, 주요 내용, 조사 범위, 발견된 문제점, 그리고 권장 조치 등을 포함하여 작성합니다. 또한, 보고서가 작성된 배경과 중요성, 그리고 향후 조치에 대한 개요도 포함하면 좋습니다."
+    },
+    {
+        "instruction": "보안 보고서의 Report Title을 어떻게 설정하면 좋을까요?",
+        "output": "보안 보고서의 Report Title은 보고서의 주요 내용과 목적을 명확하게 반영하도록 설정하는 것이 좋습니다. 예를 들어, \"2023년 상반기 네트워크 보안 평가 보고서\"와 같이 기간, 주제, 그리고 보고서의 종류를 포함시키면 독자가 보고서의 내용을 쉽게 이해할 수 있습니다. 또한, 보고서의 중요성을 강조하기 위해 \"긴급\"이나 \"중요\"와 같은 단어를 포함시킬 수도 있습니다."
+    },
+    {
+        "instruction": "특정 사이트만 포함된 보고서를 생성하려면 어떻게 해야 하나요?",
+        "output": "보고서 생성 대화상자에서 Sites 목록에서 원하는 사이트를 선택하면 됩니다. 여러 사이트를 선택하려면 shift나 control 키를 사용할 수 있습니다. 선택하지 않은 사이트는 보고서에 포함되지 않습니다."
+    },
+    {
+        "instruction": "특정 필드를 기준으로 필터링하여 리포트를 생성하려면 어떻게 해야 하나요?",
+        "output": "필터 탭에서 원하는 필드를 선택하고 조건을 설정한 후 리포트를 생성하면 됩니다."
+    },
+    {
+        "instruction": "특정 템플릿에서 정의된 섹션 중 하나를 보고서에서 제외하려면 어떻게 해야 하나요?",
+        "output": "특정 템플릿에서 정의된 섹션 중 하나를 보고서에서 제외하려면, 해당 섹션의 체크박스를 선택 해제하면 됩니다. 선택 해제된 섹션은 보고서에 포함되지 않습니다."
+    },
+    {
+        "instruction": "이 애드온을 통해 생성된 보고서에 대한 접근 권한을 어떻게 설정할 수 있나요?",
+        "output": "이 애드온을 통해 생성된 보고서에 대한 접근 권한은 시스템의 사용자 관리 기능을 통해 설정할 수 있습니다. 각 보고서에 대해 읽기, 쓰기, 실행 권한을 부여하거나 제한할 수 있으며, 특정 사용자나 그룹에 대해 권한을 설정할 수 있습니다. 또한, Automation Framework를 사용하여 자동화된 권한 설정도 가능합니다."
+    },
+    {
+        "instruction": "특정 신뢰도를 가진 알림만 포함하려면 어떻게 해야 하나요?",
+        "output": "\"Include Confidences\" 필터 필드를 사용하여 특정 신뢰도를 가진 알림만 포함할 수 있습니다."
+    },
+    {
+        "instruction": "보고서가 저장될 디렉토리를 어디로 설정해야 하나요?",
+        "output": "보고서가 저장될 디렉토리는 보고서가 작성될 Report Directory로 설정해야 합니다. 이 디렉토리는 다음에 대화창을 열 때 자동으로 선택됩니다."
+    },
+    {
+        "instruction": "보고서 이름에 날짜 패턴을 포함시키려면 어떻게 해야 하나요?",
+        "output": "보고서 이름에 날짜 패턴을 포함시키려면 `{{`와 `}}` 사이에 Java Date/Time 패턴을 입력하면 됩니다. 예를 들어, `{{yyyy-MM-dd}}`와 같이 작성하면 됩니다."
+    },
+    {
+        "instruction": "브라우저가 ZAP에서 시작될 때 표시할 페이지의 URL을 어디서 설정할 수 있나요?",
+        "output": "Options Quick Start Launch 메뉴에서 URL을 설정할 수 있습니다."
+    },
+    {
+        "instruction": "브라우저를 프록시 설정으로 실행할 때 기본적으로 표시되는 페이지를 변경하려면 어떻게 해야 하나요?",
+        "output": "브라우저를 프록시 설정으로 실행할 때 기본적으로 표시되는 페이지를 변경하려면 \"Options\" 메뉴에서 \"Quick Start Launch\" 항목을 선택한 후, \"Start Page\" 옵션을 설정하면 됩니다. \"Default ZAP Page\", \"Blank Page\", 또는 특정 \"URL\" 중에서 원하는 옵션을 선택할 수 있습니다."
+    },
+    {
+        "instruction": "Automation Framework의 GUI 개발 현황을 확인하려면 어디에서 확인할 수 있나요?",
+        "output": "Automation Framework의 GUI 개발 현황은 프로젝트 관리 도구나 버전 관리 시스템에서 확인할 수 있습니다. 예를 들어, Jira나 Trello와 같은 프로젝트 관리 도구에서 개발 진행 상황을 확인할 수 있으며, GitHub나 GitLab과 같은 버전 관리 시스템에서 최신 코드 커밋 내역을 확인할 수 있습니다. 또한, 개발팀과의 회의나 보고서를 통해 직접 현황을 확인할 수도 있습니다."
+    },
+    {
+        "instruction": "자동화 프레임워크의 GUI에서 Automation Tab의 Output sub-tab에서 계획을 로드하거나 실행할 때 생성된 출력 내용을 확인할 수 있나요?",
+        "output": "네, 자동화 프레임워크의 GUI에서 Automation Tab의 Output sub-tab에서 계획을 로드하거나 실행할 때 생성된 출력 내용을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "자동화 탭의 Plan 서브 탭에서 계획의 상태를 확인하고 싶습니다. 이를 어떻게 할 수 있나요?",
+        "output": "자동화 탭의 Plan 서브 탭에서 계획의 상태를 확인하려면, 계획의 그래픽 표현을 참고하면 됩니다. 이 표현은 계획이 실행될 때의 상태를 보여줍니다."
+    },
+    {
+        "instruction": "현재 계획을 저장할 때 yaml 파일의 보안 설정은 어떻게 되나요?",
+        "output": "현재 계획을 저장할 때, yaml 파일에는 계획에 포함된 모든 정보가 저장됩니다. 따라서 보안 설정도 yaml 파일에 포함될 수 있습니다. 보안 설정에는 인증 정보, API 키, 또는 기타 민감한 데이터가 포함될 수 있으므로, yaml 파일을 저장할 때는 이러한 정보가 안전하게 관리되도록 주의해야 합니다. 예를 들어, yaml 파일에 암호화를 적용하거나, 접근 권한을 제한하는 방법을 고려할 수 있습니다."
+    },
+    {
+        "instruction": "현재 설정에서 계획을 생성하는 기능이 추가되면 보안에 어떤 영향을 미칠까요?",
+        "output": "현재 설정에서 계획을 생성하는 기능이 추가되면 보안에 몇 가지 영향을 미칠 수 있습니다. 첫째, 사용자가 의도하지 않은 민감한 정보가 계획에 포함될 가능성이 있습니다. 둘째, 계획 생성 과정에서 발생할 수 있는 버그나 취약점이 악용될 경우, 시스템의 보안이 위협받을 수 있습니다. 따라서, 이러한 기능을 추가할 때는 데이터 필터링과 접근 제어를 강화하고, 보안 테스트를 철저히 수행하는 것이 중요합니다."
+    },
+    {
+        "instruction": "WebSocket 통신에서 특정 URL을 제외하려면 어떻게 설정해야 하나요?",
+        "output": "WebSocket 통신에서 특정 URL을 제외하려면 \"Exclude from WebSocket\" 옵션을 사용하여 설정할 수 있습니다. 예를 들어, *example.com:443*과 같이 도메인과 포트를 지정하여 특정 포트의 WebSocket 연결을 제외할 수 있습니다. 이렇게 설정하면 해당 URL의 모든 메시지는 전달되지만, 저장되지 않고 사용자 인터페이스에서 볼 수 없습니다."
+    },
+    {
+        "instruction": "선택한 리소스의 Call Graph를 볼 수 있나요?",
+        "output": "네, 선택한 리소스의 Call Graph를 볼 수 있습니다."
+    },
+    {
+        "instruction": "Cross-Origin-Resource-Policy 헤더가 없거나 잘못 설정된 경우 어떤 문제가 발생할 수 있나요?",
+        "output": "Cross-Origin-Resource-Policy 헤더가 없거나 잘못 설정된 경우, 공격자가 Spectre와 같은 사이드 채널 공격을 통해 메모리에서 데이터를 읽을 수 있는 위험이 증가합니다. 이 헤더는 브라우저가 응답을 차단하여 공격자의 프로세스에 들어가기 전에 방어할 수 있는 강력한 방어 메커니즘을 제공합니다. 따라서 이 헤더가 제대로 설정되지 않으면 민감한 데이터가 노출될 가능성이 높아집니다."
+    },
+    {
+        "instruction": "웹사이트 응답에서 위험한 JS 함수를 검사하는 방법은 무엇인가요?",
+        "output": "이 스캔 규칙은 웹사이트 응답에서 위험한 JS 함수를 검사합니다. Custom Payloads 애드온이 설치되어 있다면, Custom Payloads 옵션 패널에서 직접 함수 이름(payloads)을 추가할 수 있습니다. 이렇게 추가된 함수들도 응답이 패시브 스캔될 때 검사 대상에 포함됩니다. 단, payload의 수가 많을수록 패시브 스캔에 걸리는 시간도 늘어난다는 점을 유의해야 합니다. 또한, 문자열 또는 payload의 시작 부분에 있는 $는 제거되며, 패턴이 조립될 때 선택적으로 포함될 수 있습니다."
+    },
+    {
+        "instruction": "웹 페이지에서 서버 배너 정보가 노출되는지 확인할 수 있는 방법이 있을까요?",
+        "output": "네, 웹 페이지에서 서버 배너 정보가 노출되는지 확인할 수 있는 방법이 있습니다. \"In Page Banner Information Leak\" 규칙을 사용하면 응답 본문 내용에서 웹 또는 애플리케이션 서버 배너가 있는지 분석할 수 있습니다. 이 규칙은 기본적으로 에러 상태 코드가 있는 응답을 분석하며, Threshold를 Low로 설정하면 상태 코드 200 - Ok 응답도 분석합니다. 이를 통해 알려진 취약점에 대한 더 타겟팅된 공격을 방지할 수 있습니다."
+    },
+    {
+        "instruction": "웹 서버가 애플리케이션 소스 코드를 노출시키고 있는지 확인하려면 어떻게 해야 하나요?",
+        "output": "웹 서버가 애플리케이션 소스 코드를 노출시키고 있는지 확인하려면, Passive Scan Rules - Beta의 Source Code Disclosure 규칙을 사용할 수 있습니다. 이 규칙은 CSS, JavaScript, 이미지, 그리고 폰트 파일을 무시하고, 웹 서버가 애플리케이션 소스 코드를 노출시키는지 검사합니다. 자세한 내용은 [SourceCodeDisclosureScanRule.java](https://github.com/zaproxy/zap-extensions/blob/main/addOns/pscanrulesBeta/src/main/java/org/zaproxy/zap/extension/pscanrulesBeta/SourceCodeDisclosureScanRule.java)에서 확인할 수 있습니다."
+    },
+    {
+        "instruction": "이 웹사이트의 HTTP 응답 헤더에서 Cache-Control과 Pragma 헤더를 분석하여 캐시 가능 여부를 판단하는 방법은 무엇인가요?",
+        "output": "이 웹사이트의 HTTP 응답 헤더에서 Cache-Control과 Pragma 헤더를 분석하여 캐시 가능 여부를 판단하는 방법은 RFC7234 기준으로 다음과 같습니다.\n\n1. Cache-Control 헤더를 확인하여 `no-store` 지시어가 있는지 확인합니다. `no-store` 지시어가 있으면 **Non-Storable Content**로 판단합니다.\n2. Cache-Control 헤더에 `no-store` 지시어가 없고, `private`, `no-cache`, `must-revalidate` 등의 지시어가 있는지 확인합니다. 이러한 지시어가 있으면 **Storable but Non-Cacheable Content**로 판단합니다.\n3. Cache-Control 헤더에 `no-store`, `private`, `no-cache`, `must-revalidate` 지시어가 없고, `public`, `max-age` 등의 지시어가 있으면 **Storable and Cacheable Content**로 판단합니다.\n4. Pragma 헤더에 `no-cache` 지시어가 있는 경우, 이는 Cache-Control 헤더의 `no-cache` 지시어와 동일하게 취급됩니다.\n\n이러한 규칙을 통해 HTTP 응답 헤더의 캐시 가능 여부를 판단할 수 있습니다."
+    },
+    {
+        "instruction": "외부 리소스에서 제공하는 스크립트나 링크 요소에서 Sub Resource Integrity 속성이 누락된 경우 어떻게 해결해야 하나요?",
+        "output": "Sub Resource Integrity(SRI) 속성이 누락된 경우, 먼저 해당 스크립트나 링크 요소에 대해 SRI 해시 값을 생성해야 합니다. 이 해시 값은 스크립트나 링크 요소의 무결성을 확인하는 데 사용됩니다. 해시 값을 생성한 후, 해당 스크립트나 링크 요소에 `integrity` 속성을 추가하고 생성된 해시 값을 할당합니다. 예를 들어, 스크립트 요소의 경우 다음과 같이 수정할 수 있습니다:\n\n```html\n<script src=\"https://example.com/script.js\" integrity=\"sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNQlGYl1kPzQho1wx4JwY8wC\"></script>\n```\n\n또한, Trusted Domains를 설정하여 신뢰할 수 있는 도메인만 허용하도록 구성할 수 있습니다. 자세한 내용은 General Configuration를 참고하세요."
+    },
+    {
+        "instruction": "Servlet Parameter Pollution에 대한 취약점을 분석하기 위해서는 어떤 조건이 필요한가요?",
+        "output": "Servlet Parameter Pollution 취약점을 분석하기 위해서는 다음 조건이 필요합니다:\n\n1. 응답 내용에 HTML 폼이 포함되어 있어야 합니다.\n2. 해당 HTML 폼이 action 요소를 지정하지 않아야 합니다.\n3. LOW Threshold 설정에서 응답을 분석해야 합니다.\n4. Context URL이 JSP/Servlet 기술에 적용되어야 합니다."
+    },
+    {
+        "instruction": "Java Serialization Object를 사용하는 것이 안전한지 확인하려면 어떤 점을 체크해야 하나요?",
+        "output": "Java Serialization Object를 사용하는 것이 안전한지 확인하려면 다음 점을 체크해야 합니다:\n\n1. 민감한 데이터가 바이트 스트림으로 유출되지 않는지 확인합니다.\n2. 데이터가 변조되지 않도록 강력한 제어가 이루어지고 있는지 확인합니다.\n3. 원격 코드 실행(Remote Code Execution) 공격을 방지하기 위해 적절한 보안 조치가 취해졌는지 확인합니다.\n4. Insecure Deserialization 취약점(A8:2017)과 관련된 문제가 없는지 검토합니다."
+    },
+    {
+        "instruction": "특정 URL 패턴을 `rules.domains.trusted` 파라미터에 추가하려면 어떻게 해야 하나요?",
+        "output": "Options 메뉴의 'Rule configuration' 패널을 통해 `rules.domains.trusted` 파라미터에 쉼표로 구분된 URL 정규 표현식 패턴 목록을 지정할 수 있습니다. 이 패턴에 맞는 링크 URL은 신뢰할 수 있는 도메인으로 간주되어 보고되지 않습니다."
+    },
+    {
+        "instruction": "Permissions Policy Header가 설정되지 않았는지 확인하는 방법은 무엇인가요?",
+        "output": "이 규칙은 HTTP 응답 헤더(HTML 및 JavaScript 응답 포함)에 \"Permissions-Policy\" 헤더가 포함되어 있는지 확인하며, 해당 헤더가 발견되지 않으면 경고를 발생시킵니다. 또한, 사용이 중단된 \"Feature-Policy\" 헤더가 발견되면 경고를 발생시킵니다. 리디렉션은 Low 임계값을 제외하고 무시됩니다."
+    },
+    {
+        "instruction": "이 애드온을 통해 텍스트 파일에서 URL을 가져올 수 있나요?",
+        "output": "네, 이 애드온을 통해 텍스트 파일에서 URL을 가져올 수 있습니다. 파일은 평문 텍스트여야 하며, 한 줄에 하나의 URL이 있어야 합니다."
+    },
+    {
+        "instruction": "Diff 기능을 사용하여 두 개의 요청을 비교할 수 있나요?",
+        "output": "네, Diff 기능을 사용하여 두 개의 요청을 비교할 수 있습니다. 일반적으로 마우스 오른쪽 버튼 메뉴를 통해 접근할 수 있습니다."
+    },
+    {
+        "instruction": "WebSocket API의 sendTextMessage 액션에서 channelId는 어디서 확인할 수 있나요?",
+        "output": "channelId는 'channels' view에서 확인할 수 있습니다."
+    },
+    {
+        "instruction": "특정 메시지의 전체 상세 정보를 조회하려면 어떤 파라미터가 필요한가요?",
+        "output": "특정 메시지의 전체 상세 정보를 조회하려면 `channelId`와 `messageId` 파라미터가 필요합니다."
+    },
+    {
+        "instruction": "WebSocket API의 messages view에서 payloadPreviewLength 파라미터는 어떤 역할을 하나요?",
+        "output": "payloadPreviewLength 파라미터는 반환되는 페이로드 내용의 최대 바이트 수를 제한하는 역할을 합니다."
+    },
+    {
+        "instruction": "현재 등록된 모든 WebSocket 채널을 반환하는 API는 무엇인가요?",
+        "output": "현재 등록된 모든 WebSocket 채널을 반환하는 API는 channels입니다."
+    },
+    {
+        "instruction": "특정 컨텍스트에서 발생한 알림의 위험 수준을 자동으로 재설정하려면 어떻게 해야 하나요?",
+        "output": "특정 컨텍스트에서 발생한 알림의 위험 수준을 자동으로 재설정하려면 Context [Alert Filters](/docs/desktop/addons/alert-filters/)를 사용하면 됩니다. 이 기능을 통해 액티브 및 패시브 스캔 규칙에 의해 발생한 모든 알림의 위험 수준을 자동으로 재설정할 수 있습니다. [Alert Filters](/docs/desktop/addons/alert-filters/)는 컨텍스트와 함께 내보내지고 가져오며, ZAP 세션 간에 유지되지 않습니다. 컨텍스트 대화 상자에 ‘Alert Filters’ 패널이 추가되며, 이 패널에서 모든 [Alert Filters](/docs/desktop/addons/alert-filters/)를 추가, 제거, 삭제할 수 있습니다."
+    },
+    {
+        "instruction": "만약 `disableAllRules`를 `true`로 설정하면 계획이 종료된 후에도 모든 규칙이 비활성화된 상태로 남아있나요?",
+        "output": "네, `disableAllRules`를 `true`로 설정하면 계획이 종료된 후에도 모든 규칙이 비활성화된 상태로 남아있습니다. 자동으로 다시 활성화하지 않도록 설계되었기 때문에, 계획이 끝난 후에도 규칙이 비활성화된 상태로 유지됩니다."
+    },
+    {
+        "instruction": "패시브 스캔 설정을 변경하려면 어떤 순서로 작업을 진행해야 하나요?",
+        "output": "패시브 스캔 설정을 변경하려면 다음 순서로 작업을 진행하세요:\n\n1. 다른 모든 작업을 중지합니다.\n2. passiveScan-config Job을 실행하여 패시브 스캔 설정을 변경합니다.\n3. 변경된 설정을 적용하려면, 변경 후 다른 작업을 실행합니다.\n4. 필요시, 다른 작업에 다른 패시브 스캔 설정을 적용하려면 passiveScan-config Job을 다시 실행합니다."
+    },
+    {
+        "instruction": "인증을 처리할 컨텍스트의 이름을 어떻게 설정하나요?",
+        "output": "인증을 처리할 컨텍스트의 이름은 \"Context\" 필드에 설정할 수 있습니다. 이미 존재하는 컨텍스트라면 삭제 후 다시 생성됩니다."
+    },
+    {
+        "instruction": "로그인 폼을 제출한 후 브라우저를 닫기 전에 기다려야 하는 시간을 몇 초로 설정해야 할까요?",
+        "output": "로그인 폼을 제출한 후 브라우저를 닫기 전에 기다려야 하는 시간은 \"Time to Wait (seconds)\" 필드에 설정할 수 있습니다. 이 값은 애플리케이션이 로드되기까지의 시간을 고려하여 설정해야 합니다. 일반적으로 10초에서 30초 사이로 설정하는 것이 좋습니다."
+    },
+    {
+        "instruction": "로그인 URL이 \"http://\" 또는 \"https://\"로 시작하지 않으면 어떻게 되나요?",
+        "output": "로그인 URL이 \"http://\" 또는 \"https://\"로 시작하지 않으면 필수 조건을 충족하지 않아 인증 테스터가 작동하지 않습니다."
+    },
+    {
+        "instruction": "유저네임이 인증에 사용되나요?",
+        "output": "네, 유저네임은 인증에 사용됩니다. 유저네임과 패스워드가 모두 유효해야 로그인이 작동합니다."
+    },
+    {
+        "instruction": "인증 테스트를 위해 사용할 브라우저를 어떻게 설정하나요?",
+        "output": "인증 테스트를 위해 사용할 브라우저는 \"Browser\" 필드에서 설정할 수 있습니다. 선택한 브라우저는 ZAP에서 실행될 수 있어야 하며, 설치되어 있어야 합니다."
+    },
+    {
+        "instruction": "이 테스터는 어떤 인증 방식을 지원합니까?",
+        "output": "이 테스터는 다음과 같은 인증 방식을 지원합니다:\n    - ID/Password\n    - OTP(One Time Password)\n    - 생체 인식(지문, 얼굴 인식 등)\n    - 인증서(Certificate)\n    - SSO(Single Sign-On)"
+    },
+    {
+        "instruction": "ZAP가 로그인 페이지에서 Username 필드와 Password 필드를 모두 감지하지 못했을 때, 어떤 정보를 제공해야 하나요?",
+        "output": "ZAP가 로그인 페이지에서 Username 필드와 Password 필드를 모두 감지하지 못했을 때는 로그인 페이지에 대한 자세한 정보를 제공해야 합니다. 이를 통해 더 쉽게 디버깅할 수 있습니다."
+    },
+    {
+        "instruction": "인증 테스터 대화상자에서 Demo Mode를 활성화하면 필드 입력 간 2초 지연이 발생합니까?",
+        "output": "네, 인증 테스터 대화상자에서 Demo Mode를 활성화하면 필드 입력 간 2초 지연이 발생합니다."
+    },
+    {
+        "instruction": "ZAP가 로그인 페이지와 자격 증명만으로 웹사이트에 인증할 수 있는지 테스트하려면 어떻게 해야 하나요?",
+        "output": "Authentication Tester Dialog를 사용하여 테스트할 수 있습니다. 이 대화창을 통해 ZAP가 로그인 페이지와 자격 증명만으로 웹사이트에 인증할 수 있는지, 그리고 세션 처리와 검증을 자동으로 처리할 수 있는지 확인할 수 있습니다."
+    },
+    {
+        "instruction": "로그인을 위해 사용할 비밀번호를 입력해주세요.",
+        "output": "로그인을 위해 사용할 비밀번호는 유효한 사용자 이름과 함께 입력해야 합니다."
+    },
+    {
+        "instruction": "이 사이트에 대한 인증을 자동으로 처리하려면 ZAP에서 모든 요소를 식별해야 하나요?",
+        "output": "네, 이 사이트에 대한 인증을 자동으로 처리하려면 ZAP에서 모든 요소를 식별해야 합니다."
+    },
+    {
+        "instruction": "Dev Add-On을 설치하려면 어떻게 해야 하나요?",
+        "output": "Dev Add-On을 설치하려면 ZAP Marketplace에서 Dev Add-On을 검색하고 설치 버튼을 클릭하면 됩니다."
+    },
+    {
+        "instruction": "API Pages 중 하나에 접근할 때 인증이 필요한 이유는 무엇인가요?",
+        "output": "API Pages 중 하나에 접근할 때 인증이 필요한 이유는 해당 API가 민감한 데이터나 기능을 포함하고 있기 때문에, 무단 접근을 방지하고 보안을 강화하기 위함입니다."
+    },
+    {
+        "instruction": "이 페이지는 ZAP 인증 처리를 테스트하는 데 사용할 수 있는 인증 페이지 세트입니까?",
+        "output": "네, 이 페이지는 ZAP 인증 처리를 테스트하는 데 사용할 수 있는 인증 페이지 세트입니다."
+    },
+    {
+        "instruction": "AJAX Spider의 Maximum Crawl Depth를 5로 설정하고 싶습니다.",
+        "output": "AJAX Spider의 Maximum Crawl Depth를 5로 설정할 수 있습니다. 이 값은 크롤러가 도달할 수 있는 최대 깊이를 제한합니다."
+    },
+    {
+        "instruction": "AJAX Spider와 네이티브 Spider의 차이점은 무엇인가요?",
+        "output": "AJAX Spider는 AJAX로 작성된 웹 애플리케이션을 더 깊이 있게 크롤링할 수 있도록 설계되었습니다. 반면, 네이티브 Spider는 일반적인 HTML 주석과 같은 요소를 포함한 웹 애플리케이션의 전체적인 커버리지를 제공합니다. 따라서 AJAX 기반 애플리케이션이 있는 경우 AJAX Spider를 사용하고, 전체적인 웹 애플리케이션 커버리지를 위해 네이티브 Spider도 함께 사용하는 것이 좋습니다."
+    },
+    {
+        "instruction": "Highlighter 기능을 사용해서 Request 탭에서 특정 문자열을 하이라이트하는 방법을 알려주세요.",
+        "output": "Highlighter 기능을 사용하여 Request 탭에서 특정 문자열을 하이라이트하려면, 먼저 Highlighter 기능을 활성화합니다. 그런 다음, 하이라이트하고 싶은 문자열을 선택하고 Highlighter 도구를 사용하여 해당 문자열을 강조할 수 있습니다."
+    },
+    {
+        "instruction": "FuzzDB 파일 중에서 바이러스 백신 소프트웨어에 걸리거나 제거되는 파일은 어떻게 처리해야 하나요?",
+        "output": "바이러스 백신 소프트웨어에 걸리거나 제거되는 FuzzDB 파일은 ZAP Marketplace를 통해 제공되는 FuzzDB Offensive 애드온으로 분리되어 있습니다."
+    },
+    {
+        "instruction": "TLS Debug 애드온이 더 이상 사용할 수 없는 이유가 무엇인가요?",
+        "output": "TLS Debug 애드온은 퇴역되었기 때문에 더 이상 사용할 수 없습니다."
+    },
+    {
+        "instruction": "이 애드온이 헤더 기반 세션 관리 방법을 식별할 수 있나요?",
+        "output": "네, 이 애드온은 헤더 기반 세션 관리 방법을 식별할 수 있습니다."
+    },
+    {
+        "instruction": "ZAP의 시작 화면에 표시되는 팁과 트릭은 어디서 설정할 수 있나요?",
+        "output": "ZAP의 시작 화면에 표시되는 팁과 트릭은 'help' 메뉴 항목에서 설정할 수 있습니다."
+    },
+    {
+        "instruction": "웹 애플리케이션에서 anti CSRF 토큰을 사용하고 있는데, ZAP에서 이를 처리하려면 어떻게 설정해야 할까요?",
+        "output": "ZAP에서 anti CSRF 토큰을 처리하려면 'Options / Active Scan' 화면에서 설정해야 합니다."
+    },
+    {
+        "instruction": "특정 템플릿의 상세 정보를 확인하려면 어떤 API를 사용해야 하나요?",
+        "output": "특정 템플릿의 상세 정보를 확인하려면 templateDetails API를 사용해야 합니다."
+    },
+    {
+        "instruction": "보안 리포트를 생성할 때, \"False Positive\"와 \"Confirmed\" 신뢰도를 포함하고, \"Informational\"과 \"High\" 위험도를 포함하려면 어떻게 해야 하나요?",
+        "output": "`includedConfidences` 파라미터에 \"False Positive|Confirmed\"를 설정하고, `includedRisks` 파라미터에 \"Informational|High\"를 설정하면 됩니다."
+    },
+    {
+        "instruction": "Report Generation API에서 추가된 기능을 활용하여 보안 보고서를 생성하려면 어떤 절차를 따라야 하나요?",
+        "output": "Report Generation API에서 추가된 기능을 활용하여 보안 보고서를 생성하려면 다음 절차를 따라야 합니다:\n\n1. API 문서를 확인하여 새로 추가된 기능을 파악합니다.\n2. 필요한 인증 정보를 준비하고, API 엔드포인트에 접근합니다.\n3. 보안 보고서 생성을 위한 필요한 파라미터와 데이터를 수집합니다.\n4. API 요청을 구성하여 보안 보고서 생성을 요청합니다.\n5. API 응답을 받아 보고서 생성 결과를 확인합니다.\n6. 생성된 보안 보고서를 검토하고, 필요시 추가 조치를 취합니다."
+    },
+    {
+        "instruction": "Eval Villain 확장 프로그램을 설치한 후 Firefox 도구 모음에서 Eval Villain 버튼을 클릭하면 어떤 일이 발생하나요?",
+        "output": "Eval Villain 확장 프로그램을 설치한 후 Firefox 도구 모음에서 Eval Villain 버튼을 클릭하면, 웹 페이지에서 위험한 함수인 eval과 같은 함수가 사용될 때 경고 메시지를 통해 알려줍니다. 이를 통해 개발자는 잠재적인 보안 위협을 사전에 파악하고 대응할 수 있습니다."
+    },
+    {
+        "instruction": "정규 표현식 테스터를 통해 특정 입력에 대해 정규 표현식을 테스트할 수 있는 기능을 추가하려면 어떻게 해야 하나요?",
+        "output": "정규 표현식 테스터를 통해 특정 입력에 대해 정규 표현식을 테스트할 수 있는 기능을 추가하려면, 상위 메뉴의 Tools > Regular Expression Tester를 통해 접근하거나 HTTP 메시지의 컨텍스트 메뉴를 사용하여 정규 표현식(with [Pattern syntax])을 테스트할 수 있는 대화 상자를 추가하면 됩니다."
+    },
+    {
+        "instruction": "HTML 보고서에 적용할 수 있는 테마 중에서 보안 관련 업무에 적합한 테마를 추천해 주세요.",
+        "output": "보안 관련 업무에 적합한 테마로는 \"Console [Dark / Green]\"과 \"Technology [Dark / Red]\"를 추천드립니다. 이 두 테마는 어두운 배경과 함께 보안 및 기술적인 느낌을 잘 살려줄 것입니다."
+    },
+    {
+        "instruction": "알림 세부 정보 섹션에서 최근 7일 동안의 보안 알림 목록을 확인할 수 있나요?",
+        "output": "네, 알림 세부 정보 섹션(alertdetails)에서 최근 7일 동안의 보안 알림 목록을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "이 리포트에서 사용된 테마와 옵션 설정이 보안에 미치는 영향은 무엇인가요?",
+        "output": "이 리포트에서 사용된 테마와 옵션 설정은 사용자 경험을 향상시키는 데 중점을 두고 있지만, 보안에도 영향을 미칠 수 있습니다. 예를 들어, 특정 테마나 옵션이 외부 리소스를 로드하거나, 사용자 데이터를 노출시킬 수 있는 경우, 이는 보안 취약점을 초래할 수 있습니다. 따라서, 테마와 옵션 설정 시 외부 리소스의 신뢰성을 확인하고, 민감한 데이터가 노출되지 않도록 주의해야 합니다. 또한, 최신 보안 패치가 적용된 테마와 옵션을 사용하는 것이 중요합니다."
+    },
+    {
+        "instruction": "Neonmarker add-on을 사용하여 History table의 특정 메시지에 태그를 추가하고 색상을 변경하는 방법은 무엇인가요?",
+        "output": "Neonmarker add-on을 사용하여 History table의 특정 메시지에 태그를 추가하고 색상을 변경하려면, 먼저 해당 메시지를 선택한 후 마우스 오른쪽 버튼을 클릭하여 컨텍스트 메뉴를 열어야 합니다. 그런 다음, 컨텍스트 메뉴에서 원하는 색상을 선택하여 태그를 추가할 수 있습니다. 태그는 `neon_UUID` 형식으로 추가되며, 예를 들어 `neon_e8b1d1e6-9dd4-4996-bc02-de2213986352`와 같은 형태입니다. 또한, JavaScript를 사용하여 Stand Alone 스크립트를 통해 색상 매핑을 추가할 수도 있습니다. 예를 들어, \"Comment\"라는 태그를 빨간색으로 매핑하려면 다음과 같은 코드를 사용할 수 있습니다:\n\n```javascript\nextNeon = control.getExtensionLoader().getExtension(org.zaproxy.zap.extension.neonmarker.ExtensionNeonmarker.NAME);\n\n// History items tagged “Comment” will be red\nextNeon.addColorMapping(\"Comment\", 0x990000);\n```"
+    },
+    {
+        "instruction": "WebSocket 탭에서 마우스 오른쪽 버튼을 클릭했을 때 Break... 메뉴를 선택하면 *Add Break Point dialog*가 나타나나요?",
+        "output": "네, WebSocket 탭에서 마우스 오른쪽 버튼을 클릭했을 때 Break... 메뉴를 선택하면 *Add Break Point dialog*가 나타납니다."
+    },
+    {
+        "instruction": "WebSocket 메시지에서 마우스 오른쪽 버튼을 클릭했을 때 나타나는 메뉴에서 어떤 기능을 사용할 수 있나요?",
+        "output": "WebSocket 메시지에서 마우스 오른쪽 버튼을 클릭하면 메뉴가 나타나며, 이 메뉴를 통해 메시지를 복사하거나, 응답을 보내거나, 메시지를 다시 전송할 수 있습니다."
+    },
+    {
+        "instruction": "WebSocket 연결에서 발생하는 모든 메시지를 확인할 수 있는 방법은 무엇인가요?",
+        "output": "WebSocket 연결에서 발생하는 모든 메시지를 확인하려면 WebSockets tab을 사용하면 됩니다. ZAP이 활성화된 상태에서 Mozilla’s BrowserQuest와 같은 사이트를 방문하면 WebSockets 메시지를 확인할 수 있습니다."
+    },
+    {
+        "instruction": "WebSocket 탭에서 커스텀 브레이크포인트를 설정하려면 어떻게 해야 하나요?",
+        "output": "WebSocket 탭에서 커스텀 브레이크포인트를 설정하려면 *Add Custom Breakpoints* 버튼을 사용하거나 *Right click menu*를 이용하면 됩니다."
+    },
+    {
+        "instruction": "WebSocket tab에서 어떻게 필터 대화 상자를 사용하여 표시되는 메시지를 제어할 수 있나요?",
+        "output": "WebSocket tab의 필터 대화 상자에서는 표시되는 메시지를 추가로 제어할 수 있습니다. 필터 대화 상자를 열면 어떤 메시지가 표시될지 설정할 수 있는 다양한 옵션이 제공됩니다. 예를 들어, 특정 유형의 메시지만 보이도록 필터링하거나, 특정 키워드를 포함한 메시지만 표시되도록 설정할 수 있습니다. 이를 통해 필요한 정보만 선별적으로 확인할 수 있습니다."
+    },
+    {
+        "instruction": "WebSocket 탭에서 특정 채널의 메시지만 표시하려면 어떻게 해야 하나요?",
+        "output": "WebSocket 탭에서 특정 채널의 메시지만 표시하려면 \"Channel Selector\"를 사용하여 원하는 채널을 선택하면 됩니다."
+    },
+    {
+        "instruction": "WebSocket 연결을 웹소켓 탭에서 제외하려면 어떻게 해야 하나요?",
+        "output": "WebSocket 연결을 웹소켓 탭에서 제외하려면, 우클릭 메뉴에서 \"Exclude from WebSocket\" 항목을 선택하여 *Session Properties*에 제외할 URL을 추가하면 됩니다. 이렇게 하면 해당 WebSocket 연결은 닫히지 않고 추가 처리 없이 전달됩니다."
+    },
+    {
+        "instruction": "선택한 사이트에 대해 재방문 기능을 비활성화하려면 어떻게 해야 하나요?",
+        "output": "선택한 사이트에 대해 재방문 기능을 비활성화하려면 \"Disable Revisit\" 옵션을 선택하면 됩니다."
+    },
+    {
+        "instruction": "특정 웹사이트에 대해 Revisit 기능을 활성화하려면 어떻게 해야 하나요?",
+        "output": "특정 웹사이트에 대해 Revisit 기능을 활성화하려면, 해당 사이트를 선택한 후 팝업 창이 나타나도록 합니다. 팝업 창에서 시작 시간과 종료 시간을 설정할 수 있으며, 시작 시간은 세션의 첫 번째 요청 시간으로, 종료 시간은 세션의 마지막 요청 시간으로 기본 설정됩니다. 시간 요소 중 변경되지 않은 부분은 비활성화됩니다. 대화 상자의 OK 버튼을 누르면 선택한 사이트에 대해 Revisit 기능이 활성화되고, History 트리의 사이트 노드에 'calendar' 아이콘이 추가됩니다."
+    },
+    {
+        "instruction": "ZAP 애드온을 사용하여 특정 시간대의 웹 애플리케이션을 브라우징할 수 있는 방법을 알려주세요.",
+        "output": "ZAP 애드온을 사용하여 특정 시간대의 웹 애플리케이션을 브라우징하려면, 먼저 ZAP에서 해당 애드온을 설치하고 활성화해야 합니다. 그런 다음, ZAP history에서 특정 날짜 범위 내의 콘텐츠를 반환하도록 ZAP을 설정합니다. 이를 통해 실제 사이트로 요청을 전달하는 대신, ZAP history에서 페이지를 반환하게 됩니다. 이 설정을 완료하면, 특정 시간대의 웹 애플리케이션을 브라우징할 수 있습니다. 또한, 페이지가 생성된 것임을 나타내기 위해 HTML 페이지에 플로팅 푸터가 삽입됩니다."
+    },
+    {
+        "instruction": "특정 사이트에 대해 revisit를 켤 수 있는 API 엔드포인트는 무엇인가요?",
+        "output": "revisit / action / revisitSiteOn 입니다."
+    },
+    {
+        "instruction": "다음 명령어를 통해 타겟 애플리케이션을 공격하고 결과를 JSON 형식으로 저장하려면 어떻게 해야 하나요?",
+        "output": "다음 명령어를 사용하여 타겟 애플리케이션을 공격하고 결과를 JSON 형식으로 저장할 수 있습니다:\n\n```\n-quickurl http://example.com/ -quickout /path/to/report.json\n```"
+    },
+    {
+        "instruction": "특정 사이트에서 포트 스캔을 실행하려면 어떻게 해야 하나요?",
+        "output": "특정 사이트에서 포트 스캔을 실행하려면 'Sites' 탭에서 해당 사이트를 찾은 후, 마우스 오른쪽 버튼을 클릭하여 'Attack/Port Scan host' 메뉴 항목을 선택하면 됩니다."
+    },
+    {
+        "instruction": "특정 웹사이트의 열린 포트를 확인하려면 어떻게 해야 하나요?",
+        "output": "포트 스캔 기능을 사용하여 특정 웹사이트의 열린 포트를 확인할 수 있습니다. 포트 스캔 설정은 [Options Port Scan screen](/docs/desktop/addons/port-scan/options/)에서 구성할 수 있습니다."
+    },
+    {
+        "instruction": "선택한 노드의 호스트에 대해 포트 스캔을 시작하려면 어떻게 해야 하나요?",
+        "output": "팝업 메뉴에서 \"Port Scan host\" 항목을 선택하면 됩니다. 이 항목을 선택하면 [Port Scan tab]이 표시되고, 스캔 진행 상황을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "이 SARIF JSON Report에서 발견된 XSS 취약점은 어떤 공격 코드를 사용하고 있나요?",
+        "output": "이 SARIF JSON Report에서 발견된 XSS 취약점은 `</p><script>alert(1);</script><p>` 공격 코드를 사용하고 있습니다."
+    },
+    {
+        "instruction": "ZAP 기본 디렉토리에서 'reports' 디렉토리를 찾을 수 없습니다.",
+        "output": "ZAP 기본 디렉토리 내에 'reports' 디렉토리가 존재하지 않는 경우, 먼저 ZAP의 기본 디렉토리 경로가 올바른지 확인해야 합니다. ZAP의 기본 디렉토리는 설치 환경에 따라 다를 수 있으므로, ZAP 공식 문서를 참고하여 기본 디렉토리 경로를 확인한 후, 'reports' 디렉토리가 해당 경로에 존재하는지 다시 한 번 확인해 주세요. 또한, ZAP을 최신 버전으로 업데이트했는지도 확인해 보세요."
+    },
+    {
+        "instruction": "보고서 생성 시 사용되는 template.yaml 파일에서 format에 지정할 수 있는 형식은 무엇인가요?",
+        "output": "template.yaml 파일에서 format에 지정할 수 있는 형식은 HTML, XML, MD, JSON, PDF입니다."
+    },
+    {
+        "instruction": "글로벌 통계 지도에서 사이트 기반 통계를 확인하려면 어떻게 해야 하나요?",
+        "output": "글로벌 통계 지도에서 사이트 기반 통계를 확인하려면 helper를 통해 확인할 수 있습니다."
+    },
+    {
+        "instruction": "보고서를 생성할 때 \"resources\" 디렉토리에 있는 파일을 어떻게 참조해야 하나요?",
+        "output": "\"resources\" 디렉토리에 있는 파일을 참조할 때는 다음과 같은 방식으로 참조해야 합니다:\n\n```\n<script th:src=\"${resources + '/script.js'}\" src=\"resources/script.js\"></script>\n<link rel=\"stylesheet\" th:href=\"${resources + '/style.css'}\" href=\"resources/style.css\">\n<img th:src=\"${resources + '/image.png'}\" src=\"resources/image.png\">\n```"
+    },
+    {
+        "instruction": "각 위험 수준별로 발생한 고유 알림의 수를 확인하려면 어떻게 해야 하나요?",
+        "output": "alertCounts 맵을 참조하면 각 위험 수준별로 발생한 고유 알림의 수를 확인할 수 있습니다. 이를 통해 보고서에 요약 표를 생성할 수 있습니다."
+    },
+    {
+        "instruction": "특정 스캔 규칙 ID에 대한 인스턴스 수를 확인하려면 어떻게 해야 하나요?",
+        "output": "alertCountsByRule 맵에서 해당 스캔 규칙 ID를 검색하면 됩니다."
+    },
+    {
+        "instruction": "보안 보고서의 description을 어떻게 설정하나요?",
+        "output": "보안 보고서의 description은 사용자가 직접 설정할 수 있습니다."
+    },
+    {
+        "instruction": "alertTree에서 각 알림 유형의 인스턴스 수를 확인하려면 어떻게 해야 하나요?",
+        "output": "alertTree의 두 번째 레벨 노드를 순회하여 각 노드의 자식 노드 수를 세면 됩니다. 두 번째 레벨 노드는 각 알림 유형을 나타내며, 세 번째 레벨 노드는 해당 알림 유형의 인스턴스를 포함하고 있습니다."
+    },
+    {
+        "instruction": "이 데이터 작업은 웹 사이트에서 사용된 파라미터에 대한 어떤 정보를 제공합니까?",
+        "output": "이 데이터 작업은 웹 사이트에서 사용된 파라미터의 종류와 값에 대한 정보를 제공합니다. 예를 들어, 어떤 파라미터가 사용되었는지, 그리고 그 파라미터의 값이 무엇인지를 확인할 수 있습니다. 또한, 파라미터가 사용된 URL이나 폼 필드 등의 상세 정보도 포함될 수 있습니다."
+    },
+    {
+        "instruction": "보안 보고서 템플릿 파일의 확장자를 변경하려면 어떻게 해야 하나요?",
+        "output": "보안 보고서 템플릿 파일의 확장자를 변경하려면, template.yaml 파일에 지정된 확장자와 동일하게 설정해야 합니다. 단, PDF 보고서의 경우 \"html\" 확장자를 사용해야 합니다."
+    },
+    {
+        "instruction": "특정 레벨의 알림이 보고서에 포함되지 않았는지, 아니면 의도적으로 제외되었는지 확인하려면 어떻게 해야 하나요?",
+        "output": "특정 레벨의 알림이 보고서에 포함되지 않았는지, 아니면 의도적으로 제외되었는지 확인하려면 `reportData` 인스턴스를 사용하여 데이터를 검토할 수 있습니다. 이를 통해 특정 레벨의 알림이 없었는지, 아니면 의도적으로 제외되었는지 확인할 수 있습니다."
+    },
+    {
+        "instruction": "특정 사이트 URL이 SSL을 사용하고 있는지 확인하려면 어떻게 해야 하나요?",
+        "output": "`isSslSite(String site)` 메서드를 사용하여 특정 사이트 URL이 SSL을 사용하고 있는지 확인할 수 있습니다. 이 메서드는 주어진 사이트 URL이 SSL을 사용하고 있으면 `true`를 반환하고, 그렇지 않으면 `false`를 반환합니다."
+    },
+    {
+        "instruction": "보안 보고서의 reportTitle을 어떻게 설정할 수 있나요?",
+        "output": "보안 보고서의 reportTitle은 사용자가 직접 설정할 수 있습니다."
+    },
+    {
+        "instruction": "보고서 템플릿에서 섹션 이름을 정의할 때 숫자로 시작할 수 있습니까?",
+        "output": "보고서 템플릿에서 섹션 이름을 정의할 때 숫자로 시작할 수 없습니다. 섹션 이름은 알파벳 숫자 문자열이어야 하며, 숫자로 시작해서는 안 됩니다."
+    },
+    {
+        "instruction": "PDF 보고서를 생성할 때 발생하는 오류를 확인하려면 어디를 확인해야 하나요?",
+        "output": "PDF 보고서를 생성할 때 발생하는 오류를 확인하려면 ZAP log file을 확인해야 합니다."
+    },
+    {
+        "instruction": "보고서 제목을 어떻게 접근할 수 있나요?",
+        "output": "보고서 제목은 Thymeleaf Standard Dialect를 통해 `${reportTitle}`을 사용하여 접근할 수 있습니다."
+    },
+    {
+        "instruction": "ZAP에서 보고서 템플릿을 테스트할 때 캐시 설정을 어떻게 해야 하나요?",
+        "output": "ZAP에서 보고서 템플릿을 테스트할 때 캐시 설정을 따로 하지 않아도 됩니다. ZAP는 보고서 템플릿을 캐시하지 않기 때문에 매번 보고서를 생성할 때마다 템플릿을 다시 읽습니다. 이를 통해 템플릿의 최신 버전을 항상 사용할 수 있습니다."
+    },
+    {
+        "instruction": "AJAX Spider의 Context 데이터를 어떻게 관리할 수 있나요?",
+        "output": "이 화면을 통해 AJAX Spider의 Context 데이터를 관리할 수 있습니다."
+    },
+    {
+        "instruction": "크롤링에서 제외할 요소를 설정하려면 어떤 정보가 필요한가요?",
+        "output": "크롤링에서 제외할 요소를 설정하려면 Description, Element(태그 이름), 그리고 XPath, Text(요소의 텍스트, 정확히 일치하고 대소문자를 구분), 또는 Attribute(속성 이름과 값) 중 하나가 필요합니다."
+    },
+    {
+        "instruction": "AJAX Spider 탭에서 각 요청의 HTTP response status code와 그에 대한 간단한 설명을 어떻게 확인할 수 있나요?",
+        "output": "AJAX Spider 탭에서 각 요청의 HTTP response status code와 그에 대한 간단한 설명을 확인하려면, 요청 목록에서 원하는 요청을 선택하면 됩니다. 선택한 요청에 대해 HTTP response status code와 그 의미에 대한 간단한 설명이 표시됩니다."
+    },
+    {
+        "instruction": "AJAX Spider tab에서 새로운 Alert를 추가하려면 어떻게 해야 하나요?",
+        "output": "AJAX Spider tab에서 마우스 오른쪽 버튼을 클릭하여 \"New Alert…\" 메뉴를 선택하면 *Add Alert dialog*가 나타나고, 이를 통해 새로운 *Alert*를 수동으로 기록할 수 있습니다."
+    },
+    {
+        "instruction": "AJAX Spider tab에서 요청과 연관된 태그를 변경하려면 어떻게 해야 하나요?",
+        "output": "AJAX Spider tab에서 마우스 오른쪽 버튼을 클릭하여 \"Manage Tags…\"를 선택하면 *Manage Tags dialog*가 나타나고, 이를 통해 요청과 연관된 태그를 변경할 수 있습니다."
+    },
+    {
+        "instruction": "AJAX Spider tab에서 설정한 애플리케이션을 실행하려면 어떻게 해야 하나요?",
+        "output": "AJAX Spider tab에서 마우스 오른쪽 버튼을 클릭하여 'Run application' 메뉴를 선택하면 됩니다. 이 메뉴를 통해 Options Applications screen에서 구성한 애플리케이션을 실행할 수 있습니다."
+    },
+    {
+        "instruction": "AJAX Spider tab에서 노드를 우클릭했을 때 나타나는 메뉴에서 어떤 기능을 사용할 수 있나요?",
+        "output": "AJAX Spider tab에서 노드를 우클릭하면 메뉴가 나타나며, 이 메뉴를 통해 다양한 기능을 사용할 수 있습니다."
+    },
+    {
+        "instruction": "AJAX Spider tab에서 요청을 다시 보내려면 어떻게 해야 하나요?",
+        "output": "AJAX Spider tab에서 마우스 오른쪽 버튼을 클릭하여 \"Resend…\" 메뉴를 선택하면 *Resend dialog*가 나타나고, 이를 통해 요청을 수정한 후 다시 보낼 수 있습니다."
+    },
+    {
+        "instruction": "AJAX Spider tab에서 특정 항목을 제외하려면 어떻게 해야 하나요?",
+        "output": "AJAX Spider tab에서 특정 항목을 제외하려면, 해당 항목을 마우스 오른쪽 버튼으로 클릭한 후 \"Exclude from\" 메뉴를 선택하면 됩니다."
+    },
+    {
+        "instruction": "선택한 노드가 포함된 사이트 전체에 대해 강제 브라우징을 시작하려면 어떻게 해야 하나요?",
+        "output": "\"Attack\" 메뉴에서 \"Forced Browse Site\" 옵션을 선택하면 됩니다."
+    },
+    {
+        "instruction": "특정 노드를 스캐너에서 제외하려면 어떻게 해야 하나요?",
+        "output": "특정 노드를 스캐너에서 제외하려면, AJAX Spider tab에서 해당 노드를 마우스 오른쪽 버튼으로 클릭한 후, \"Exclude from\" 메뉴에서 \"Scanner\" 옵션을 선택하면 됩니다. 나중에 다시 포함시키려면 *Session Properties* 대화상자를 통해 설정할 수 있습니다."
+    },
+    {
+        "instruction": "선택한 디렉토리와 모든 자식 디렉토리에 대해 강제 브라우징을 시작하려면 어떻게 해야 하나요?",
+        "output": "\"Forced Browse Directory (and children)\" 옵션을 선택하면 됩니다."
+    },
+    {
+        "instruction": "AJAX Spider tab에서 특정 URL에 대해 브레이크 포인트를 설정하려면 어떻게 해야 하나요?",
+        "output": "AJAX Spider tab에서 마우스 오른쪽 버튼을 클릭하여 \"Break…\" 메뉴를 선택하면 *Add Break Point dialog*가 나타나고, 이를 통해 특정 URL에 대해 브레이크 포인트를 설정할 수 있습니다."
+    },
+    {
+        "instruction": "선택한 노드의 URL을 기본 브라우저에서 열려면 어떻게 해야 하나요?",
+        "output": "마우스 오른쪽 버튼을 클릭한 후 \"Open URL in Browser\" 옵션을 선택하세요."
+    },
+    {
+        "instruction": "AJAX Spider tab에서 우클릭 메뉴를 통해 요청과 관련된 노트를 추가하려면 어떻게 해야 하나요?",
+        "output": "AJAX Spider tab에서 우클릭 메뉴를 열면 *Add Note dialog*가 나타나며, 이를 통해 요청과 관련된 노트를 기록할 수 있습니다."
+    },
+    {
+        "instruction": "선택한 노드에 대해서만 액티브 스캔을 실행하려면 어떻게 해야 하나요?",
+        "output": "마우스 오른쪽 버튼을 클릭한 후, \"Attack\" 메뉴에서 \"Active Scan Node\"를 선택하면 됩니다."
+    },
+    {
+        "instruction": "특정 노드를 스파이더링에서 제외하려면 어떻게 해야 하나요?",
+        "output": "마우스 오른쪽 버튼을 클릭한 후 \"Exclude from\" 메뉴에서 \"Spider\" 옵션을 선택하면 됩니다. 나중에 다시 포함시키려면 *Session Properties* 대화 상자를 통해 설정할 수 있습니다."
+    },
+    {
+        "instruction": "이 사이트의 특정 노드를 선택하고 *Active Scan*을 실행하려면 어떻게 해야 하나요?",
+        "output": "이 사이트의 특정 노드를 선택한 후, 마우스 오른쪽 버튼을 클릭하여 나타나는 메뉴에서 \"Attack\"을 선택하고 \"Active Scan Site\"를 클릭하면 *Active Scan*이 실행됩니다."
+    },
+    {
+        "instruction": "선택한 노드가 속한 사이트 전체에 대해 스파이더링을 시작하려면 어떻게 해야 하나요?",
+        "output": "오른쪽 클릭 메뉴에서 \"Attack\" 메뉴를 선택한 후, \"Spider Site\" 옵션을 클릭하면 됩니다.\n    이렇게 하면 선택한 노드가 속한 사이트 전체에 대해 *spider*가 시작되고, *Spider tab*에서 스캔 진행 상황을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "선택한 디렉토리에 대해 강제 브라우징을 시작하려면 어떻게 해야 하나요?",
+        "output": "선택한 디렉토리에 대해 *forced browse*를 시작하려면 \"AJAX Spider tab\"에서 \"Right click menu\"를 열고 \"Attack\" 메뉴에서 \"Forced Browse Directory\" 옵션을 선택하면 됩니다. 이후 *Forced Browse tab*이 표시되며 스캔 진행 상황을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "AJAX Spider tab에서 공격 메뉴를 통해 어떤 기능을 사용할 수 있나요?",
+        "output": "AJAX Spider tab에서 공격 메뉴를 통해 사용할 수 있는 기능은 다음과 같습니다:\n\n- Scan: 선택한 항목을 스캔합니다.\n- Scan in browser: 브라우저에서 선택한 항목을 스캔합니다.\n- Spider from here: 선택한 항목부터 스파이더링을 시작합니다.\n- Spider from selected node: 선택한 노드부터 스파이더링을 시작합니다.\n- Add to scope: 선택한 항목을 스코프에 추가합니다.\n- Remove from scope: 선택한 항목을 스코프에서 제거합니다.\n- Exclude from audit: 선택한 항목을 감사에서 제외합니다.\n- Include in audit: 선택한 항목을 감사에 포함합니다.\n- Send to Intruder: 선택한 항목을 Intruder로 보냅니다.\n- Send to Repeater: 선택한 항목을 Repeater로 보냅니다.\n- Send to Sequencer: 선택한 항목을 Sequencer로 보냅니다.\n- Send to Comparer: 선택한 항목을 Comparer로 보냅니다.\n- Send to Decoder: 선택한 항목을 Decoder로 보냅니다.\n- Send to WebSocket History: 선택한 항목을 WebSocket History로 보냅니다.\n- Send to WebSocket Scope: 선택한 항목을 WebSocket Scope로 보냅니다.\n- Send to HTTP History: 선택한 항목을 HTTP History로 보냅니다.\n- Send to HTTP Scope: 선택한 항목을 HTTP Scope로 보냅니다."
+    },
+    {
+        "instruction": "이 URL에 연관된 알럿이 있는지 확인하려면 어떻게 해야 하나요?",
+        "output": "이 URL에 연관된 알럿이 있는지 확인하려면, AJAX Spider 탭에서 해당 URL을 선택한 후 마우스 오른쪽 버튼을 클릭하여 \"Alerts for this node\" 메뉴를 확인하세요. 이 메뉴에 알럿이 나열되어 있다면, 해당 URL에 연관된 알럿이 있는 것입니다."
+    },
+    {
+        "instruction": "특정 URL을 프록시에서 제외하려면 어떻게 해야 하나요?",
+        "output": "특정 URL을 프록시에서 제외하려면, AJAX Spider tab에서 해당 URL을 선택한 후, 마우스 오른쪽 버튼을 클릭하여 \"Exclude from\" 메뉴에서 \"Proxy\"를 선택하면 됩니다. 이렇게 하면 선택한 노드는 프록시에서 제외되지만, ZAP를 통해 여전히 프록시됩니다. 나중에 다시 포함시키려면 *Session Properties* 대화 상자를 통해 설정할 수 있습니다."
+    },
+    {
+        "instruction": "Sec-WebSocket-Extensions 헤더를 제거하면 웹소켓 메시지 처리에 어떤 영향을 미치나요?",
+        "output": "Sec-WebSocket-Extensions 헤더를 제거하면 웹소켓 메시지가 변환되지 않으므로, ZAP에서 웹소켓 메시지를 올바르게 처리할 수 있습니다. 이 옵션은 클라이언트나 서버가 특정 확장을 요구하지 않는 한 항상 활성화되어야 합니다."
+    },
+    {
+        "instruction": "WebSocket 통신에서 모든 요청에 대해 중단점을 설정하려면 어떻게 해야 하나요?",
+        "output": "*Break* 툴바에서 ![](/docs/desktop/addons/websockets/images/105.png) *Set break on all requests* 버튼을 활성화하면 됩니다. 이 옵션을 활성화하면 모든 외부로 나가는 WebSocket 메시지가 이 컨트롤 버튼에 의해 중단됩니다."
+    },
+    {
+        "instruction": "WebSocket 통신에 관심이 없지만, ZAP를 통해 메시지가 왕복되도록 허용하고 싶다면 어떤 옵션을 활성화해야 하나요?",
+        "output": "\"Forward all\" 옵션을 활성화하면 됩니다."
+    },
+    {
+        "instruction": "WebSocket 옵션을 어떻게 설정해야 하나요?",
+        "output": "이 화면에서 WebSocket 옵션을 설정할 수 있습니다."
+    },
+    {
+        "instruction": "WebSocket 연결에서 PING 메시지를 받았을 때 브라우저가 즉시 PONG 메시지를 반환하지 못하면 어떤 일이 발생하나요?",
+        "output": "WebSocket 연결에서 PING 메시지를 받았을 때 브라우저가 즉시 PONG 메시지를 반환하지 못하면 연결의 대기 시간 값이 나빠집니다."
+    },
+    {
+        "instruction": "이 Database Add-on에서 제공하는 데이터베이스 엔진 중 SQLite을 사용할 때 보안에 취약한 점은 무엇인가요?",
+        "output": "SQLite는 파일 기반 데이터베이스로, 네트워크를 통해 접근하지 않기 때문에 네트워크 공격에 대한 취약점은 적습니다. 그러나 SQLite는 단일 사용자 환경에서 주로 사용되며, 동시에 여러 사용자가 접근할 경우 데이터 무결성과 동시성 문제가 발생할 수 있습니다. 또한, SQLite는 암호화 기능을 기본적으로 제공하지 않기 때문에 데이터베이스 파일이 노출될 경우 데이터가 쉽게 유출될 수 있습니다. 따라서 SQLite를 사용할 때는 파일 시스템 권한 설정과 별도의 암호화 솔루션을 고려해야 합니다."
+    },
+    {
+        "instruction": "특정 스캔 규칙에서 사용자 지정 payload를 지원하는지 확인하려면 어디서 확인할 수 있나요?",
+        "output": "사용자 지정 payload를 지원하는 스캔 규칙은 [here](/alerttags/custom_payloads/)에서 확인할 수 있습니다."
+    },
+    {
+        "instruction": "Automation Framework에서 사용 가능한 옵션들이 무엇인지 알려주세요.",
+        "output": "Automation Framework에서 사용 가능한 옵션들은 다음과 같습니다:\n\n- **Run Mode**: 자동화 테스트를 실행하는 방식을 설정합니다. 예를 들어, 로컬에서 실행할지, 원격 서버에서 실행할지 결정합니다.\n- **Browser**: 테스트를 실행할 브라우저를 선택합니다. 예를 들어, Chrome, Firefox, Safari 등이 있습니다.\n- **Environment**: 테스트를 실행할 환경을 설정합니다. 예를 들어, 개발 환경, 스테이징 환경, 프로덕션 환경 등이 있습니다.\n- **Test Suite**: 실행할 테스트 케이스의 집합을 선택합니다. 예를 들어, 회귀 테스트, 스모크 테스트 등이 있습니다.\n- **Parallel Execution**: 여러 테스트를 동시에 실행할지 여부를 설정합니다. 이를 통해 테스트 시간을 단축할 수 있습니다.\n- **Reporting**: 테스트 결과를 보고서 형태로 출력하는 옵션입니다. 예를 들어, HTML, PDF, Excel 등의 형식으로 보고서를 생성할 수 있습니다.\n- **Logging**: 테스트 실행 중 발생하는 로그를 기록하는 옵션입니다. 이를 통해 테스트 실패 원인을 분석할 수 있습니다.\n- **Retry Mechanism**: 테스트 실패 시 자동으로 재시도할지 여부를 설정합니다. 예를 들어, 일시적인 네트워크 문제로 인한 실패를 방지할 수 있습니다.\n- **Notification**: 테스트 결과를 이메일, Slack, 또는 다른 알림 시스템을 통해 전송하는 옵션입니다. 이를 통해 팀원들이 실시간으로 테스트 결과를 확인할 수 있습니다.\n- **Data Management**: 테스트 데이터를 관리하는 옵션입니다. 예를 들어, 테스트 데이터를 외부 파일에서 읽어오거나, 데이터베이스에서 가져올 수 있습니다."
+    },
+    {
+        "instruction": "데스크탑 GUI를 사용하지 않을 때도 Open Last Plan on Start 옵션을 활성화할 수 있나요?",
+        "output": "데스크탑 GUI를 사용하지 않을 때는 Open Last Plan on Start 옵션이 아무런 효과가 없습니다."
+    },
+    {
+        "instruction": "GraalVM JavaScript 엔진을 ZAP 스크립팅에 사용할 수 있는지 확인하려면 어떻게 해야 하나요?",
+        "output": "GraalVM JavaScript 엔진을 ZAP 스크립팅에 사용할 수 있는지 확인하려면, 먼저 ZAP의 설정 메뉴에 접속한 후, 스크립팅 엔진 옵션에서 GraalVM JavaScript 엔진이 활성화되어 있는지 확인하면 됩니다. 활성화되어 있다면, 해당 엔진을 사용할 수 있습니다."
+    },
+    {
+        "instruction": "스크립트 콘솔에서 디스크의 스크립트가 변경되었을 때 매번 물어보기 옵션을 선택하면 어떤 일이 발생하나요?",
+        "output": "스크립트 콘솔에서 \"Ask Each Time\" 옵션을 선택하면, 디스크의 스크립트가 변경될 때마다 사용자에게 확인 메시지가 표시됩니다. 이 메시지를 통해 사용자는 콘솔에 있는 스크립트를 유지할지, 아니면 변경된 스크립트로 대체할지 선택할 수 있습니다."
+    },
+    {
+        "instruction": "ZAP 2.8.0 이후 버전에서 커스텀 글로벌/스크립트 변수를 설정하는 방법은 무엇인가요?",
+        "output": "ZAP 2.8.0 이후 버전에서는 `ScriptVars`를 사용하여 커스텀 글로벌/스크립트 변수를 설정할 수 있습니다. 예를 들어, JavaScript에서는 다음과 같이 설정할 수 있습니다:\n\n```javascript\nvar ScriptVars = Java.type(\"org.zaproxy.zap.extension.script.ScriptVars\");\nScriptVars.setScriptCustomVar(this.context, \"var.name\", {x: 1, y: 3});\nprint(ScriptVars.getScriptCustomVar(this.context, \"var.name\").y); // Prints 3\nScriptVars.setGlobalCustomVar(\"var.name\", [\"A\", \"B\", \"C\", \"D\"]);\nprint(ScriptVars.getGlobalCustomVar(\"var.name\")[2]); // Prints C\n```"
+    },
+    {
+        "instruction": "스크립트 콘솔에서 특정 URL을 대상으로 한 Targeted 스크립트를 수동으로 실행하려면 어떻게 해야 하나요?",
+        "output": "Targeted 스크립트를 수동으로 실행하려면 Sites 또는 History 탭에서 레코드를 마우스 오른쪽 버튼으로 클릭한 후 'Invoke with script...' 메뉴 항목을 선택하면 됩니다."
+    },
+    {
+        "instruction": "스크립트 콘솔에서 실행하는 스크립트는 ZAP와 동일한 권한을 가지므로, 신뢰하지 않는 스크립트를 실행하지 않도록 주의해야 하나요?",
+        "output": "네, 스크립트 콘솔에서 실행하는 스크립트는 ZAP와 동일한 권한을 가지므로, 신뢰하지 않는 스크립트를 실행하지 않도록 주의해야 합니다."
+    },
+    {
+        "instruction": "스크립트 콘솔에서 글로벌 변수를 설정하고 가져오는 방법은 무엇인가요?",
+        "output": "스크립트 콘솔에서 글로벌 변수를 설정하려면 `org.zaproxy.zap.extension.script.ScriptVars.setGlobalVar(\"변수명\", \"값\")`을 사용하고, 글로벌 변수를 가져오려면 `org.zaproxy.zap.extension.script.ScriptVars.getGlobalVar(\"변수명\")`을 사용합니다."
+    },
+    {
+        "instruction": "스크립트 변수를 설정할 때 ScriptContext를 사용하는 방법과 스크립트 이름을 직접 지정하는 방법의 차이점은 무엇인가요?",
+        "output": "스크립트 변수를 설정할 때 ScriptContext를 사용하는 방법은 주로 JavaScript와 같은 스크립팅 언어에서 제공되는 ScriptContext에 접근할 수 있을 때 사용됩니다. 이 방법은 `this.context`를 통해 현재 스크립트의 컨텍스트를 자동으로 참조하여 변수를 설정하거나 가져올 수 있습니다. 예를 들어, `org.zaproxy.zap.extension.script.ScriptVars.setScriptVar(this.context, \"var.name\",\"value\")`와 같이 사용합니다.\n\n반면, 스크립트 이름을 직접 지정하는 방법은 ZAP 버전 2.7.0 이후에 도입된 방식으로, ScriptContext에 접근할 수 없는 다른 스크립팅 언어에서 사용됩니다. 이 방법은 스크립트 이름을 명시적으로 지정하여 변수를 설정하거나 가져옵니다. 예를 들어, `org.zaproxy.zap.extension.script.ScriptVars.setScriptVar(\"ScriptName\", \"var.name\",\"value\")`와 같이 사용합니다. 이 방법은 스크립트 이름을 직접 지정하므로, 여러 스크립트 간에 변수를 공유할 때 더 명확하게 구분할 수 있습니다."
+    },
+    {
+        "instruction": "Jython screen에서 Python Scripting 설정을 어떻게 변경할 수 있나요?",
+        "output": "Jython screen에서 Python Scripting 설정을 변경하려면, 해당 화면에 접속한 후 제공되는 옵션들을 통해 원하는 설정을 변경할 수 있습니다."
+    },
+    {
+        "instruction": "추가적인 Python 모듈 경로를 설정하려면 어떻게 해야 하나요?",
+        "output": "추가적인 Python 모듈 경로를 설정하려면 `jython.modulepath` 키를 사용하여 파일 시스템 경로를 지정하면 됩니다."
+    },
+    {
+        "instruction": "이 웹 백도어는 ZAP fuzzer와 함께 사용할 수 있나요?",
+        "output": "네, 이 웹 백도어는 ZAP fuzzer와 함께 사용할 수 있습니다."
+    },
+    {
+        "instruction": "이 보고서에서 Risk와 Confidence HTML의 차이점은 무엇인가요?",
+        "output": "이 보고서에서 Risk는 특정 위협이나 취약점이 발생할 가능성을 의미하며, 이를 통해 시스템이나 데이터가 손상될 수 있는 정도를 평가합니다. 반면, Confidence는 해당 위협이나 취약점이 실제로 존재하고 발생할 가능성이 얼마나 높은지를 나타내는 지표입니다. 예를 들어, Risk가 높다면 해당 위협이 시스템에 큰 영향을 미칠 수 있음을 의미하며, Confidence가 높다면 그 위협이 실제로 발생할 가능성이 높다는 것을 의미합니다."
+    },
+    {
+        "instruction": "알럿 타입별 경고 건수를 확인하려면 어디를 참고해야 하나요?",
+        "output": "알럿 타입별 경고 건수를 확인하려면 \"alertTypeCounts\" 섹션을 참고하세요."
+    },
+    {
+        "instruction": "이 예제 액티브 스캔 규칙이 실제 서비스 거부(Denial of Service) 공격을 방지하는 데 얼마나 효과적인가요?",
+        "output": "이 예제 액티브 스캔 규칙은 매우 기본적인 형태의 규칙을 구현하고 있으며, 실제 서비스 거부(Denial of Service) 공격을 방지하는 데 있어서는 제한적인 효과를 가질 수 있습니다. 실제 서비스 거부 공격을 방지하기 위해서는 더 복잡하고 다양한 방어 메커니즘이 필요합니다. 이 예제는 주로 교육 목적으로 제공되며, 실제 환경에서의 완전한 보호를 위해서는 추가적인 보안 조치가 필요합니다."
+    },
+    {
+        "instruction": "이 예제 액티브 스캔 규칙은 사용자가 편집할 수 있는 파일에서 문자열을 로드하는 방식으로 구현되었습니다.",
+        "output": "이 예제 액티브 스캔 규칙(Active Scan Rules)은 사용자가 편집할 수 있는 파일에서 문자열을 로드하는 방식으로 구현되었습니다."
+    },
+    {
+        "instruction": "MongoDB 특정 NoSQL Injection 취약점을 식별하기 위해 어떤 종류의 공격을 시도하나요?",
+        "output": "이 규칙은 불리언 기반, 에러 기반, 타임 기반, 인증 우회 등 다양한 유형의 공격을 시도합니다. 또한, 스캔이 JSON 파라미터 변형을 포함하도록 구성된 경우 JSON 파라미터 특정 페이로드도 시도합니다."
+    },
+    {
+        "instruction": "LDAP Injection 공격을 통해 인증 제어를 우회하고 LDAP 디렉토리의 데이터를 임의로 조회하거나 수정할 수 있는지 확인하려고 합니다.",
+        "output": "LDAP Injection 공격을 통해 인증 제어를 우회하고 LDAP 디렉토리의 데이터를 임의로 조회하거나 수정할 수 있는지 확인하려면, LdapInjectionScanRule.java 코드를 참고하여 스캔을 실행해보세요. 이 코드는 LDAP Injection 취약점을 검출하는 데 사용됩니다."
+    },
+    {
+        "instruction": "인증된 사용자가 Web Cache Deception 취약점을 이용해 민감한 정보를 유출할 수 있는지 확인하려면 어떻게 해야 하나요?",
+        "output": "이 규칙을 사용하여 인증된 사용자가 Web Cache Deception 취약점을 이용해 민감한 정보를 유출할 수 있는지 확인하려면, 먼저 사용자가 인증된 상태에서 원본 URI에 정적 경로를 추가하여 요청을 보내야 합니다. 이를 통해 민감한 사용자 정보가 유출되는지 여부를 확인할 수 있습니다."
+    },
+    {
+        "instruction": "이 애드온에는 어떤 알파 상태의 Active Scan Rules이 포함되어 있나요?",
+        "output": "이 애드온에는 다음과 같은 알파 상태의 Active Scan Rules이 포함되어 있습니다:"
+    },
+    {
+        "instruction": "replacer 규칙을 추가할 때, matchType에 사용할 수 있는 값들이 궁금합니다.",
+        "output": "replacer 규칙을 추가할 때, matchType에 사용할 수 있는 값들은 다음과 같습니다: req_header, req_header_str, req_body_str, resp_header, resp_header_str, resp_body_str."
+    },
+    {
+        "instruction": "Replacer Automation Framework Support 추가 기능이 제공하는 기능에 대해 설명해 주세요.",
+        "output": "Replacer Automation Framework Support 추가 기능은 Automation Framework를 지원합니다."
+    },
+    {
+        "instruction": "펄저 대화 상자에서 Options 탭을 통해 펄징 시 사용할 옵션을 설정할 수 있나요?",
+        "output": "네, 펄저 대화 상자에서 Options 탭을 통해 펄징 시 사용할 옵션을 설정할 수 있습니다."
+    },
+    {
+        "instruction": "Fuzz 기능을 사용하려면 어떤 방법으로 접근할 수 있나요?",
+        "output": "Fuzz 기능에 접근하려면 여러 방법이 있습니다. 첫째, Request tab에서 'Fuzz…' 항목을 마우스 오른쪽 버튼으로 클릭하여 접근할 수 있습니다. 둘째, Sites and History tab에서 Attack > Fuzz… 메뉴 항목을 선택할 수 있습니다. 셋째, Tools 메뉴에서 Attack > Fuzz… 메뉴 항목을 선택할 수 있습니다."
+    },
+    {
+        "instruction": "특정 요청을 펄징할 때 사용할 펄저를 선택하려면 어떻게 해야 하나요?",
+        "output": "이 대화창을 통해 특정 요청을 펄징할 때 사용할 펄저를 선택할 수 있습니다."
+    },
+    {
+        "instruction": "펜징 테스트 중에 Fuzzer dialog의 Fuzz Locations 탭에서 특정 문자열을 선택하고 페이로드를 추가한 후 펜징을 시작하려면 어떻게 해야 하나요?",
+        "output": "Fuzz Locations 탭에서 펜징 테스트를 위해 특정 문자열을 선택하고 페이로드를 추가한 후 펜징을 시작하려면 다음 단계를 따르세요.\n\n1. Fuzz Locations 탭에서 펜징을 원하는 문자열을 하이라이트합니다.\n2. ‘Add…’ 버튼을 클릭하여 Payloads dialog를 엽니다.\n3. 사용하려는 페이로드를 추가합니다.\n4. 필요한 경우 ‘Processors…’ 버튼을 클릭하여 Location Processors dialog를 엽니다.\n5. ‘Start Fuzzer’ 버튼을 클릭하여 펜징을 시작합니다.\n6. 결과는 Fuzzer tab에 나열되며, 전체 요청 및 응답을 보려면 결과를 선택합니다."
+    },
+    {
+        "instruction": "메시지 프로세서는 펄징 중인 메시지에 접근하고 변경할 수 있으며, 펄징 과정을 제어하고 ZAP UI와 상호작용할 수 있습니까?",
+        "output": "네, 메시지 프로세서는 펄징 중인 메시지에 접근하고 변경할 수 있으며, 펄징 과정을 제어하고 ZAP UI와 상호작용할 수 있습니다."
+    },
+    {
+        "instruction": "Fuzzer가 HTTP 메시지에서 리다이렉트 응답을 따라가도록 설정하려면 어떻게 해야 하나요?",
+        "output": "\"Options\" 탭에서 \"Follow Redirects\" 옵션을 활성화하면 됩니다."
+    },
+    {
+        "instruction": "Fuzzer 대화 상자에서 'Processors...' 버튼을 통해 Fuzz Location Processors 대화 상자에 접근할 수 있나요?",
+        "output": "네, Fuzzer 대화 상자에서 'Processors...' 버튼을 통해 Fuzz Location Processors 대화 상자에 접근할 수 있습니다."
+    },
+    {
+        "instruction": "모든 페이로드 생성기와 함께 사용할 페이로드 프로세서를 선택할 수 있는 방법이 무엇인가요?",
+        "output": "Fuzz Location Processors dialog를 사용하면 모든 페이로드 생성기와 함께 사용할 페이로드 프로세서를 선택할 수 있습니다."
+    },
+    {
+        "instruction": "현재 Alert Count 섹션의 경고 수가 정상 범위를 초과했습니까?",
+        "output": "Alert Count 섹션의 경고 수가 정상 범위를 초과했는지 확인하려면, 먼저 정상 범위의 기준을 설정해야 합니다. 기준을 설정한 후, 현재 Alert Count 섹션의 경고 수를 확인하여 비교합니다. 만약 현재 경고 수가 설정된 기준을 초과한다면, 정상 범위를 초과한 것입니다."
+    },
+    {
+        "instruction": "이 화면에서 보이는 전통적인 HTML 보고서의 보안 취약점은 무엇인가요?",
+        "output": "이 화면에서 보이는 전통적인 HTML 보고서의 보안 취약점으로는 다음과 같은 것들이 있습니다:\n\n1. **Cross-Site Scripting (XSS)**: 사용자 입력을 제대로 검증하지 않으면, 악성 스크립트가 삽입될 수 있습니다.\n2. **Cross-Site Request Forgery (CSRF)**: 인증된 사용자가 의도하지 않은 행동을 수행하도록 유도할 수 있습니다.\n3. **SQL Injection**: 데이터베이스 쿼리에 사용자 입력을 직접 포함시키면, 악성 코드가 실행될 수 있습니다.\n4. **Insecure Direct Object References (IDOR)**: 직접 객체 참조가 노출되면, 권한 없는 사용자가 데이터에 접근할 수 있습니다.\n5. **Security Misconfiguration**: 서버나 애플리케이션의 보안 설정이 부적절하면, 다양한 공격에 노출될 수 있습니다.\n6. **Sensitive Data Exposure**: 민감한 데이터가 암호화되지 않거나, 안전하게 저장되지 않으면 유출될 수 있습니다.\n7. **Missing Function Level Access Control**: 기능 수준에서의 접근 제어가 부족하면, 권한 없는 사용자가 특정 기능을 사용할 수 있습니다.\n8. **Using Components with Known Vulnerabilities**: 알려진 취약점이 있는 라이브러리나 프레임워크를 사용하면, 공격에 취약해질 수 있습니다."
+    },
+    {
+        "instruction": "파라미터 디거를 사용하여 숨겨진 파라미터를 발견할 수 있나요?",
+        "output": "네, 파라미터 디거를 사용하여 숨겨진 파라미터를 발견할 수 있습니다. 이 도구는 주어진 URL을 시드로 사용하여 brute force guessing attacks를 수행하여 숨겨진, 연결되지 않은, 그리고 \"모호한\" 파라미터를 식별합니다."
+    },
+    {
+        "instruction": "파라미터 디거 애드온이 최신 버전인지 확인하려면 어떻게 해야 하나요?",
+        "output": "파라미터 디거 애드온의 최신 버전을 확인하려면 [paramdigger](https://github.com/zaproxy/zap-extensions/tree/main/addOns/paramdigger) GitHub 저장소를 방문하여 최신 코드를 확인하세요."
+    },
+    {
+        "instruction": "파라미터 디거의 상태 패널에서 현재 네트워크 상태를 확인하는 방법은 무엇인가요?",
+        "output": "파라미터 디거의 상태 패널에서 현재 네트워크 상태를 확인하려면, 상태 패널을 열고 네트워크 연결 아이콘을 확인하십시오. 아이콘의 색상과 표시 메시지를 통해 현재 네트워크 상태를 쉽게 파악할 수 있습니다."
+    },
+    {
+        "instruction": "Parameter Digger가 무엇인지 설명해 주세요.",
+        "output": "Parameter Digger는 상위 메뉴 'Tools' 하위에 있는 메뉴 항목입니다."
+    },
+    {
+        "instruction": "ZAP API Component에서 Parameter Digger를 활성화하는 방법을 알려주세요.",
+        "output": "ZAP API Component에서 Parameter Digger를 활성화하려면, 먼저 ZAP의 API를 통해 접근할 수 있는 엔드포인트를 확인해야 합니다. 일반적으로 ZAP의 API 문서를 참고하여 Parameter Digger를 활성화하는 엔드포인트를 찾습니다. 예를 들어, `/JSON/parameterDigger/action/scanAsUser/`와 같은 엔드포인트를 사용할 수 있습니다. 이 엔드포인트에 POST 요청을 보내어 Parameter Digger를 활성화할 수 있습니다. 요청 본문에는 필요한 파라미터를 JSON 형식으로 포함시켜야 합니다. 예를 들어, 다음과 같은 요청을 보낼 수 있습니다:\n\n```json\n{\n    \"url\": \"http://example.com\",\n    \"postData\": \"param1=value1&param2=value2\"\n}\n```\n\n이 요청을 통해 지정된 URL과 파라미터에 대해 Parameter Digger를 실행할 수 있습니다. 자세한 내용은 ZAP의 API 문서를 참고하시기 바랍니다."
+    },
+    {
+        "instruction": "Param Digger 탭에서 각 URL 시도 시 어떤 정보를 확인할 수 있나요?",
+        "output": "Param Digger 탭의 'History' 탭에서 각 URL 시도 시 확인할 수 있는 정보는 다음과 같습니다:\n    * ID - 메시지의 ID\n    * Req. Timestamp - ZAP의 HTTP Sender가 요청을 보낸 시간\n    * Res. Timestamp - 응답을 받은 시간\n    * Method - 사용된 HTTP 메서드\n    * URL - 추측에 사용된 URL\n    * Code - 응답의 상태 코드\n    * Reason - 특정 상태 코드의 이유\n    * RTT - 요청의 왕복 시간"
+    },
+    {
+        "instruction": "HTTP 메시지의 내용을 바이너리 형태로 저장하는 기능에 대해 설명해 주세요.",
+        "output": "\"Save Raw Message\" 기능은 HTTP 메시지의 내용을 바이너리 형태로 저장할 수 있는 컨텍스트 메뉴를 제공합니다."
+    },
+    {
+        "instruction": "특정 기술에 집중된 애드온을 제외하고 설치된 모든 스캔 규칙 애드온의 목록을 확인하려면 어떻게 해야 하나요?",
+        "output": "Scan Rules Pack을 설치하면 특정 기술에 집중된 애드온을 제외한 모든 스캔 규칙 애드온이 자동으로 설치됩니다. 이 패키지에는 Active Scan Rules, Active Scan Rules (beta), Active Scan Rules (alpha), DOM XSS Active Scan Rule, Passive Scan Rules, Passive Scan Rules (beta), Passive Scan Rules (alpha), Retire.js가 포함되어 있습니다."
+    },
+    {
+        "instruction": "GraphQL 스키마를 로컬에서 가져오려면 어떤 파라미터를 설정해야 하나요?",
+        "output": "GraphQL 스키마를 로컬에서 가져오려면 `type`을 `graphql`로 설정하고, `schemaFile` 파라미터에 로컬 파일 경로를 지정해야 합니다."
+    },
+    {
+        "instruction": "이 애드온이 GraphQL 스키마를 어떻게 가져오는지 설명해 주세요.",
+        "output": "이 애드온은 GraphQL 스키마를 introspection을 사용하여 가져옵니다. 만약 스파이더링 중에 endpoint가 발견되면, 이를 통해 스키마를 가져옵니다. 그러나 endpoint와 선택적으로 스키마 파일이나 URL을 지정하는 것이 가능하다면, 이를 권장합니다."
+    },
+    {
+        "instruction": "기본 포트를 사용하는 타겟을 테스트할 때, URL에 포트 번호를 포함해야 하나요?",
+        "output": "기본 포트를 사용하는 타겟을 테스트할 때, URL에 포트 번호를 포함해서는 안 됩니다. 예를 들어, http의 경우 80 포트, https의 경우 443 포트는 기본 포트로 간주되므로 URL에 포트 번호를 포함하면 크롤링이나 테스트가 제대로 수행되지 않을 수 있습니다."
+    },
+    {
+        "instruction": "시스템 환경 변수와 동일한 이름의 변수가 있을 때, 어떤 변수의 값이 우선적으로 사용되나요?",
+        "output": "시스템 환경 변수의 값이 우선적으로 사용됩니다."
+    },
+    {
+        "instruction": "자동화 프레임워크에서 'username'과 'password' 필드를 사용자 요소 직접 아래가 아닌 'credentials' 요소 아래에 위치시키려면 어떻게 해야 하나요?",
+        "output": "자동화 프레임워크에서 'username'과 'password' 필드를 'credentials' 요소 아래에 위치시키려면, 이전에는 사용자 요소 직접 아래에 위치했던 것을 변경하여 'credentials' 요소 아래에 배치하면 됩니다. 이 변경 사항은 이미 지원되며, 새로운 형식에 맞춰 설정하면 됩니다."
+    },
+    {
+        "instruction": "특정 URL에 대한 접근 시도가 허용되었는지 여부를 확인하려면 어떻게 해야 하나요?",
+        "output": "Access Control Status Tab에서 해당 URL에 대한 접근 시도의 결과를 확인하세요. 결과가 성공적(green check)이면 허용된 것이고, 실패(red cross)면 허용되지 않은 것입니다."
+    },
+    {
+        "instruction": "이 이미지는 Traditional PDF 보고서의 스크린샷인가요?",
+        "output": "네, 이 이미지는 Traditional PDF 보고서의 스크린샷입니다."
+    },
+    {
+        "instruction": "최근 7일 동안의 Alert Count는 얼마인가요?",
+        "output": "최근 7일 동안의 Alert Count는 50건입니다."
+    },
+    {
+        "instruction": "네트워크 애드온이 제공하는 핵심 네트워킹 기능에는 어떤 것들이 포함되나요?",
+        "output": "네트워크 애드온이 제공하는 핵심 네트워킹 기능에는 라우팅, 방화벽 설정, DNS 관리, 로드 밸런싱, 그리고 VPN 연결 등이 포함됩니다."
+    },
+    {
+        "instruction": "스프링 액추에이터가 활성화되어 있는지 확인하려면 어떻게 해야 하나요?",
+        "output": "스프링 액추에이터가 활성화되어 있는지 확인하려면, 애플리케이션의 /actuator/health 경로에 접근해 보세요. 이 경로가 응답하면 스프링 액추에이터가 활성화된 것입니다."
+    },
+    {
+        "instruction": "웹 서버에서 Subversion 소스 코드 저장소 메타데이터를 통해 소스 코드가 노출되었는지 확인하는 방법은 무엇인가요?",
+        "output": "Subversion 소스 코드 저장소 메타데이터를 사용하여 웹 서버에서 소스 코드가 노출되었는지 확인하는 방법은 Source Code Disclosure - SVN 규칙을 활용하는 것입니다. 이 규칙은 웹 서버에서 소스 코드를 포함하는 파일을 스캔하며, LOW alert threshold 설정 시 더 적은 증거로도 잠재적인 코드를 식별할 수 있습니다. 이로 인해 더 많은 거짓 양성 결과가 발생할 수 있습니다."
+    },
+    {
+        "instruction": "HTTP Parameter Pollution(HPP) 공격을 방지하기 위해 어떤 조치를 취해야 하나요?",
+        "output": "HTTP Parameter Pollution(HPP) 공격을 방지하기 위해서는 여러 가지 조치를 취할 수 있습니다. 첫째, 입력 값을 철저히 검증하고, 중복된 파라미터를 허용하지 않도록 서버 측에서 처리해야 합니다. 둘째, 웹 애플리케이션 방화벽(WAF)을 사용하여 악의적인 요청을 차단할 수 있습니다. 셋째, 보안 테스트 도구를 사용하여 정기적으로 애플리케이션을 스캔하고, 취약점을 조기에 발견하여 수정해야 합니다. 마지막으로, 개발자들에게 보안 교육을 실시하여 안전한 코딩 습관을 기르도록 해야 합니다."
+    },
+    {
+        "instruction": "로그인 URL에서 Session Fixation 문제가 발생할 수 있는지 확인하려고 합니다.",
+        "output": "로그인 URL에서 Session Fixation 문제가 발생할 수 있습니다. 공격자가 피해자에게 고정된 session id와 함께 URL을 제공하여, 나중에 해당 session id를 사용해 피해자의 신원을 가장할 수 있습니다."
+    },
+    {
+        "instruction": "이 웹사이트가 HttPoxy 취약점에 노출되어 있는지 확인하려면 어떻게 해야 하나요?",
+        "output": "이 웹사이트가 HttPoxy 취약점에 노출되어 있는지 확인하려면, ZAP 도구를 사용하여 Active Scan Rules - Beta 중 HttPoxy - Proxy Header Misuse 규칙을 실행해야 합니다. 이 규칙은 요청에 지정된 HTTP Proxy 헤더를 사용하는지 확인합니다. ZAP이 실행되는 컴퓨터는 임의의 포트에서 들어오는 요청을 허용해야 하며, 방화벽이 들어오는 연결을 차단하지 않도록 설정되어 있어야 합니다. 그런 다음, ZAP은 타겟 서버에 일련의 요청을 보내고, 새로운 포트에서 요청을 받으면 서버가 취약할 가능성이 높습니다."
+    },
+    {
+        "instruction": "로그인 URL에서 유효하지 않은 사용자 이름과 유효한 사용자 이름을 입력했을 때 HTTP 응답이 다른지 확인할 수 있나요?",
+        "output": "네, 로그인 URL에서 유효하지 않은 사용자 이름과 유효한 사용자 이름을 입력했을 때 HTTP 응답이 다른지 확인할 수 있습니다. 이를 통해 사용자 이름 열거가 가능한지 여부를 판단할 수 있으며, 이는 패스워드 브루트포싱 공격의 성공 확률을 높일 수 있습니다. ZAP의 'Attack Strength' 옵션을 증가시켜 거짓 양성을 최소화할 수 있으며, 'Other Info' 필드를 수동으로 확인하여 실제 문제인지 여부를 확인해야 합니다."
+    },
+    {
+        "instruction": "Out-of-band XSS 취약점을 발견하기 위해 어떤 방법을 사용하나요?",
+        "output": "Out-of-band XSS 취약점을 발견하기 위해서는 주로 외부 서버와의 상호작용을 통해 확인합니다. 이 방법은 악성 스크립트가 실행되었을 때 외부 서버로 데이터를 전송하도록 하여, 이를 통해 취약점의 존재 여부를 판단합니다. 예를 들어, 특정 URL이나 페이로드를 삽입하여 해당 스크립트가 실행되면 외부 서버로 요청이 전송되고, 이를 통해 취약점을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "특정 URL에 대해 허용된 HTTP 메서드를 확인하려고 합니다. PUT 또는 PATCH 메서드가 활성화되어 있는지, 그리고 이들이 JSON 또는 XML과 같은 구조화된 데이터를 반환하는지 알고 싶습니다.",
+        "output": "이를 위해 \"Insecure HTTP Method\" 규칙을 사용하여 스캔을 실행할 수 있습니다. 이 규칙은 특정 URL에 대해 허용된 HTTP 메서드를 확인하고, PUT 또는 PATCH 메서드가 활성화되어 있는지 여부를 검사합니다. 또한, 이 메서드들이 JSON 또는 XML과 같은 구조화된 데이터를 반환하는지도 확인합니다. 스캔 설정에 따라 이 메서드들이 응답으로 구조화된 데이터를 반환할 경우, 이를 허용할 수 있습니다."
+    },
+    {
+        "instruction": "웹 서버에서 Git 소스 코드 저장소 메타데이터를 통해 소스 코드가 노출되었는지 확인하는 방법은 무엇인가요?",
+        "output": "웹 서버에서 Git 소스 코드 저장소 메타데이터를 통해 소스 코드가 노출되었는지 확인하려면, 웹 서버의 파일 시스템에서 Git 메타데이터 파일(예: .git 디렉토리)을 검색하는 것입니다. 이를 위해 OWASP ZAP와 같은 도구를 사용하여 Active Scan Rules - Beta 중 Source Code Disclosure - Git 규칙을 활용할 수 있습니다. 이 규칙은 Git 메타데이터를 기반으로 소스 코드가 포함된 파일을 스캔합니다."
+    },
+    {
+        "instruction": "이 애드온에는 어떤 베타 상태의 Active Scan Rules가 포함되어 있나요?",
+        "output": "이 애드온에는 다음과 같은 베타 상태의 Active Scan Rules가 포함되어 있습니다:"
+    },
+    {
+        "instruction": "웹 서버에서 소스 코드를 포함한 파일이 노출되었는지 확인하기 위해 로컬 파일 포함 기법을 사용하는 방법은 무엇인가요?",
+        "output": "웹 서버에서 소스 코드를 포함한 파일이 노출되었는지 확인하기 위해 로컬 파일 포함(LFI) 기법을 사용하는 방법은 다음과 같습니다. 먼저, 웹 애플리케이션의 URL 매개변수나 입력 필드에 특정 파일 경로를 삽입하여 서버가 해당 파일을 읽도록 유도합니다. 예를 들어, `../../../etc/passwd`와 같은 경로를 입력하여 서버가 시스템 파일을 읽도록 시도할 수 있습니다. 이를 통해 서버가 응답으로 소스 코드나 민감한 파일을 반환하는지 확인합니다. 이 과정은 자동화된 스캔 규칙을 통해 수행될 수 있으며, ZAP(Zed Attack Proxy)와 같은 도구를 사용하면 효율적으로 검사할 수 있습니다."
+    },
+    {
+        "instruction": "웹 서버에서 정수 오버플로우 오류를 일으키는 컴파일된 코드가 있는지 확인하려면 어떻게 해야 하나요?",
+        "output": "웹 서버에서 정수 오버플로우 오류를 일으키는 컴파일된 코드가 있는지 확인하려면, 다양한 정수 문자열을 입력하여 비정상적인 응답을 유도하는 방식으로 스캔을 수행합니다. 이를 통해 웹 서버가 크래시하는 지점을 찾을 수 있습니다. 이 과정은 Integer Overflow Error 규칙을 사용하여 수행할 수 있으며, 관련 코드는 [IntegerOverflowScanRule.java](https://github.com/zaproxy/zap-extensions/blob/main/addOns/ascanrulesBeta/src/main/java/org/zaproxy/zap/extension/ascanrulesBeta/IntegerOverflowScanRule.java)에서 확인할 수 있습니다."
+    },
+    {
+        "instruction": "이 애플리케이션에서 사용 중인 Proxy 서버의 종류와 버전을 알 수 있는 방법이 있을까요?",
+        "output": "이 애플리케이션에서 사용 중인 Proxy 서버의 종류와 버전을 알아내기 위해서는 Proxy Disclosure 스캔 규칙을 사용할 수 있습니다. 이 스캔 규칙은 Proxy 서버를 탐지하고 지문 분석을 통해 종류와 버전을 식별하려고 시도합니다. 이를 통해 잠재적인 공격자가 애플리케이션 대상을 파악하거나 Proxy 서버의 취약점을 찾는 데 도움이 될 수 있습니다."
+    },
+    {
+        "instruction": "특정 쿠키가 응답 크기에 영향을 미치지 않는지 테스트하는 방법은 무엇인가요?",
+        "output": "Cookie Slack Detector 규칙을 사용하여 특정 쿠키가 응답 크기에 영향을 미치지 않는지 테스트할 수 있습니다. 이 규칙은 특히 \"session\" 또는 \"userid\"와 같은 이름을 포함한 쿠키를 생략했을 때 응답 크기에 변화가 없는지 확인합니다."
+    },
+    {
+        "instruction": "CSRF 토큰이 포함되지 않은 HTML 메시지를 스캔하는 방법은 무엇인가요?",
+        "output": "CSRF 토큰이 포함되지 않은 HTML 메시지를 스캔하려면, Active Scan Rules - Beta 중 CSRF Token 규칙을 사용하면 됩니다. 이 규칙은 HTML 기반 메시지를 스캔하여 Anti-CSRF 토큰이 존재하는지 확인하며, 토큰이 없는 요청에 대해 경고를 발생시킵니다. HIGH 경고 임계값에서는 스코프 내의 메시지만 스캔합니다. 또한, 2.5.0 버전 이후부터는 `rules.csrf.ignorelist` 파라미터를 통해 특정 FORM을 무시할 수 있습니다. 이 파라미터에 쉼표로 구분된 식별자 목록을 지정하면, 해당 이름이나 ID를 가진 FORM은 스캔 대상에서 제외됩니다. 이 기능은 안전한 FORM, 예를 들어 검색 FORM과 같은 경우에만 사용해야 합니다."
+    },
+    {
+        "instruction": "CORS 헤더가 모든 출처를 허용하도록 설정되어 있는지 확인하는 방법은 무엇인가요?",
+        "output": "CORS 헤더가 모든 출처를 허용하도록 설정되어 있는지 확인하려면, Access-Control-Allow-Origin 헤더의 값을 확인해야 합니다. 이 값이 \"*\"로 설정되어 있거나, \"<>\" 형태로 모든 출처를 허용하는 경우, CORS가 모든 출처를 허용하도록 설정된 것입니다. 예를 들어, Access-Control-Allow-Origin: * 또는 Access-Control-Allow-Origin: <http://example.com>와 같은 형태로 설정되어 있는지 확인하면 됩니다."
+    },
+    {
+        "instruction": "서버 측 요청 위조(SSRF) 취약점을 찾기 위해 어떤 방법을 사용하나요?",
+        "output": "이 규칙은 서버 측 요청 위조(SSRF) 취약점을 찾기 위해 요청 파라미터에 비동기(out-of-band) 페이로드를 주입하는 방법을 사용합니다."
+    },
+    {
+        "instruction": "웹 서버가 모호한 URL에 대한 응답을 제공할 때 \"상대 경로\" 혼동이 발생할 수 있는지 테스트하는 방법은 무엇인가요?",
+        "output": "이 테스트는 웹 서버가 모호한 URL에 대한 응답을 제공할 때 \"상대 경로\" 혼동이 발생할 수 있는지 확인합니다. 웹 서버가 응답에서 자원(CSS, 이미지 등)을 상대 URL 대신 절대 URL로 참조하는지 검사합니다. 웹 브라우저가 \"크로스 콘텐츠\" 응답을 허용적으로 파싱하거나, 프레임과 같은 기술을 사용하여 허용적으로 파싱하도록 속일 수 있다면, 웹 브라우저가 HTML을 CSS(또는 다른 콘텐츠 유형)으로 잘못 해석하여 XSS 취약점이 발생할 수 있습니다."
+    }
+]

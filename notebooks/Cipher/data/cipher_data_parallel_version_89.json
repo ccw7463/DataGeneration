@@ -1,0 +1,1442 @@
+[
+    {
+        "instruction": "현재 사용자의 모든 리밋 속성을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`ulimit -a` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "xzdiff 명령어를 사용하여 xz로 압축된 두 파일의 차이점을 비교하려면 어떻게 해야하나요?",
+        "output": "`xzdiff` 명령어를 사용하여 xz로 압축된 두 파일의 차이점을 비교하려면 다음과 같이 입력하면 됩니다:\n\n`xzdiff {{path/to/file1}} {{path/to/file2}}`"
+    },
+    {
+        "instruction": "reflex를 사용하여 특정 디렉토리의 파일이 변경될 때만 go run . 명령어를 실행하려면 어떻게 해야 하나요?",
+        "output": "`reflex --regex='{{\\.go$}}' {{go run .}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "특정 파일의 SHA384 체크섬을 계산하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`sha384sum {{path/to/file}}` 명령어를 사용하여 특정 파일의 SHA384 체크섬을 계산할 수 있습니다."
+    },
+    {
+        "instruction": "f3read 명령어를 사용하여 드라이브의 실제 용량을 테스트하려면 어떻게 해야 하나요?",
+        "output": "f3read 명령어를 사용하여 드라이브의 실제 용량을 테스트하려면, 먼저 f3write 명령어를 사용하여 .h2w 파일을 생성한 후, 해당 파일이 있는 디렉토리 경로를 지정하여 f3read 명령어를 실행합니다. 예를 들어, 마운트 포인트가 /mnt/usb인 경우 `f3read /mnt/usb` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "oathtool을 사용하여 TOTP 토큰을 생성하려면 어떻게 해야 하나요?",
+        "output": "`oathtool --totp --base32 \"{{secret}}\"` 명령어를 사용하여 TOTP 토큰을 생성할 수 있습니다."
+    },
+    {
+        "instruction": "espeak를 사용하여 특정 파일을 음성으로 출력하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "espeak -f {{path/to/file}} 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "helm chart를 생성하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "helm chart를 생성하려면 `helm create {{chart_name}}` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "md5sum 명령어를 사용해서 파일의 MD5 체크섬을 계산하는 방법은 무엇인가요?",
+        "output": "`md5sum {{path/to/file1 path/to/file2 ...}}` 명령어를 사용하여 파일의 MD5 체크섬을 계산할 수 있습니다."
+    },
+    {
+        "instruction": "mtr 명령어를 사용하여 example.com에 대해 IPv4를 강제하고, 각 홉을 10번 핑한 후 결과를 출력하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`mtr -4 --report-wide {{example.com}}` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "az login 명령어를 사용하여 서비스 주체(service principal)와 클라이언트 인증서(client certificate)를 이용해 Azure에 로그인하려고 합니다. 어떻게 해야 하나요?",
+        "output": "`az login --service-principal --username {{http://azure-cli-service-principal}} --password {{path/to/cert.pem}} --tenant {{someone.onmicrosoft.com}}` 명령어를 사용하여 Azure에 로그인할 수 있습니다."
+    },
+    {
+        "instruction": "tlmgr을 사용하여 모든 TeX Live 프로그램의 기본 용지 크기를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`tlmgr paper` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "podman run 명령어를 사용하여 새로운 컨테이너에서 특정 이미지를 실행하고, 호스트의 8080 포트를 컨테이너의 80 포트에 연결하려면 어떻게 해야 하나요?",
+        "output": "`podman run --publish 8080:80 {{image:tag}}` 명령어를 사용하여 새로운 컨테이너에서 특정 이미지를 실행하고, 호스트의 8080 포트를 컨테이너의 80 포트에 연결할 수 있습니다."
+    },
+    {
+        "instruction": "luac 명령어를 사용하여 Lua 소스 파일을 Lua bytecode로 컴파일하려고 합니다. 디버그 심볼을 포함하지 않고 컴파일하는 방법을 알려주세요.",
+        "output": "`luac -s -o {{byte_code.luac}} {{source.lua}}` 명령어를 사용하여 Lua 소스 파일을 Lua bytecode로 컴파일할 수 있으며, 이 명령어에는 디버그 심볼이 포함되지 않습니다."
+    },
+    {
+        "instruction": "도커 네트워크를 생성할 때 사용할 수 있는 드라이버 종류는 무엇인가요?",
+        "output": "도커 네트워크를 생성할 때 사용할 수 있는 드라이버 종류는 bridge, host, overlay, macvlan, none 등이 있습니다."
+    },
+    {
+        "instruction": "git mr 명령어를 사용하여 특정 merge request를 로컬에서 확인하려면 어떻게 해야 하나요?",
+        "output": "`git mr` 명령어를 사용하여 특정 merge request를 로컬에서 확인하려면 `git mr {{mr_number}}` 명령어를 사용하면 됩니다. 예를 들어, merge request 번호가 123인 경우 `git mr 123`을 입력하면 됩니다."
+    },
+    {
+        "instruction": "llvm-g++ 명령어와 clang++ 명령어의 차이점이 궁금합니다.",
+        "output": "llvm-g++ 명령어는 clang++ 명령어의 별칭입니다. 따라서 두 명령어 간의 차이점은 없으며, 동일한 기능을 수행합니다."
+    },
+    {
+        "instruction": "unison 명령어를 사용하여 두 디렉토리를 동기화하고 특정 파일 패턴을 무시하려면 어떻게 해야 하나요?",
+        "output": "unison을 사용하여 두 디렉토리를 동기화하고 특정 파일 패턴을 무시하려면 다음과 같은 명령어를 사용하면 됩니다:\n\n`unison {{path/to/directory_1}} {{path/to/directory_2}} -ignore {{pattern}}`"
+    },
+    {
+        "instruction": "글로벌 툴을 설치하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "글로벌 툴을 설치하려면 `dotnet tool install --global {{dotnetsay}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "파일의 총 바이트 수를 세는 명령어는 무엇인가요?",
+        "output": "파일의 총 바이트 수를 세는 명령어는 `wc --bytes {{path/to/file}}`입니다."
+    },
+    {
+        "instruction": "parallel을 사용해서 여러 대의 서버에서 동시에 보안 패치를 설치하려면 어떻게 해야 하나요?",
+        "output": "parallel을 사용해서 여러 대의 서버에서 동시에 보안 패치를 설치하려면 다음과 같은 명령어를 사용할 수 있습니다:\n\n`parallel -S {{server1}},{{server2}},{{server3}} sudo apt-get update && sudo apt-get upgrade ::: {{patch1}} {{patch2}} {{patch3}}`\n\n여기서 `{{server1}}, {{server2}}, {{server3}}`는 각각의 서버 주소를 의미하며, `{{patch1}}, {{patch2}}, {{patch3}}`는 설치할 보안 패치의 이름입니다. 필요에 따라 서버 주소와 패치 이름을 적절히 변경하여 사용하면 됩니다."
+    },
+    {
+        "instruction": "borg 백업 저장소에서 특정 디렉토리를 추출할 때 특정 파일 확장자를 제외하는 방법은 무엇인가요?",
+        "output": "`borg extract` 명령어를 사용하여 특정 디렉토리를 추출할 때, `--exclude` 옵션을 사용하면 특정 파일 확장자를 제외할 수 있습니다. 예를 들어, `*.ext` 파일을 제외하려면 다음과 같이 명령어를 입력합니다:\n\n`borg extract {{user}}@{{host}}:{{path/to/repo_directory}}::{{Monday}} {{path/to/target_directory}} --exclude '{{*.ext}}'`"
+    },
+    {
+        "instruction": "rvm을 사용하여 Ruby 버전을 설치하고 관리하는 방법에 대해 알려주세요.",
+        "output": "rvm을 사용하여 Ruby 버전을 설치하고 관리하는 방법은 다음과 같습니다.\n\n먼저, 원하는 버전의 Ruby를 설치하려면 `rvm install {{version(s)}}` 명령어를 사용합니다. 예를 들어, Ruby 2.7.2를 설치하려면 `rvm install 2.7.2`를 입력합니다.\n\n설치된 Ruby 버전을 확인하려면 `rvm list` 명령어를 사용합니다.\n\n특정 버전의 Ruby를 사용하려면 `rvm use {{version}}` 명령어를 사용합니다. 예를 들어, Ruby 2.7.2를 사용하려면 `rvm use 2.7.2`를 입력합니다.\n\n기본 Ruby 버전을 설정하려면 `rvm --default use {{version}}` 명령어를 사용합니다. 예를 들어, Ruby 2.7.2를 기본 버전으로 설정하려면 `rvm --default use 2.7.2`를 입력합니다.\n\nRuby 버전을 업그레이드하려면 `rvm upgrade {{current_version}} {{new_version}}` 명령어를 사용합니다. 예를 들어, Ruby 2.6.6을 2.7.2로 업그레이드하려면 `rvm upgrade 2.6.6 2.7.2`를 입력합니다.\n\nRuby 버전을 삭제하면서 소스 파일을 유지하려면 `rvm uninstall {{version}}` 명령어를 사용합니다. 예를 들어, Ruby 2.6.6을 삭제하면서 소스 파일을 유지하려면 `rvm uninstall 2.6.6`를 입력합니다.\n\nRuby 버전과 소스 파일을 모두 삭제하려면 `rvm remove {{version}}` 명령어를 사용합니다. 예를 들어, Ruby 2.6.6과 소스 파일을 모두 삭제하려면 `rvm remove 2.6.6`를 입력합니다.\n\n마지막으로, 운영체제에 맞는 특정 의존성을 확인하려면 `rvm requirements` 명령어를 사용합니다."
+    },
+    {
+        "instruction": "at 명령어를 사용하여 매주 월요일 자정에 특정 스크립트를 실행하려고 합니다. 어떻게 설정해야 할까요?",
+        "output": "at 명령어는 반복 작업을 지원하지 않기 때문에, cron을 사용하여 매주 월요일 자정에 특정 스크립트를 실행하는 것이 더 적합합니다. cron 설정 파일을 편집하여 다음과 같이 작성하면 됩니다:\n\n```\n0 0 * * 1 {{path/to/script.sh}}\n```\n\n이 설정은 매주 월요일 자정에 지정된 스크립트를 실행합니다."
+    },
+    {
+        "instruction": "fc-match 명령어를 사용하여 시스템에서 가장 잘 맞는 폰트를 찾는 방법을 알려주세요.",
+        "output": "`fc-match -s '{{DejaVu Serif}}'` 명령어를 사용하면 시스템에서 가장 잘 맞는 폰트를 정렬된 목록으로 반환할 수 있습니다."
+    },
+    {
+        "instruction": "DigitalOcean apps의 특정 app에 대한 로그를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`doctl apps logs {{app_id}}` 명령어를 사용하여 DigitalOcean apps의 특정 app에 대한 로그를 확인할 수 있습니다."
+    },
+    {
+        "instruction": "deno run --allow-net 옵션은 어떤 권한을 부여하나요?",
+        "output": "`--allow-net` 옵션은 네트워크 접근 권한을 부여합니다. 이 옵션을 사용하면 Deno 애플리케이션이 네트워크 요청을 수행할 수 있습니다."
+    },
+    {
+        "instruction": "새로운 `resume.json` 파일을 생성하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`resume init` 명령어를 사용하면 새로운 `resume.json` 파일을 생성할 수 있습니다."
+    },
+    {
+        "instruction": "runsvdir의 기본 디렉토리를 변경하려면 어떻게 해야 하나요?",
+        "output": "`runsvdir`의 기본 디렉토리를 변경하려면 `sudo runsvchdir {{path/to/directory}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "peerindex 명령어를 사용하여 모든 피어를 출력하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`peerindex {{master6.mrt}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "nix-store --gc 명령어를 실행했을 때 어떤 파일들이 삭제되나요?",
+        "output": "`nix-store --gc` 명령어를 실행하면 사용되지 않는 파일들, 즉 더 이상 어떤 패키지나 프로그램에서도 참조되지 않는 파일들이 삭제됩니다. 이를 통해 시스템의 디스크 공간을 정리할 수 있습니다."
+    },
+    {
+        "instruction": "현재 실행 중인 도커 컨테이너 목록을 보여주는 명령어는 무엇인가요?",
+        "output": "`docker ps` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "grip을 사용하여 현재 디렉토리의 `README` 파일을 특정 포트에서 서빙하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "grip과 특정 포트 번호를 함께 사용하여 현재 디렉토리의 `README` 파일을 서빙하려면 다음 명령어를 사용합니다:\n\n`grip {{port}}`"
+    },
+    {
+        "instruction": "bzgrep 명령어를 사용하여 bzip2 압축 파일 내에서 특정 패턴을 검색하려면 어떻게 해야 하나요?",
+        "output": "bzgrep 명령어를 사용하여 bzip2 압축 파일 내에서 특정 패턴을 검색하려면 다음과 같이 입력합니다:\n\n`bzgrep \"{{search_pattern}}\" {{path/to/file}}`"
+    },
+    {
+        "instruction": "gh workflow 명령어를 사용하여 특정 브랜치에서 특정 workflow의 YAML 정의를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`gh workflow view {{id|workflow_name|filename.yml}} --ref {{branch|tag_name}} --yaml` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "aws rds 인스턴스의 식별자를 변경하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`aws rds modify-db-instance --db-instance-identifier {{old_instance_identifier}} --new-db-instance-identifier {{new_instance_identifier}}` 명령어를 사용하여 AWS RDS 인스턴스의 식별자를 변경할 수 있습니다."
+    },
+    {
+        "instruction": "cs fetch 명령어를 사용하여 특정 버전의 jar 파일과 해당 소스, javadoc을 모두 가져오려면 어떻게 해야 하나요?",
+        "output": "`cs fetch --default=true --sources --javadoc {{group_id}}:{{artifact_id}}:{{artifact_version}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "Doxygen을 사용하여 기본 템플릿 설정 파일을 생성하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "Doxygen을 사용하여 기본 템플릿 설정 파일을 생성하려면 `doxygen -g` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "jar 파일의 내용을 상세하게 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`jar tvf {{path/to/file.jar}}` 명령어를 사용하면 jar 파일의 내용을 상세하게 확인할 수 있습니다."
+    },
+    {
+        "instruction": "lwp-request를 사용하여 HTTP 인증을 통해 파일을 업로드하려면 어떻게 해야 하나요?",
+        "output": "lwp-request를 사용하여 HTTP 인증을 통해 파일을 업로드하려면 다음과 같은 명령어를 사용하면 됩니다:\n\n`lwp-request -C {{username}}:{{password}} -m POST {{http://example.com/some/path}} < {{path/to/file}}`"
+    },
+    {
+        "instruction": "docsify init 명령어를 실행할 때 특정 디렉토리를 지정하지 않으면 어떤 일이 발생하나요?",
+        "output": "`docsify init` 명령어를 실행할 때 특정 디렉토리를 지정하지 않으면, 현재 디렉토리에 새로운 문서를 초기화합니다."
+    },
+    {
+        "instruction": "xml transform 명령어를 사용하여 XSL 스타일시트를 적용한 XML 문서를 변환하려고 합니다. 이 때, XPATH 파라미터와 리터럴 문자열 파라미터를 각각 하나씩 전달하려고 합니다. 이를 위해 어떤 명령어를 사용해야 하나요?",
+        "output": "`xml transform {{path/to/stylesheet.xsl}} -p \"{{Count='count(/xml/table/rec)'}}\" -s {{Text=\"Count=\"}} {{path/to/input.xml|URI}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "터미널에서 이미지를 출력할 때 24-bit color를 비활성화하려면 어떻게 해야 하나요?",
+        "output": "터미널에서 이미지를 출력할 때 24-bit color를 비활성화하려면 `catimg -t {{path/to/file}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "go version 명령어를 사용하여 현재 설치된 Go 버전을 확인할 수 있나요?",
+        "output": "네, `go version` 명령어를 사용하여 현재 설치된 Go 버전을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "tcsh를 사용하여 특정 스크립트의 문법 오류를 확인하려면 어떻게 해야 하나요?",
+        "output": "특정 스크립트의 문법 오류를 확인하려면 다음과 같이 명령어를 입력하면 됩니다:\n\n`tcsh -n {{path/to/script.tcsh}}`"
+    },
+    {
+        "instruction": "monodis를 사용하여 특정 어셈블리의 모든 메소드를 나열하는 명령어는 무엇인가요?",
+        "output": "`monodis --method {{path/to/assembly.exe}}`"
+    },
+    {
+        "instruction": "acme.sh를 사용하여 도메인 example.com과 www.example.com에 대해 standalone 모드로 인증서를 발급하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "acme.sh --issue --standalone --domain example.com --domain www.example.com"
+    },
+    {
+        "instruction": "Nyxt 브라우저에서 시스템 정보를 출력하는 명령어는 무엇인가요?",
+        "output": "Nyxt 브라우저에서 시스템 정보를 출력하는 명령어는 `nyxt --system-information`입니다."
+    },
+    {
+        "instruction": "rails 프로젝트를 새로 생성할 때 사용하는 명령어가 궁금합니다.",
+        "output": "새로운 rails 프로젝트를 생성할 때 사용하는 명령어는 다음과 같습니다:\n`rails new \"{{project_name}}\"`"
+    },
+    {
+        "instruction": "latexdiff 명령어를 사용하여 두 개의 LaTeX 파일 간의 차이점을 확인하려고 합니다.",
+        "output": "`latexdiff` 명령어를 사용하여 두 개의 LaTeX 파일 간의 차이점을 확인하려면 다음과 같은 명령어를 사용할 수 있습니다:\n\n- 차이점을 밑줄로 표시하려면:\n  ```\n  latexdiff {{old.tex}} {{new.tex}} > {{diff.tex}}\n  ```\n\n- 차이점을 굵게 표시하려면:\n  ```\n  latexdiff --type=BOLD {{old.tex}} {{new.tex}} > {{diff.tex}}\n  ```\n\n- 수식에서 작은 변경 사항을 추가된 그래픽과 삭제된 그래픽 모두로 표시하려면:\n  ```\n  latexdiff --math-markup=fine --graphics-markup=both {{old.tex}} {{new.tex}} > {{diff.tex}}\n  ```"
+    },
+    {
+        "instruction": "varnishlog를 사용해서 example.com 도메인으로 들어온 POST 요청만 실시간으로 확인할 수 있을까요?",
+        "output": "네, 가능합니다. 다음 명령어를 사용하여 example.com 도메인으로 들어온 POST 요청만 실시간으로 확인할 수 있습니다:\n\n`varnishlog -q 'ReqHeader eq \"Host: example.com\"' -q 'ReqMethod eq \"POST\"'`"
+    },
+    {
+        "instruction": "ani-cli를 사용하여 특정 애니메이션의 에피소드를 다운로드하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`ani-cli -d \"{{anime_name}}\"` 명령어를 사용하여 특정 애니메이션의 에피소드를 다운로드할 수 있습니다."
+    },
+    {
+        "instruction": "dokku 설치 후 보안 패치를 적용하려면 어떻게 해야 하나요?",
+        "output": "dokku를 설치한 후 보안 패치를 적용하려면, 먼저 dokku와 관련된 모든 플러그인과 의존성을 최신 상태로 유지하는 것이 중요합니다. 다음 단계를 따라 보안 패치를 적용할 수 있습니다:\n\n1. dokku 업데이트:\n   ```\n   sudo dokku update\n   ```\n\n2. 모든 플러그인 업데이트:\n   ```\n   sudo dokku plugin:update --all\n   ```\n\n3. 서버의 운영체제와 패키지도 최신 상태로 유지:\n   ```\n   sudo apt-get update\n   sudo apt-get upgrade\n   ```\n\n4. 필요한 경우, 특정 플러그인의 보안 패치 정보를 확인하고 업데이트:\n   - 예를 들어, MySQL 플러그인의 경우:\n     ```\n     sudo dokku plugin:update https://github.com/dokku/dokku-mysql.git\n     ```\n\n5. 방화벽 설정 확인 및 강화:\n   - 방화벽 규칙을 검토하고, 불필요한 포트를 열지 않도록 설정합니다.\n\n6. SSH 접근 보안 강화:\n   - SSH 키 기반 인증을 사용하고, 비밀번호 기반 인증을 비활성화합니다.\n   - `/etc/ssh/sshd_config` 파일에서 `PasswordAuthentication no`로 설정합니다.\n\n7. 정기적인 백업 및 복구 계획 수립:\n   - 데이터베이스와 애플리케이션 데이터를 정기적으로 백업하고, 복구 절차를 테스트합니다."
+    },
+    {
+        "instruction": "puppet agent를 실행할 때 --noop 옵션을 사용하면 어떤 일이 발생하나요?",
+        "output": "--noop 옵션을 사용하면 puppet agent가 dry-mode로 실행됩니다. 이 모드에서는 실제로 시스템에 변경을 적용하지 않고, 변경 사항이 있을 경우 어떤 변경이 이루어질지만 출력합니다."
+    },
+    {
+        "instruction": "ts-node를 사용하여 TypeScript 파일을 실행할 때, tsconfig.json 파일을 무시하고 실행하는 방법은 무엇인가요?",
+        "output": "`ts-node --skip-project {{path/to/file.ts}}` 명령어를 사용하면 tsconfig.json 파일을 무시하고 TypeScript 파일을 실행할 수 있습니다."
+    },
+    {
+        "instruction": "gcalcli를 처음 실행할 때 Google API 인증을 요구하나요?",
+        "output": "네, gcalcli를 처음 실행할 때 Google API authorization을 요구합니다."
+    },
+    {
+        "instruction": "vgrep을 사용하여 현재 디렉토리에서 특정 패턴을 검색하고 캐시에 저장하는 방법은 무엇인가요?",
+        "output": "현재 디렉토리에서 특정 패턴을 검색하고 캐시에 저장하려면 다음 명령어를 사용하세요:\n`vgrep {{search_pattern}}`"
+    },
+    {
+        "instruction": "kosmorro 명령어를 사용하여 서울의 위도와 경도를 입력하면 천문 데이터를 얻을 수 있나요?",
+        "output": "네, kosmorro 명령어를 사용하여 서울의 위도와 경도를 입력하면 천문 데이터를 얻을 수 있습니다. 예를 들어, 서울의 위도(37.5665)와 경도(126.9780)를 입력하여 천문 데이터를 얻으려면 다음과 같은 명령어를 사용할 수 있습니다:\n\n`kosmorro --latitude={{37.5665}} --longitude={{126.9780}}`"
+    },
+    {
+        "instruction": "설치 명령어에서 모든 프롬프트에 자동으로 \"yes\"를 입력하려면 어떻게 해야 하나요?",
+        "output": "`yes` 명령어를 사용하면 됩니다. 예를 들어, `apt-get` 명령어에서 모든 프롬프트에 자동으로 \"yes\"를 입력하려면 다음과 같이 입력하면 됩니다:\n\n`yes | sudo apt-get install {{program}}`"
+    },
+    {
+        "instruction": "valac --version 명령어를 실행했을 때 나타나는 버전 정보가 최신 버전인지 확인하려면 어떻게 해야 하나요?",
+        "output": "valac --version 명령어를 실행하여 나타나는 버전 정보를 확인한 후, 이 버전이 최신 버전인지 확인하려면 valadoc.org 사이트를 방문하여 최신 버전 정보를 비교하면 됩니다."
+    },
+    {
+        "instruction": "zmv 명령어를 사용하여 파일을 이동할 때 실제로 파일이 이동되지 않도록 미리 결과를 확인하는 방법은 무엇인가요?",
+        "output": "`zmv -n '{{(*).log}}' '{{$1.txt}}'` 명령어를 사용하면 실제로 파일이 이동되지 않고 결과를 미리 확인할 수 있습니다."
+    },
+    {
+        "instruction": "cargo test 명령어를 사용하여 특정 패키지의 테스트를 실행하려면 어떻게 해야 하나요?",
+        "output": "`cargo test --package {{package}}` 명령어를 사용하여 특정 패키지의 테스트를 실행할 수 있습니다."
+    },
+    {
+        "instruction": "tox를 사용하여 특정 환경에서 테스트를 실행하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`tox -e {{py36}}` 명령어를 사용하여 특정 환경에서 테스트를 실행할 수 있습니다."
+    },
+    {
+        "instruction": "ss-local 명령어를 사용하여 Shadowsocks 프록시를 실행할 때, 구체적인 예시를 포함한 명령어를 작성하는 방법을 알려주세요.",
+        "output": "Shadowsocks 프록시를 실행하기 위해 `ss-local` 명령어를 사용할 때, 다음과 같은 구체적인 예시를 포함한 명령어를 작성할 수 있습니다.\n\n1. 호스트, 서버 포트, 로컬 포트, 비밀번호, 암호화 방식을 지정하여 Shadowsocks 프록시를 실행하는 방법:\n```\nss-local -s example.com -p 8388 -l 1080 -k mypassword -m aes-256-gcm\n```\n\n2. 설정 파일을 지정하여 Shadowsocks 프록시를 실행하는 방법:\n```\nss-local -c /path/to/config/file.json\n```\n\n3. 플러그인을 사용하여 프록시 클라이언트를 실행하는 방법:\n```\nss-local --plugin v2ray-plugin --plugin-opts \"server;foo\"\n```\n\n4. TCP fast open을 활성화하여 프록시를 실행하는 방법:\n```\nss-local --fast-open -s example.com -p 8388 -l 1080 -k mypassword -m aes-256-gcm\n```"
+    },
+    {
+        "instruction": "GitHub pull request를 merge할 때 --delete-branch 옵션을 사용하면 어떤 일이 발생하나요?",
+        "output": "`--delete-branch` 옵션을 사용하면 pull request를 merge한 후, 해당 pull request와 연관된 브랜치가 로컬과 원격 저장소에서 모두 삭제됩니다."
+    },
+    {
+        "instruction": "Go 소스 파일을 컴파일할 때 데이터 레이스 감지 기능을 활성화하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`go build -race -o {{path/to/executable}} {{path/to/main/package}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "mkfile 명령어를 사용하여 10메가바이트 크기의 빈 파일을 생성하려면 어떻게 해야 하나요?",
+        "output": "`mkfile -n 10m path/to/file` 명령어를 사용하여 10메가바이트 크기의 빈 파일을 생성할 수 있습니다."
+    },
+    {
+        "instruction": "gops를 사용하여 현재 실행 중인 Go 프로세스의 메모리 통계를 확인하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`gops memstats {{pid|addr}}` 명령어를 사용하여 현재 실행 중인 Go 프로세스의 메모리 통계를 확인할 수 있습니다."
+    },
+    {
+        "instruction": "md-to-clip 명령어를 사용하여 tldr-pages 파일을 변환할 때, 특정 디렉토리에 저장하는 방법은 무엇인가요?",
+        "output": "`md-to-clip --output-directory {{path/to/directory}} {{path/to/page1.md path/to/page2.md ...}}` 명령어를 사용하여 tldr-pages 파일을 변환한 후 특정 디렉토리에 저장할 수 있습니다."
+    },
+    {
+        "instruction": "arduino-builder 도구를 사용하여 스케치를 컴파일할 때 디버그 레벨을 3으로 설정하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "arduino-builder -compile {{path/to/sketch.ino}} -debug-level 3"
+    },
+    {
+        "instruction": "SSH Agent를 시작하고 현재 셸에서 사용하려면 어떻게 해야 하나요?",
+        "output": "`eval $(ssh-agent)` 명령어를 사용하여 SSH Agent를 시작하고 현재 셸에서 사용할 수 있습니다."
+    },
+    {
+        "instruction": "kotlinc 명령어를 사용하여 특정 Kotlin 파일을 컴파일하고, 이를 자체 포함된 jar 파일로 만드는 방법은 무엇인가요?",
+        "output": "`kotlinc {{path/to/file.kt}} -include-runtime -d {{path/to/file.jar}}` 명령어를 사용하여 특정 Kotlin 파일을 컴파일하고, 이를 자체 포함된 jar 파일로 만들 수 있습니다."
+    },
+    {
+        "instruction": "streamlink를 사용하여 특정 URL에서 스트림을 추출하고 가능한 스트림 목록을 출력하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`streamlink {{example.com/stream}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "masscan을 사용하여 특정 IP 주소의 80번 포트를 스캔하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "masscan을 사용하여 특정 IP 주소의 80번 포트를 스캔하려면 다음 명령어를 사용해야 합니다:\n\n`masscan {{ip_address}} --ports {{80}}`"
+    },
+    {
+        "instruction": "ROPgadget 도구를 사용하여 바이너리 파일에서 ROP gadget을 찾는 방법을 알려주세요.",
+        "output": "ROPgadget 도구를 사용하여 바이너리 파일에서 ROP gadget을 찾으려면 다음 명령어를 사용하면 됩니다:\n`ROPgadget --binary {{path/to/binary}}`"
+    },
+    {
+        "instruction": "deluge-console에서 특정 토렌트의 정보를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`info {{torrent_id}}` 명령어를 사용하여 특정 토렌트의 정보를 확인할 수 있습니다."
+    },
+    {
+        "instruction": "git changelog 명령어를 사용하여 특정 태그 사이의 커밋 메시지를 예쁘게 포맷된 형태로 출력하려면 어떻게 해야 하나요?",
+        "output": "`git changelog --start-tag {{시작 태그}} --final-tag {{종료 태그}}` 명령어를 사용하면 됩니다. 예를 들어, 태그 `0.5.0`과 `1.0.0` 사이의 커밋 메시지를 예쁘게 포맷된 형태로 출력하려면 `git changelog --start-tag {{0.5.0}} --final-tag {{1.0.0}}`를 실행하면 됩니다."
+    },
+    {
+        "instruction": "glab mr merge 명령어를 사용하여 현재 브랜치와 연결된 merge request를 병합하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`glab mr merge` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "iverilog를 사용하여 경로가 다른 Verilog 라이브러리 파일을 사용해서 소스 파일을 컴파일하려면 어떻게 해야 하나요?",
+        "output": "`iverilog {{path/to/source.v}} -o {{path/to/executable}} -I{{path/to/library_directory}}` 명령어를 사용하여 경로가 다른 Verilog 라이브러리 파일을 사용해서 소스 파일을 컴파일할 수 있습니다."
+    },
+    {
+        "instruction": "Arduino Studio에서 특정 보드의 최신 버전을 설치하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "Arduino Studio에서 특정 보드의 최신 버전을 설치하려면 다음 명령어를 사용해야 합니다:\n\n`arduino --install-boards \"{{arduino:sam}}\"`"
+    },
+    {
+        "instruction": "calligrasheets를 실행할 때 특정 스프레드시트를 열려면 어떻게 해야 하나요?",
+        "output": "특정 스프레드시트를 열기 위해서는 다음과 같은 명령어를 사용하면 됩니다:\n`calligrasheets {{path/to/spreadsheet}}`"
+    },
+    {
+        "instruction": "gst-inspect-1.0을 사용해서 내 장치의 하드웨어 트랜스코딩 기능을 확인하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`gst-inspect-1.0 vaapi` 또는 `gst-inspect-1.0 nvcodec` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "로컬 환경에서 Azure Storage API 호환 서버를 실행할 때, 디버그 로그를 활성화하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "디버그 로그를 활성화하려면 다음 명령어를 사용하면 됩니다:\n`azurite {{-d|--debug}} {{path/to/debug.log}}`"
+    },
+    {
+        "instruction": "protoc 명령어를 사용하여 .proto 파일로부터 Python 코드를 생성하려고 합니다. 이를 위해 어떤 옵션을 사용해야 하나요?",
+        "output": "`protoc --python_out={{path/to/output_directory}} {{input_file.proto}}` 명령어를 사용하여 .proto 파일로부터 Python 코드를 생성할 수 있습니다."
+    },
+    {
+        "instruction": "특정 스토리지 계정에서 큐를 생성하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "특정 스토리지 계정에서 큐를 생성하려면 다음 명령어를 사용해야 합니다:\n`az storage queue create --account-name {{storage_account_name}} --name {{queue_name}} --metadata {{queue_metadata}}`"
+    },
+    {
+        "instruction": "파일을 읽기 전용 모드로 열려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`view {{path/to/file}}` 명령어를 사용하면 파일을 읽기 전용 모드로 열 수 있습니다."
+    },
+    {
+        "instruction": "`nixpkgs` 레지스트리를 현재 업스트림 저장소 버전으로 고정하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`nix registry pin {{nixpkgs}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "두 디렉토리를 비교할 때 특정 패턴에 맞는 파일을 제외하고 비교하려면 어떻게 해야 하나요?",
+        "output": "`diffoscope --exclude {{pattern}} {{path/to/directory1}} {{path/to/directory2}}` 명령어를 사용하여 두 디렉토리를 비교할 때 특정 패턴에 맞는 파일을 제외할 수 있습니다."
+    },
+    {
+        "instruction": "bedtools를 사용하여 두 개의 파일을 교차시키고 결과를 특정 파일에 저장하려고 합니다. 이 때, 시퀀스의 strand를 고려하여 교차시키는 명령어는 무엇인가요?",
+        "output": "`bedtools intersect -a {{path/to/file_1}} -b {{path/to/file_2}} -s > {{path/to/output_file}}`"
+    },
+    {
+        "instruction": "figlet 명령어를 사용하여 사용 가능한 폰트 목록을 확인하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "showfigfonts 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "mitmdump를 사용해서 저장된 트래픽 파일에서 POST 요청만 필터링하는 방법을 알려주세요.",
+        "output": "mitmdump -nr {{input_filename}} -w {{output_filename}} \"{{~m post}}\" 명령어를 사용하여 저장된 트래픽 파일에서 POST 요청만 필터링할 수 있습니다."
+    },
+    {
+        "instruction": "asdf를 사용하여 특정 패키지의 모든 버전을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`asdf list all {{name}}` 명령어를 사용하여 특정 패키지의 모든 버전을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "nkf 명령어를 사용해서 파일의 인코딩을 SHIFT_JIS로 변환하고 파일을 덮어쓰는 방법을 알려주세요.",
+        "output": "`nkf -s --overwrite {{path/to/file.txt}}` 명령어를 사용하면 파일의 인코딩을 SHIFT_JIS로 변환하고 파일을 덮어쓸 수 있습니다."
+    },
+    {
+        "instruction": "keychain --agents \"{{gpg,ssh}}\" 명령어를 사용하여 현재 실행 중인 ssh-agent와 gpg-agent를 확인하고 필요시 시작하는 방법을 알려주세요.",
+        "output": "`keychain --agents \"{{gpg,ssh}}\"` 명령어를 사용하여 현재 실행 중인 ssh-agent와 gpg-agent를 확인하고 필요시 시작하려면, 터미널에 해당 명령어를 입력하면 됩니다. 이 명령어는 ssh-agent와 gpg-agent가 실행 중인지 확인하고, 실행 중이지 않다면 자동으로 시작합니다."
+    },
+    {
+        "instruction": "redis-benchmark 명령어를 사용하여 특정 Redis 서버에 대해 set과 get 명령어를 포함한 벤치마크를 실행하려고 합니다. 이 때, 파이프라이닝을 16개의 명령어로 설정하고 총 100만 개의 요청을 보내려고 합니다. 이를 위한 명령어는 무엇인가요?",
+        "output": "`redis-benchmark -h {{host}} -p {{port}} -n {{1000000}} -t {{set,get}} -P {{16}}`"
+    },
+    {
+        "instruction": "gcc를 사용하여 여러 소스 파일을 컴파일하고 실행 파일로 생성하려면 어떻게 해야 하나요?",
+        "output": "여러 소스 파일을 컴파일하고 실행 파일로 생성하려면 다음과 같은 명령어를 사용하면 됩니다:\n\n`gcc {{path/to/source1.c path/to/source2.c ...}} -o {{path/to/output_executable}}`"
+    },
+    {
+        "instruction": "cake server를 실행할 때 기본 포트를 변경하려면 어떻게 해야 하나요?",
+        "output": "`cake server -p {{port_number}}` 명령어를 사용하여 기본 포트를 변경할 수 있습니다."
+    },
+    {
+        "instruction": "pngquant를 사용하여 특정 PNG 파일을 최대한 압축하고 결과를 새로운 파일로 저장하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`pngquant {{path/to/file.png}}`"
+    },
+    {
+        "instruction": "keep-header 명령어를 사용하여 파일의 첫 번째 줄을 유지한 채 나머지 줄을 정렬하려면 어떻게 해야 하나요?",
+        "output": "keep-header 명령어를 사용하여 파일의 첫 번째 줄을 유지한 채 나머지 줄을 정렬하려면 다음과 같이 입력하면 됩니다:\n\n`keep-header {{path/to/file}} -- sort`"
+    },
+    {
+        "instruction": "pueue pause 명령어를 사용하여 특정 그룹의 모든 작업을 일시 중지하고 새로운 작업이 시작되지 않도록 하려면 어떻게 해야 하나요?",
+        "output": "`pueue pause --group {{group_name}}` 명령어를 사용하여 특정 그룹의 모든 작업을 일시 중지하고 새로운 작업이 시작되지 않도록 할 수 있습니다."
+    },
+    {
+        "instruction": "ned를 사용하여 현재 디렉토리부터 대소문자를 구분하지 않고 검색하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "현재 디렉토리부터 대소문자를 구분하지 않고 검색하려면 다음 명령어를 사용하세요:\n\n`ned --ignore-case --recursive '{{^[dl]og}}' {{.}}`"
+    },
+    {
+        "instruction": "trivy를 사용하여 특정 이미지의 취약점을 스캔하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`trivy image {{image:tag}}` 명령어를 사용하여 특정 이미지의 취약점을 스캔할 수 있습니다."
+    },
+    {
+        "instruction": "mogrify 명령어를 사용하여 현재 디렉토리에 있는 모든 이미지 파일의 선명도를 두 배로 높이려면 어떻게 해야 하나요?",
+        "output": "`mogrify -modulate {{200,100,100}} {{*}}`"
+    },
+    {
+        "instruction": "kotlin 명령어를 사용해서 현재 설치된 Kotlin과 JVM의 버전을 확인하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`kotlin -version` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "gv2gxl 명령어를 사용하여 gv 형식의 그래프를 gxl 형식으로 변환하는 방법을 알려주세요.",
+        "output": "`gv2gxl -o {{output.gxl}} {{input.gv}}` 명령어를 사용하여 `gv` 형식의 그래프를 `gxl` 형식으로 변환할 수 있습니다. 예를 들어, `input.gv` 파일을 `output.gxl` 파일로 변환하려면 다음과 같이 입력합니다: `gv2gxl -o output.gxl input.gv`."
+    },
+    {
+        "instruction": "serverless 프로젝트를 생성하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "serverless 프로젝트를 생성하려면 `serverless create` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "platformio 명령어를 사용할 때 보안에 어떤 점을 주의해야 하나요?",
+        "output": "platformio 명령어를 사용할 때는 몇 가지 보안 사항을 주의해야 합니다. 첫째, 신뢰할 수 있는 소스에서만 platformio를 설치하고 업데이트해야 합니다. 둘째, 민감한 정보를 포함한 파일이나 디렉토리에 대한 접근 권한을 최소화해야 합니다. 셋째, 네트워크 통신이 필요한 경우, 암호화된 연결을 사용하여 데이터 유출을 방지해야 합니다. 마지막으로, platformio 환경 변수나 설정 파일에 민감한 정보를 저장하지 않도록 주의해야 합니다."
+    },
+    {
+        "instruction": "shopt 명령어를 사용하여 cdspell 옵션을 설정하려면 어떻게 해야 하나요?",
+        "output": "`shopt -s cdspell` 명령어를 사용하여 cdspell 옵션을 설정할 수 있습니다."
+    },
+    {
+        "instruction": "git check-mailmap을 사용해서 이메일 주소와 연관된 정식 이름을 찾을 수 있나요?",
+        "output": "네, git check-mailmap을 사용하여 이메일 주소와 연관된 정식 이름을 찾을 수 있습니다. 예를 들어, `git check-mailmap \"<{{email@example.com}}>\"` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "이 XML 문서가 DTD 스키마를 준수하고 있는지 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "XML 문서가 DTD 스키마를 준수하고 있는지 확인하려면 다음 명령어를 사용하면 됩니다:\n\n`xml validate --dtd {{path/to/schema.dtd}} {{path/to/input1.xml|URI}} {{input2.xml ...}}`"
+    },
+    {
+        "instruction": "fnm을 사용하여 현재 쉘에서 특정 버전의 Node.js를 사용하려면 어떻게 해야 하나요?",
+        "output": "`fnm use {{node_version}}` 명령어를 사용하여 현재 쉘에서 특정 버전의 Node.js를 사용할 수 있습니다."
+    },
+    {
+        "instruction": "csvsql을 사용하여 CSV 파일을 SQL 데이터베이스에 안전하게 가져오는 방법은 무엇인가요?",
+        "output": "csvsql을 사용하여 CSV 파일을 SQL 데이터베이스에 안전하게 가져오려면, 데이터베이스 연결 정보를 포함한 명령어를 사용합니다. 예를 들어, MySQL 데이터베이스에 데이터를 가져오려면 다음과 같은 명령어를 사용할 수 있습니다:\n\n`csvsql --insert --db \"mysql://user:password@host/database\" data.csv`\n\n이 명령어에서 `user`, `password`, `host`, `database`는 각각 데이터베이스의 사용자 이름, 비밀번호, 호스트, 데이터베이스 이름으로 대체되어야 합니다. 또한, `data.csv`는 가져올 CSV 파일의 경로입니다. 이 방법을 통해 데이터를 안전하게 데이터베이스에 가져올 수 있습니다."
+    },
+    {
+        "instruction": "az logout 명령어를 사용하여 특정 사용자를 로그아웃시키려면 어떻게 해야 하나요?",
+        "output": "특정 사용자를 로그아웃시키려면 `az logout` 명령어에 `--username` 옵션을 사용하여 사용자의 이메일 주소를 지정하면 됩니다. 예를 들어, `az logout --username alias@somedomain.com`과 같이 입력하면 됩니다."
+    },
+    {
+        "instruction": "yacas 세션에서 특정 스크립트를 실행한 후 결과를 출력하고 종료하는 방법은 무엇인가요?",
+        "output": "`yacas -p -c {{path/to/script1}} {{path/to/script2}}` 명령어를 사용하여 특정 스크립트를 실행한 후 결과를 출력하고 종료할 수 있습니다."
+    },
+    {
+        "instruction": "feh 명령어를 사용하여 이미지를 보안 위협으로부터 안전하게 볼 수 있는 방법은 무엇인가요?",
+        "output": "feh 명령어 자체는 이미지를 보안 위협으로부터 안전하게 보여주는 기능을 제공하지 않습니다. feh는 이미지 뷰어 유틸리티로, 이미지를 로컬에서 또는 URL을 통해 보여주는 기능을 제공합니다. 이미지를 안전하게 보려면, 이미지 파일이 신뢰할 수 있는 출처에서 왔는지 확인하고, 시스템에 최신 보안 패치가 적용되어 있는지 확인하는 것이 중요합니다. 또한, 이미지 파일을 열기 전에 바이러스 검사를 실행하는 것도 좋은 방법입니다."
+    },
+    {
+        "instruction": "쿠키 기반 인증을 사용하여 Linkedin Learning 강의를 다운로드하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "쿠키 기반 인증을 사용하여 Linkedin Learning 강의를 다운로드하려면 `llvd -c {{course-slug}} --cookies` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "steamcmd를 사용하여 익명으로 애플리케이션을 설치하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`steamcmd +login anonymous +app_update {{appid}} +quit` 명령어를 사용하여 익명으로 애플리케이션을 설치할 수 있습니다."
+    },
+    {
+        "instruction": "`skim`을 사용하여 특정 디렉토리 내의 모든 파일을 검색하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "특정 디렉토리 내의 모든 파일을 검색하려면 다음 명령어를 사용하세요:\n`find {{path/to/directory}} -type f | sk`"
+    },
+    {
+        "instruction": "tlmgr remove 명령어를 사용하여 패키지를 제거할 때, 백업 디렉토리를 지정하지 않으면 기본적으로 어디에 백업이 저장되나요?",
+        "output": "기본적으로 백업은 TeX Live 설치 디렉토리 아래의 `./tlpkg/backups`에 저장됩니다."
+    },
+    {
+        "instruction": "pdflatex 명령어를 사용하여 LaTeX 소스 파일을 PDF 문서로 컴파일하려고 합니다. 오류가 발생할 경우 컴파일을 중지하도록 설정하고 싶습니다. 어떻게 해야 하나요?",
+        "output": "`pdflatex -halt-on-error {{source.tex}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "특정 디자인으로 문자열에 박스를 그리는 방법을 알려주세요.",
+        "output": "특정 디자인으로 문자열에 박스를 그리려면 다음 명령어를 사용하세요:\n`echo \"{{string}}\" | boxes -d {{parchment}}`"
+    },
+    {
+        "instruction": "atoum --init 명령어를 실행했을 때 생성되는 파일의 위치는 어디인가요?",
+        "output": "`atoum --init` 명령어를 실행하면 현재 디렉토리에 `.atoum.php` 파일이 생성됩니다."
+    },
+    {
+        "instruction": "Redshift를 사용하여 낮에는 5700K, 밤에는 3600K의 색온도로 설정하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`redshift -t 5700:3600` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "tmsu를 사용하여 특정 파일에 여러 개의 태그를 추가하려면 어떻게 해야 하나요?",
+        "output": "`tmsu tag {{path/to/file.mp3}} {{music}} {{big-jazz}} {{mp3}}` 명령어를 사용하여 특정 파일에 여러 개의 태그를 추가할 수 있습니다."
+    },
+    {
+        "instruction": "ansible-galaxy를 사용하여 특정 역할을 설치하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`ansible-galaxy install {{username}}.{{role_name}}` 명령어를 사용하여 특정 역할을 설치할 수 있습니다."
+    },
+    {
+        "instruction": "ld 명령어를 사용하여 두 개의 오브젝트 파일을 링크하고 실행 파일을 생성하려고 합니다.",
+        "output": "`ld {{path/to/file1.o}} {{path/to/file2.o}} --output {{path/to/output_executable}}` 명령어를 사용하여 두 개의 오브젝트 파일을 링크하고 실행 파일을 생성할 수 있습니다."
+    },
+    {
+        "instruction": "mosquitto_pub 명령어를 사용하여 특정 토픽에 메시지를 발행할 때 QoS를 설정하는 방법은 무엇인가요?",
+        "output": "`mosquitto_pub` 명령어를 사용하여 특정 토픽에 메시지를 발행할 때 `QoS`를 설정하려면 `-q` 옵션을 사용합니다. 예를 들어, `QoS`를 1로 설정하려면 다음과 같이 명령어를 입력합니다:\n\n`mosquitto_pub -h {{호스트}} -t {{토픽}} -m {{메시지}} -q {{1}}`"
+    },
+    {
+        "instruction": "git cat-file 명령어를 사용하여 HEAD commit의 크기를 바이트 단위로 확인하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`git cat-file -s HEAD` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "openssl genrsa 명령어를 사용하여 2048비트 RSA 개인 키를 생성하고 이를 AES256으로 암호화하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "openssl genrsa -aes256 2048 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "elvish를 사용하여 특정 스크립트를 실행하려면 어떻게 해야 하나요?",
+        "output": "elvish를 사용하여 특정 스크립트를 실행하려면 다음과 같은 명령어를 사용하면 됩니다:\n`elvish {{path/to/script.elv}}`"
+    },
+    {
+        "instruction": "pm2로 현재 실행 중인 프로세스 목록을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`pm2 list` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "두 개의 다른 Git commit 간에 DVC 추적 파일의 변경 사항을 비교하려면 어떻게 해야 하나요?",
+        "output": "`dvc diff {{revision_b}} {{revision_a}}` 명령어를 사용하여 두 개의 다른 Git commit 간에 DVC 추적 파일의 변경 사항을 비교할 수 있습니다."
+    },
+    {
+        "instruction": "nimble search 명령어를 사용해서 보안 관련 패키지를 검색하려면 어떻게 해야하나요?",
+        "output": "`nimble search security` 명령어를 사용하여 보안 관련 패키지를 검색할 수 있습니다."
+    },
+    {
+        "instruction": "nextflow run 명령어에서 -resume 옵션을 사용하면 이전 실행 결과를 캐시로 사용할 수 있나요?",
+        "output": "네, `nextflow run` 명령어에서 `-resume` 옵션을 사용하면 이전 실행 결과를 캐시로 사용할 수 있습니다."
+    },
+    {
+        "instruction": "특정 파이썬 2 언어 기능만 파이썬 3으로 변환하는 방법을 알려주세요.",
+        "output": "`2to3 --write {{path/to/file.py}} --fix={{raw_input}} --fix={{print}}` 명령어를 사용하여 특정 파이썬 2 언어 기능만 파이썬 3으로 변환할 수 있습니다."
+    },
+    {
+        "instruction": "tts --list_models 명령어를 실행했을 때 나타나는 모델 목록에서 특정 모델의 정보를 조회하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "특정 모델의 정보를 조회하려면 `tts --model_info_by_idx` 또는 `tts --model_info_by_name` 명령어를 사용할 수 있습니다. 예를 들어, 모델 인덱스를 사용하여 조회하려면 `tts --model_info_by_idx {{model_type/model_query_idx}}`를 사용하고, 모델 이름을 사용하여 조회하려면 `tts --model_info_by_name {{model_type/language/dataset/model_name}}`를 사용합니다."
+    },
+    {
+        "instruction": "ect 명령어를 사용하여 특정 디렉토리 내의 모든 파일을 재귀적으로 압축하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`ect -recurse {{path/to/directory}}` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "tr 명령어를 사용해서 파일에서 특정 문자를 모두 삭제하는 방법을 알려주세요.",
+        "output": "`tr -d '{{input_characters}}' < {{path/to/file}}` 명령어를 사용하여 파일에서 특정 문자를 모두 삭제할 수 있습니다."
+    },
+    {
+        "instruction": "scan-build 명령어를 사용하여 현재 디렉토리의 프로젝트를 빌드하고 분석하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`scan-build make` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "scrapy startproject 명령어를 사용하여 프로젝트를 생성할 때 프로젝트 이름에 공백이 포함되면 어떻게 해야 하나요?",
+        "output": "프로젝트 이름에 공백이 포함되면 따옴표로 묶어서 사용하면 됩니다. 예를 들어, `scrapy startproject \"my project\"`와 같이 입력하면 됩니다."
+    },
+    {
+        "instruction": "dlv debug 명령어를 사용하여 현재 디렉토리의 메인 패키지를 디버깅하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`dlv debug` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "plantuml 명령어를 사용하여 특정 디렉토리 내의 모든 다이어그램을 렌더링하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "특정 디렉토리 내의 모든 다이어그램을 렌더링하려면 다음 명령어를 사용하면 됩니다:\n\n`plantuml {{path/to/diagrams}}`"
+    },
+    {
+        "instruction": "GitHub repository를 로컬에서 clone하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "GitHub repository를 로컬에서 clone하려면 `gh repo clone {{owner}}/{{repository}}` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "realpath 명령어를 사용하여 파일이나 디렉토리의 절대 경로를 표시하려면 어떻게 해야 하나요?",
+        "output": "`realpath {{path/to/file_or_directory}}` 명령어를 사용하여 파일이나 디렉토리의 절대 경로를 표시할 수 있습니다."
+    },
+    {
+        "instruction": "git archive 명령어를 사용하여 현재 HEAD의 내용을 tar 형식으로 압축하고, 이를 특정 디렉토리에 저장하려고 합니다. 이 때, 각 파일 앞에 특정 경로를 추가하여 아카이브 내에서 특정 디렉토리에 저장하고 싶습니다. 어떻게 해야 할까요?",
+        "output": "`git archive --output={{path/to/file.tar}} --prefix={{path/to/prepend}}/ HEAD` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "erl 명령어를 사용하여 원격 Erlang 노드에 연결하려고 합니다. 노드 이름은 \"mynode\"이고, 호스트 이름은 \"remotehost\"이며, 쿠키는 \"mycookie\"입니다. 어떻게 명령어를 작성해야 하나요?",
+        "output": "다음과 같이 명령어를 작성하면 됩니다:\n\n`erl -remsh mynode@remotehost -sname custom_shortname -hidden -setcookie mycookie`"
+    },
+    {
+        "instruction": "turbo run build 명령어를 실행할 때 보안에 취약한 점은 무엇인가요?",
+        "output": "`turbo run build` 명령어를 실행할 때 보안에 취약한 점은 여러 가지가 있습니다. 첫째, 빌드 과정에서 민감한 정보가 포함된 파일이 생성될 수 있으며, 이를 적절히 관리하지 않으면 정보 유출의 위험이 있습니다. 둘째, 외부 패키지나 라이브러리를 사용할 때 이들이 악성 코드를 포함하고 있을 경우, 빌드 과정에서 시스템이 손상될 수 있습니다. 셋째, 빌드 환경에서 사용되는 인증 정보나 API 키가 노출될 경우, 이를 통해 공격자가 시스템에 무단 접근할 수 있습니다. 따라서, 빌드 과정에서 보안을 강화하기 위해 민감한 정보를 암호화하고, 외부 패키지의 신뢰성을 검증하며, 인증 정보를 안전하게 관리하는 것이 중요합니다."
+    },
+    {
+        "instruction": "git standup 명령어를 사용하여 특정 사용자의 최근 10일간의 커밋을 확인하려면 어떻게 해야 하나요?",
+        "output": "`git standup -a {{name|email}} -d {{10}}` 명령어를 사용하여 특정 사용자의 최근 10일간의 커밋을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "\"npm-name\" 명령어를 사용해서 \"react-utils\"라는 패키지 이름이 npm 레지스트리에 사용 가능한지 확인하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`npm-name react-utils` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "nix search 명령어를 사용해서 nixpkgs에서 특정 패키지를 검색하는 방법을 알려주세요.",
+        "output": "`nix search {{nixpkgs}} {{search_term...}}` 명령어를 사용하여 nixpkgs에서 특정 패키지를 검색할 수 있습니다."
+    },
+    {
+        "instruction": "hg remove 명령어를 사용하여 특정 파일을 스테이징 영역에서 제거하려면 어떻게 해야 하나요?",
+        "output": "`hg remove {{path/to/file}}` 명령어를 사용하여 특정 파일을 스테이징 영역에서 제거할 수 있습니다."
+    },
+    {
+        "instruction": "AWS Batch에서 실행 중인 배치 작업 목록을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "실행 중인 배치 작업 목록을 확인하려면 다음 명령어를 사용하면 됩니다:\n\n`aws batch list-jobs --job-queue {{queue_name}}`"
+    },
+    {
+        "instruction": "gdal_contour 명령어를 사용하여 100미터 간격으로 등고선을 생성하고, 고도 속성을 \"ele\"로 지정하려면 어떻게 해야 하나요?",
+        "output": "`gdal_contour -a ele -i 100.0 path/to/input.tif path/to/output.gpkg` 명령어를 사용하여 100미터 간격으로 등고선을 생성하고, 고도 속성을 \"ele\"로 지정할 수 있습니다."
+    },
+    {
+        "instruction": "texdoc 명령어를 사용하여 LaTeX 패키지의 문서를 검색하려면 어떻게 해야 하나요?",
+        "output": "`texdoc {{search}}` 명령어를 사용하여 LaTeX 패키지의 문서를 검색할 수 있습니다. 예를 들어, \"geometry\" 패키지의 문서를 검색하려면 `texdoc geometry`를 입력하면 됩니다."
+    },
+    {
+        "instruction": "`dhclient`을 사용하여 `eth0` 인터페이스에서 IP 주소를 할당받으려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`sudo dhclient eth0` 명령어를 사용하여 `eth0` 인터페이스에서 IP 주소를 할당받을 수 있습니다."
+    },
+    {
+        "instruction": "현재 bash shell에서 명령어 히스토리를 삭제하고 히스토리 파일을 덮어쓰는 방법은 무엇인가요?",
+        "output": "현재 bash shell에서 명령어 히스토리를 삭제하고 히스토리 파일을 덮어쓰려면 `history -c`와 `history -w` 명령어를 함께 사용하면 됩니다."
+    },
+    {
+        "instruction": "PostgreSQL 서버를 재시작하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "PostgreSQL 서버를 재시작하려면 `pg_ctl -D {{data_directory}} restart` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "dvc config core.remote 명령어를 사용하여 현재 프로젝트의 기본 원격 저장소 이름을 확인할 수 있나요?",
+        "output": "네, dvc config core.remote 명령어를 사용하여 현재 프로젝트의 기본 원격 저장소 이름을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "wpa_supplicant를 사용해서 보호된 무선 네트워크에 연결하려면 어떻게 해야 하나요?",
+        "output": "wpa_supplicant를 사용해서 보호된 무선 네트워크에 연결하려면 다음 명령어를 사용하면 됩니다:\n`wpa_supplicant -i {{interface}} -c {{path/to/wpa_supplicant_conf.conf}}`"
+    },
+    {
+        "instruction": "ptargrep를 사용하여 특정 패턴을 포함한 파일을 tar 아카이브 내에서 검색하려면 어떻게 해야 하나요?",
+        "output": "ptargrep를 사용하여 tar 아카이브 내에서 특정 패턴을 포함한 파일을 검색하려면 다음과 같은 명령어를 사용하면 됩니다:\n\n`ptargrep \"{{search_pattern}}\" {{path/to/file}}`\n\n여기서 `{{search_pattern}}`은 검색하려는 패턴을, `{{path/to/file}}`은 tar 아카이브 파일의 경로를 의미합니다."
+    },
+    {
+        "instruction": "htop을 실행할 때 특정 사용자의 프로세스만 보여주려면 어떻게 해야 하나요?",
+        "output": "`htop --user {{username}}` 명령어를 사용하여 특정 사용자의 프로세스만 보여줄 수 있습니다."
+    },
+    {
+        "instruction": "brew bundle 명령어를 사용하여 현재 설치된 모든 패키지를 Brewfile로 저장하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`brew bundle dump` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "gh issue view 명령어를 사용하여 특정 이슈를 보는 방법을 알려주세요.",
+        "output": "`gh issue view {{issue_number}}` 명령어를 사용하여 특정 이슈를 볼 수 있습니다."
+    },
+    {
+        "instruction": "어떻게 하면 `typeset`을 사용하여 읽기 전용 변수를 선언할 수 있나요?",
+        "output": "`typeset -r {{variable}}=\"{{value}}\"`를 사용하여 읽기 전용 변수를 선언할 수 있습니다."
+    },
+    {
+        "instruction": "opusenc 명령어를 사용하여 스테레오 오디오를 최고 품질로 변환하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`opusenc --bitrate 512 {{path/to/input.wav}} {{path/to/output}}.opus` 명령어를 사용하여 스테레오 오디오를 최고 품질로 변환할 수 있습니다."
+    },
+    {
+        "instruction": "특정 제품의 marketplace 약관을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "특정 제품의 marketplace 약관을 확인하려면 다음 명령어를 사용해야 합니다:\n`az term show --product \"{{product_identifier}}\" --plan \"{{plan_identifier}}\" --publisher \"{{publisher_identifier}}\"`"
+    },
+    {
+        "instruction": "rtl_sdr 명령어를 사용하여 특정 주파수에서 데이터를 파일로 저장하려면 어떻게 해야 하나요?",
+        "output": "`rtl_sdr -f {{주파수}} {{파일 경로}}` 명령어를 사용하여 특정 주파수에서 데이터를 파일로 저장할 수 있습니다. 예를 들어, 100000000 Hz의 주파수에서 데이터를 저장하려면 `rtl_sdr -f 100000000 /path/to/file`와 같이 입력하면 됩니다."
+    },
+    {
+        "instruction": "WeeChat를 실행할 때 자동으로 서버에 연결되지 않도록 하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`weechat --no-connect` 옵션을 사용하면 WeeChat를 실행할 때 자동으로 서버에 연결되지 않습니다."
+    },
+    {
+        "instruction": "optipng를 사용하여 PNG 파일을 최적의 압축률로 압축하는 명령어는 무엇인가요?",
+        "output": "`optipng -o{{7}} {{path/to/file.png}}`"
+    },
+    {
+        "instruction": "특정 파일을 지정된 위치로 압축 해제하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`ouch decompress {{path/to/archive.tar.xz}} --dir {{path/to/directory}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "이 명령어는 어떤 보안 위협에 노출될 수 있나요?",
+        "output": "이 명령어는 여러 가지 보안 위협에 노출될 수 있습니다. 예를 들어, 입력 파일이나 입력 데이터가 신뢰할 수 없는 출처에서 온 경우, 악의적인 코드가 포함되어 있을 수 있습니다. 이는 Command Injection 공격을 통해 시스템에 악영향을 미칠 수 있습니다. 또한, 출력 파일의 경로가 잘못 설정되어 있을 경우, 중요한 시스템 파일이 덮어쓰여질 수 있습니다. 또한, 외부 명령어를 실행하는 과정에서 민감한 정보가 노출될 수 있습니다. 따라서, 입력 데이터와 출력 경로를 신중하게 검증하고, 최소 권한 원칙을 준수하는 것이 중요합니다."
+    },
+    {
+        "instruction": "popeye를 사용하여 특정 namespace의 잠재적인 문제를 스캔하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`popeye -n {{namespace}}` 명령어를 사용하여 특정 namespace의 잠재적인 문제를 스캔할 수 있습니다."
+    },
+    {
+        "instruction": "airmon-ng를 사용하여 특정 네트워크 인터페이스의 monitor mode를 비활성화하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`sudo airmon-ng stop {{wlan0mon}}` 명령어를 사용하여 특정 네트워크 인터페이스의 monitor mode를 비활성화할 수 있습니다."
+    },
+    {
+        "instruction": "b3sum 명령어를 사용하여 파일의 BLAKE3 checksum을 계산하는 방법은 무엇인가요?",
+        "output": "`b3sum {{path/to/file1 path/to/file2 ...}}` 명령어를 사용하여 파일의 BLAKE3 checksum을 계산할 수 있습니다."
+    },
+    {
+        "instruction": "doctl auth init --context 개발용 토큰을 입력하려면 어떻게 해야하나요?",
+        "output": "`doctl auth init --context 개발용 토큰` 명령어를 입력하면 프롬프트가 열리면서 API 토큰을 입력할 수 있습니다. 프롬프트에 API 토큰을 입력하고 엔터를 누르면 인증이 완료됩니다."
+    },
+    {
+        "instruction": "git push 명령어를 사용하여 원격 저장소에서 특정 브랜치를 삭제하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "원격 저장소에서 특정 브랜치를 삭제하려면 다음 명령어를 사용합니다:\n`git push {{remote_name}} --delete {{remote_branch}}`"
+    },
+    {
+        "instruction": "rustup update 명령어를 사용하여 설치된 모든 툴체인과 rustup을 업데이트하려면 어떻게 해야 하나요?",
+        "output": "`rustup update` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "npm install 명령어를 실행할 때 보안에 취약한 패키지를 설치하지 않도록 하려면 어떻게 해야 하나요?",
+        "output": "npm install 명령어를 실행할 때 보안에 취약한 패키지를 설치하지 않도록 하기 위해서는 몇 가지 방법을 사용할 수 있습니다.\n\n1. npm audit 명령어를 사용하여 프로젝트의 취약점을 검사합니다. 이 명령어는 설치된 패키지와 그 종속성에서 알려진 취약점을 찾아줍니다.\n   ```\n   npm audit\n   ```\n\n2. package.json 파일에서 패키지의 버전을 명시적으로 지정하여 최신 버전이 아닌 특정 버전을 설치하도록 합니다. 이렇게 하면 알려진 취약점이 있는 최신 버전을 피할 수 있습니다.\n   ```json\n   \"dependencies\": {\n     \"express\": \"4.17.1\"\n   }\n   ```\n\n3. npm config set fund false 명령어를 사용하여 패키지 설치 시 자금 요청을 비활성화합니다. 이는 패키지 유지보수자가 자금을 요청할 때 경고 메시지를 표시하지 않도록 합니다.\n   ```\n   npm config set fund false\n   ```\n\n4. npm ci 명령어를 사용하여 프로젝트를 설치합니다. 이 명령어는 package-lock.json 파일을 기반으로 패키지를 설치하므로, 일관된 환경을 유지할 수 있습니다.\n   ```\n   npm ci\n   ```\n\n5. 신뢰할 수 있는 출처에서만 패키지를 설치하도록 합니다. npm 레지스트리 외의 출처에서 패키지를 설치하지 않도록 주의합니다.\n\n이러한 방법들을 통해 npm install 명령어를 실행할 때 보안에 취약한 패키지를 설치하지 않도록 할 수 있습니다."
+    },
+    {
+        "instruction": "7zr를 사용해서 암호화된 아카이브를 생성하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "암호화된 아카이브를 생성하려면 다음 명령어를 사용하세요:\n\n`7zr a {{path/to/encrypted.7z}} -p{{password}} -mhe=on {{path/to/archive.7z}}`"
+    },
+    {
+        "instruction": "/usr 디렉토리의 파일 시스템 사용량을 duc를 사용하여 어떻게 시각화할 수 있나요?",
+        "output": "/usr 디렉토리의 파일 시스템 사용량을 duc를 사용하여 시각화하려면 다음 명령어를 사용하세요:\n\n`duc gui /usr`"
+    },
+    {
+        "instruction": "nix-shell을 사용하여 특정 nixpkgs 리비전에서 패키지를 로드하는 방법은 무엇인가요?",
+        "output": "`nix-shell --packages {{package1 package2 ...}} -I nixpkgs={{https://github.com/NixOS/nixpkgs/archive/nixpkgs_revision.tar.gz}}` 명령어를 사용하여 특정 nixpkgs 리비전에서 패키지를 로드할 수 있습니다."
+    },
+    {
+        "instruction": "현재 사용 중인 Ruby의 버전을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`ruby -v` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "waitress-serve를 사용하여 Python web app을 실행할 때, 보안상의 이유로 HTTPS 스키마를 설정해야 하나요?",
+        "output": "네, 보안상의 이유로 HTTPS 스키마를 설정하는 것이 좋습니다. HTTPS는 데이터를 암호화하여 전송하므로, 중간에서 데이터가 가로채질 위험을 줄여줍니다. waitress-serve를 사용할 때 HTTPS 스키마를 설정하려면 `--url-scheme=https` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "git var 명령어를 사용하여 GIT_EDITOR의 값을 출력하려면 어떻게 해야 하나요?",
+        "output": "`git var GIT_EDITOR` 명령어를 사용하여 GIT_EDITOR의 값을 출력할 수 있습니다."
+    },
+    {
+        "instruction": "xml pyx 명령어를 사용하여 XML 문서를 PYX 형식으로 변환하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "XML 문서를 PYX 형식으로 변환하려면 `xml pyx` 명령어를 사용하며, 입력 XML 파일의 경로와 출력 PYX 파일의 경로를 지정해야 합니다. 예를 들어, 다음과 같은 명령어를 사용할 수 있습니다:\n\n`xml pyx {{path/to/input.xml|URI}} > {{path/to/output.pyx}}`\n\n또는 `stdin`에서 XML 문서를 읽어 PYX 형식으로 변환하려면 다음과 같은 명령어를 사용할 수 있습니다:\n\n`cat {{path/to/input.xml}} | xml pyx > {{path/to/output.pyx}}`"
+    },
+    {
+        "instruction": "rubocop --show-cops 명령어를 실행했을 때, 나타나는 cop들 중에서 어떤 것이 보안과 관련이 있나요?",
+        "output": "`rubocop --show-cops` 명령어를 실행하면 다양한 cops 목록이 나타납니다. 이 중 보안과 관련된 cop들은 다음과 같습니다:\n\n- Security/Eval\n- Security/JSONLoad\n- Security/MarshalLoad\n- Security/Open\n- Security/YAMLLoad"
+    },
+    {
+        "instruction": "colordiff 명령어를 사용하여 두 파일을 비교할 때 대소문자 차이를 무시하고 싶습니다.",
+        "output": "`colordiff -i {{file1}} {{file2}}` 명령어를 사용하면 두 파일을 비교할 때 대소문자 차이를 무시할 수 있습니다."
+    },
+    {
+        "instruction": "Heroku 앱을 삭제하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "Heroku 앱을 삭제하려면 `heroku destroy --app {{app_name}}` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "fdupes 명령어를 사용하여 특정 디렉토리 내에서 중복 파일을 찾고, 이를 하드링크로 대체하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`fdupes -rH {{path/to/directory}}` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "Azure Functions Core Tools를 사용하여 로컬에서 새로운 함수를 생성하고 실행하는 방법은 무엇인가요?",
+        "output": "Azure Functions Core Tools를 사용하여 로컬에서 새로운 함수를 생성하려면 `func new` 명령어를 사용합니다. 그리고 함수를 실행하려면 `func start` 명령어를 사용합니다."
+    },
+    {
+        "instruction": "meteor 프로젝트에서 현재 사용 중인 패키지 목록을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`meteor list` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "ncc를 사용하여 Node.js 애플리케이션을 번들링하고 미니파이하는 방법은 무엇인가요?",
+        "output": "`ncc build --minify {{path/to/file.js}}` 명령어를 사용하여 Node.js 애플리케이션을 번들링하고 미니파이할 수 있습니다."
+    },
+    {
+        "instruction": "puppet apply 명령어를 사용하여 특정 모듈과 hiera 설정 파일을 지정하여 매니페스트를 적용하려면 어떻게 해야 하나요?",
+        "output": "특정 모듈과 hiera 설정 파일을 지정하여 매니페스트를 적용하려면 다음과 같은 명령어를 사용하면 됩니다:\n\n`puppet apply --modulepath {{path/to/directory}} --hiera_config {{path/to/file}} {{path/to/manifest}}`"
+    },
+    {
+        "instruction": "hping3을 사용하여 특정 IP 주소의 TCP 포트 80, 3000, 9000을 스캔하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`hping3 --scan {{80,3000,9000}} --syn {{ip_or_hostname}}`"
+    },
+    {
+        "instruction": "가상 머신을 클론할 때 새로운 이름, 저장소 경로, 그리고 MAC 주소를 자동으로 생성하는 방법은 무엇인가요?",
+        "output": "`virt-clone --original {{vm_name}} --auto-clone` 명령어를 사용하면 가상 머신을 클론하면서 새로운 이름, 저장소 경로, 그리고 MAC 주소를 자동으로 생성할 수 있습니다."
+    },
+    {
+        "instruction": "AWS S3 버킷 내의 특정 디렉토리에서 모든 파일을 재귀적으로 목록으로 출력하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`aws s3 ls --recursive {{bucket_name}}/{{path/to/directory/}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "fin project start 명령어를 실행했는데, 프로젝트가 시작되지 않습니다. 어떻게 해결해야 할까요?",
+        "output": "먼저, `fin project start` 명령어를 실행할 때 발생하는 오류 메시지를 확인해보세요. 오류 메시지에 따라 문제를 진단할 수 있습니다. 일반적으로 다음과 같은 사항들을 점검해볼 수 있습니다:\n\n1. Docksal이 올바르게 설치되었는지 확인합니다.\n2. 현재 디렉토리가 올바른 프로젝트 디렉토리인지 확인합니다.\n3. Docker가 정상적으로 실행되고 있는지 확인합니다.\n4. 필요한 환경 변수가 올바르게 설정되었는지 확인합니다.\n\n위의 사항들을 확인한 후에도 문제가 해결되지 않으면, Docksal의 공식 문서나 커뮤니티 포럼을 참고하거나, `fin logs` 명령어를 사용하여 더 자세한 로그를 확인해보세요."
+    },
+    {
+        "instruction": "id3tag 명령어를 사용해서 MP3 파일의 artist와 title tag를 설정하는 방법을 알려주세요.",
+        "output": "`id3tag --artist={{artist}} --title={{title}} {{path/to/file.mp3}}` 명령어를 사용하여 MP3 파일의 artist와 title tag를 설정할 수 있습니다."
+    },
+    {
+        "instruction": "Singularity 이미지를 Sylabs Cloud에서 다운로드하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`singularity pull --name {{image.sif}} {{library://godlovedc/funny/lolcow:latest}}` 명령어를 사용하여 Singularity 이미지를 Sylabs Cloud에서 다운로드할 수 있습니다."
+    },
+    {
+        "instruction": "ogr2ogr 명령어를 사용하여 Shapefile을 GeoPackage로 변환할 때 보안상 주의해야 할 점은 무엇인가요?",
+        "output": "ogr2ogr 명령어를 사용하여 Shapefile을 GeoPackage로 변환할 때는 다음과 같은 보안상의 사항에 주의해야 합니다:\n\n1. **입력 파일의 신뢰성 확인**: 변환할 Shapefile이 신뢰할 수 있는 출처에서 제공된 것인지 확인해야 합니다. 악의적인 파일은 시스템에 손상을 줄 수 있습니다.\n2. **출력 파일의 위치 설정**: 출력 파일의 경로를 안전한 디렉토리로 설정해야 합니다. 중요한 시스템 파일이 덮어쓰이지 않도록 주의해야 합니다.\n3. **권한 설정**: 명령어를 실행하는 사용자가 적절한 권한을 가지고 있는지 확인해야 합니다. 불필요한 권한을 부여하지 않도록 주의해야 합니다.\n4. **환경 변수 관리**: 환경 변수에 민감한 정보가 포함되지 않도록 주의해야 합니다. 예를 들어, 데이터베이스 연결 정보와 같은 민감한 정보는 환경 변수에 직접 노출되지 않도록 해야 합니다.\n5. **로그 파일 관리**: 명령어 실행 로그가 남지 않도록 설정하거나, 로그 파일이 안전한 위치에 저장되도록 해야 합니다. 로그 파일에 민감한 정보가 포함되지 않도록 주의해야 합니다.\n6. **소프트웨어 업데이트**: ogr2ogr 및 관련 라이브러리가 최신 버전으로 유지되도록 해야 합니다. 보안 패치가 적용된 최신 버전을 사용하는 것이 중요합니다."
+    },
+    {
+        "instruction": "gofmt 명령어를 사용하여 파일을 포맷팅하고 오류를 모두 출력하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`gofmt -e {{source.go}}` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "Kakoune에서 파일을 열고 normal mode로 진입하는 명령어는 무엇인가요?",
+        "output": "`kak {{path/to/file}}`"
+    },
+    {
+        "instruction": "brew로 설치된 모든 패키지를 업그레이드하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`brew upgrade` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "starship init bash 명령어를 실행했을 때 발생하는 보안 이슈는 무엇인가요?",
+        "output": "`starship init bash` 명령어를 실행할 때 발생할 수 있는 보안 이슈는 다음과 같습니다:\n\n1. **Shell Injection**: `starship` 명령어가 악의적인 코드를 포함하고 있을 경우, 이를 실행함으로써 시스템에 악성 코드가 주입될 수 있습니다.\n2. **Configuration File Tampering**: `starship` 설정 파일이 악의적으로 수정되었을 경우, 이를 통해 시스템 환경 변수나 기타 중요한 설정이 변경될 수 있습니다.\n3. **Unauthorized Access**: `starship` 명령어가 실행되는 동안 시스템의 환경 변수나 기타 민감한 정보가 노출될 수 있습니다. 이를 통해 공격자가 시스템에 무단 접근할 수 있는 정보를 얻을 수 있습니다.\n4. **Dependency Vulnerabilities**: `starship`이 의존하는 라이브러리나 패키지에 보안 취약점이 있을 경우, 이를 통해 시스템이 공격받을 수 있습니다.\n\n이러한 이유로 `starship`과 같은 외부 도구를 사용할 때는 신뢰할 수 있는 출처에서 다운로드하고, 최신 보안 패치를 적용하는 것이 중요합니다."
+    },
+    {
+        "instruction": "goimports 명령어를 사용하여 특정 Go 파일의 import 라인을 업데이트하고 결과를 파일에 직접 저장하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`goimports -w {{path/to/file}}.go` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "rr 도구를 사용하여 프로그램 실행을 녹화하고 재생하는 방법을 알려주세요.",
+        "output": "rr 도구를 사용하여 프로그램 실행을 녹화하려면 `rr record {{path/to/binary --arg1 --arg2}}` 명령어를 사용합니다. 최근에 녹화된 실행을 재생하려면 `rr replay` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "shiori를 사용하여 저장된 북마크를 브라우저에서 열려면 어떻게 해야 하나요?",
+        "output": "`shiori open {{bookmark_id}}` 명령어를 사용하여 저장된 북마크를 브라우저에서 열 수 있습니다."
+    },
+    {
+        "instruction": "wasm2wat 명령어를 사용하여 WebAssembly 바이너리 파일을 텍스트 형식으로 변환하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "wasm2wat 명령어를 사용하여 WebAssembly 바이너리 파일을 텍스트 형식으로 변환하려면 `-o` 옵션을 사용하여 출력 파일을 지정할 수 있습니다. 예를 들어, `wasm2wat {{file.wasm}} -o {{file.wat}}`와 같이 사용합니다."
+    },
+    {
+        "instruction": "sshfs를 사용하여 특정 포트를 통해 원격 디렉토리를 마운트하려면 어떻게 해야 하나요?",
+        "output": "`sshfs {{username}}@{{remote_host}}:{{remote_directory}} -p {{2222}}` 명령어를 사용하여 특정 포트를 통해 원격 디렉토리를 마운트할 수 있습니다."
+    },
+    {
+        "instruction": "MongoDB 셸에서 특정 데이터베이스에 연결하고 인증할 때 사용하는 명령어를 알려주세요.",
+        "output": "MongoDB 셸에서 특정 데이터베이스에 연결하고 인증할 때 사용하는 명령어는 다음과 같습니다:\n\n`mongo --host {{host}} --port {{port}} --username {{username}} --authenticationDatabase {{authdb_name}} {{db_name}}`"
+    },
+    {
+        "instruction": "autossh를 사용하여 로컬 포트를 리모트 포트로 포워딩하면서, 필요시 자동으로 재연결하는 방법은 무엇인가요?",
+        "output": "`autossh -M {{monitor_port}} -L {{local_port}}:localhost:{{remote_port}} {{user}}@{{host}}` 명령어를 사용하여 로컬 포트를 리모트 포트로 포워딩하면서 필요시 자동으로 재연결할 수 있습니다."
+    },
+    {
+        "instruction": "glow를 사용하여 GitHub 저장소의 README 파일을 보려면 어떻게 해야 하나요?",
+        "output": "GitHub 저장소의 README 파일을 보려면 다음 명령어를 사용하세요:\n\n`glow {{github.com/owner/repository}}`"
+    },
+    {
+        "instruction": "espanso status 명령어를 실행했을 때, 현재 설치된 패키지 목록을 확인할 수 있나요?",
+        "output": "`espanso status` 명령어를 실행하면 현재 설치된 패키지 목록을 확인할 수 없습니다. 이 명령어는 espanso의 현재 상태를 확인하는 데 사용됩니다. 설치된 패키지 목록을 확인하려면 `espanso list packages` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "git rebase 중에 문제가 발생해서 취소하고 싶은데, 이를 어떻게 할 수 있나요?",
+        "output": "git rebase 중에 문제가 발생해서 취소하고 싶다면, `git abort` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "특정 receipt rule set을 삭제하려고 하는데, 현재 활성화된 rule set을 삭제할 수 없다는 메시지가 나옵니다. 이 문제를 어떻게 해결할 수 있나요?",
+        "output": "현재 활성화된 receipt rule set을 삭제하려면, 먼저 다른 receipt rule set을 활성화한 후에 삭제해야 합니다. 활성화된 rule set을 변경하려면 `aws ses update-receipt-rule-set` 명령어를 사용하여 다른 rule set을 활성화한 후, 원하는 rule set을 삭제할 수 있습니다."
+    },
+    {
+        "instruction": "polybar를 시작할 때 설정 파일을 지정하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "polybar를 시작할 때 설정 파일을 지정하려면 다음 명령어를 사용하면 됩니다:\n`polybar --config={{path/to/config.ini}} {{bar_name}}`"
+    },
+    {
+        "instruction": "특정 대시보드의 상세 정보를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "특정 대시보드의 상세 정보를 확인하려면 `aws cloudwatch get-dashboard --dashboard-name {{dashboard_name}}` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "현재 호스트의 숫자 식별자를 16진수로 표시하려면 어떻게 해야 하나요?",
+        "output": "`hostid` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "bastet 게임을 실행하고 좌우로 움직이는 방법은 무엇인가요?",
+        "output": "bastet 게임을 실행하려면 `bastet` 명령어를 입력하면 됩니다. 좌우로 움직이려면 `Left arrow key`와 `Right arrow key`를 사용하면 됩니다."
+    },
+    {
+        "instruction": "xh를 사용하여 POST 요청을 보내고, JSON 본문에 이름과 나이를 포함하려면 어떻게 해야 하나요?",
+        "output": "xh post {{httpbin.org/post}} {{name=홍길동}} {{age:=30}} 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "git squash 명령어를 사용하여 현재 브랜치에서 특정 커밋부터 시작하는 모든 커밋을 하나로 통합하려면 어떻게 해야 하나요?",
+        "output": "현재 브랜치에서 특정 커밋부터 시작하는 모든 커밋을 하나로 통합하려면 다음 명령어를 사용하면 됩니다:\n\n`git squash {{commit}}`"
+    },
+    {
+        "instruction": "이 명령어가 실행되면 어떤 보안 위협이 발생할 수 있나요?",
+        "output": "이 명령어 자체는 단순히 텍스트를 출력하는 기능을 수행하므로 직접적인 보안 위협은 없습니다. 그러나 사용자가 입력하는 텍스트가 악의적인 스크립트나 명령어를 포함할 경우, 이를 통해 시스템에 대한 공격이 가능할 수 있습니다. 예를 들어, `--greeting` 옵션을 통해 악의적인 코드를 실행하도록 유도할 수 있습니다. 따라서 사용자 입력을 신뢰하지 않고, 입력 값을 적절히 검증하는 것이 중요합니다. 또한, 명령어 실행 권한을 최소화하여 잠재적인 피해를 줄이는 것이 좋습니다."
+    },
+    {
+        "instruction": "sshuttle을 사용하여 특정 서브넷을 제외한 모든 트래픽을 SSH 서버를 통해 터널링하려면 어떻게 해야 하나요?",
+        "output": "`sshuttle --remote={{username}}@{{sshserver}} {{0.0.0.0/0}} --exclude {{특정_서브넷}}` 명령어를 사용하여 특정 서브넷을 제외한 모든 트래픽을 SSH 서버를 통해 터널링할 수 있습니다."
+    },
+    {
+        "instruction": "tokei 명령어를 사용하여 특정 디렉토리와 그 하위 디렉토리에 있는 모든 코드에 대한 보고서를 얻으려면 어떻게 해야 하나요?",
+        "output": "특정 디렉토리와 그 하위 디렉토리에 있는 모든 코드에 대한 보고서를 얻으려면 다음 명령어를 사용하세요:\n\n`tokei {{path/to/directory}}`"
+    },
+    {
+        "instruction": "특정 HTTP 메서드를 사용하여 로드 테스트를 실행하려면 어떻게 해야 하나요?",
+        "output": "특정 HTTP 메서드를 사용하여 로드 테스트를 실행하려면 `--method` 옵션을 사용하여 원하는 HTTP 메서드를 지정하면 됩니다. 예를 들어, GET 메서드를 사용하여 로드 테스트를 실행하려면 다음과 같이 명령어를 입력합니다:\n\n`loadtest --method GET https://example.com`"
+    },
+    {
+        "instruction": "openscad 파일을 STL 형식으로 변환하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`openscad -o {{path/to/button.stl}} {{path/to/button.scad}}` 명령어를 사용하면 OpenSCAD 파일을 STL 형식으로 변환할 수 있습니다."
+    },
+    {
+        "instruction": "AWS CLI 설정에서 특정 프로파일의 구성 항목을 나열하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`aws configure list --profile {{profile_name}}` 명령어를 사용하여 특정 프로파일의 구성 항목을 나열할 수 있습니다."
+    },
+    {
+        "instruction": "dog를 사용하여 example.com의 A 레코드를 DNS over HTTPS를 통해 조회하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`dog example.com --https @https://cloudflare-dns.com/dns-query`를 사용하면 됩니다."
+    },
+    {
+        "instruction": "특정 명령어의 타입을 어떻게 확인할 수 있나요?",
+        "output": "`type {{command}}` 명령어를 사용하여 특정 명령어의 타입을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "lambo new 명령어를 실행할 때 보안 취약점이 있나요?",
+        "output": "`lambo new` 명령어 자체에는 특별한 보안 취약점이 없습니다. 그러나 명령어를 실행할 때 사용하는 환경이나 추가적인 설정에 따라 보안 문제가 발생할 수 있습니다. 예를 들어, 최신 버전의 Laravel과 Valet을 사용하지 않거나, 신뢰할 수 없는 소스에서 설치한 패키지를 사용할 경우 보안 문제가 발생할 수 있습니다. 또한, 명령어를 실행할 때 민감한 정보를 포함하지 않도록 주의해야 합니다."
+    },
+    {
+        "instruction": "현재 실행 중인 모든 컨테이너의 CPU 사용량 퍼센트를 포함한 리소스 사용 통계를 한 번에 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`docker stats --no-stream --format \"{{.Name}}:\\t{{.CPUPerc}}\"` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "git rename-branch 명령어를 사용하여 현재 브랜치의 이름을 변경하려면 어떻게 해야 하나요?",
+        "output": "현재 브랜치의 이름을 변경하려면 다음 명령어를 사용하면 됩니다:\n`git rename-branch {{new_branch_name}}`"
+    },
+    {
+        "instruction": "pueue send 명령어를 사용하여 실행 중인 작업에 입력을 보내는 방법은 무엇인가요?",
+        "output": "`pueue send {{task_id}} \"{{input}}\"` 명령어를 사용하여 실행 중인 작업에 입력을 보낼 수 있습니다."
+    },
+    {
+        "instruction": "nodenv를 사용하여 현재 디렉토리에서 사용 중인 Node.js 버전을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`nodenv version` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "bvnc 명령어를 사용해서 로컬 네트워크에서 VNC 서버를 찾는 방법을 알려주세요.",
+        "output": "bvnc 명령어를 사용하여 로컬 네트워크에서 VNC 서버를 찾으려면 다음과 같이 입력하면 됩니다:\n\n`bvnc`"
+    },
+    {
+        "instruction": "Google Drive의 특정 폴더에 로컬 파일을 업로드하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`gdrive upload -p {{id}} {{path/to/file_or_folder}}` 명령어를 사용하여 Google Drive의 특정 폴더에 로컬 파일을 업로드할 수 있습니다."
+    },
+    {
+        "instruction": "특정 파일에 설정된 모든 gitattribute 값을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`git check-attr --all {{path/to/file}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "xcaddy를 사용하여 특정 모듈을 포함한 Caddy 서버를 빌드하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`xcaddy build --with {{module_name}}` 명령어를 사용하여 특정 모듈을 포함한 Caddy 서버를 빌드할 수 있습니다."
+    },
+    {
+        "instruction": "slimrb 명령어를 사용하여 Slim 파일을 HTML로 변환하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "Slim 파일을 HTML로 변환하려면 `slimrb {{input.slim}} {{output.html}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "nix-env를 사용해서 설치된 모든 패키지를 확인하는 방법은 무엇인가요?",
+        "output": "`nix-env -q` 명령어를 사용하여 설치된 모든 패키지를 확인할 수 있습니다."
+    },
+    {
+        "instruction": "Keycloak에서 인증된 세션을 시작하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`kcadm.sh config credentials --server {{host}} --realm {{realm_name}} --user {{username}} --password {{password}}` 명령어를 사용하여 Keycloak에서 인증된 세션을 시작할 수 있습니다."
+    },
+    {
+        "instruction": "lpinfo 명령어를 사용해서 현재 연결된 프린터 목록을 확인하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`lpinfo -v` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "go run 명령어를 사용하여 Go 코드를 실행할 때, 보안상 어떤 점을 주의해야 하나요?",
+        "output": "`go run` 명령어를 사용하여 Go 코드를 실행할 때, 보안상 주의해야 할 몇 가지 사항이 있습니다.\n\n1. **신뢰할 수 없는 소스 코드 실행 금지**: 신뢰할 수 없는 소스에서 다운로드한 코드나 검증되지 않은 코드를 `go run`으로 실행하지 않도록 주의해야 합니다. 이러한 코드는 악성 코드를 포함할 수 있으며, 시스템에 피해를 줄 수 있습니다.\n\n2. **파일 경로 확인**: `go run` 명령어에 전달되는 파일 경로가 올바른지 확인해야 합니다. 잘못된 경로를 지정하면 의도치 않은 파일이 실행될 수 있습니다.\n\n3. **환경 변수 관리**: Go 프로그램이 실행되는 환경 변수를 주의 깊게 관리해야 합니다. 민감한 정보가 포함된 환경 변수가 노출되지 않도록 해야 합니다.\n\n4. **권한 설정**: Go 프로그램이 실행되는 사용자 권한을 최소화하여 실행해야 합니다. 루트 권한이나 관리자 권한으로 실행하는 것은 피해야 합니다.\n\n5. **의존성 관리**: 프로젝트의 의존성을 신뢰할 수 있는 소스에서만 다운로드하고, 정기적으로 업데이트하여 보안 취약점을 최소화해야 합니다.\n\n6. **코드 검토**: 실행하기 전에 코드를 검토하여 악성 코드나 보안 취약점이 없는지 확인해야 합니다.\n\n이러한 사항들을 준수하면 `go run` 명령어를 사용할 때 발생할 수 있는 보안 위협을 줄일 수 있습니다."
+    },
+    {
+        "instruction": "notmuch search --format=json --output=messages \"보안 관련 이메일\"",
+        "output": "이 명령어는 Notmuch를 사용하여 \"보안 관련 이메일\"이라는 검색어에 맞는 이메일 메시지를 JSON 형식으로 출력합니다."
+    },
+    {
+        "instruction": "shar 명령어를 사용하여 쉘 스크립트를 생성하려고 합니다. 이 스크립트는 실행되면 자신에게서 지정된 파일들을 추출할 수 있습니다. 이를 위해 어떤 명령어를 사용해야 하나요?",
+        "output": "shar 명령어를 사용하여 쉘 스크립트를 생성하려면 다음과 같은 명령어를 사용하면 됩니다:\n`shar {{path/to/file1 path/to/file2 ...}} > {{path/to/archive.sh}}`"
+    },
+    {
+        "instruction": "xml escape 명령어를 사용하여 문자열에서 special XML characters를 어떻게 escape 할 수 있나요?",
+        "output": "xml escape 명령어를 사용하여 문자열에서 special XML characters를 escape 하려면 다음과 같이 입력하면 됩니다:\n`xml escape \"{{<a1>}}\"`.\n또한, `stdin`에서 special XML characters를 escape 하려면 다음과 같이 입력하면 됩니다:\n`echo \"{{<a1>}}\" | xml escape`."
+    },
+    {
+        "instruction": "파일의 마지막 링크를 제거할 때 unlink 명령어를 사용하면 파일 내용도 함께 삭제되나요?",
+        "output": "네, unlink 명령어를 사용하여 파일의 마지막 링크를 제거하면 파일 내용도 함께 삭제됩니다."
+    },
+    {
+        "instruction": "git scp 명령어를 사용하여 특정 원격 저장소에 변경 사항이 있는 파일만 복사하려면 어떻게 해야 하나요?",
+        "output": "`git scp {{remote_name}}` 명령어를 사용하면 됩니다. 이 명령어는 현재 작업 트리에서 스테이지되지 않은 파일들을 특정 원격 저장소로 복사합니다."
+    },
+    {
+        "instruction": "Railway 프로젝트에 코드를 연결하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "Railway 프로젝트에 코드를 연결하려면 `railway login` 명령어를 사용하여 먼저 계정에 로그인한 후, `railway link {{projectId}}` 명령어를 사용하여 기존 프로젝트에 연결하거나 `railway init` 명령어를 사용하여 새로운 프로젝트를 생성할 수 있습니다."
+    },
+    {
+        "instruction": "nix store gc 명령어를 실행했을 때 어떤 파일들이 삭제되나요?",
+        "output": "`nix store gc` 명령어를 실행하면 사용되지 않는 파일들이 삭제됩니다. 이를 통해 디스크 공간 사용량을 줄일 수 있습니다."
+    },
+    {
+        "instruction": "django-admin startproject 명령어를 실행할 때 프로젝트 이름에 공백이 포함되면 어떻게 처리해야 하나요?",
+        "output": "프로젝트 이름에 공백이 포함되면 따옴표로 묶어서 처리하면 됩니다. 예를 들어, `django-admin startproject \"my project\"`와 같이 입력하면 됩니다."
+    },
+    {
+        "instruction": "htpasswd 파일에 새로운 사용자를 추가하거나 기존 사용자를 업데이트하는 명령어는 무엇인가요?",
+        "output": "`htpasswd {{path/to/file}} {{username}}`"
+    },
+    {
+        "instruction": "openssl ts 명령어를 사용하여 특정 파일의 SHA-512 타임스탬프 요청을 생성하고 이를 `file.tsq` 파일로 출력하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`openssl ts -query -data {{path/to/file}} -sha512 -out {{path/to/file.tsq}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "특정 웹사이트의 상태를 확인하려면 어떻게 해야 하나요?",
+        "output": "`is-up {{example.com}}` 명령어를 사용하여 특정 웹사이트의 상태를 확인할 수 있습니다."
+    },
+    {
+        "instruction": "mosquitto_passwd 명령어를 사용해서 새로운 사용자를 비밀번호 파일에 추가하려면 어떻게 해야 하나요?",
+        "output": "`mosquitto_passwd {{path/to/password_file}} {{username}}` 명령어를 사용하여 새로운 사용자를 비밀번호 파일에 추가할 수 있습니다. 이 명령어를 실행하면 비밀번호를 입력하라는 프롬프트가 나타납니다."
+    },
+    {
+        "instruction": "Maestral의 현재 상태를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "Maestral의 현재 상태를 확인하려면 `maestral status` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "rbt post 명령어를 사용하여 변경 사항을 Review Board에 올리려면 어떻게 해야 하나요?",
+        "output": "`rbt post {{change_number}}` 명령어를 사용하여 변경 사항을 Review Board에 올릴 수 있습니다. `{{change_number}}` 부분에는 올리려는 변경 사항의 번호를 입력하면 됩니다."
+    },
+    {
+        "instruction": "pdftotext를 사용하여 특정 페이지 범위를 텍스트로 변환하는 방법은 무엇인가요?",
+        "output": "`pdftotext`를 사용하여 특정 페이지 범위를 텍스트로 변환하려면 `-f` 옵션과 `-l` 옵션을 사용합니다. 예를 들어, `input.pdf` 파일의 2페이지부터 4페이지까지를 텍스트로 변환하여 `output.txt` 파일로 저장하려면 다음 명령어를 사용합니다:\n\n`pdftotext -f 2 -l 4 input.pdf output.txt`"
+    },
+    {
+        "instruction": "adb reverse 명령어를 사용하여 안드로이드 에뮬레이터와 연결된 디바이스의 모든 역방향 소켓 연결을 제거하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`adb reverse --remove-all` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "clockwork-cli 명령어를 사용하여 현재 프로젝트의 Clockwork 로그를 모니터링하려면 어떻게 해야 하나요?",
+        "output": "`clockwork-cli` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "특정 파일에서 테스트를 실행하고, 특정 키워드 표현식과 일치하는 테스트만 실행하며, 첫 번째 실패 시 종료하는 pytest 명령어는 무엇인가요?",
+        "output": "특정 파일에서 테스트를 실행하고, 특정 키워드 표현식과 일치하는 테스트만 실행하며, 첫 번째 실패 시 종료하는 pytest 명령어는 다음과 같습니다:\n\n`pytest {{path/to/test_file.py}} -k {{expression}} --exitfirst`"
+    },
+    {
+        "instruction": "Snyk을 사용하여 로컬 Docker 이미지에서 알려진 취약점을 검사하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`snyk test --docker {{docker_image}}` 명령어를 사용하여 로컬 Docker 이미지에서 알려진 취약점을 검사할 수 있습니다."
+    },
+    {
+        "instruction": "파일 경로에서 파일 이름만 보여주려면 어떻게 해야 하나요?",
+        "output": "`basename {{path/to/file}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "twurl을 사용하여 Twitter 계정에 접근하려면 어떻게 권한을 부여해야 하나요?",
+        "output": "twurl을 사용하여 Twitter 계정에 접근하려면 다음 명령어를 사용하여 권한을 부여해야 합니다:\n\n`twurl authorize --consumer-key {{twitter_api_key}} --consumer-secret {{twitter_api_secret}}`"
+    },
+    {
+        "instruction": "go fix 명령어를 사용하여 패키지를 업데이트할 때, 특정 패키지만 업데이트하고 싶은데 어떻게 해야 하나요?",
+        "output": "`go fix` 명령어를 사용하여 특정 패키지만 업데이트하려면, 다음과 같이 패키지 이름을 명시해야 합니다:\n\n`go fix {{packages}}`"
+    },
+    {
+        "instruction": "git fsck 명령어를 사용하여 현재 저장소의 모든 태그와 루트 노드를 함께 확인할 수 있나요?",
+        "output": "`git fsck --tags --root` 명령어를 사용하여 현재 저장소의 모든 태그와 루트 노드를 함께 확인할 수 있습니다."
+    },
+    {
+        "instruction": "stdbuf 명령어를 사용하여 stdout 버퍼를 라인 버퍼링으로 설정하려면 어떻게 해야 하나요?",
+        "output": "`stdbuf --output=L` 옵션을 사용하여 `stdout` 버퍼를 라인 버퍼링으로 설정할 수 있습니다. 예를 들어, `command`라는 명령어를 실행할 때 `stdout`을 라인 버퍼링으로 설정하려면 다음과 같이 입력하면 됩니다:\n\n`stdbuf --output=L command`"
+    },
+    {
+        "instruction": "czkawka-cli를 사용하여 특정 디렉토리에서 중복된 파일을 찾고 삭제하려고 합니다. 이 때, 삭제 방법으로 AEN을 사용하려고 합니다. 어떻게 명령어를 입력해야 하나요?",
+        "output": "czkawka-cli dup --directories {{path/to/directory1 path/to/directory2 ...}} --delete-method AEN"
+    },
+    {
+        "instruction": "watchexec를 사용하여 현재 디렉토리의 파일이 변경될 때 `python main.py`를 실행하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`watchexec {{python main.py}}`"
+    },
+    {
+        "instruction": "현재 실행 중인 백그라운드 작업을 포그라운드로 가져오려면 어떻게 해야 하나요?",
+        "output": "`fg %{{job_id}}` 명령어를 사용하여 특정 백그라운드 작업을 포그라운드로 가져올 수 있습니다."
+    },
+    {
+        "instruction": "clang-tidy를 사용하여 특정 소스 파일에 대해 cppcoreguidelines 체크만 실행하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`clang-tidy {{path/to/file.cpp}} -checks={{-*,cppcoreguidelines-*}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "mods --format \"{{이 코드에서 보안 취약점을 찾아주세요.}}\" < {{path/to/file}}",
+        "output": "이 코드에서 보안 취약점을 찾아주세요."
+    },
+    {
+        "instruction": "nth 명령어를 사용하여 해시를 파일에서 읽어와서 해시 타입을 알아내는 방법은 무엇인가요?",
+        "output": "`nth -f {{path/to/hashes}}` 명령어를 사용하여 파일에서 해시를 읽어와 해시 타입을 알아낼 수 있습니다."
+    },
+    {
+        "instruction": "Middleman 프로젝트를 새로 생성하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "Middleman 프로젝트를 새로 생성하려면 `middleman init \"{{project_name}}\"` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "phpstan으로 특정 디렉토리를 분석할 때 메모리 제한을 설정하는 방법은 무엇인가요?",
+        "output": "`phpstan analyse {{path/to/directory}} --memory-limit {{memory_limit}}` 명령어를 사용하여 특정 디렉토리를 분석할 때 메모리 제한을 설정할 수 있습니다."
+    },
+    {
+        "instruction": "mktemp 명령어를 사용하여 임시 파일을 생성하고 싶습니다. 이 파일의 절대 경로를 출력하는 방법은 무엇인가요?",
+        "output": "`mktemp` 명령어를 사용하여 임시 파일을 생성하고 그 파일의 절대 경로를 출력하려면 다음과 같이 입력하면 됩니다:\n`mktemp`"
+    },
+    {
+        "instruction": "파일을 100줄씩 나누려면 어떤 명령어를 사용해야 할까요?",
+        "output": "`split -l 100 path/to/file` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "offlineimap을 사용해서 특정 계정만 동기화하는 명령어가 궁금합니다.",
+        "output": "`offlineimap -a {{account}}` 명령어를 사용하여 특정 계정만 동기화할 수 있습니다."
+    },
+    {
+        "instruction": "fish 쉘에서 스크립트를 실행할 때 문법 오류를 확인하지 않고 바로 실행하려면 어떻게 해야 하나요?",
+        "output": "스크립트를 실행할 때 문법 오류를 확인하지 않고 바로 실행하려면 다음 명령어를 사용하면 됩니다:\n\n`fish {{path/to/script.fish}}`"
+    },
+    {
+        "instruction": "zellij로 새로운 세션을 시작하려면 어떻게 해야 하나요?",
+        "output": "새로운 세션을 시작하려면 `zellij --session {{name}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "ARP 테이블에서 특정 IP 주소의 엔트리를 삭제하려면 어떻게 해야 하나요?",
+        "output": "`arp -d {{address}}` 명령어를 사용하여 ARP 테이블에서 특정 IP 주소의 엔트리를 삭제할 수 있습니다."
+    },
+    {
+        "instruction": "ssh-agent가 실행 중인지 확인하고, 기본 ssh 키를 ssh-agent에 추가하는 방법은 무엇인가요?",
+        "output": "ssh-agent가 실행 중인지 확인하려면 `ps aux | grep ssh-agent` 명령어를 사용할 수 있습니다. 기본 ssh 키를 ssh-agent에 추가하려면 `ssh-add` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "babel을 사용하여 특정 파일을 ES5 문법으로 변환하고, 결과를 특정 파일로 출력하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "babel을 사용하여 특정 파일을 ES5 문법으로 변환하고, 결과를 특정 파일로 출력하려면 다음 명령어를 사용해야 합니다:\n\n`babel {{path/to/input_file}} --out-file {{path/to/output_file}}`"
+    },
+    {
+        "instruction": "compgen 명령어를 사용해서 현재 쉘에서 사용 가능한 모든 함수를 출력하는 방법은 무엇인가요?",
+        "output": "`compgen -A function` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "unar 명령어를 사용하여 현재 디렉토리에 있는 압축 파일을 강제로 덮어쓰며 추출하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`unar -f {{archive}}` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "7za를 사용하여 기존 아카이브를 암호화하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "기존 아카이브를 암호화하려면 다음 명령어를 사용하세요:\n\n`7za a {{path/to/encrypted.7z}} -p{{password}} -mhe={{on}} {{path/to/archive.7z}}`"
+    },
+    {
+        "instruction": "ngrok을 사용해서 로컬에서 실행 중인 HTTP 서비스를 80번 포트로 노출시키려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`ngrok http {{80}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "phan --init --init-level 3을 실행했는데, 보안 취약점이 있는지 확인할 수 있나요?",
+        "output": "`phan --init --init-level 3` 명령어는 Phan의 초기 설정 파일을 생성하는 데 사용됩니다. 이 명령어는 코드의 보안 취약점을 직접적으로 확인하는 것이 아니라, Phan 도구를 초기화하고 설정 파일을 생성하는 역할을 합니다. 보안 취약점을 확인하려면 초기화 후에 `phan` 명령어를 실행하여 코드를 분석해야 합니다. 예를 들어, `phan` 명령어를 사용하여 현재 디렉토리를 분석할 수 있습니다."
+    },
+    {
+        "instruction": "git diff 명령어를 사용하여 특정 파일의 변경 사항을 두 브랜치 간에 비교하려면 어떻게 해야 하나요?",
+        "output": "`git diff {{branch_1}}..{{branch_2}} [--] {{path/to/file}}` 명령어를 사용하여 특정 파일의 변경 사항을 두 브랜치 간에 비교할 수 있습니다."
+    },
+    {
+        "instruction": "특정 remote의 URL을 변경하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`git remote set-url` 명령어를 사용하여 특정 remote의 URL을 변경할 수 있습니다. 예를 들어, `git remote set-url {{remote_name}} {{new_url}}`와 같이 입력하면 됩니다."
+    },
+    {
+        "instruction": "파일을 복사하고 속성을 설정하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`install` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "새로운 조직을 생성하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`pio org create {{organization_name}}` 명령어를 사용하여 새로운 조직을 생성할 수 있습니다."
+    },
+    {
+        "instruction": "jadx를 사용해서 Dex 파일을 특정 디렉토리에 디컴파일하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "jadx --output-dir {{path/to/directory}} {{path/to/file}} 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "gdal2tiles.py를 사용하여 레스터 데이터셋의 특정 줌 레벨에 대한 TMS 타일을 생성하려면 어떻게 해야 하나요?",
+        "output": "`gdal2tiles.py --zoom={{원하는 줌 레벨}} {{레스터 데이터셋 경로}} {{출력 디렉토리 경로}}` 명령어를 사용하여 특정 줌 레벨에 대한 TMS 타일을 생성할 수 있습니다."
+    },
+    {
+        "instruction": "HashiCorp Vault와 상호작용하여 새로운 2048-bit SSH 키 쌍을 생성하고 저장하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`safe ssh 2048 {{path/to/secret}}` 명령어를 사용하여 새로운 2048-bit SSH 키 쌍을 생성하고 저장할 수 있습니다."
+    },
+    {
+        "instruction": "pueue reset 명령어를 사용하여 모든 작업을 종료하고 로그, 상태, 그룹, 작업 ID를 모두 제거하려면 어떻게 해야 하나요?",
+        "output": "`pueue reset` 명령어를 사용하여 모든 작업을 종료하고 로그, 상태, 그룹, 작업 ID를 모두 제거할 수 있습니다."
+    },
+    {
+        "instruction": "특정 컨테이너의 메모리 제한을 512메가바이트로 업데이트하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`docker update --memory 512M {{container_name}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "github-label-sync 명령어를 사용하여 GitHub 레포지토리의 라벨을 동기화하려고 합니다. 이 때, 특정 labels JSON 파일을 사용하여 라벨을 동기화하고, 실제로 라벨을 변경하지 않고 드라이 런만 수행하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`github-label-sync --access-token {{token}} --labels {{url|path/to/json_file}} --dry-run {{repository_name}}` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "pastel 명령어를 사용하여 RGB 색상 코드를 HSL 형식으로 변환하려면 어떻게 해야 하나요?",
+        "output": "pastel format {{hsl}} {{ff8000}} 명령어를 사용하여 RGB 색상 코드를 HSL 형식으로 변환할 수 있습니다."
+    },
+    {
+        "instruction": "nix run 명령어를 사용하여 원격 저장소에서 특정 태그를 지정해서 애플리케이션을 실행하려면 어떻게 해야 하나요?",
+        "output": "원격 저장소에서 특정 태그를 지정해서 애플리케이션을 실행하려면 다음과 같은 명령어를 사용하면 됩니다:\n\n`nix run {{remote_name}}:{{owner}}/{{repo}}/{{reference}}`\n\n여기서 `{{remote_name}}`은 원격 저장소의 이름, `{{owner}}`는 저장소의 소유자, `{{repo}}`는 저장소의 이름, `{{reference}}`는 특정 태그, 리비전 또는 브랜치를 의미합니다."
+    },
+    {
+        "instruction": "gyb 명령어를 사용하여 내 Gmail 계정에서 중요하거나 별표가 있는 이메일만 백업하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`gyb --email {{email@gmail.com}} --search \"{{is:important OR is:starred}}\"` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "현재 실행 중인 모든 docker container의 로그를 실시간으로 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "현재 실행 중인 모든 docker container의 로그를 실시간으로 확인하려면 `docker logs -f {{container_name}}` 명령어를 사용합니다. 모든 컨테이너의 로그를 확인하려면 각 컨테이너의 이름을 순차적으로 입력해야 합니다."
+    },
+    {
+        "instruction": "astronomer 도구를 사용하여 GitHub 프로젝트에서 봇 계정의 비정상적인 스타를 탐지하려면 어떻게 해야 하나요?",
+        "output": "GitHub 프로젝트에서 봇 계정의 비정상적인 스타를 탐지하려면 `astronomer` 도구를 사용하여 다음 명령어를 실행하면 됩니다:\n\n`astronomer {{tldr-pages/tldr-node-client}}`\n\n추가로, 최대 스타 수를 지정하거나 비교 보고서를 포함하려면 다음과 같은 옵션을 사용할 수 있습니다:\n\n- 최대 스타 수 지정:\n`astronomer {{tldr-pages/tldr-node-client}} --stars {{50}}`\n\n- 비교 보고서 포함:\n`astronomer {{tldr-pages/tldr-node-client}} --verbose`"
+    },
+    {
+        "instruction": "tmuxinator를 사용하여 새로운 프로젝트를 생성하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`tmuxinator new {{project}}` 명령어를 사용하여 새로운 프로젝트를 생성할 수 있습니다."
+    },
+    {
+        "instruction": "이미지의 포맷과 자세한 특성을 알고 싶은데, 어떤 명령어를 사용해야 하나요?",
+        "output": "`identify -verbose {{path/to/image}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "tac 명령어를 사용하여 특정 파일의 내용을 역순으로 출력하려면 어떻게 해야 하나요?",
+        "output": "`tac {{path/to/file}}` 명령어를 사용하여 특정 파일의 내용을 역순으로 출력할 수 있습니다."
+    },
+    {
+        "instruction": "특정 큐에서 모든 메시지를 삭제하려면 어떻게 해야 하나요?",
+        "output": "특정 큐에서 모든 메시지를 삭제하려면 다음 명령어를 사용하면 됩니다:\n\n`aws sqs purge-queue --queue-url https://sqs.{{region}}.amazonaws.com/{{queue_name}}`"
+    },
+    {
+        "instruction": "theHarvester를 사용하여 특정 도메인에 대한 정보를 Google과 Bing에서 수집하고, 결과를 XML 형식으로 파일에 저장하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "theHarvester --domain {{domain_name}} --source {{google,bing}} --file {{output_file_name}}.xml"
+    },
+    {
+        "instruction": "nix develop 명령어를 사용하여 현재 디렉토리에서 기본 패키지의 개발 셸을 시작하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "현재 디렉토리에서 기본 패키지의 개발 셸을 시작하려면 `nix develop` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "wpaclean 명령어를 사용하여 캡처 파일에서 4-way handshake와 beacon만 추출하는 방법을 알려주세요.",
+        "output": "wpaclean 명령어를 사용하여 캡처 파일에서 4-way handshake와 beacon만 추출하려면 다음과 같은 명령어를 사용합니다:\n\n`wpaclean {{path/to/result.cap}} {{path/to/capture.cap}}`\n\n여기서 `{{path/to/result.cap}}`는 결과를 저장할 파일 경로이고, `{{path/to/capture.cap}}`는 원본 캡처 파일의 경로입니다."
+    },
+    {
+        "instruction": "PlatformIO 프로젝트에서 특정 환경의 모든 타겟을 실행하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`pio run --environment {{environment}}` 명령어를 사용하여 특정 환경의 모든 타겟을 실행할 수 있습니다."
+    },
+    {
+        "instruction": "Hugo로 새로운 사이트를 생성하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`hugo new site {{path/to/site}}` 명령어를 사용하여 Hugo로 새로운 사이트를 생성할 수 있습니다."
+    },
+    {
+        "instruction": "lerna init 명령어를 실행했을 때 생성되는 파일들 중에서 보안에 영향을 미칠 수 있는 파일은 무엇인가요?",
+        "output": "`lerna init` 명령어를 실행했을 때 생성되는 파일들 중에서 보안에 영향을 미칠 수 있는 파일은 `package.json`입니다. 이 파일에는 프로젝트의 의존성과 스크립트가 포함되어 있으며, 악의적인 패키지가 포함될 경우 보안에 심각한 문제를 일으킬 수 있습니다."
+    },
+    {
+        "instruction": "cmctl을 사용하여 my-certificate라는 이름의 certificate의 상태를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`cmctl status certificate my-certificate`를 사용하여 my-certificate라는 이름의 certificate의 상태를 확인할 수 있습니다."
+    },
+    {
+        "instruction": "k8s-unused-secret-detector 도구를 사용해서 특정 namespace에서 사용되지 않는 secret을 삭제하려면 어떻게 해야 하나요?",
+        "output": "특정 namespace에서 사용되지 않는 secret을 삭제하려면 다음 명령어를 사용하세요:\n\n`k8s-unused-secret-detector -n {{namespace}} | kubectl delete secret -n {{namespace}}`"
+    },
+    {
+        "instruction": "소스 파일에서 바이너리를 생성하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "소스 파일에서 바이너리를 생성하려면 `ocamlc {{path/to/source_file.ml}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "droplet을 생성할 때 사용하는 os_image에 대해 설명해주세요.",
+        "output": "droplet을 생성할 때 사용하는 os_image는 생성할 droplet에 설치될 운영체제 이미지를 의미합니다.\n    이 이미지는 DigitalOcean에서 제공하는 다양한 운영체제 중 하나를 선택할 수 있으며, 예를 들어 Ubuntu, CentOS, Debian 등이 있습니다.\n    선택한 이미지는 droplet이 생성된 후 해당 운영체제로 부팅되어 사용자가 원하는 소프트웨어를 설치하고 구성할 수 있게 됩니다."
+    },
+    {
+        "instruction": "rgpt 명령어를 사용하여 특정 파일의 코드를 davinci 모델을 이용해 리뷰받고, 최대 300개의 GPT3 토큰을 사용하며, JSON 형식으로 출력받으려면 어떻게 해야하나요?",
+        "output": "```\nrgpt --model davinci --max 300 --json --i \"$(git diff {{path/to/file}})\"\n```"
+    },
+    {
+        "instruction": "example.com에서 지원하는 SSL/TLS 프로토콜과 암호 알고리즘을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`sslscan example.com` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "이 드라이브의 실제 용량을 테스트하려면 f3write 명령어를 어떻게 사용해야 하나요?",
+        "output": "이 드라이브의 실제 용량을 테스트하려면 다음과 같이 `f3write` 명령어를 사용하면 됩니다:\n\n`f3write {{path/to/mount_point}}`"
+    },
+    {
+        "instruction": "screen 세션을 시작하고 명령어를 실행한 후 로그를 남기려면 어떻게 해야 하나요?",
+        "output": "새로운 데몬을 시작하고 로그를 남기려면 `screen -dmLS {{session_name}} {{command}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "특정 패키지의 Elasticsearch 인덱스를 초기화하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`cradle elastic flush {{package}}` 명령어를 사용하여 특정 패키지의 Elasticsearch 인덱스를 초기화할 수 있습니다."
+    },
+    {
+        "instruction": "local 변수를 선언할 때 보안상 주의해야 할 점은 무엇인가요?",
+        "output": "local 변수를 선언할 때 보안상 주의해야 할 점은 다음과 같습니다:\n\n1. **민감한 정보 노출 방지**: local 변수에 민감한 정보를 저장할 때는 특히 주의해야 합니다. 변수 이름과 값이 스크립트 내에서 노출되지 않도록 해야 합니다.\n2. **변수 범위 제한**: local 변수는 함수 내에서만 유효하도록 선언해야 합니다. 전역 변수와 혼동되지 않도록 변수 범위를 명확히 해야 합니다.\n3. **읽기 전용 변수 사용**: 변경되지 않아야 하는 값은 `local -r`을 사용하여 읽기 전용 변수로 선언하는 것이 좋습니다. 이를 통해 실수로 변수 값이 변경되는 것을 방지할 수 있습니다.\n4. **입력 검증**: 외부 입력을 변수에 할당할 때는 반드시 입력 검증을 수행해야 합니다. 이를 통해 악의적인 입력으로부터 보호할 수 있습니다.\n5. **환경 변수 사용 제한**: 환경 변수를 사용할 때는 필요한 경우에만 사용하고, 그 외에는 local 변수를 사용하는 것이 좋습니다. 환경 변수는 다른 프로세스에서도 접근 가능하므로 보안 위협이 될 수 있습니다."
+    },
+    {
+        "instruction": "git secret으로 특정 파일을 등록하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`git secret add {{path/to/file}}` 명령어를 사용하여 특정 파일을 등록할 수 있습니다."
+    },
+    {
+        "instruction": "VirtualBox의 모든 가상 머신을 나열하는 명령어는 무엇인가요?",
+        "output": "VirtualBox의 모든 가상 머신을 나열하는 명령어는 `VBoxManage list vms`입니다."
+    },
+    {
+        "instruction": "kustomize를 사용하여 현재 디렉토리에서 Kubernetes 리소스를 자동으로 검색하고 kustomization 파일에 추가하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`kustomize create --autodetect` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "openconnect 명령어를 사용하여 VPN 서버에 연결할 때, 배경으로 실행하는 방법은 무엇인가요?",
+        "output": "openconnect 명령어를 사용하여 VPN 서버에 연결할 때, 배경으로 실행하는 방법은 `openconnect --background {{vpn.example.org}}`를 사용하면 됩니다."
+    },
+    {
+        "instruction": "셸 스크립트에서 case 문을 사용하여 변수를 문자열과 비교하는 방법은 무엇인가요?",
+        "output": "셸 스크립트에서 `case` 문을 사용하여 변수를 문자열과 비교하려면 다음과 같은 구문을 사용합니다:\n\n```bash\ncase {{$tocount}} in\n  {{words}})\n    {{wc -w README}}\n    ;;\n  {{lines}})\n    {{wc -l README}}\n    ;;\nesac\n```\n\n또한, 패턴을 결합하거나 기본 패턴을 사용할 수도 있습니다:\n\n```bash\ncase {{$tocount}} in\n  {{[wW]|words}})\n    {{wc -w README}}\n    ;;\n  {{[lL]|lines}})\n    {{wc -l README}}\n    ;;\n  *)\n    {{echo \"what?\"}}\n    ;;\nesac\n```"
+    },
+    {
+        "instruction": "pueue edit 명령어를 사용하여 큐에 있는 작업의 명령어를 수정하려면 어떻게 해야 하나요?",
+        "output": "먼저 `pueue status` 명령어를 사용하여 작업 ID를 확인한 후, 다음 명령어를 사용하여 작업의 명령어를 수정할 수 있습니다:\n`pueue edit {{task_id}}`"
+    },
+    {
+        "instruction": "Logstash 설정 파일의 유효성을 어떻게 확인할 수 있나요?",
+        "output": "Logstash 설정 파일의 유효성을 확인하려면 다음 명령어를 사용하면 됩니다:\n`logstash --configtest --config {{logstash_config.conf}}`"
+    },
+    {
+        "instruction": "git filter-repo를 사용하여 모든 파일에서 민감한 문자열을 대체하려면 어떻게 해야 하나요?",
+        "output": "`git filter-repo --replace-text <(echo '{{find}}==>{{replacement}}')` 명령어를 사용하여 모든 파일에서 민감한 문자열을 대체할 수 있습니다."
+    },
+    {
+        "instruction": "consul kv get 명령어를 사용해서 \"config/database\" 키의 값을 조회하려면 어떻게 해야 하나요?",
+        "output": "`consul kv get config/database` 명령어를 사용하여 \"config/database\" 키의 값을 조회할 수 있습니다."
+    },
+    {
+        "instruction": "특정 리소스 그룹이 존재하는지 확인하는 방법을 알려주세요.",
+        "output": "특정 리소스 그룹이 존재하는지 확인하려면 다음 명령어를 사용하세요:\n`az group exists --name {{name}}`"
+    },
+    {
+        "instruction": "opam으로 패키지를 검색하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`opam search {{query}}` 명령어를 사용하여 opam으로 패키지를 검색할 수 있습니다."
+    },
+    {
+        "instruction": "assimp를 사용하여 지원되는 모든 import 파일 형식을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`assimp listext` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "calc -m 7 명령어를 실행했을 때와 calc -m 0 명령어를 실행했을 때의 차이점은 무엇인가요?",
+        "output": "`calc -m 7` 명령어를 실행하면 `calc`가 기본 권한 모드인 7로 시작되어 모든 기능을 사용할 수 있습니다. 반면, `calc -m 0` 명령어를 실행하면 `calc`가 권한 모드 0으로 시작되어 매우 제한된 기능만 사용할 수 있습니다. 예를 들어, 파일 입출력과 같은 기능이 제한될 수 있습니다."
+    },
+    {
+        "instruction": "dotnet ef database drop 명령어를 실행할 때 발생할 수 있는 보안 문제는 무엇인가요?",
+        "output": "`dotnet ef database drop` 명령어를 실행할 때 발생할 수 있는 보안 문제는 여러 가지가 있습니다. 첫째, 데이터베이스를 삭제하면 모든 데이터가 영구적으로 손실되므로, 잘못된 데이터베이스를 삭제할 경우 중요한 데이터가 유실될 수 있습니다. 둘째, 권한이 부여된 사용자가 악의적으로 데이터베이스를 삭제할 수 있으므로, 접근 권한을 철저히 관리해야 합니다. 셋째, 데이터베이스 삭제 명령어가 로그에 기록될 경우, 민감한 정보가 노출될 수 있습니다. 따라서, 로그 관리와 접근 제어를 철저히 해야 합니다."
+    },
+    {
+        "instruction": "browser-sync를 사용하여 특정 디렉토리에서 서버를 시작하고 해당 디렉토리의 파일 변경 시 브라우저를 업데이트하려면 어떻게 해야 하나요?",
+        "output": "`browser-sync start --server {{path/to/directory}} --files {{path/to/directory}}` 명령어를 사용하여 특정 디렉토리에서 서버를 시작하고, 해당 디렉토리의 파일 변경 시 브라우저를 업데이트할 수 있습니다."
+    },
+    {
+        "instruction": "터미널 세션을 기록하는 typescript 파일을 만드는 방법에 대해 설명해주세요.",
+        "output": "터미널 세션을 기록하는 typescript 파일을 만드는 방법은 다음과 같습니다.\n\n먼저, `script` 명령어를 사용하여 기본 파일명인 \"typescript\"에 기록을 시작할 수 있습니다.\n\n기록을 중지하려면 `exit` 명령어를 입력하면 됩니다.\n\n특정 파일에 기록을 시작하려면 `script {{logfile.log}}` 명령어를 사용합니다.\n\n기존 파일에 추가로 기록을 하려면 `script -a {{logfile.log}}` 명령어를 사용합니다.\n\n시작과 종료 메시지 없이 조용히 실행하려면 `script -q {{logfile.log}}` 명령어를 사용합니다."
+    },
+    {
+        "instruction": "Apache Ant를 사용하여 프로젝트를 빌드할 때, 기본 빌드 파일이 아닌 다른 빌드 파일을 지정하려면 어떤 명령어를 사용해야 합니까?",
+        "output": "`ant -f {{buildfile.xml}}` 명령어를 사용하여 기본 빌드 파일이 아닌 다른 빌드 파일을 지정할 수 있습니다."
+    },
+    {
+        "instruction": "`go doc` 명령어를 사용하여 `encoding/json` 패키지의 문서를 보려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`go doc encoding/json` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "surfraw를 사용하여 지원되는 웹사이트 검색 스크립트 목록을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`surfraw -elvi` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "ffe 명령어를 사용하여 입력 파일에서 LastName이 Smith인 레코드만 추출하고, 결과를 새로운 파일로 저장하려면 어떻게 해야 하나요?",
+        "output": "ffe 명령어를 사용하여 입력 파일에서 LastName이 Smith인 레코드만 추출하고, 결과를 새로운 파일로 저장하려면 다음과 같이 입력합니다:\n\n`ffe --output={{path/to/output}} -e \"{{LastName=Smith}}\" -c {{path/to/config.ffe}} {{path/to/input}}`"
+    },
+    {
+        "instruction": "황금비를 계산하는 과정에서 사용된 스크립트에서 보안 취약점이 있는지 확인하려고 합니다.",
+        "output": "황금비를 계산하는 과정에서 사용된 스크립트는 `dc` 명령어를 사용하여 수식을 계산하는 것입니다. 이 스크립트는 단순히 수학적 연산을 수행하며, 외부 입력이나 파일 시스템과 상호작용하지 않습니다. 따라서 이 스크립트에는 명령어 주입(Command Injection), 파일 포함(File Inclusion), 또는 기타 일반적인 보안 취약점이 존재하지 않습니다. 그러나 스크립트가 신뢰할 수 없는 소스에서 가져온 데이터를 사용하거나, 시스템에서 특권을 가진 사용자가 실행할 경우 추가적인 보안 검토가 필요할 수 있습니다."
+    },
+    {
+        "instruction": "현재 디렉토리를 스캔하고 감염된 파일만 출력하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`clamdscan --infected` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "transcrypt --cipher={{cipher}} 명령어를 사용할 때 {{cipher}}에 어떤 값을 넣어야 하나요?",
+        "output": "`{{cipher}}`에는 사용하고자 하는 암호화 알고리즘의 이름을 넣어야 합니다. 예를 들어, AES-256을 사용하려면 `transcrypt --cipher=AES-256`와 같이 입력합니다."
+    },
+    {
+        "instruction": "todo 명령어를 사용하여 작업 목록에 새로운 작업을 추가할 때, 해당 작업의 위치를 함께 설정하는 방법은 무엇인가요?",
+        "output": "먼저 `todo new` 명령어를 사용하여 새로운 작업을 추가한 후, `todo edit` 명령어를 사용하여 해당 작업의 위치를 설정할 수 있습니다. 예를 들어, 새로운 작업을 추가하고 해당 작업의 위치를 설정하려면 다음과 같이 입력합니다:\n\n```\ntodo new {{thing_to_do}} --list {{work}}\ntodo edit --location {{location_name}} {{task_id}}\n```"
+    },
+    {
+        "instruction": "spike new 명령어를 실행할 때 프로젝트 이름에 특수문자를 포함시키면 보안에 취약점이 생길 수 있나요?",
+        "output": "`spike new` 명령어를 실행할 때 프로젝트 이름에 특수문자를 포함시키는 것은 일반적으로 보안 취약점을 직접적으로 유발하지 않습니다. 그러나 특수문자를 사용하면 파일 시스템이나 스크립트에서 예기치 않은 동작이 발생할 수 있으므로, 프로젝트 이름에는 알파벳과 숫자, 하이픈(-) 또는 언더스코어(_)만 사용하는 것이 좋습니다. 또한, 프로젝트 이름에 공백이나 특수문자를 포함하면 명령어 실행 시 인용부호로 묶어야 하는 등의 추가적인 주의가 필요합니다."
+    },
+    {
+        "instruction": "tlmgr를 사용하여 특정 패키지와 그 의존성을 설치하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`tlmgr install {{package}}` 명령어를 사용하여 특정 패키지와 그 의존성을 설치할 수 있습니다."
+    },
+    {
+        "instruction": "가상 머신을 즉시 중지하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`qm stop {{VM_ID}}` 명령어를 사용하여 가상 머신을 즉시 중지할 수 있습니다."
+    },
+    {
+        "instruction": "irb를 실행하면 어떤 보안 위협이 있나요?",
+        "output": "irb를 실행하면 사용자가 입력한 Ruby 코드를 실시간으로 평가하고 실행하므로, 악의적인 코드 실행, 시스템 명령어 주입, 민감한 정보 노출 등의 보안 위협이 있습니다. 특히, 신뢰할 수 없는 환경에서 irb를 실행할 경우, 공격자가 시스템에 악성 코드를 주입할 수 있으며, 이는 시스템 손상, 데이터 유출, 서비스 중단 등의 심각한 결과를 초래할 수 있습니다."
+    },
+    {
+        "instruction": "현재 시스템에서 사용 가능한 CPU 코어 수를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "현재 시스템에서 사용 가능한 CPU 코어 수를 확인하려면 `nproc` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "XML 문서에서 XPATH가 \"/xml/table/rec[@id=3]/@id\"인 요소의 값을 5로 업데이트하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`xml edit --update \"/xml/table/rec[@id=3]/@id\" -v 5 path/to/input.xml` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "tlmgr option을 사용하여 현재 설정된 TeX Live 설정을 모두 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`tlmgr option show` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "node --no-lazy --inspect-brk 옵션을 사용하여 디버깅을 시작하려면 어떻게 해야 하나요?",
+        "output": "`node --no-lazy --inspect-brk {{path/to/file}}` 명령어를 사용하여 디버깅을 시작할 수 있습니다. 이 옵션은 소스 코드가 완전히 파싱된 후 디버거가 연결될 때까지 실행을 일시 중지합니다."
+    },
+    {
+        "instruction": "paperkey 명령어를 사용하여 특정 secret key를 텍스트 파일로 내보내는 방법을 알려주세요.",
+        "output": "특정 secret key를 텍스트 파일로 내보내려면 다음 명령어를 사용하세요:\n\n`gpg --export-secret-key {{key}} | paperkey --output {{path/to/secret_data.txt}}`"
+    },
+    {
+        "instruction": "dotnet build 명령어를 사용할 때 특정 런타임을 지정하려면 어떻게 해야 하나요?",
+        "output": "`dotnet build --runtime {{runtime_identifier}}` 옵션을 사용하여 특정 런타임을 지정할 수 있습니다."
+    },
+    {
+        "instruction": "현재 로그인된 모든 세션의 사용자명, 라인, 시간을 표시하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`who` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "ebook-convert 명령어를 사용하여 PDF 파일을 EPUB 형식으로 변환하려면 어떻게 해야 하나요?",
+        "output": "ebook-convert 명령어를 사용하여 PDF 파일을 EPUB 형식으로 변환하려면 다음과 같이 입력합니다:\n\n`ebook-convert {{path/to/input_file.pdf}} {{output_file.epub}}`"
+    },
+    {
+        "instruction": "dust 명령어를 사용하여 현재 디렉토리의 디스크 사용량을 확인하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`dust` 명령어를 입력하면 됩니다."
+    }
+]

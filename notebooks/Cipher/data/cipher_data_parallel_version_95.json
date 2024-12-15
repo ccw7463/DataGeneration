@@ -1,0 +1,1442 @@
+[
+    {
+        "instruction": "현재 시스템의 ARP 테이블을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "ARP 테이블을 확인하려면 `ip neighbour` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "현재 호스트에 설치된 취약한 패키지 목록을 출력하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`debsecan` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "stress 명령어를 사용하여 CPU와 메모리를 동시에 스트레스 테스트하려고 합니다. 각각 2개의 워커를 생성하고, CPU 워커는 각각 1개의 CPU 코어를 사용하며, 메모리 워커는 각각 512M 바이트를 할당하도록 하려고 합니다. 이를 위한 명령어를 알려주세요.",
+        "output": "stress -c 2 -m 2 --vm-bytes 512M"
+    },
+    {
+        "instruction": "신뢰할 수 있는 컴파일러를 사용할 때 어셈블리 파일을 빠르게 처리하는 방법은 무엇인가요?",
+        "output": "신뢰할 수 있는 컴파일러를 사용할 때 어셈블리 파일을 빠르게 처리하려면 `as -f {{file.s}}` 명령어를 사용하여 공백과 주석 사전 처리를 건너뛰도록 합니다."
+    },
+    {
+        "instruction": "kde-inhibit 명령어를 사용해서 화면 보호기를 비활성화하면서 특정 명령어를 실행하는 방법을 알려주세요.",
+        "output": "`kde-inhibit --screenSaver {{command}} {{command_arguments}}` 명령어를 사용하여 화면 보호기를 비활성화하면서 특정 명령어를 실행할 수 있습니다."
+    },
+    {
+        "instruction": "po4a-translate 명령어를 사용하여 번역된 PO 파일을 다시 문서 형식으로 변환하려고 합니다. 이 명령어에서 --format 옵션에 어떤 값을 넣어야 하나요?",
+        "output": "--format 옵션에는 변환하려는 문서의 형식을 지정해야 합니다. 예를 들어, 문서가 Markdown 형식이라면 --format markdown과 같이 입력하면 됩니다. 사용 가능한 형식 목록을 확인하려면 po4a-translate --help-format 명령어를 사용할 수 있습니다."
+    },
+    {
+        "instruction": "특정 입력 장치의 설정을 변경하려면 어떻게 해야 하나요?",
+        "output": "`xinput set-prop` 명령어를 사용하여 특정 입력 장치의 설정을 변경할 수 있습니다. 예를 들어, `xinput set-prop {{id}} {{setting_id}} {{value}}` 형식으로 입력하면 됩니다. 여기서 `{{id}}`는 입력 장치의 ID, `{{setting_id}}`는 변경하려는 설정의 ID, `{{value}}`는 설정할 값입니다."
+    },
+    {
+        "instruction": "프록시모스에서 VMDK 디스크 이미지를 특정 저장소 이름으로 가져오려면 어떻게 해야 하나요?",
+        "output": "`qm importdisk` 명령어를 사용하여 VMDK 디스크 이미지를 특정 저장소 이름으로 가져올 수 있습니다. 예를 들어, VM ID가 100인 경우, 경로가 `/path/to/disk.vmdk`인 VMDK 이미지를 `local-lvm`이라는 저장소 이름으로 가져오려면 다음과 같은 명령어를 사용합니다:\n\n`qm importdisk 100 /path/to/disk.vmdk local-lvm --format vmdk`"
+    },
+    {
+        "instruction": "특정 도메인의 부트 디바이스 메뉴를 활성화하려면 어떻게 해야 하나요?",
+        "output": "`virt-xml {{domain}} --edit --boot bootmenu=on`을 실행하여 특정 도메인의 부트 디바이스 메뉴를 활성화할 수 있습니다."
+    },
+    {
+        "instruction": "compose 명령어를 사용하여 파일을 작성하려면 어떻게 해야 하나요?",
+        "output": "`compose` 명령어를 사용하여 파일을 작성하려면 다음과 같이 입력하면 됩니다:\n`compose {{filename}}`\n또는 `run-mailcap`을 사용하여 다음과 같이 입력할 수도 있습니다:\n`run-mailcap --action=compose {{filename}}`"
+    },
+    {
+        "instruction": "nmcli를 사용하여 Wi-Fi 연결을 설정하는 방법을 알려주세요.",
+        "output": "`nmcli device wifi connect` 명령어를 사용하여 Wi-Fi 연결을 설정할 수 있습니다. 예를 들어, `nmcli device wifi connect \"SSID\" password \"비밀번호\"` 명령어를 사용하여 특정 SSID와 비밀번호로 Wi-Fi에 연결할 수 있습니다. 더 자세한 정보는 `tldr nmcli device` 명령어를 통해 확인할 수 있습니다."
+    },
+    {
+        "instruction": "특정 프로세스의 모든 현재 리소스 제한 값을 표시하려면 어떻게 해야 하나요?",
+        "output": "특정 프로세스의 모든 현재 리소스 제한 값을 표시하려면 `prlimit --pid {{pid number}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "ffuf를 사용하여 타겟 웹사이트에서 디렉토리를 발견하려고 합니다. 단, 개별 작업의 최대 시간을 60초로 설정하고 재귀 탐색 깊이를 2로 설정하려고 합니다. 이를 위해 어떤 명령어를 사용해야 하나요?",
+        "output": "`ffuf -w {{path/to/wordlist}} -u {{https://target/FUZZ}} -maxtime-job {{60}} -recursion -recursion-depth {{2}}`"
+    },
+    {
+        "instruction": "특정 디바이스에서 파일시스템 시그니처를 지우려면 어떻게 해야 하나요?",
+        "output": "특정 디바이스에서 파일시스템 시그니처를 지우려면 `sudo wipefs --all /dev/sdX` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "run-mailcap --action=edit 명령어를 사용하여 파일을 편집할 수 있나요?",
+        "output": "`run-mailcap --action=edit` 명령어는 파일을 편집하는 것이 아니라, 파일을 기본 메일캡 탐색기에서 볼 수 있게 해줍니다. 파일을 직접 편집하려면 별도의 텍스트 에디터를 사용해야 합니다."
+    },
+    {
+        "instruction": "startx 명령어를 사용하여 X Window System 세션을 시작할 때, 특정 DPI 값을 설정하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`startx -- -dpi {{value}}` 옵션을 사용하여 X Window System 세션을 시작할 때 특정 DPI 값을 설정할 수 있습니다."
+    },
+    {
+        "instruction": "kwrite를 사용하여 UTF-8 인코딩으로 텍스트 파일을 열려면 어떻게 해야 하나요?",
+        "output": "`kwrite --encoding=UTF-8 {{path/to/file}}` 명령어를 사용하여 kwrite를 통해 UTF-8 인코딩으로 텍스트 파일을 열 수 있습니다."
+    },
+    {
+        "instruction": "cal 명령어를 사용하여 2023년 12월의 달력을 출력하려면 어떻게 해야 하나요?",
+        "output": "`cal 12 2023` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "Proxmox VE에서 새로운 가상 머신을 생성하면서 자동으로 시작하고, Windows 10 운영체제를 설정하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`qm create {{100}} --start 1 --ostype {{win10}}`를 사용하면 됩니다."
+    },
+    {
+        "instruction": "virt-viewer를 사용하여 특정 가상 머신에 연결할 때 사용하는 명령어를 알려주세요.",
+        "output": "`virt-viewer`를 사용하여 특정 가상 머신에 연결할 때 사용하는 명령어는 다음과 같습니다:\n`virt-viewer \"{{domain}}\"`"
+    },
+    {
+        "instruction": "check-language-support 명령어를 사용하여 설치된 소프트웨어와 활성화된 로케일에 기반하여 누락된 언어 패키지 목록을 표시하려면 어떻게 해야 하나요?",
+        "output": "`check-language-support` 명령어를 단독으로 실행하면 됩니다."
+    },
+    {
+        "instruction": "ldapdomaindump 명령어를 사용하여 특정 도메인의 모든 정보를 덤프하려고 합니다. 이 때, 도메인 컨트롤러의 IP 주소를 지정하여 DNS 서버를 사용하고, 결과를 JSON 형식이 아닌 HTML 형식으로 특정 디렉토리에 저장하려고 합니다. 이를 위해 어떤 명령어를 사용해야 하나요?",
+        "output": "다음 명령어를 사용하면 됩니다:\n\n`ldapdomaindump --no-json --outdir {{path/to/directory}} --dns-server {{domain_controller_ip}} --user {{domain}}\\\\{{administrator}} --password {{password}} {{hostname|ip}}`"
+    },
+    {
+        "instruction": "curlie를 사용하여 커스텀 헤더를 포함한 GET 요청을 보내려면 어떻게 해야 하나요?",
+        "output": "curlie를 사용하여 커스텀 헤더를 포함한 GET 요청을 보내려면 다음과 같이 입력하면 됩니다:\n\n`curlie get {{httpbin.org/get}} {{header-name:header-value}}`"
+    },
+    {
+        "instruction": "Aura를 사용하여 AUR에서 패키지를 검색하고 설치하는 방법은 무엇인가요?",
+        "output": "Aura를 사용하여 AUR에서 패키지를 검색하려면 다음 명령어를 사용합니다:\n`aura --aursync --both --search {{keyword|regular_expression}}`\n\nAUR에서 패키지를 설치하려면 다음 명령어를 사용합니다:\n`aura --aursync {{package}}`"
+    },
+    {
+        "instruction": "dm-tool switch-to-greeter 명령어를 실행했을 때 현재 데스크탑 세션이 유지되나요?",
+        "output": "네, `dm-tool switch-to-greeter` 명령어를 실행하면 현재 데스크탑 세션이 유지됩니다. 이 명령어는 그리터를 표시하면서 현재 데스크탑 세션을 열어두고, 인증된 사용자가 로그인할 때까지 대기합니다."
+    },
+    {
+        "instruction": "systemd-analyze security 명령어를 통해 실행 중인 유닛들의 보안 점수를 확인할 수 있나요?",
+        "output": "네, systemd-analyze security 명령어를 통해 실행 중인 유닛들의 보안 점수를 확인할 수 있습니다."
+    },
+    {
+        "instruction": "slapt-get을 사용하여 설치된 모든 패키지를 최신 버전으로 업그레이드하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`slapt-get --upgrade` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "libvirt XML 파일을 특정 스키마에 대해 검증하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`virt-xml-validate` 명령어를 사용하여 XML 파일을 특정 스키마에 대해 검증할 수 있습니다. 예를 들어, 다음과 같은 명령어를 사용합니다:\n`virt-xml-validate {{path/to/file.xml}} {{schema}}`"
+    },
+    {
+        "instruction": "특정 파일에서 디버그 심볼만 제거하려면 어떻게 해야 하나요?",
+        "output": "`strip --strip-debug {{path/to/file.o}}` 명령어를 사용하여 특정 파일에서 디버그 심볼만 제거할 수 있습니다."
+    },
+    {
+        "instruction": "pactree 명령어를 사용해서 특정 패키지의 의존성 트리를 출력하는 방법은 무엇인가요?",
+        "output": "`pactree {{package}}` 명령어를 사용하여 특정 패키지의 의존성 트리를 출력할 수 있습니다."
+    },
+    {
+        "instruction": "특정 인터페이스를 block zone으로 영구적으로 이동시키는 명령어를 알려주세요.",
+        "output": "`firewall-cmd --permanent --zone=block --change-interface=enp1s0`"
+    },
+    {
+        "instruction": "Ubuntu Pro 서비스 상태를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "Ubuntu Pro 서비스 상태를 확인하려면 `pro status` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "bpftrace를 사용하여 특정 PID의 시스템 콜을 추적하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`sudo bpftrace -e '{{tracepoint:raw_syscalls:sys_enter /pid == 123/ { @[comm] = count(); }}}'` 명령어를 사용하여 특정 PID의 시스템 콜을 추적할 수 있습니다."
+    },
+    {
+        "instruction": "killall 명령어를 사용하여 특정 프로세스를 강제로 종료하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`killall -KILL {{process_name}}` 옵션을 사용하여 특정 프로세스를 강제로 종료할 수 있습니다."
+    },
+    {
+        "instruction": "`pkgctl`을 GitLab 인스턴스와 인증하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`pkgctl auth login` 명령어를 사용하면 `pkgctl`을 GitLab 인스턴스와 인증할 수 있습니다."
+    },
+    {
+        "instruction": "createrepo 명령어를 사용하여 디렉토리에 RPM repository를 초기화하려고 합니다. 이 때, test로 시작하는 RPM 파일을 제외하고, verbose 로그를 출력하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`createrepo -v -x {{test_*.rpm}} {{path/to/directory}}` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "modinfo 명령어를 사용해서 tcp_lp 커널 모듈의 모든 속성을 확인하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`modinfo tcp_lp`를 입력하면 됩니다."
+    },
+    {
+        "instruction": "bluetoothd 데몬을 특정 설정 파일을 사용하여 시작하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`bluetoothd --configfile {{path/to/file}}` 명령어를 사용하여 bluetoothd 데몬을 특정 설정 파일을 사용하여 시작할 수 있습니다."
+    },
+    {
+        "instruction": "wajig를 사용하여 시스템에 설치된 모든 패키지의 버전과 배포판을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`wajig versions` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "thunar를 사용하여 현재 디렉토리를 새 창으로 열려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`thunar` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "xrandr 명령어를 사용하여 DP1의 해상도를 1920x1080으로 설정하고 주사율을 60Hz로 변경하려면 어떻게 해야 하나요?",
+        "output": "`xrandr --output {{DP1}} --mode {{1920x1080}} --rate {{60}}` 명령어를 사용하여 DP1의 해상도를 1920x1080으로 설정하고 주사율을 60Hz로 변경할 수 있습니다."
+    },
+    {
+        "instruction": "현재 로그인된 모든 사용자와 그들의 프로세스를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`w` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "megadl 명령어와 megatools-dl 명령어의 차이점이 궁금합니다.",
+        "output": "`megadl` 명령어는 `megatools-dl` 명령어의 별칭입니다. 따라서 두 명령어 간의 차이점은 없으며, 동일한 기능을 수행합니다."
+    },
+    {
+        "instruction": "strace -p 1234 -e open 명령어를 실행했을 때, open system call만 추적할 수 있나요?",
+        "output": "네, `strace -p 1234 -e open` 명령어를 실행하면 PID가 1234인 프로세스에서 `open` system call만 추적할 수 있습니다."
+    },
+    {
+        "instruction": "apt-cache search 명령어를 사용해서 특정 패키지를 검색하는 방법을 알려주세요.",
+        "output": "`apt-cache search {{query}}` 명령어를 사용하여 특정 패키지를 검색할 수 있습니다. 예를 들어, \"vim\" 패키지를 검색하려면 `apt-cache search vim` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "x11vnc를 사용하여 기존 디스플레이 서버에서 VNC를 활성화하려면 어떻게 해야 하나요?",
+        "output": "x11vnc를 사용하여 기존 디스플레이 서버에서 VNC를 활성화하려면 `x11vnc` 명령어를 실행하면 됩니다. 기본적으로 서버는 모든 클라이언트가 연결을 끊으면 자동으로 종료됩니다. 예를 들어, 여러 클라이언트가 연결할 수 있도록 VNC 서버를 시작하려면 `x11vnc -shared` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "ext4 파일시스템의 단편화 상태를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "ext4 파일시스템의 단편화 상태를 확인하려면 `e4defrag -c /dev/sdXN` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "btrfs 파일시스템의 특정 파일에 대해 압축 속성을 zstd로 설정하려면 어떻게 해야 하나요?",
+        "output": "sudo btrfs property set {{path/to/btrfs_inode}} compression zstd"
+    },
+    {
+        "instruction": "radeontop 명령어를 사용하여 특정 AMD GPU의 사용량을 확인하려면 어떻게 해야 하나요?",
+        "output": "`lspci` 명령어를 실행하여 원하는 GPU의 bus number를 확인한 후, 해당 bus number를 사용하여 `radeontop --bus {{bus_number}}` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "hostnamectl 명령어를 사용해서 컴퓨터의 호스트 이름을 확인하려면 어떻게 해야 하나요?",
+        "output": "`hostnamectl` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "powerstat 명령어를 사용하여 인텔의 RAPL 인터페이스를 통해 5초 간격으로 20번 샘플링하여 전력 소비를 측정하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`powerstat -R 5 20`을 입력하면 됩니다."
+    },
+    {
+        "instruction": "setxkbmap 명령어를 사용하여 키보드 레이아웃을 변경하려고 합니다. 현재 설정된 키보드 레이아웃을 확인하는 방법을 알려주세요.",
+        "output": "현재 설정된 키보드 레이아웃을 확인하려면 `setxkbmap -query` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "논리 볼륨의 크기를 150 GB로 변경하려면 어떻게 해야 하나요?",
+        "output": "논리 볼륨의 크기를 150 GB로 변경하려면 다음 명령어를 사용하세요:\n`lvresize --size 150G volume_group/logical_volume`"
+    },
+    {
+        "instruction": "zram이 활성화되어 있는지 확인하려면 어떻게 해야 하나요?",
+        "output": "zram이 활성화되어 있는지 확인하려면 다음 명령어를 사용하세요:\n`lsmod | grep -i zram`"
+    },
+    {
+        "instruction": "tcpkill을 사용해서 eth1 인터페이스에서 192.95.4.27 호스트와 2266 포트로 진행 중인 연결을 끊으려면 어떻게 해야 하나요?",
+        "output": "`tcpkill -i eth1 host 192.95.4.27 and port 2266` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "whiptail을 사용하여 사용자에게 비밀번호를 입력받는 방법은 무엇인가요?",
+        "output": "whiptail을 사용하여 사용자에게 비밀번호를 입력받는 방법은 다음과 같습니다:\n\n`{{result_variable_name}}=\"$(whiptail --title \"{{title}}\" --passwordbox \"{{message}}\" {{height_in_chars}} {{width_in_chars}} 3>&1 1>&2 2>&3)\"`"
+    },
+    {
+        "instruction": "sudo mknod 명령어를 사용하여 블록 장치를 생성하려고 합니다.",
+        "output": "`sudo mknod {{path/to/device_file}} b {{major_device_number}} {{minor_device_number}}` 명령어를 사용하여 블록 장치를 생성할 수 있습니다."
+    },
+    {
+        "instruction": "현재 네트워크 링크의 상태를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "현재 네트워크 링크의 상태를 확인하려면 `networkctl list` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "httpie를 사용하여 API-Key를 포함한 DELETE 요청을 보내려면 어떻게 해야 하나요?",
+        "output": "`http DELETE {{https://example.com/todos/7}} {{API-Key:foo}}` 명령어를 사용하여 httpie를 통해 API-Key를 포함한 DELETE 요청을 보낼 수 있습니다."
+    },
+    {
+        "instruction": "OpenWrt에서 특정 패키지를 설치하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "OpenWrt에서 특정 패키지를 설치하려면 `opkg install {{package}}` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "woeusb를 사용하여 USB를 포맷한 후 부팅 가능한 Windows 설치 드라이브를 만드는 방법을 알려주세요.",
+        "output": "`woeusb --device {{path/to/windows.iso}} {{/dev/sdX}}` 명령어를 사용하여 USB를 포맷한 후 부팅 가능한 Windows 설치 드라이브를 만들 수 있습니다."
+    },
+    {
+        "instruction": "id3v2 명령어를 사용해서 특정 파일의 모든 태그를 삭제하려면 어떻게 해야 하나요?",
+        "output": "`id3v2 --delete-v2 {{path/to/file}}` 또는 `id3v2 --delete-v1 {{path/to/file}}` 명령어를 사용하여 특정 파일의 모든 `id3v2` 또는 `id3v1` 태그를 삭제할 수 있습니다."
+    },
+    {
+        "instruction": "mmcli를 사용하여 모뎀에서 특정 SMS 메시지를 삭제하려면 어떤 명령어를 사용해야 합니까?",
+        "output": "`sudo mmcli --modem={{modem}} --messaging-delete-sms={{path/to/message_file}}`를 사용하여 모뎀에서 특정 SMS 메시지를 삭제할 수 있습니다."
+    },
+    {
+        "instruction": "named 명령어를 사용하여 특정 포트에서 쿼리를 수신하도록 DNS 서버를 실행하려면 어떻게 해야 하나요?",
+        "output": "named 명령어를 사용하여 특정 포트에서 쿼리를 수신하도록 DNS 서버를 실행하려면 `named -p {{port}}` 옵션을 사용하면 됩니다. 예를 들어, 포트 1053에서 쿼리를 수신하려면 `named -p 1053`을 입력하면 됩니다."
+    },
+    {
+        "instruction": "pkgrm 명령어를 사용하여 설치된 패키지를 제거하려면 어떻게 해야 하나요?",
+        "output": "설치된 패키지를 제거하려면 `pkgrm {{package}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "현재 실행 중인 toolbox container를 강제로 삭제하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "현재 실행 중인 `toolbox` container를 강제로 삭제하려면 `toolbox rm --force {{container_name}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "sherlock 도구를 사용하여 특정 사용자 이름을 Tor 네트워크를 통해 소셜 네트워크에서 검색하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`sherlock --tor {{username}}` 명령어를 사용하여 특정 사용자 이름을 Tor 네트워크를 통해 소셜 네트워크에서 검색할 수 있습니다."
+    },
+    {
+        "instruction": "sudo a2ensite 명령어를 사용하여 Apache 가상 호스트를 활성화하려면 어떻게 해야 하나요?",
+        "output": "sudo a2ensite 명령어를 사용하여 Apache 가상 호스트를 활성화하려면, 다음과 같은 명령어를 입력하면 됩니다:\n\n`sudo a2ensite {{virtual_host}}`\n\n여기서 `{{virtual_host}}`는 활성화하고자 하는 가상 호스트의 이름으로 대체해야 합니다. 예를 들어, 가상 호스트의 이름이 `example.com`이라면 다음과 같이 입력합니다:\n\n`sudo a2ensite example.com`\n\n또한, 정보 메시지를 보이지 않게 하려면 `--quiet` 옵션을 추가할 수 있습니다:\n\n`sudo a2ensite --quiet example.com`"
+    },
+    {
+        "instruction": "burpsuite를 실행할 때 기본 설정을 사용하지 않고 특정 프로젝트 파일을 열려면 어떤 명령어를 사용해야 하나요?",
+        "output": "특정 프로젝트 파일을 열기 위해서는 `burpsuite --project-file={{path/to/file}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "asterisk 서버에서 현재 활성화된 통화와 채널을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`asterisk -r -x \"core show channels\"`를 사용하여 현재 활성화된 통화와 채널을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "e2image 명령어를 사용하여 ext4 파일시스템의 메타데이터를 백업하려고 합니다.",
+        "output": "`e2image /dev/sdXN /path/to/image_file` 명령어를 사용하여 ext4 파일시스템의 메타데이터를 백업할 수 있습니다."
+    },
+    {
+        "instruction": "updatedb 명령어를 실행할 때 --verbose 옵션을 사용하면 어떤 파일들이 찾아지는지 실시간으로 확인할 수 있나요?",
+        "output": "네, `updatedb` 명령어를 실행할 때 `--verbose` 옵션을 사용하면 파일들이 찾아질 때마다 파일 이름을 실시간으로 확인할 수 있습니다."
+    },
+    {
+        "instruction": "cat 명령어를 사용하여 파일의 내용을 출력할 때, 모든 출력 라인에 줄 번호를 붙이는 방법은 무엇인가요?",
+        "output": "`cat -n {{path/to/file}}` 명령어를 사용하면 파일의 내용을 출력할 때 모든 출력 라인에 줄 번호를 붙일 수 있습니다."
+    },
+    {
+        "instruction": "apt-file 명령어를 사용해서 특정 파일을 포함하고 있는 패키지를 검색하려면 어떻게 해야 하나요?",
+        "output": "`apt-file search {{partial_path/to/file}}` 명령어를 사용하여 특정 파일을 포함하고 있는 패키지를 검색할 수 있습니다."
+    },
+    {
+        "instruction": "bchunk 명령어를 사용하여 바이너리 CD 이미지를 iso9960 이미지 파일로 변환하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "bchunk 명령어를 사용하여 바이너리 CD 이미지를 iso9960 이미지 파일로 변환하려면 다음과 같은 명령어를 사용합니다:\n\n`bchunk {{path/to/image.bin}} {{path/to/image.cue}} {{path/to/output}}`"
+    },
+    {
+        "instruction": "NetworkManager를 통해 네트워크가 연결되어 있는지 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`nm-online` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "btrfs filesystem의 특정 디렉토리에 대한 디스크 사용량을 요약하는 명령어는 무엇인가요?",
+        "output": "`sudo btrfs filesystem du --summarize {{path/to/directory}}`"
+    },
+    {
+        "instruction": "sudo extrace -u 명령어를 사용하면 어떤 정보를 확인할 수 있나요?",
+        "output": "sudo extrace -u 명령어를 사용하면 각 프로세스를 실행하는 사용자 정보를 확인할 수 있습니다."
+    },
+    {
+        "instruction": "mkfs.cramfs 명령어를 사용하여 /dev/sdb1 파티션에 ROM 파일시스템을 생성하려고 합니다. 이 파일시스템의 볼륨 이름을 \"my_volume\"로 설정하려면 어떤 옵션을 사용해야 합니까?",
+        "output": "`-n` 옵션을 사용하여 볼륨 이름을 설정할 수 있습니다. 예를 들어, `mkfs.cramfs -n my_volume /dev/sdb1` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "sdb1 파티션에 ext4 파일 시스템을 생성하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`sudo mkfs.ext4 /dev/sdb1` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "pkgctl version 명령어를 사용하여 현재 설치된 pkgctl의 버전을 확인할 수 있나요?",
+        "output": "네, `pkgctl version` 명령어를 사용하여 현재 설치된 `pkgctl`의 버전을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "aptitude로 설치된 패키지를 검색하는 명령어는 무엇인가요?",
+        "output": "aptitude search '?installed({{package}})'"
+    },
+    {
+        "instruction": "현재 시스템에서 사용 중인 ext4 파일시스템의 가용 공간 단편화 정보를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`e2freefrag /dev/sdXN` 명령어를 사용하여 현재 시스템에서 사용 중인 ext4 파일시스템의 가용 공간 단편화 정보를 확인할 수 있습니다."
+    },
+    {
+        "instruction": "dstat 명령어를 사용하여 시스템의 CPU와 메모리 사용량을 확인하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`dstat --cpu --mem` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "emerge --sync 명령어를 실행했을 때 어떤 일이 발생하나요?",
+        "output": "emerge --sync 명령어를 실행하면 Portage 트리와 관련된 모든 패키지가 동기화됩니다. 이 명령어는 Gentoo Linux의 패키지 관리자 유틸리티인 emerge를 사용하여 로컬 패키지 데이터베이스를 최신 상태로 업데이트합니다."
+    },
+    {
+        "instruction": "physlock 명령어를 사용하여 모든 콘솔과 가상 터미널을 잠그고, 커널 메시지를 뮤트하며, SysRq 메커니즘을 비활성화하고, 패스워드 프롬프트 전에 메시지를 표시하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`physlock -m -s -p \"{{Locked!}}\"` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "특정 그룹에 속한 사용자를 보여주는 명령어는 무엇인가요?",
+        "output": "`lslogins --groups={{groups}}` 명령어를 사용하면 특정 그룹에 속한 사용자를 확인할 수 있습니다."
+    },
+    {
+        "instruction": "dpkg-reconfigure 명령어를 사용해서 이미 설치된 패키지를 재구성하려면 어떻게 해야 하나요?",
+        "output": "dpkg-reconfigure 명령어를 사용해서 이미 설치된 패키지를 재구성하려면, 터미널에서 `dpkg-reconfigure {{package1 package2 ...}}` 형식으로 입력하면 됩니다. 여기서 {{package1 package2 ...}} 부분에는 재구성하고자 하는 패키지 이름을 공백으로 구분하여 입력합니다."
+    },
+    {
+        "instruction": "terminator를 실행하고 수평으로 터미널을 나누는 방법은 무엇인가요?",
+        "output": "terminator를 실행하려면 `terminator` 명령어를 입력하면 됩니다. 터미널을 수평으로 나누려면 `Ctrl + Shift + O` 단축키를 사용하면 됩니다."
+    },
+    {
+        "instruction": "vkpurge 명령어를 사용해서 현재 시스템에서 제거 가능한 모든 커널 버전을 나열하는 방법은 무엇인가요?",
+        "output": "vkpurge list 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "sudo a2enconf 명령어를 사용하여 Apache 설정 파일을 활성화하려면 어떻게 해야 하나요?",
+        "output": "Apache 설정 파일을 활성화하려면 `sudo a2enconf {{configuration_file}}` 명령어를 사용하면 됩니다. 여기서 `{{configuration_file}}`은 활성화하고자 하는 설정 파일의 이름으로 대체해야 합니다."
+    },
+    {
+        "instruction": "Anbox를 통해 리눅스 운영체제에서 안드로이드 애플리케이션을 실행할 수 있나요?",
+        "output": "네, Anbox를 통해 GNU/Linux 운영체제에서 안드로이드 애플리케이션을 실행할 수 있습니다."
+    },
+    {
+        "instruction": "특정 사용자의 모든 값을 재귀적으로 표시하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`nixos-option -r users.users.{{user}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "halt 명령어를 사용하여 시스템을 즉시 종료하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`halt --force --force` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "여러 사용자의 암호를 변경할 때 입력 텍스트에 공백이 포함되면 어떻게 되나요?",
+        "output": "입력 텍스트에 공백이 포함되면 `chpasswd` 명령어가 올바르게 동작하지 않습니다. 공백이 포함된 경우, 명령어는 사용자 이름과 암호를 제대로 구분하지 못해 오류가 발생할 수 있습니다. 따라서 입력 텍스트에는 반드시 공백이 포함되지 않도록 해야 합니다."
+    },
+    {
+        "instruction": "터미널 에뮬레이터를 열고 특정 명령어를 실행한 후 결과를 파일에 저장하려면 어떻게 해야 하나요?",
+        "output": "`st -o {{path/to/file}} -e {{command argument1 argument2}}` 명령어를 사용하여 터미널 에뮬레이터를 열고 특정 명령어를 실행한 후 결과를 파일에 저장할 수 있습니다."
+    },
+    {
+        "instruction": "mediamtx를 실행할 때 커스텀 설정 파일을 사용하려면 어떻게 해야 하나요?",
+        "output": "커스텀 설정 파일을 사용하여 mediamtx를 실행하려면 다음 명령어를 사용하면 됩니다:\n\n`mediamtx {{path/to/config}}.yml`"
+    },
+    {
+        "instruction": "SNAP 업데이트 목록을 모두 표시하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`snap --nosplash --nogui --modules --list --refresh` 명령어를 사용하면 SNAP 업데이트 목록을 모두 표시할 수 있습니다."
+    },
+    {
+        "instruction": "mono --debug 옵션을 사용하여 .NET 어셈블리를 디버그 모드로 실행하려면 어떻게 해야 하나요?",
+        "output": "`mono --debug` 옵션을 사용하여 .NET 어셈블리를 디버그 모드로 실행하려면 다음 명령어를 사용하세요:\n\n`mono --debug {{path/to/program.exe}}`"
+    },
+    {
+        "instruction": "특정 그룹의 멤버를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "특정 그룹의 멤버를 확인하려면 `getent group {{group_name}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "xcowsay를 사용하여 특정 좌표에 소가 나타나도록 설정할 수 있을까요?",
+        "output": "네, xcowsay를 사용하여 특정 좌표에 소가 나타나도록 설정할 수 있습니다. `--at` 옵션을 사용하여 X와 Y 좌표를 지정하면 됩니다. 예를 들어, `xcowsay --at=100,200`과 같이 입력하면 됩니다."
+    },
+    {
+        "instruction": "특정 가상 머신의 모든 snapshot을 조회하려면 어떻게 해야 하나요?",
+        "output": "특정 가상 머신의 모든 snapshot을 조회하려면 `qm listsnapshot {{vm_id}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "특정 작업의 상태를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "특정 작업의 상태를 확인하려면 `scontrol show job {{job_id}}` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "insmod 명령어를 사용하여 리눅스 커널에 모듈을 동적으로 로드할 수 있나요?",
+        "output": "네, insmod 명령어를 사용하여 리눅스 커널에 모듈을 동적으로 로드할 수 있습니다."
+    },
+    {
+        "instruction": "pacman --sync --refresh --sysupgrade --noconfirm 옵션을 사용하면 어떤 일이 발생하나요?",
+        "output": "`pacman --sync --refresh --sysupgrade --noconfirm` 옵션을 사용하면 모든 패키지를 최신 상태로 업데이트하며, 이 과정에서 사용자에게 확인을 요구하지 않습니다."
+    },
+    {
+        "instruction": "wodim 명령어를 사용하여 현재 시스템에 연결된 광학 드라이브 목록을 확인하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "wodim --devices"
+    },
+    {
+        "instruction": "모든 활성화된 네트워크 인터페이스를 비활성화하려면 어떻게 해야 하나요?",
+        "output": "모든 활성화된 네트워크 인터페이스를 비활성화하려면 `ifdown -a` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "handlr를 사용해서 모든 비디오 파일의 기본 애플리케이션을 VLC로 설정하려면 어떻게 해야 하나요?",
+        "output": "`handlr set {{'video/*'}} {{vlc.desktop}}`를 실행하면 됩니다."
+    },
+    {
+        "instruction": "현재 설정된 기본 Java 환경을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`archlinux-java get` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "라즈베리파이 EEPROM 업데이트를 취소하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "라즈베리파이 EEPROM 업데이트를 취소하려면 `sudo rpi-eeprom-update -r` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "logwatch 명령어를 사용하여 어제의 로그를 중간 수준의 상세도로 분석하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "logwatch --range yesterday --detail medium"
+    },
+    {
+        "instruction": "특정 PID에 의해 생성된 모든 로컬 시스템 락을 조회하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "특정 PID에 의해 생성된 모든 로컬 시스템 락을 조회하려면 `lslocks --pid {{PID}}` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "ksvgtopng5 명령어를 사용하여 SVG 파일을 PNG 형식으로 변환할 때, 출력 파일의 파일명에 공백이 포함되면 어떻게 처리해야 하나요?",
+        "output": "출력 파일의 파일명에 공백이 포함되는 경우, 파일명을 따옴표로 묶어서 처리해야 합니다. 예를 들어, 다음과 같이 명령어를 입력할 수 있습니다:\n\n`ksvgtopng5 {{width}} {{height}} {{path/to/file.svg}} \"{{output filename with space.png}}\"`"
+    },
+    {
+        "instruction": "pdfxup 명령어를 사용하여 2-up PDF를 생성하려고 합니다. 이 때, 출력 파일 경로와 입력 파일 경로를 지정해야 하는데, 출력 파일 경로를 잘못 설정하면 보안에 문제가 생길 수 있습니다. 출력 파일 경로를 어떻게 설정해야 보안에 문제가 없을까요?",
+        "output": "출력 파일 경로를 설정할 때는 다음과 같은 보안 원칙을 따르는 것이 좋습니다.\n\n1. **권한 설정**: 출력 파일이 저장될 디렉토리의 권한을 적절히 설정하여 불필요한 접근을 차단합니다. 예를 들어, 민감한 정보가 포함된 PDF 파일은 특정 사용자만 접근할 수 있는 디렉토리에 저장합니다.\n\n2. **암호화**: 민감한 데이터가 포함된 경우, 출력 파일을 암호화하여 저장합니다. 이를 통해 파일이 유출되더라도 쉽게 열람할 수 없도록 합니다.\n\n3. **백업 및 복구**: 출력 파일이 저장될 위치에 대한 백업 및 복구 계획을 마련합니다. 이를 통해 데이터 손실 시 신속하게 복구할 수 있습니다.\n\n4. **로그 관리**: 파일 생성 및 접근 로그를 관리하여 불법적인 접근을 감지하고 대응할 수 있도록 합니다.\n\n5. **네트워크 보안**: 출력 파일이 네트워크를 통해 전송될 경우, 안전한 통신 채널을 사용하여 데이터 유출을 방지합니다.\n\n예를 들어, 출력 파일 경로를 설정할 때는 다음과 같이 할 수 있습니다:\n\n```bash\npdfxup -o /secure/directory/output.pdf /path/to/input.pdf\n```\n\n여기서 `/secure/directory/`는 적절한 권한 설정과 보안 조치가 적용된 디렉토리입니다."
+    },
+    {
+        "instruction": "mkinitcpio --preset linux-lts 명령어를 실행했을 때 어떤 일이 발생하나요?",
+        "output": "`mkinitcpio --preset linux-lts` 명령어를 실행하면, `linux-lts` 프리셋을 기반으로 초기 RAM 디스크 환경이 생성됩니다. 이 명령어는 `/etc/mkinitcpio.conf` 파일에 정의된 `linux-lts` 프리셋에 따라 필요한 모듈과 설정을 포함한 initramfs 이미지를 생성합니다."
+    },
+    {
+        "instruction": "QEMU/KVM 가상 머신 매니저에서 특정 사용자의 비밀번호를 설정하려면 어떻게 해야 하나요?",
+        "output": "`qm guest passwd` 명령어를 사용하여 QEMU/KVM 가상 머신 매니저에서 특정 사용자의 비밀번호를 설정할 수 있습니다. 예를 들어, 가상 머신 ID가 100이고 사용자 이름이 user1인 경우, 다음과 같이 명령어를 입력합니다:\n`qm guest passwd 100 user1`.\n이 명령어는 대화식으로 비밀번호를 설정합니다. 이미 해시된 비밀번호를 설정하려면 `--crypted 1` 옵션을 추가하여 다음과 같이 입력합니다:\n`qm guest passwd 100 user1 --crypted 1`."
+    },
+    {
+        "instruction": "netselect 명령어를 사용하여 가장 빠른 네트워크 서버를 선택하려고 합니다. 이 때, 최대 TTL을 15로 설정하고, 가장 빠른 서버 3대를 출력하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "sudo netselect -m 15 -s 3 host_1 host_2 host_3"
+    },
+    {
+        "instruction": "hardinfo를 실행하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "hardinfo를 실행하려면 `hardinfo` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "특정 비디오 장치의 모든 컨트롤과 그 값을 나열하는 명령어는 무엇인가요?",
+        "output": "특정 비디오 장치의 모든 컨트롤과 그 값을 나열하는 명령어는 다음과 같습니다:\n\n`v4l2-ctl --list-ctrls --device {{path/to/video_device}}`"
+    },
+    {
+        "instruction": "distrobox-create 명령어를 사용하여 Ubuntu 이미지로 컨테이너를 생성할 때, 보안상 어떤 점을 고려해야 하나요?",
+        "output": "distrobox-create 명령어를 사용하여 Ubuntu 이미지로 컨테이너를 생성할 때, 보안상 다음 사항을 고려해야 합니다:\n\n1. **이미지 출처 확인**: Ubuntu 이미지가 신뢰할 수 있는 출처에서 제공되는지 확인해야 합니다. 공식 이미지를 사용하는 것이 좋습니다.\n2. **컨테이너 격리**: 컨테이너가 호스트 시스템과 얼마나 긴밀하게 통합되는지 확인하고, 필요한 경우 격리 수준을 조정해야 합니다. 예를 들어, 특정 디렉토리나 디바이스의 접근 권한을 제한할 수 있습니다.\n3. **사용자 권한**: 컨테이너를 생성할 때 사용되는 사용자 권한을 최소화하여 보안 위협을 줄여야 합니다. root 권한으로 컨테이너를 실행하는 것은 피해야 합니다.\n4. **네트워크 설정**: 컨테이너의 네트워크 설정을 검토하고, 불필요한 포트나 서비스가 노출되지 않도록 해야 합니다.\n5. **업데이트 및 패치**: 컨테이너 내의 소프트웨어를 정기적으로 업데이트하고 패치하여 최신 보안 업데이트를 적용해야 합니다.\n6. **백업 및 복구**: 중요한 데이터가 컨테이너 내에 저장되는 경우, 정기적인 백업 및 복구 계획을 마련해야 합니다."
+    },
+    {
+        "instruction": "Flatpak 애플리케이션을 빌드하고 특정 저장소에 내보내면서 GPG 키로 서명하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`flatpak-builder --gpg-sign={{key_id}} --repo={{repository_name}} {{path/to/build_directory}} {{path/to/manifest}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "phpquery를 사용하여 PHP 7.3에서 apache2 SAPI로 JSON 확장이 활성화되어 있는지 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`sudo phpquery -v {{7.3}} -s {{apache2}} -m {{json}}` 명령어를 사용하면 PHP 7.3에서 apache2 SAPI로 JSON 확장이 활성화되어 있는지 확인할 수 있습니다."
+    },
+    {
+        "instruction": "xclip을 사용하여 파일의 내용을 시스템 clipboard에 복사하는 명령어는 무엇인가요?",
+        "output": "`xclip -sel clip {{input_file.txt}}`"
+    },
+    {
+        "instruction": "schroot를 사용하여 현재 시스템에서 사용 가능한 chroot 목록을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "현재 시스템에서 사용 가능한 chroot 목록을 확인하려면 `schroot --list` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "파일의 줄바꿈 문자를 macOS 스타일로 변환하려면 어떻게 해야 하나요?",
+        "output": "`unix2mac {{path/to/file}}` 명령어를 사용하여 파일의 줄바꿈 문자를 macOS 스타일로 변환할 수 있습니다."
+    },
+    {
+        "instruction": "lsscsi 명령어를 사용하여 모든 SCSI 디바이스와 그 속성을 확인하려면 어떻게 해야 하나요?",
+        "output": "`lsscsi -L` 명령어를 사용하여 모든 SCSI 디바이스와 그 속성을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "rpm-ostree status 명령어를 실행했을 때, 부팅 로더에 나타나는 순서와 일치하는지 확인할 수 있는 방법이 있나요?",
+        "output": "`rpm-ostree status` 명령어를 실행하면 부팅 로더에 나타나는 순서와 일치하여 ostree 배포를 표시합니다."
+    },
+    {
+        "instruction": "dumpe2fs 명령어를 사용하여 /dev/sdXN 파티션의 슈퍼블록 정보만 출력하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`dumpe2fs -h {{/dev/sdXN}}` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "현재 로드된 모듈을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "현재 로드된 모듈을 확인하려면 `module list` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "larasail을 사용하여 특정 PHP 버전으로 서버를 설정하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`larasail setup {{php71}}` 명령어를 사용하여 특정 PHP 버전으로 서버를 설정할 수 있습니다."
+    },
+    {
+        "instruction": "auracle search 명령어를 사용하여 정규 표현식에 맞는 AUR 패키지를 검색하려면 어떻게 해야 하나요?",
+        "output": "auracle search 명령어를 사용하여 정규 표현식에 맞는 AUR 패키지를 검색하려면 다음과 같이 입력하면 됩니다:\n\n`auracle search '{{regular_expression}}'`"
+    },
+    {
+        "instruction": "특정 네트워크 인터페이스의 MAC 주소를 변경하려면 어떻게 해야 하나요?",
+        "output": "`ip link set {{ethN}} address {{ff:ff:ff:ff:ff:ff}}` 명령어를 사용하여 특정 네트워크 인터페이스의 MAC 주소를 변경할 수 있습니다."
+    },
+    {
+        "instruction": "xset 명령어를 사용하여 스크린세이버를 비활성화하려면 어떻게 해야 하나요?",
+        "output": "`xset s off` 명령어를 사용하여 스크린세이버를 비활성화할 수 있습니다."
+    },
+    {
+        "instruction": "산술 퀴즈를 시작하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "산술 퀴즈를 시작하려면 `arithmetic` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "fscrypt를 사용하여 디렉토리의 파일시스템 암호화를 활성화하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`fscrypt encrypt {{path/to/directory}}` 명령어를 사용하여 fscrypt를 사용하여 디렉토리의 파일시스템 암호화를 활성화할 수 있습니다."
+    },
+    {
+        "instruction": "snapper list-configs 명령어를 사용하여 현재 시스템에 설정된 snapshot config들을 모두 확인할 수 있나요?",
+        "output": "네, `snapper list-configs` 명령어를 사용하여 현재 시스템에 설정된 snapshot config들을 모두 확인할 수 있습니다."
+    },
+    {
+        "instruction": "시스템 로그에 특정 명령어의 출력을 기록하려면 어떻게 해야 하나요?",
+        "output": "`systemd-cat` 명령어를 사용하여 특정 명령어의 출력을 시스템 로그에 기록할 수 있습니다. 예를 들어, `systemd-cat {{command}}` 형식으로 입력하면 됩니다. 이렇게 하면 명령어의 출력 스트림과 오류 스트림 모두가 시스템 로그에 기록됩니다."
+    },
+    {
+        "instruction": "top 명령어를 사용하여 특정 사용자가 소유한 프로세스만 보여주는 방법은 무엇인가요?",
+        "output": "`top -u {{username}}` 명령어를 사용하여 특정 사용자가 소유한 프로세스만 볼 수 있습니다."
+    },
+    {
+        "instruction": "iftop 명령어를 사용하여 특정 인터페이스의 대역폭 사용량을 확인하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`sudo iftop -i {{interface}}` 옵션을 사용하여 특정 인터페이스의 대역폭 사용량을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "calcurse --appointment 명령어를 실행했을 때 오늘의 일정이 제대로 출력되지 않습니다. 이 문제를 해결하기 위해 어떤 보안 설정을 확인해야 할까요?",
+        "output": "먼저, `calcurse`가 올바르게 설치되었는지 확인하세요. 그 다음, 사용자 권한 문제가 있는지 확인해야 합니다. `calcurse`가 일정 파일에 접근할 수 있는 권한이 있는지 확인하세요. 또한, 네트워크 연결이 필요한 경우, 방화벽 설정이나 네트워크 보안 설정이 제대로 구성되어 있는지도 확인해야 합니다. 마지막으로, `calcurse`가 사용하는 데이터 소스의 인증 정보가 올바른지 확인하세요."
+    },
+    {
+        "instruction": "`lrzuntar` 명령어를 사용하여 특정 디렉토리로 압축을 풀고, 압축 파일을 삭제하려면 어떻게 해야 하나요?",
+        "output": "`lrzuntar -O {{path/to/directory}} -D {{path/to/archive.tar.lrz}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "sm 명령어를 사용하여 배경색을 빨간색으로 설정하고 텍스트 색상을 흰색으로 설정하여 \"경고: 시스템 점검 중\"이라는 메시지를 표시하려면 어떻게 해야 하나요?",
+        "output": "`sm -b {{red}} -f {{white}} \"{{경고: 시스템 점검 중}}\"`"
+    },
+    {
+        "instruction": "cryptsetup luksFormat 명령어를 사용하여 LUKS 볼륨을 초기화할 때 모든 데이터가 덮어쓰여지나요?",
+        "output": "네, cryptsetup luksFormat 명령어를 사용하여 LUKS 볼륨을 초기화할 때 해당 파티션의 모든 데이터가 덮어쓰여집니다."
+    },
+    {
+        "instruction": "cc 명령어와 gcc 명령어의 차이점이 궁금합니다.",
+        "output": "cc 명령어는 gcc 명령어의 별칭입니다. 따라서 두 명령어 간의 차이는 없으며, 동일한 기능을 수행합니다."
+    },
+    {
+        "instruction": "이 파일이 ARM EFI 이미지인지 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`grub-file --is-arm-efi {{path/to/file}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "trace-cmd 명령어를 사용하여 현재 시스템에서 활성화된 tracer 목록을 확인하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`trace-cmd list -t` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "파티션 테이블을 수정한 후 변경 사항을 저장하지 않고 종료하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "파티션 테이블을 수정한 후 변경 사항을 저장하지 않고 종료하려면 `q` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "conntrack --dump 명령어를 사용하여 현재 추적되고 있는 모든 연결을 확인할 수 있나요?",
+        "output": "네, conntrack --dump 명령어를 사용하여 현재 추적되고 있는 모든 연결을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "nmtui-edit 명령어를 사용하여 네트워크 설정을 수정하려고 합니다. 이 명령어를 실행할 때 주의해야 할 보안 사항이 있나요?",
+        "output": "`nmtui-edit` 명령어를 사용하여 네트워크 설정을 수정할 때는 몇 가지 보안 사항을 주의해야 합니다. 첫째, 루트 권한으로 명령어를 실행해야 하므로, `sudo`를 사용하여 실행해야 합니다. 둘째, 네트워크 설정을 변경할 때는 외부에서 접근할 수 있는 포트나 서비스를 열지 않도록 주의해야 합니다. 셋째, 네트워크 설정을 변경한 후에는 방화벽 설정을 확인하고 필요한 경우 업데이트해야 합니다. 마지막으로, 네트워크 설정을 변경한 후에는 시스템 로그를 확인하여 비정상적인 활동이 없는지 점검해야 합니다."
+    },
+    {
+        "instruction": "aplay 명령어를 사용하여 특정 파일을 재생하려면 어떻게 해야 하나요?",
+        "output": "`aplay {{path/to/file}}` 명령어를 사용하여 특정 파일을 재생할 수 있습니다."
+    },
+    {
+        "instruction": "autorandr --save 프로필명 명령어를 실행했을 때, 저장된 프로필에 어떤 정보가 포함되나요?",
+        "output": "`autorandr --save 프로필명` 명령어를 실행하면, 현재 화면 레이아웃 정보가 저장됩니다. 이 정보에는 연결된 모니터의 배치, 해상도, 그리고 기타 디스플레이 설정이 포함됩니다. 이를 통해 나중에 동일한 레이아웃을 쉽게 복원할 수 있습니다."
+    },
+    {
+        "instruction": "Samba 사용자의 비밀번호 실패 횟수를 초기화하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "Samba 사용자의 비밀번호 실패 횟수를 초기화하려면 다음 명령어를 사용해야 합니다:\n`sudo pdbedit --user {{username}} --bad-password-count-reset`"
+    },
+    {
+        "instruction": "rspamc 명령어를 사용해서 이메일을 스팸으로 학습시키려면 어떻게 해야 하나요?",
+        "output": "`rspamc learn_spam {{path/to/email_file}}` 명령어를 사용하여 이메일을 스팸으로 학습시킬 수 있습니다."
+    },
+    {
+        "instruction": "Guake 터미널을 닫는 단축키는 무엇인가요?",
+        "output": "Guake 터미널을 닫는 단축키는 `Super+X`입니다."
+    },
+    {
+        "instruction": "dbclient를 사용하여 특정 identity key를 사용해 원격 호스트에 연결하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`dbclient -i {{path/to/key_file}} {{user}}@{{host}}` 명령어를 사용하여 특정 identity key를 사용해 원격 호스트에 연결할 수 있습니다."
+    },
+    {
+        "instruction": "coproc을 사용하여 비동기적으로 실행되는 서브셸을 생성하려면 어떻게 해야 하나요?",
+        "output": "coproc을 사용하여 비동기적으로 실행되는 서브셸을 생성하려면 다음과 같이 명령어를 입력하면 됩니다:\n\n`coproc { {{command1; command2; ...}}; }`"
+    },
+    {
+        "instruction": "trust policy store에서 특정 인증서의 정보를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`trust list --filter=certificates` 명령어를 사용하여 trust policy store에서 특정 인증서의 정보를 확인할 수 있습니다."
+    },
+    {
+        "instruction": "특정 UDP 포트를 사용하여 DNS 서버에 연결하는 방법은 무엇인가요?",
+        "output": "`adig -U {{port}} {{example.com}}` 명령어를 사용하여 특정 UDP 포트를 사용하여 DNS 서버에 연결할 수 있습니다."
+    },
+    {
+        "instruction": "whatis 명령어를 사용하여 특정 언어로 된 설명을 표시하려면 어떻게 해야 하나요?",
+        "output": "whatis 명령어를 사용하여 특정 언어로 된 설명을 표시하려면 --locale 옵션을 사용하면 됩니다.\n예를 들어, 영어로 된 설명을 표시하려면 다음과 같이 입력합니다:\n`whatis --locale=en {{command}}`.\n이 명령어를 실행하기 위해서는 `manpage-{{locale}}` 패키지가 필요합니다."
+    },
+    {
+        "instruction": "특정 사용자의 모든 지문을 삭제하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "특정 사용자의 모든 지문을 삭제하려면 `fprintd-delete {{username}}` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "현재 터미널을 재초기화하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "현재 터미널을 재초기화하려면 `reset` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "NixOS 시스템을 재구성하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "NixOS 시스템을 재구성하려면 `sudo nixos-rebuild switch` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "ISO 이미지 파일에서 특정 파일을 추출하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`isoinfo -i {{path/to/image.iso}} -x {{/PATH/TO/FILE/INSIDE/ISO.EXT}}` 명령어를 사용하여 ISO 이미지 파일에서 특정 파일을 추출할 수 있습니다."
+    },
+    {
+        "instruction": "특정 가상 머신의 상태를 자세히 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "특정 가상 머신의 상태를 자세히 확인하려면 `qm status --verbose true {{vm_id}}` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "vipw 명령어를 사용하여 패스워드 파일을 수정하려면 어떻게 해야 하나요?",
+        "output": "`vipw` 명령어를 입력하면 패스워드 파일을 수정할 수 있습니다."
+    },
+    {
+        "instruction": "PDF 파일의 특정 페이지를 이미지 파일로 변환하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`gs -dQUIET -dBATCH -dNOPAUSE -sDEVICE=jpeg -r150 -dFirstPage={{페이지 번호}} -dLastPage={{페이지 번호}} -sOutputFile={{output_%d.jpg}} {{input.pdf}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "특정 벤더와 제품 ID를 가진 USB 장치만 나열하는 명령어는 무엇인가요?",
+        "output": "`lsusb -d {{vendor}}:{{product}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "ltrace를 사용하여 특정 프로그램의 malloc과 free 함수 호출만 추적하고, 이를 파일에 저장하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`ltrace -e malloc+free -o {{file}} {{path/to/program}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "unzipsfx를 사용하여 자가 추출 바이너리 파일을 생성하려면 어떻게 해야 하나요?",
+        "output": "`zip` 아카이브의 자가 추출 바이너리 파일을 생성하려면 다음 명령어를 사용하세요:\n`cat unzipsfx {{path/to/archive.zip}} > {{filename}} && chmod 755 {{filename}}`"
+    },
+    {
+        "instruction": "timedatectl을 사용해서 현재 시스템 시간을 확인하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`timedatectl` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "애플리케이션에서 글로벌 에러 핸들러를 설정하려면 어떻게 해야 하나요?",
+        "output": "애플리케이션에서 글로벌 에러 핸들러를 설정하려면 런타임 구성의 일부로 이를 정의하거나 코드 내에서 직접 설정할 수 있습니다. 예기치 않은 에러가 발생했을 때 일반적인 응답을 반환하도록 하고, 에러 세부 정보는 서버 측에 로그로 기록되도록 합니다. 이를 통해 사용자에게 구현 세부 사항이 노출되지 않도록 할 수 있습니다. 또한, [RFC 7807 - Problem Details for HTTP APIs](https://www.rfc-editor.org/rfc/rfc7807)에 정의된 문서 형식을 사용하여 에러 응답을 구성하는 것이 좋습니다."
+    },
+    {
+        "instruction": "웹 애플리케이션에서 발생한 오류 메시지를 통해 기술 스택 정보를 유추할 수 있는 방법은 무엇인가요?",
+        "output": "웹 애플리케이션에서 발생한 오류 메시지를 통해 기술 스택 정보를 유추할 수 있는 방법은 다음과 같습니다.\n\n오류 메시지에 포함된 예외 클래스 이름과 메서드 호출 스택(stack trace)을 분석하여 사용된 프로그래밍 언어, 프레임워크, 라이브러리 등을 식별할 수 있습니다.\n예를 들어, `java.lang.NumberFormatException`과 같은 예외 클래스는 Java 언어를 사용하고 있음을 나타내며, `com.opensymphony.xwork2` 패키지는 Struts2 프레임워크를 사용하고 있음을 알 수 있습니다.\n또한, 오류 메시지에 포함된 서버 정보나 파일 경로를 통해 서버 소프트웨어와 설치 경로를 유추할 수 있습니다.\n예를 들어, `Apache Tomcat/7.0.56`은 사용된 서버 소프트웨어와 버전을 나타내며, `D:\\app\\index_new.php`와 같은 파일 경로는 웹 애플리케이션의 설치 경로를 알 수 있습니다.\n이와 같은 정보를 통해 웹 애플리케이션의 기술 스택을 유추할 수 있습니다."
+    },
+    {
+        "instruction": "이 프로젝트에서 사용된 설정을 찾기 위해 만든 모든 샌드박스 프로젝트의 소스 코드는 어디에 저장되어 있나요?",
+        "output": "이 프로젝트에서 사용된 설정을 찾기 위해 만든 모든 샌드박스 프로젝트의 소스 코드는 [GitHub repository](https://github.com/righettod/poc-error-handling)에 저장되어 있습니다."
+    },
+    {
+        "instruction": "특정 기술 스택에서 Error Handling을 구성하기 위해 어떤 옵션들이 제안되나요?",
+        "output": "각 기술 스택에 대해 다음과 같은 구성 옵션이 제안됩니다."
+    },
+    {
+        "instruction": "표준 Java 웹 애플리케이션에서 글로벌 에러 핸들러를 설정하려면 web.xml 배포 설명자 수준에서 어떻게 구성해야 하나요?",
+        "output": "표준 Java 웹 애플리케이션에서 글로벌 에러 핸들러를 설정하려면 **web.xml** 배포 설명자 파일에 다음과 같이 구성해야 합니다.\n\n``` xml\n<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<web-app xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" ns=\"http://java.sun.com/xml/ns/javaee\"\nxsi:schemaLocation=\"http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd\"\nversion=\"3.0\">\n...\n<error-page>\n<exception-type>java.lang.Exception</exception-type>\n<location>/error.jsp</location>\n</error-page>\n...\n</web-app>\n```\n\n이 구성을 통해 발생하는 모든 예기치 않은 에러는 **error.jsp** 페이지로 리디렉션되며, 해당 페이지에서 에러를 추적하고 일반적인 응답을 반환합니다."
+    },
+    {
+        "instruction": "애플리케이션에서 발생하는 에러를 처리하지 않으면 Reconnaissance 단계에서 공격자에게 어떤 정보를 제공할 수 있나요?",
+        "output": "애플리케이션에서 발생하는 에러를 처리하지 않으면 공격자에게 애플리케이션 서버, 프레임워크, 라이브러리 등의 기술적인 정보(이름과 버전 속성)를 제공할 수 있습니다. 이러한 정보는 공격자가 Reconnaissance 단계에서 목표에 대한 초기 정보를 수집하는 데 도움이 됩니다."
+    },
+    {
+        "instruction": "ASP.NET Web API 웹 애플리케이션에서 전역 에러 핸들러를 등록하는 방법은 무엇인가요?",
+        "output": "ASP.NET Web API 웹 애플리케이션에서 전역 에러 핸들러를 등록하려면, WebApiConfig.cs 파일에서 config.Services.Replace 메서드를 사용하여 IExceptionLogger와 IExceptionHandler를 각각 GlobalErrorLogger와 GlobalErrorHandler로 대체합니다. 예를 들어, 다음과 같이 등록할 수 있습니다:\n\n```csharp\nconfig.Services.Replace(typeof(IExceptionLogger), new GlobalErrorLogger());\nconfig.Services.Replace(typeof(IExceptionHandler), new GlobalErrorHandler());\n```"
+    },
+    {
+        "instruction": "ASP.NET Core 웹 애플리케이션에서 글로벌 에러 핸들러를 정의하려면 어떻게 해야 하나요?",
+        "output": "ASP.NET Core 웹 애플리케이션에서 글로벌 에러 핸들러를 정의하려면, 먼저 에러 처리를 담당할 전용 API Controller를 만들어야 합니다. 이 Controller는 예상치 못한 예외가 발생했을 때 호출됩니다. 예를 들어, `ErrorController`라는 이름의 Controller를 만들고, 이 Controller 내에서 `Handle` 메서드를 정의하여 예외를 처리하고 JSON 형식의 응답을 반환할 수 있습니다.\n\n그 다음, `Startup.cs` 파일에서 글로벌 에러 핸들러를 설정합니다. `Configure` 메서드 내에서 `UseExceptionHandler` 미들웨어를 사용하여 예외가 발생했을 때 호출될 API Controller의 URL을 지정합니다. 개발 환경이 아닌 경우에만 글로벌 에러 핸들러를 활성화하도록 설정할 수 있습니다. 예를 들어, `app.UseExceptionHandler(\"/api/error\");`와 같이 설정할 수 있습니다."
+    },
+    {
+        "instruction": "클라이언트 요청에 대해 403 에러 코드를 반환할 때, 구현 세부 사항을 포함하지 않도록 어떻게 해야 하나요?",
+        "output": "403 에러 코드를 반환할 때는 \"Forbidden\"이라는 일반적인 메시지를 사용하고, 추가적인 구현 세부 사항을 포함하지 않도록 해야 합니다. 예를 들어, \"Access is denied\"와 같은 메시지를 사용하여 클라이언트에게 접근이 거부되었음을 알리되, 왜 거부되었는지에 대한 구체적인 정보는 제공하지 않아야 합니다."
+    },
+    {
+        "instruction": "SpringMVC 또는 SpringBoot 웹 애플리케이션에서 글로벌 에러 핸들러를 정의하려면 어떻게 해야 하나요?",
+        "output": "SpringMVC 또는 SpringBoot 웹 애플리케이션에서 글로벌 에러 핸들러를 정의하려면, `@RestControllerAdvice` 어노테이션을 사용하여 클래스를 생성하고, `@ExceptionHandler` 어노테이션을 사용하여 예외를 처리하는 메서드를 정의합니다. 또한, `ProblemDetail` 클래스를 사용하여 응답 객체를 생성할 수 있습니다. 예를 들어, 다음과 같이 구현할 수 있습니다:\n\n```java\nimport org.springframework.http.HttpStatus;\nimport org.springframework.http.ProblemDetail;\nimport org.springframework.web.bind.annotation.ExceptionHandler;\nimport org.springframework.web.bind.annotation.RestControllerAdvice;\nimport org.springframework.web.context.request.WebRequest;\nimport org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;\n\n@RestControllerAdvice\npublic class RestResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {\n\n    @ExceptionHandler(value = {Exception.class})\n    public ProblemDetail handleGlobalError(RuntimeException exception, WebRequest request) {\n        return ProblemDetail.forStatusAndDetail(HttpStatus.INTERNAL_SERVER_ERROR, \"An error occurred, please retry\");\n    }\n}\n```\n\n이 클래스는 애플리케이션에서 발생하는 모든 예외를 처리하고, 내부 서버 오류 응답을 반환합니다."
+    },
+    {
+        "instruction": "SOAP 웹 서비스에서 XSD를 사용하여 모든 고정 형식 파라미터에 대해 강력한 검증 패턴을 정의하는 방법은 무엇인가요?",
+        "output": "SOAP 웹 서비스에서 XSD를 사용하여 모든 고정 형식 파라미터에 대해 강력한 검증 패턴을 정의하려면, 허용 목록(allow-list) 기반의 정규 표현식을 사용하여 각 파라미터의 형식을 엄격하게 제한하는 것이 좋습니다. 예를 들어, 우편번호, 전화번호, 목록 값 등과 같은 고정 형식 파라미터에 대해 정확한 패턴을 정의하여 XSD 스키마에 포함시키면 됩니다. 이를 통해 잘못된 형식의 데이터가 웹 서비스에 전달되는 것을 방지할 수 있습니다."
+    },
+    {
+        "instruction": "웹 서비스에서 클라이언트로 전송되는 출력 데이터는 스크립트로 실행되지 않도록 인코딩되어야 하나요?",
+        "output": "네, 웹 서비스에서 클라이언트로 전송되는 출력 데이터는 스크립트로 실행되지 않도록 인코딩되어야 합니다. 이는 특히 웹 서비스 클라이언트가 출력 데이터를 HTML 페이지를 렌더링하는 데 직접적으로 또는 AJAX 객체를 통해 간접적으로 사용할 때 중요합니다."
+    },
+    {
+        "instruction": "웹 서비스의 메시지 처리량을 최대화하기 위해 어떻게 설정을 최적화해야 하나요?",
+        "output": "웹 서비스의 메시지 처리량(Message Throughput)을 최대화하기 위해서는 설정을 DoS(Denial of Service) 상황을 피할 수 있도록 최적화해야 합니다."
+    },
+    {
+        "instruction": "SOAP 메시지에 첨부된 파일이 바이러스나 악성코드에 감염되었을 경우를 대비하여 어떤 보안 조치를 취해야 하나요?",
+        "output": "SOAP 메시지에 첨부된 파일이 바이러스나 악성코드에 감염되었을 경우를 대비하여 바이러스 스캔 기술을 설치하고, 가능하면 인라인으로 설정하여 파일과 첨부물이 디스크에 저장되기 전에 검사할 수 있도록 해야 합니다. 또한, 바이러스 스캔 기술을 최신 바이러스 정의/규칙으로 정기적으로 업데이트해야 합니다."
+    },
+    {
+        "instruction": "공개키 암호화를 사용할 때, 암호화는 기밀성을 보장하지만 메시지의 무결성을 보장할 수 있나요?",
+        "output": "공개키 암호화를 사용할 때, 암호화는 기밀성을 보장하지만 메시지의 무결성을 보장하지 않습니다. 이는 수신자의 공개키가 공개되어 있기 때문입니다."
+    },
+    {
+        "instruction": "XML Denial of Service 공격에 대해 어떻게 방어할 수 있나요?",
+        "output": "XML Denial of Service 공격에 대해 방어하기 위해서는 다음과 같은 검증을 제공해야 합니다:\n    재귀적인 payload에 대한 검증, 과도하게 큰 payload에 대한 검증, XML entity expansion에 대한 보호, 그리고 과도하게 긴 element 이름에 대한 검증.\n    이러한 보호는 XML parser/schema validator에 의해 제공되어야 하며, 이를 확인하기 위해 테스트 케이스를 작성하여 parser가 이러한 공격에 저항할 수 있는지 확인해야 합니다."
+    },
+    {
+        "instruction": "클라이언트 인증서 인증을 사용할 때 Mutual-TLS를 적용해야 하나요?",
+        "output": "네, 클라이언트 인증서 인증을 사용할 때는 Mutual-TLS를 적용하는 것이 일반적입니다."
+    },
+    {
+        "instruction": "웹 서비스에서 SOAP 메시지의 크기를 제한하지 않으면 DoS 공격의 위험이 증가하나요?",
+        "output": "네, 웹 서비스에서 SOAP 메시지의 크기를 제한하지 않으면 DoS 공격의 위험이 증가합니다."
+    },
+    {
+        "instruction": "웹 서비스 간의 통신에서 [TLS]를 사용하여 모든 인증된 세션과 민감한 데이터 전송을 암호화하는 방법은 무엇인가요?",
+        "output": "웹 서비스 간의 통신에서 [TLS]를 사용하여 모든 인증된 세션과 민감한 데이터 전송을 암호화하려면, 먼저 웹 서버와 클라이언트 모두에서 [TLS]를 지원하도록 설정해야 합니다. 이를 위해 신뢰할 수 있는 [CA](Certificate Authority)에서 발급한 유효한 인증서를 사용하여 서버를 구성해야 합니다. 또한, 최신 암호화 알고리즘과 프로토콜을 사용하도록 설정하여 보안을 강화해야 합니다. 예를 들어, [TLS] 1.2 이상 버전을 사용하고, 약한 암호화 알고리즘은 비활성화하는 것이 좋습니다. 이러한 설정을 통해 데이터의 기밀성, 무결성, 그리고 서버 인증을 보장할 수 있습니다. 자세한 구성 방법은 [Transport Layer Protection Cheat Sheet]를 참고하세요."
+    },
+    {
+        "instruction": "웹 서비스가 WS-I Basic Profile에 최소한 준수하고 있는지 확인하려면 어떻게 해야 합니까?",
+        "output": "웹 서비스가 WS-I Basic Profile에 최소한 준수하고 있는지 확인하려면, 먼저 WS-I Basic Profile의 규격을 이해하고, 해당 규격에 따라 웹 서비스의 엔드포인트를 테스트해야 합니다. 이를 위해 WS-I 테스트 도구를 사용하여 웹 서비스의 SOAP 메시지, WSDL 파일, 그리고 기타 관련 구성 요소를 검증할 수 있습니다. 또한, 웹 서비스의 인터페이스와 메시지 교환 패턴이 WS-I Basic Profile의 요구사항을 충족하는지 확인해야 합니다."
+    },
+    {
+        "instruction": "웹 서비스가 사용할 수 있는 CPU 사이클의 양을 제한하는 방법은 무엇인가요?",
+        "output": "웹 서비스가 사용할 수 있는 CPU 사이클의 양을 제한하는 방법은 예상된 서비스 속도에 따라 CPU 사이클의 사용량을 제한하는 것입니다."
+    },
+    {
+        "instruction": "웹 서비스에서 관리자 기능에 접근할 수 있는 권한은 어떻게 제한해야 하나요?",
+        "output": "웹 서비스에서 관리자 기능에 접근할 수 있는 권한은 웹 서비스 관리자로 제한해야 합니다. 이상적으로는 관리 기능이 포함된 별도의 애플리케이션을 사용하여, 일반 사용자와 민감한 관리 기능을 완전히 분리해야 합니다."
+    },
+    {
+        "instruction": "웹 서비스에서 XML 입력을 처리할 때 XML Bomb 공격을 방지하기 위해 어떤 검증 절차를 거쳐야 하나요?",
+        "output": "웹 서비스에서 XML 입력을 처리할 때 XML Bomb 공격을 방지하기 위해서는 입력을 소비하기 전에 콘텐츠 검증을 거쳐야 합니다. 이 검증 절차에는 악성 XML 엔티티를 대상으로 한 검증과 XML Bomb 공격을 방지하기 위한 검증이 포함됩니다. 또한, 강력한 허용 목록을 사용하여 입력을 검증하고, 외부 엔티티 공격을 방지하기 위한 검증도 필요합니다."
+    },
+    {
+        "instruction": "웹 서비스에서 TLS를 사용하여 서버 인증을 수행할 때, 서버 인증서가 신뢰할 수 있는 제공자에 의해 발급되었는지 어떻게 확인할 수 있나요?",
+        "output": "서버 인증서가 신뢰할 수 있는 제공자에 의해 발급되었는지 확인하려면, 클라이언트는 인증서의 발급자를 신뢰할 수 있는 Certificate Authority(CA) 목록과 비교하여 확인할 수 있습니다. 이 목록은 일반적으로 운영체제나 브라우저에 내장되어 있으며, 인증서 체인을 통해 최종 CA까지 검증하는 과정을 거칩니다."
+    },
+    {
+        "instruction": "웹 서비스에서 OWASP Top 10 중 어떤 공격이 가장 흔한가요?",
+        "output": "웹 서비스에서 OWASP Top 10 중 가장 흔한 공격은 인젝션(Injection) 공격입니다."
+    },
+    {
+        "instruction": "웹 서비스에서 민감한 데이터를 포함한 메시지는 강력한 encryption cipher를 사용하여 암호화되어야 하나요?",
+        "output": "네, 웹 서비스에서 민감한 데이터를 포함한 메시지는 강력한 encryption cipher를 사용하여 암호화되어야 합니다. 이는 transport encryption 또는 message encryption을 통해 이루어질 수 있습니다."
+    },
+    {
+        "instruction": "SOAP 인코딩 스타일을 클라이언트와 서버 간에 동일하게 적용하는 방법은 무엇인가요?",
+        "output": "SOAP 인코딩 스타일을 클라이언트와 서버 간에 동일하게 적용하려면, 먼저 클라이언트와 서버 모두에서 사용할 인코딩 스타일을 명확히 정의해야 합니다. 일반적으로 사용되는 인코딩 스타일은 Document/Literal 또는 RPC/Literal입니다. 이를 위해 WSDL(Web Services Description Language) 파일에서 인코딩 스타일을 명시적으로 설정하고, 클라이언트와 서버 모두가 이 WSDL 파일을 참조하도록 합니다. 또한, 클라이언트와 서버 간의 통신 프로토콜을 일치시키고, 필요한 경우 인증서나 암호화 방식도 동일하게 설정해야 합니다."
+    },
+    {
+        "instruction": "RESTful 웹 서비스와 SOAP 웹 서비스의 차이점은 무엇인가요?",
+        "output": "RESTful 웹 서비스는 HTTP 요청을 사용하여 가벼운 통신을 구현하며, SOAP 웹 서비스는 복잡한 프로토콜을 사용합니다."
+    },
+    {
+        "instruction": "RESTful 웹 서비스에서 사용되는 인증 방식과 세션 관리 방법에 대해 설명해주세요.",
+        "output": "RESTful 웹 서비스에서는 주로 머신 투 머신 커뮤니케이션을 위해 커스텀 인증 방식과 세션 관리 방법을 사용합니다. 일반적으로 로그인 시퀀스를 허용하지 않기 때문에 커스텀 보안 토큰을 활용합니다. 이를 통해 각 요청마다 토큰을 포함하여 인증을 수행하고, 세션 상태를 유지하지 않는 무상태(stateless) 특성을 가집니다."
+    },
+    {
+        "instruction": "RESTful 서비스에서 인증 토큰을 안전하게 저장하는 방법은 무엇인가요?",
+        "output": "RESTful 서비스에서 인증 토큰을 안전하게 저장하는 방법은 여러 가지가 있습니다. 첫째, HTTPS를 사용하여 데이터 전송 시 암호화를 통해 토큰의 유출을 방지해야 합니다. 둘째, 클라이언트 측에서는 토큰을 메모리에 저장하거나, 보안이 강화된 스토리지(예: Secure Storage, Keychain)를 사용해야 합니다. 셋째, 서버 측에서는 토큰의 유효성을 주기적으로 검증하고, 필요 시 재발급하는 메커니즘을 구현해야 합니다. 마지막으로, 토큰의 유효 기간을 짧게 설정하고, Refresh Token을 사용하여 새로운 Access Token을 발급받는 방식도 고려할 수 있습니다."
+    },
+    {
+        "instruction": "RESTful 웹 서비스의 모든 기능과 파라미터를 어떻게 식별할 수 있나요?",
+        "output": "RESTful 웹 서비스의 모든 기능과 파라미터를 식별하는 것은 매우 어려운 작업입니다. 애플리케이션이 모든 기능과 파라미터를 활용하지 않기 때문에, 클라이언트 측 코드에 의해 동적으로 활성화되는 경우가 많습니다. 또한, 클라이언트 애플리케이션이 웹 애플리케이션이 아닌 경우가 많아 관련 코드를 검사할 수 없습니다. 파라미터가 비표준적이기 때문에 URL의 일부인지, 상수 헤더인지, 아니면 펄징(fuzzing)할 가치가 있는 파라미터인지 판단하기 어렵습니다. 또한, 머신 인터페이스로 사용되는 파라미터의 수가 매우 많을 수 있으며, 예를 들어 JSON 구조는 수십 개의 파라미터를 포함할 수 있습니다. 각 파라미터를 펄징(fuzzing)하려면 테스트에 필요한 시간이 크게 늘어납니다. 맞춤형 인증 메커니즘은 역공학이 필요하며, 인기 있는 도구들은 로그인 세션을 추적할 수 없어 유용하지 않습니다."
+    },
+    {
+        "instruction": "RESTful 웹 서비스의 공격 표면을 어떻게 확인할 수 있나요?",
+        "output": "RESTful 웹 서비스의 공격 표면을 확인하기 위해서는 먼저 문서를 통해 공격 표면을 결정합니다. 화이트박스 테스팅이 허용되면 서비스에 대한 정보를 얻을 수 있으며, 이는 공격 표면을 더 완전히 커버할 수 있습니다. 찾아야 할 정보는 다음과 같습니다:\n- 공식 서비스 설명: REST를 설명하는 WSDL 2.0 또는 WADL이 사용될 수 있습니다.\n- 서비스 사용 개발자 가이드: 블랙박스로 간주될 수 있는 덜 상세한 가이드입니다.\n- 애플리케이션 소스 또는 구성: 예를 들어 dotNet 프레임워크에서는 구성 파일에서 REST 서비스 정의를 쉽게 얻을 수 있습니다.\n\n또한, 프록시를 사용하여 전체 요청을 수집합니다. 이는 REST 기반 애플리케이션에서 특히 중요하며, 애플리케이션 UI가 실제 공격 표면에 대한 단서를 제공하지 않을 수 있기 때문입니다. 프록시는 전체 요청을 수집할 수 있어야 하며, REST 서비스는 GET 매개변수뿐만 아니라 다른 매개변수도 사용합니다.\n\n수집된 요청을 분석하여 공격 표면을 결정합니다:\n- 비표준 매개변수를 찾습니다.\n- 비정상적인 HTTP 헤더를 찾습니다. 이는 종종 헤더 기반 매개변수입니다.\n- URL 세그먼트에 반복되는 패턴이 있는지 확인합니다. 예를 들어, 날짜, 숫자 또는 ID와 같은 문자열이 포함될 수 있습니다.\n- 구조화된 매개변수 값을 찾습니다. 이는 JSON, XML 또는 비표준 구조일 수 있습니다.\n- URL의 마지막 요소에 확장자가 없는 경우 매개변수일 수 있습니다.\n- 매우 다양한 URL 세그먼트를 찾습니다. 단일 URL 세그먼트가 많은 값을 가지면 매개변수일 수 있습니다.\n\n비표준 매개변수를 확인합니다. 일부 경우에는 URL 세그먼트의 값을 무효로 설정하여 경로 요소인지 매개변수인지 확인할 수 있습니다. 경로 요소인 경우 웹 서버는 404 메시지를 반환하고, 무효한 값인 경우 애플리케이션 수준 메시지를 반환합니다.\n\n수집된 요청을 분석하여 펄징을 최적화합니다. 잠재적인 매개변수를 식별한 후 각 값을 분석하여 유효한 값과 무효한 값을 구분합니다. 이를 통해 펄징은 주변 무효 값에 집중할 수 있습니다. 예를 들어, 항상 양의 정수인 값에 대해 0을 보냅니다. 또한, 현재 사용자에게 할당된 범위를 초과하여 펄징할 수 있는 순차를 찾습니다.\n\n마지막으로, 펄징 시 사용된 인증 메커니즘을 모방해야 합니다."
+    },
+    {
+        "instruction": "암호화 키를 안전하게 저장하기 위해서는 어떤 방법들이 있나요?",
+        "output": "암호화 키를 안전하게 저장하기 위해서는 여러 가지 방법이 있습니다. 운영체제, 프레임워크 또는 클라우드 서비스 제공자가 제공하는 보안 저장 메커니즘을 사용하는 것이 좋습니다. 예를 들어, 물리적 Hardware Security Module(HSM), 가상 HSM, Amazon KMS나 Azure Key Vault와 같은 키 볼트, Conjur나 HashiCorp Vault와 같은 외부 시크릿 관리 서비스, .NET 프레임워크의 ProtectedData 클래스가 제공하는 보안 저장 API 등이 있습니다. 이러한 방법들은 키의 중앙 관리, 쉬운 키 회전 및 교체, 보안 키 생성, 규제 표준 준수 심플화, 키 유출 방지 등의 장점을 제공합니다. 이러한 옵션이 사용 불가능한 경우에는 키를 소스 코드에 하드 코딩하지 않고, 버전 관리 시스템에 체크인하지 않으며, 키가 포함된 설정 파일을 제한된 권한으로 보호하고, 환경 변수에 키를 저장하지 않는 기본 규칙을 따르는 것이 좋습니다."
+    },
+    {
+        "instruction": "민감한 정보를 저장하지 않는 방법으로 보안을 강화할 수 있는 방법은 무엇인가요?",
+        "output": "민감한 정보를 저장하지 않는 것이 가장 효과적인 보안 강화 방법입니다. 특히 신용카드 정보와 같은 매우 중요한 데이터는 공격자들에게 매우 유용하기 때문에, PCI DSS와 같은 엄격한 규정을 따라야 하므로 가능한 한 저장을 피해야 합니다."
+    },
+    {
+        "instruction": "UUID 버전 4를 생성할 때 CSPRNG이 사용되는지 확인하지 않고 보안에 사용해도 되나요?",
+        "output": "UUID 버전 4를 생성할 때 CSPRNG이 사용되는지 확인하지 않고 보안에 사용하는 것은 권장되지 않습니다. 구현에 따라 랜덤성이 보장되지 않을 수 있기 때문에, 보안에 민감한 상황에서는 CSPRNG이 사용되었는지 반드시 확인해야 합니다."
+    },
+    {
+        "instruction": "암호화된 저장소에 비밀번호를 저장할 때, 가역 암호화 방식 대신 안전한 비밀번호 해시 알고리즘을 사용해야 하나요?",
+        "output": "네, 암호화된 저장소에 비밀번호를 저장할 때는 가역 암호화 방식 대신 안전한 비밀번호 해시 알고리즘을 사용해야 합니다."
+    },
+    {
+        "instruction": "애플리케이션에서 암호화를 수행하는 가장 적절한 레벨은 어디인가요?",
+        "output": "암호화를 수행하는 가장 적절한 레벨은 위협 모델에 따라 다릅니다. 예를 들어, 하드웨어 레벨 암호화는 서버의 물리적 도난에 대해 효과적인 보호를 제공하지만, 공격자가 원격으로 서버를 침해할 경우 보호를 제공하지 않습니다. 따라서 애플리케이션 레벨, 데이터베이스 레벨, 파일시스템 레벨, 하드웨어 레벨 중 하나 또는 여러 레벨에서 암호화를 수행할 수 있습니다."
+    },
+    {
+        "instruction": "대칭 암호화에서 AES 알고리즘을 사용할 때 키의 최소 길이는 얼마여야 합니까?",
+        "output": "대칭 암호화에서 AES 알고리즘을 사용할 때 키의 최소 길이는 128 bits여야 합니다."
+    },
+    {
+        "instruction": "암호화된 데이터가 유출되었을 때, 추가적인 보안 조치가 필요한가요?",
+        "output": "네, 암호화된 데이터가 유출되었을 때에도 추가적인 보안 조치가 필요합니다. 애플리케이션은 암호화 제어가 실패하더라도 여전히 안전하도록 설계되어야 하며, 암호화된 형태로 저장된 모든 정보는 추가적인 보안 계층으로 보호되어야 합니다. 또한, 암호화된 URL 매개변수의 보안에만 의존해서는 안 되며, 강력한 접근 제어를 적용하여 정보에 대한 무단 접근을 방지해야 합니다."
+    },
+    {
+        "instruction": "GCM과 CCM이 사용 가능하지 않을 때, 어떤 모드를 사용해야 하나요?",
+        "output": "GCM과 CCM이 사용 가능하지 않을 때는 CTR 모드나 CBC 모드를 사용해야 합니다. 이 모드들은 데이터의 신뢰성을 보장하지 않으므로, Encrypt-then-MAC 기법을 사용하여 별도의 인증을 구현해야 합니다."
+    },
+    {
+        "instruction": "암호화 키를 생성할 때 사용해야 하는 함수와 사용하면 안 되는 함수를 각각 설명해주세요.",
+        "output": "암호화 키를 생성할 때는 반드시 Cryptographically Secure Pseudo-Random Number Generators (CSPRNG)를 사용해야 합니다. 이는 높은 수준의 엔트로피를 제공하여 키의 예측이 어렵게 만듭니다. 각 언어별로 사용해야 하는 함수와 사용하면 안 되는 함수는 다음과 같습니다:\n\n- **C**: 사용해야 하는 함수는 `getrandom(2)`입니다. 사용하면 안 되는 함수는 `random()`, `rand()`입니다.\n- **Java**: 사용해야 하는 함수는 `java.security.SecureRandom`, `java.util.UUID.randomUUID()`입니다. 사용하면 안 되는 함수는 `Math.random()`, `StrictMath.random()`, `java.util.Random`, `java.util.SplittableRandom`, `java.util.concurrent.ThreadLocalRandom`입니다.\n- **PHP**: 사용해야 하는 함수는 `random_bytes()`, `Random\\Engine\\Secure` (PHP 8), `random_int()` (PHP 7), `openssl_random_pseudo_bytes()` (PHP 5)입니다. 사용하면 안 되는 함수는 `array_rand()`, `lcg_value()`, `mt_rand()`, `rand()`, `uniqid()`입니다.\n- **.NET/C#**: 사용해야 하는 함수는 `RandomNumberGenerator`입니다. 사용하면 안 되는 함수는 `Random()`입니다.\n- **Objective-C**: 사용해야 하는 함수는 `SecRandomCopyBytes`입니다. 사용하면 안 되는 함수는 `arc4random()`, `arc4random_uniform()`, `rand()`, `random()`입니다.\n- **Python**: 사용해야 하는 함수는 `secrets()`입니다. 사용하면 안 되는 함수는 `random()`입니다.\n- **Ruby**: 사용해야 하는 함수는 `SecureRandom`입니다. 사용하면 안 되는 함수는 `rand()`, `Random`입니다.\n- **Go**: 사용해야 하는 함수는 `crypto.rand` 패키지입니다. 사용하면 안 되는 함수는 `rand` using `math/rand` 패키지입니다.\n- **Rust**: 사용해야 하는 함수는 `rand::prng::chacha::ChaChaRng`와 나머지 Rust 라이브러리 CSPRNGs입니다. 사용하면 안 되는 함수는 `rand::prng::XorShiftRng`입니다.\n- **Node.js**: 사용해야 하는 함수는 `crypto.randomBytes()`, `crypto.randomInt()`, `crypto.randomUUID()`입니다. 사용하면 안 되는 함수는 `Math.random()`입니다.\n\n이와 같이 각 언어별로 적절한 CSPRNG 함수를 사용하여 암호화 키를 생성해야 합니다."
+    },
+    {
+        "instruction": "키 생성 시 키보드를 마구 눌러서 생성한 랜덤 문자를 사용하면 안되나요?",
+        "output": "네, 키 생성 시 키보드를 마구 눌러서 생성한 랜덤 문자를 사용해서는 안 됩니다. 키는 암호학적으로 안전한 함수를 사용하여 무작위로 생성되어야 합니다."
+    },
+    {
+        "instruction": "암호화된 데이터와 암호화 키를 별도의 위치에 저장하는 것이 좋은 방법인가요?",
+        "output": "네, 암호화된 데이터와 암호화 키를 별도의 위치에 저장하는 것이 좋은 방법입니다. 예를 들어, 데이터가 데이터베이스에 저장되어 있다면, 키는 파일 시스템에 저장하는 것이 좋습니다. 이렇게 하면 공격자가 디렉토리 트래버설이나 SQL injection과 같은 방법으로 하나만 접근할 수 있을 뿐, 둘 다 접근할 수는 없습니다. 환경의 아키텍처에 따라 키와 데이터를 별도의 시스템에 저장할 수도 있으며, 이는 더 큰 격리를 제공합니다."
+    },
+    {
+        "instruction": "커스텀 알고리즘을 사용하는 것이 안전한가요?",
+        "output": "커스텀 알고리즘을 사용하는 것은 안전하지 않습니다."
+    },
+    {
+        "instruction": "RSA에서 Random Padding을 활성화하는 방법은 무엇인가요?",
+        "output": "RSA에서 Random Padding을 활성화하려면, OAEP(Optimal Asymmetric Encryption Padding)를 사용하여 암호화할 때 랜덤 패딩을 추가하도록 설정해야 합니다. 일반적으로 PKCS#1 패딩 스키마를 사용하여 이를 구현할 수 있습니다."
+    },
+    {
+        "instruction": "암호화된 저장소를 설계할 때 시스템의 전체 아키텍처를 고려해야 하나요?",
+        "output": "네, 암호화된 저장소를 설계할 때는 시스템의 전체 아키텍처를 고려해야 합니다. 이는 기술적인 구현에 큰 영향을 미치기 때문입니다."
+    },
+    {
+        "instruction": "암호화 키가 손상되었을 경우 키 교체 절차는 무엇인가요?",
+        "output": "암호화 키가 손상되었을 경우, 새로운 키를 생성하고 이를 사용하여 새로운 데이터를 암호화해야 합니다. 기존 데이터는 두 가지 방법으로 처리할 수 있습니다: 첫째, 기존 데이터를 복호화한 후 새로운 키로 재암호화하는 방법이 있습니다. 둘째, 각 데이터 항목에 사용된 키의 ID를 표시하고, 여러 키를 저장하여 기존 데이터를 복호화할 수 있도록 하는 방법이 있습니다. 첫 번째 방법이 일반적으로 더 선호되지만, 항상 실현 가능한 것은 아닙니다. 손상된 키는 일정 기간 동안 보관해야 하며, 이는 백업 복사본을 복호화해야 할 경우를 대비하기 위함입니다. 키 교체 절차와 알고리즘 또는 라이브러리 변경 절차는 미리 준비되어 있어야 하며, 이는 손상 시 신속하게 대응할 수 있도록 하기 위함입니다."
+    },
+    {
+        "instruction": "데이터 암호화 키(DEK)와 키 암호화 키(KEK)를 분리하여 저장하는 방법에 대해 설명해주세요.",
+        "output": "데이터 암호화 키(DEK)와 키 암호화 키(KEK)를 분리하여 저장하는 방법은 다음과 같습니다. DEK는 데이터를 암호화하는 데 사용되며, KEK는 DEK를 암호화하는 데 사용됩니다. 이 방법이 효과적이려면 KEK는 DEK와 별도로 저장되어야 합니다. 암호화된 DEK는 데이터와 함께 저장될 수 있지만, 공격자가 KEK를 획득하지 못하면 DEK를 사용할 수 없습니다. KEK는 DEK와 동등하거나 더 강력해야 하며, Google의 [envelope encryption](https://cloud.google.com/kms/docs/envelope-encryption) 가이드에서 추가 정보를 확인할 수 있습니다. 단순한 애플리케이션 아키텍처에서는 KEK와 DEK를 분리하여 저장하는 것이 어려울 수 있지만, 비숙련된 공격자에 대한 추가적인 장벽을 제공할 수 있습니다. 또한, 사용자 입력(예: 패스프레이즈)을 사용하여 KEK를 생성하는 키 도출 함수(KDF)를 사용할 수 있으며, 이를 통해 사용자가 패스프레이즈를 변경할 때 KEK를 쉽게 변경할 수 있습니다."
+    },
+    {
+        "instruction": "키 관리 프로세스에서 새로운 키를 생성하고 저장하는 방법에 대해 설명해 주세요.",
+        "output": "키 관리 프로세스에서 새로운 키를 생성하고 저장하는 방법은 다음과 같습니다. 먼저, 암호학적으로 강력한 알고리즘을 사용하여 새로운 키를 생성합니다. 이 과정에서는 랜덤 숫자 생성기(RNG)를 사용하여 키의 무작위성을 보장해야 합니다. 생성된 키는 안전한 저장소에 저장되어야 하며, 이를 위해 Hardware Security Module(HSM)이나 암호화된 데이터베이스를 사용할 수 있습니다. 또한, 키의 접근 권한을 엄격히 관리하여 불필요한 접근을 차단해야 합니다."
+    },
+    {
+        "instruction": "스프링 MVC에서 특정 필드를 블랙리스트로 설정하는 방법을 알려주세요.",
+        "output": "스프링 MVC에서 특정 필드를 블랙리스트로 설정하려면, `WebDataBinder`의 `setDisallowedFields` 메서드를 사용하여 허용하지 않을 필드를 지정하면 됩니다. 예를 들어, `isAdmin` 필드를 블랙리스트로 설정하려면 다음과 같이 코드를 작성할 수 있습니다:\n\n```java\n@Controller\npublic class UserController\n{\n@InitBinder\npublic void initBinder(WebDataBinder binder, WebRequest request)\n{\nbinder.setDisallowedFields([\"isAdmin\"]);\n}\n...\n}\n```\n\n자세한 내용은 [여기](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/validation/DataBinder.html#setDisallowedFields-java.lang.String...-)에서 확인할 수 있습니다."
+    },
+    {
+        "instruction": "Mass Assignment 공격을 방지하기 위해 GSON에서 어떻게 필드를 직렬화 및 역직렬화에서 제외할 수 있나요?",
+        "output": "GSON에서 필드를 직렬화 및 역직렬화에서 제외하려면 `transient` 키워드를 사용하거나, `@Expose` 어노테이션과 `GsonBuilder`의 `excludeFieldsWithoutExposeAnnotation()` 메서드를 사용할 수 있습니다. 자세한 내용은 [여기](https://sites.google.com/site/gson/gson-user-guide#TOC-Excluding-Fields-From-Serialization-and-Deserialization)와 [여기](https://stackoverflow.com/a/27986860)에서 확인할 수 있습니다."
+    },
+    {
+        "instruction": "개발자가 의도하지 않은 변수나 객체를 생성하거나 덮어쓸 수 있는 **Mass Assignment** 취약점을 방지하기 위해 어떤 방법을 사용할 수 있나요?",
+        "output": "**Mass Assignment** 취약점을 방지하기 위해 개발자는 여러 가지 방법을 사용할 수 있습니다. 첫째, 허용된 매개변수를 명시적으로 정의하여 강제로 필터링하는 화이트리스트 접근 방식을 사용할 수 있습니다. 둘째, 프레임워크에서 제공하는 보안 기능을 활용하여 자동 바인딩을 비활성화할 수 있습니다. 셋째, 입력 데이터의 유효성을 검사하고, 필요한 경우 데이터를 정제하는 등의 입력 검증 절차를 강화할 수 있습니다. 마지막으로, 코드 리뷰와 보안 테스트를 통해 잠재적인 취약점을 사전에 발견하고 수정할 수 있습니다."
+    },
+    {
+        "instruction": "스프링 MVC에서 허용된 필드를 설정하는 방법을 알려주세요.",
+        "output": "스프링 MVC에서 허용된 필드를 설정하려면 `WebDataBinder`의 `setAllowedFields` 메서드를 사용하여 허용할 필드를 지정하면 됩니다. 예를 들어, `UserController` 클래스에서 `initBinder` 메서드를 통해 `userid`, `password`, `email` 필드만 허용하도록 설정할 수 있습니다. 다음은 그 예시입니다:\n\n```java\n@Controller\npublic class UserController\n{\n    @InitBinder\n    public void initBinder(WebDataBinder binder, WebRequest request)\n    {\n        binder.setAllowedFields([\"userid\",\"password\",\"email\"]);\n    }\n    ...\n}\n```"
+    },
+    {
+        "instruction": "어떤 필드를 Allow-list와 Block-list에 포함시켜야 하나요?",
+        "output": "Allow-list에는 바인딩이 가능하고 민감하지 않은 필드를 포함시키고, Block-list에는 바인딩이 불가능하고 민감한 필드를 포함시켜야 합니다."
+    },
+    {
+        "instruction": "Flexjson에서 Mass Assignment을 방지하는 방법을 알려주세요.",
+        "output": "Flexjson에서 Mass Assignment을 방지하기 위해서는 직렬화 과정에서 특정 필드만 허용하도록 설정할 수 있습니다. 이를 위해 `Serialization` 옵션을 사용하여 직렬화할 필드를 명시적으로 지정할 수 있습니다. 자세한 내용은 [여기](http://flexjson.sourceforge.net/#Serialization)에서 확인할 수 있습니다."
+    },
+    {
+        "instruction": "특정 조직에 공개 키를 업로드하여 저장소를 변경할 수 있는 권한을 얻은 사례는 어떤 공격 방식을 사용한 것인가요?",
+        "output": "해당 사례는 mass assignment 공격 방식을 사용한 것입니다."
+    },
+    {
+        "instruction": "사용자 정보를 업데이트할 때 isAdmin 필드를 변경하지 못하도록 설정하려면 어떻게 해야 하나요?",
+        "output": "사용자 정보를 업데이트할 때 `isAdmin` 필드를 변경하지 못하도록 설정하려면, `mongoose-mass-assign` 플러그인을 사용하여 `isAdmin` 필드를 보호 설정하면 됩니다. 위의 예제에서 `isAdmin` 필드는 이미 `protect: true`로 설정되어 있으므로, `massAssign` 메서드를 통해 업데이트할 때 `isAdmin` 필드는 자동으로 무시됩니다. 따라서 별도의 설정 없이 현재 코드를 사용하면 됩니다."
+    },
+    {
+        "instruction": "사용자 생성 시 허용된 필드만 처리하도록 설정하려면 어떻게 해야 하나요?",
+        "output": "사용자 생성 시 허용된 필드만 처리하도록 설정하려면, `Allow-listing` 방식을 사용하여 허용된 필드를 명시적으로 지정해야 합니다. 위의 예제에서는 `User.userCreateSafeFields` 배열에 허용된 필드를 정의하고, `_.pick` 함수를 사용하여 `req.body`에서 허용된 필드만 추출하여 새로운 사용자 객체를 생성합니다. 이렇게 하면 허용되지 않은 필드는 자동으로 무시됩니다."
+    },
+    {
+        "instruction": "그레일스에서 매스 어사인먼트를 방지하는 방법을 알려주세요.",
+        "output": "그레일스에서 매스 어사인먼트를 방지하기 위해서는 Secure Data Binding을 사용해야 합니다. 자세한 내용은 [여기](http://spring.io/blog/2012/03/28/secure-data-binding-with-grails/)에서 확인할 수 있습니다."
+    },
+    {
+        "instruction": "내 애플리케이션에서 Mass Assignment 취약점을 방지하기 위해 어떤 조치를 취해야 하나요?",
+        "output": "Mass Assignment 취약점을 방지하기 위해서는 먼저 strong parameters를 사용하여 허용된 속성만 업데이트할 수 있도록 제한해야 합니다. 또한, attr_accessible을 사용하여 모델에서 허용된 속성을 명시적으로 정의하고, attr_protected를 사용하여 민감한 속성을 보호해야 합니다. 마지막으로, 입력 데이터를 철저히 검증하고, 필요한 경우 권한 검사를 통해 사용자가 수정할 수 있는 데이터를 제한하는 것이 중요합니다."
+    },
+    {
+        "instruction": "Play 프레임워크에서 Mass Assignment을 방지하는 방법은 무엇인가요?",
+        "output": "Play 프레임워크에서 Mass Assignment을 방지하기 위해서는 컨트롤러에서 `@NoBinding` 어노테이션을 사용하여 특정 필드의 바인딩을 막을 수 있습니다. 자세한 내용은 [여기](https://www.playframework.com/documentation/1.4.x/controllers#nobinding)에서 확인할 수 있습니다."
+    },
+    {
+        "instruction": "공격자가 모델의 민감한 필드를 알고 있고, 해당 객체가 빈 생성자를 가지고 있을 때 Mass Assignment 취약점이 발생할 수 있나요?",
+        "output": "네, 공격자가 모델의 민감한 필드를 알고 있고, 해당 객체가 빈 생성자를 가지고 있을 때 Mass Assignment 취약점이 발생할 수 있습니다."
+    },
+    {
+        "instruction": "내 ASP NET 애플리케이션에서 Mass Assignment 공격을 방지하기 위해 어떤 방법을 사용할 수 있나요?",
+        "output": "ASP NET 애플리케이션에서 Mass Assignment 공격을 방지하기 위해 먼저 공식 문서를 참고하여 필요한 설정을 적용하는 것이 좋습니다. 예를 들어, 모델 바인딩 시 허용되는 속성을 명시적으로 지정하거나, 불필요한 속성을 제외하는 방법을 사용할 수 있습니다. 또한, 입력 데이터의 유효성을 철저히 검사하고, 권한 있는 사용자만 특정 데이터에 접근할 수 있도록 제한하는 것도 중요합니다."
+    },
+    {
+        "instruction": "라라벨에서 모델의 대량 할당을 방지하기 위해 어떻게 Allow-listing을 설정할 수 있나요?",
+        "output": "라라벨에서 모델의 대량 할당을 방지하기 위해 `$fillable` 속성을 사용하여 Allow-listing을 설정할 수 있습니다. 예를 들어, `User` 모델에서 `userid`, `password`, `email` 필드만 대량 할당을 허용하려면 다음과 같이 설정할 수 있습니다:\n\n```php\n<?php\n\nnamespace App;\n\nuse Illuminate\\Database\\Eloquent\\Model;\n\nclass User extends Model\n{\n    private $userid;\n    private $password;\n    private $email;\n    private $isAdmin;\n\n    protected $fillable = array('userid', 'password', 'email');\n}\n```\n\n이렇게 하면 `isAdmin` 필드는 대량 할당에서 제외되어 보안이 강화됩니다."
+    },
+    {
+        "instruction": "라라벨에서 특정 필드를 Mass Assignment으로부터 보호하려면 어떻게 해야 하나요?",
+        "output": "라라벨에서 특정 필드를 Mass Assignment으로부터 보호하려면 `$guarded` 속성을 사용하여 블랙리스트를 설정하면 됩니다. 예를 들어, `isAdmin` 필드를 보호하려면 다음과 같이 모델을 정의할 수 있습니다:\n\n```php\n<?php\n\nnamespace App;\n\nuse Illuminate\\Database\\Eloquent\\Model;\n\nclass User extends Model\n{\n    private $userid;\n    private $password;\n    private $email;\n    private $isAdmin;\n\n    protected $guarded = array('isAdmin');\n}\n```"
+    },
+    {
+        "instruction": "제이슨 라이브러리에서 매스 어사인먼트를 방지하는 방법을 알려주세요.",
+        "output": "제이슨 라이브러리에서 매스 어사인먼트를 방지하기 위해서는 JSON-Lib의 문서를 참고하여 설정을 변경해야 합니다. 자세한 내용은 [여기](http://json-lib.sourceforge.net/advanced.html)에서 확인할 수 있습니다."
+    },
+    {
+        "instruction": "스프링 MVC에서 Autobinding 취약점을 방지하기 위해 어떤 방법을 사용할 수 있나요?",
+        "output": "스프링 MVC에서 Autobinding 취약점을 방지하기 위해 다음과 같은 방법을 사용할 수 있습니다:\n\n1. **@InitBinder 사용**: @InitBinder 어노테이션을 사용하여 바인딩할 필드를 제한할 수 있습니다.\n2. **Whitelist 설정**: 허용된 필드만 바인딩되도록 whitelist를 설정합니다.\n3. **DTO(Data Transfer Object) 사용**: 뷰와 도메인 모델 간의 데이터 전달을 위해 DTO를 사용하여 필요한 필드만 노출시킵니다.\n4. **Validation 강화**: 입력 데이터에 대한 검증을 강화하여 불필요한 필드가 바인딩되지 않도록 합니다."
+    },
+    {
+        "instruction": "사용자 입력을 도메인 객체에 직접 바인딩하지 않고 Data Transfer Objects를 사용하여 보안을 강화할 수 있는 방법에 대해 설명해주세요.",
+        "output": "사용자 입력을 도메인 객체에 직접 바인딩하지 않고 Data Transfer Objects(DTO)를 사용하여 보안을 강화할 수 있습니다. DTO에는 사용자가 편집할 수 있는 필드만 포함되므로, 예를 들어 `isAdmin`과 같은 민감한 필드는 노출되지 않습니다. 이를 통해 불필요한 필드가 수정되는 것을 방지하고, 시스템의 안전성을 높일 수 있습니다."
+    },
+    {
+        "instruction": "잭슨(Jackson)을 사용할 때 매스 어사인먼트(Mass Assignment)를 방지하기 위해 어떤 설정을 해야 하나요?",
+        "output": "잭슨(Jackson)을 사용할 때 매스 어사인먼트(Mass Assignment)를 방지하기 위해서는 JSON View를 사용하여 특정 필드의 직렬화(serialization)와 역직렬화(deserialization)를 제어할 수 있습니다. 또한, `@JsonIgnore` 어노테이션을 사용하여 특정 필드를 완전히 무시할 수도 있습니다. 자세한 내용은 공식 문서를 참고하세요."
+    },
+    {
+        "instruction": "사용자 계정 정보를 수정하는 폼에서 isAdmin 속성을 변경할 수 있는 방법이 있을까요?",
+        "output": "네, 사용자 계정 정보를 수정하는 폼에서 `isAdmin` 속성을 변경할 수 있는 방법이 있습니다. 위의 예제에서 보듯이, 폼에 없는 `isAdmin` 파라미터를 직접 POST 요청에 추가하여 전송하면, 서버 측에서 이를 처리하는 컨트롤러가 `isAdmin` 속성을 설정할 수 있습니다. 예를 들어, 다음과 같은 요청을 보내면 `isAdmin` 속성을 `true`로 설정할 수 있습니다:\n    ```text\n    POST /addUser\n    ...\n    userid=bobbytables&password=hashedpass&email=bobby@tables.com&isAdmin=true\n    ```\n    이와 같은 공격을 Mass Assignment 공격이라고 합니다."
+    },
+    {
+        "instruction": "루비온레일즈에서 Mass Assignment을 방지하는 방법을 알려주세요.",
+        "output": "루비온레일즈에서 Mass Assignment을 방지하기 위해서는 strong parameters를 사용하여 허용된 파라미터를 명시적으로 정의해야 합니다. 이를 통해 악의적인 사용자가 의도하지 않은 필드에 데이터를 할당하는 것을 방지할 수 있습니다. 자세한 내용은 [여기](https://guides.rubyonrails.org/v3.2.9/security.html#mass-assignment)에서 확인할 수 있습니다."
+    },
+    {
+        "instruction": "드리퍼스에서 Mass Assignment 취약점을 방지하기 위해 어떤 설정을 해야 하나요?",
+        "output": "드리퍼스에서 Mass Assignment 취약점을 방지하기 위해서는 먼저 Django의 공식 문서나 관련 자료를 참고하여 모델 필드를 명시적으로 지정하는 방법을 사용해야 합니다. 예를 들어, `ModelForm`을 사용할 때 `fields` 속성을 설정하여 허용되는 필드를 명시적으로 지정할 수 있습니다. 또한, `exclude` 속성을 사용하여 특정 필드를 제외할 수도 있습니다. 이를 통해 사용자가 의도하지 않은 필드에 접근하는 것을 방지할 수 있습니다."
+    },
+    {
+        "instruction": "API Key를 URL에 포함시키지 않고 안전하게 전송하는 방법은 무엇인가요?",
+        "output": "API Key를 안전하게 전송하려면 HTTP 헤더에 포함시키는 방법이 있습니다. 예를 들어, `Authorization` 헤더를 사용하여 API Key를 전송할 수 있습니다. 또한, `POST`나 `PUT` 요청의 경우, 요청 본문에 포함시키는 방법도 있습니다."
+    },
+    {
+        "instruction": "관리 엔드포인트를 인터넷에 노출시키지 않는 방법은 무엇인가요?",
+        "output": "관리 엔드포인트를 인터넷에 노출시키지 않기 위해서는 별도의 HTTP 포트나 호스트를 사용하거나, 다른 NIC와 제한된 서브넷에 배치하는 방법이 있습니다. 또한, 방화벽 규칙이나 접근 제어 목록을 사용하여 접근을 제한할 수 있습니다."
+    },
+    {
+        "instruction": "모든 REST 서비스 엔드포인트가 HTTPS를 지원하나요?",
+        "output": "모든 REST 서비스 엔드포인트가 HTTPS를 지원해야 합니다. 이는 전송 중인 인증 자격 증명을 보호하고, 클라이언트가 서비스를 인증하며, 전송된 데이터의 무결성을 보장하기 위해서입니다."
+    },
+    {
+        "instruction": "REST 요청이나 응답의 본문이 헤더의 지정된 content type과 일치하는지 어떻게 확인할 수 있나요?",
+        "output": "REST 요청이나 응답의 본문이 헤더의 지정된 content type과 일치하는지 확인하려면, 요청이나 응답을 처리하는 코드에서 헤더의 content type을 읽어와 본문의 실제 content type과 비교하는 로직을 추가해야 합니다. 예를 들어, 요청 헤더에 \"Content-Type: application/json\"이 지정되어 있다면, 본문이 JSON 형식인지 확인하는 검증 과정을 거쳐야 합니다. 이를 통해 코드 주입이나 실행을 방지할 수 있습니다."
+    },
+    {
+        "instruction": "JWT의 무결성을 보호하기 위해 서명과 MAC 중 어느 것을 사용해야 하나요?",
+        "output": "일반적으로 서명을 사용하는 것이 좋습니다. MAC를 사용할 경우, 동일한 키를 사용하는 모든 서비스가 서로 신뢰해야 하며, 하나의 서비스가 손상되면 동일한 키를 공유하는 모든 서비스가 손상될 수 있습니다."
+    },
+    {
+        "instruction": "API 키를 사용하여 공개 REST 서비스의 접근을 제어하는 방법에 대해 설명해주세요.",
+        "output": "API 키를 사용하여 공개 REST 서비스의 접근을 제어하는 방법은 다음과 같습니다. 먼저, 모든 보호된 엔드포인트로의 요청에 API 키를 필요로 합니다. 이를 통해 무단 사용을 방지하고, 과도한 요청이 들어올 경우 `429 Too Many Requests` HTTP 응답 코드를 반환하여 트래픽을 제어할 수 있습니다. 또한, 클라이언트가 사용 약관을 위반할 경우 API 키를 취소하여 접근을 차단할 수 있습니다. 그러나 API 키만으로는 민감한 자원을 완전히 보호할 수 없으므로, 추가적인 보안 조치가 필요합니다."
+    },
+    {
+        "instruction": "에러 발생 시 기술적인 세부 사항을 클라이언트에게 노출하지 않는 방법은 무엇인가요?",
+        "output": "에러 발생 시 일반적인 에러 메시지로 응답하고, 불필요하게 실패의 세부 사항을 노출하지 않도록 합니다. 예를 들어, 콜 스택(call stack)이나 기타 내부 힌트와 같은 기술적인 세부 사항을 클라이언트에게 전달하지 않습니다."
+    },
+    {
+        "instruction": "토큰 검증 오류를 감지하기 위해 로그에 기록해야 하나요?",
+        "output": "토큰 검증 오류를 감지하기 위해 로그에 기록하는 것을 고려해야 합니다."
+    },
+    {
+        "instruction": "CORS 헤더를 비활성화하지 않으면 어떤 문제가 발생할 수 있나요?",
+        "output": "CORS 헤더를 비활성화하지 않으면 의도하지 않은 도메인에서 자바스크립트를 통해 REST API에 접근할 수 있는 보안 취약점이 발생할 수 있습니다. 이로 인해 악의적인 사용자가 다른 도메인을 통해 공격을 시도할 수 있으며, 데이터 유출이나 서비스 악용 등의 문제가 발생할 수 있습니다."
+    },
+    {
+        "instruction": "API 응답에 `Cache-Control: no-store` 헤더를 포함하는 이유는 무엇인가요?",
+        "output": "`Cache-Control: no-store` 헤더는 브라우저에게 어떤 종류의 캐시도 응답을 저장하지 말라고 지시합니다. 이 헤더를 사용하면 브라우저가 API를 호출할 때마다 최신 응답을 가져오기 위해 새로운 요청을 해야 하므로, 민감한 정보가 캐시되거나 저장되는 것을 방지할 수 있습니다."
+    },
+    {
+        "instruction": "입력 파라미터를 신뢰하지 않는 방법에 대해 설명해주세요.",
+        "output": "입력 파라미터를 신뢰하지 않는 방법은 다음과 같습니다: 입력 파라미터나 객체를 신뢰하지 않고, 입력의 길이, 범위, 형식, 타입을 검증합니다. 강력한 타입을 사용하여 암묵적인 입력 검증을 달성하며, 정규표현식(regexps)을 사용하여 문자열 입력을 제약합니다. 예상치 못한 또는 불법적인 콘텐츠를 거부하고, 특정 언어에서 검증/정화 라이브러리나 프레임워크를 활용합니다. 적절한 요청 크기 제한을 정의하고, 이를 초과하는 요청은 HTTP 응답 상태 413 Request Entity Too Large로 거부합니다. 입력 검증 실패를 로깅하며, 수백 번의 입력 검증 실패를 초당 발생시키는 사용자는 악의적인 의도가 있을 가능성이 큽니다."
+    },
+    {
+        "instruction": "각 REST 엔드포인트에서 접근 제어를 어떻게 수행해야 하나요?",
+        "output": "각 REST 엔드포인트에서 접근 제어를 수행하기 위해서는 다음과 같은 방법을 사용할 수 있습니다. 첫째, 각 엔드포인트에서 로컬에서 접근 제어 결정을 내려야 합니다. 이를 통해 지연 시간을 최소화하고 서비스 간의 결합도를 줄일 수 있습니다. 둘째, 사용자 인증은 중앙 집중식 IdP(Identity Provider)에서 처리하고, 이 IdP가 발급한 액세스 토큰을 사용하여 인증을 수행해야 합니다."
+    },
+    {
+        "instruction": "REST API를 설계할 때 상태를 유지하는 방식과 무상태 방식 중 어느 것이 보안에 더 유리한가요?",
+        "output": "REST API를 설계할 때 무상태 방식이 보안에 더 유리합니다. 상태를 유지하는 방식은 세션 관리의 복잡성과 보안 위협을 초래할 수 있습니다. 예를 들어, 재생 공격(replay attacks)과 위조 공격(impersonation attacks)에 취약할 수 있습니다. 반면, 무상태 방식은 각 요청이 독립적으로 처리되므로 이러한 위협을 줄일 수 있습니다."
+    },
+    {
+        "instruction": "HTTP Method를 제한하는 방법에 대해 설명해주세요.",
+        "output": "HTTP Method를 제한하는 방법은 다음과 같습니다. 허용된 HTTP Method의 화이트리스트를 적용합니다. 예를 들어, `GET`, `POST`, `PUT`과 같은 메서드를 허용합니다. 화이트리스트에 없는 모든 요청은 `405 Method not allowed` HTTP 응답 코드로 거부합니다. 또한, 호출자가 리소스 컬렉션, 액션 및 레코드에 대해 들어오는 HTTP 메서드를 사용할 수 있는 권한이 있는지 확인해야 합니다. 특히 Java EE에서는 이를 제대로 구현하기 어려울 수 있습니다. HTTP Verb Tampering을 통한 웹 인증 및 권한 부여 우회에 대한 일반적인 잘못된 구성에 대해서는 추가 자료를 참고하세요."
+    },
+    {
+        "instruction": "REST API에서 403 status code는 언제 사용해야 하나요?",
+        "output": "403 status code는 인증에 성공했지만, 인증된 사용자가 요청한 리소스에 대한 권한이 없을 때 사용됩니다."
+    },
+    {
+        "instruction": "클라이언트가 `Accept` 헤더에 `application/xml`과 `application/json`을 모두 요청했을 때, 서버는 어떤 `Content-type` 헤더를 사용해야 하나요?",
+        "output": "클라이언트가 `Accept` 헤더에 `application/xml`과 `application/json`을 모두 요청했을 때, 서버는 응답 본문의 내용에 맞는 `Content-type` 헤더를 사용해야 합니다. 예를 들어, 응답 본문이 JSON 형식이라면 `application/json`을, XML 형식이라면 `application/xml`을 사용해야 합니다. 단순히 `Accept` 헤더를 복사하지 말고, 응답 본문의 실제 내용과 일치하는 `Content-type`을 설정해야 합니다."
+    },
+    {
+        "instruction": "요청에서 예상치 못한 또는 누락된 content type 헤더가 포함된 경우 HTTP 응답 상태 `406 Unacceptable` 또는 `415 Unsupported Media Type`으로 요청을 거부하는 방법은 무엇인가요?",
+        "output": "요청에서 예상치 못한 또는 누락된 content type 헤더가 포함된 경우, 서버 측에서 요청을 검증하고 해당 content type이 허용된 목록에 없으면 `406 Unacceptable` 또는 `415 Unsupported Media Type` 상태 코드로 응답하도록 설정합니다. 이를 위해 서버 측 코드에서 content type을 명시적으로 정의하고, 요청이 들어올 때마다 이를 검증하는 로직을 추가해야 합니다. 예를 들어, Java의 Jersey 프레임워크에서는 `@consumes`와 `@produces` 어노테이션을 사용하여 content type을 명시적으로 정의할 수 있습니다."
+    },
+    {
+        "instruction": "이 취약점에 대한 공개된 취약점 식별자(CVE name/number)를 확인하려면 어디서 찾아야 하나요?",
+        "output": "취약점 식별자(CVE name/number)를 확인하려면 취약점 공지, 취약점 스캔 결과, 또는 관련 보안 공지를 참조하세요. 공개적으로 알려진 취약점이 아닌 경우, 각 취약점에 고유한 식별자를 직접 할당해야 합니다."
+    },
+    {
+        "instruction": "가상 패치를 위해 ModSecurity WAF 도구를 사용하는 방법에 대해 설명해 주세요.",
+        "output": "ModSecurity WAF 도구는 웹 애플리케이션의 보안을 강화하기 위해 사용되는 오픈 소스 웹 애플리케이션 방화벽입니다. 가상 패치를 적용하기 위해서는 다음 단계를 따르면 됩니다.\n\n1. **ModSecurity 설치 및 설정**: 웹 서버에 ModSecurity를 설치하고 기본 설정을 완료합니다.\n2. **규칙 작성**: 취약점을 차단하기 위한 규칙을 작성합니다. 이 규칙은 특정 패턴이나 행위를 감지하고 차단하는 역할을 합니다.\n3. **규칙 테스트**: 작성한 규칙이 의도한 대로 작동하는지 테스트합니다. 이 과정에서 잘못된 차단이 발생하지 않도록 주의해야 합니다.\n4. **규칙 배포**: 테스트가 완료되면 규칙을 실제 환경에 배포합니다.\n5. **모니터링 및 유지보수**: 배포 후에도 지속적으로 모니터링하여 규칙이 올바르게 작동하는지 확인하고, 필요시 업데이트합니다.\n\n이와 같은 절차를 통해 ModSecurity WAF 도구를 사용하여 가상 패치를 적용할 수 있습니다."
+    },
+    {
+        "instruction": "가상 패치를 \"Log Only\" 설정으로 초기 구현 후, 정상적인 사용자 트래픽이 차단되지 않도록 테스트할 수 있나요?",
+        "output": "네, 가상 패치를 \"Log Only\" 설정으로 초기 구현 후, 정상적인 사용자 트래픽이 차단되지 않도록 테스트할 수 있습니다."
+    },
+    {
+        "instruction": "가상 패치 작업 흐름에서 분석 단계는 어떤 활동을 포함합니까?",
+        "output": "분석 단계에서는 취약점의 원인과 영향을 파악하고, 시스템에 미치는 잠재적인 위협을 평가합니다. 또한, 가상 패치를 적용하기 전에 필요한 모든 정보를 수집하고, 패치의 효과를 예측합니다."
+    },
+    {
+        "instruction": "웹 애플리케이션 내 취약점을 Proactive 방식과 Reactive 방식으로 어떻게 식별할 수 있나요?",
+        "output": "Proactive 방식은 정기적인 보안 검사, 코드 리뷰, 그리고 취약점 스캔을 통해 취약점을 사전에 발견하는 방법입니다.\n    Reactive 방식은 이미 발생한 보안 사건이나 외부 보고를 통해 취약점을 발견하는 방법입니다."
+    },
+    {
+        "instruction": "가상 패치를 테스트할 때 Curl과 Wget 같은 명령줄 웹 클라이언트를 사용하는 것이 좋은가요?",
+        "output": "네, 가상 패치를 테스트할 때 Curl과 Wget 같은 명령줄 웹 클라이언트를 사용하는 것이 좋습니다. 이러한 도구들은 웹 브라우저와 달리 더 세밀한 제어가 가능하며, 다양한 HTTP 요청을 쉽게 생성하고 분석할 수 있습니다."
+    },
+    {
+        "instruction": "가상 패치를 통해 웹 애플리케이션에 대한 공격을 차단할 수 있나요?",
+        "output": "네, 가상 패치를 통해 웹 애플리케이션에 대한 공격을 차단할 수 있습니다. 가상 패치는 트랜잭션을 분석하고 공격을 가로채어 악성 트래픽이 웹 애플리케이션에 도달하지 않도록 하기 때문입니다."
+    },
+    {
+        "instruction": "가상 패치를 위한 준비 단계에서 어떤 사항들을 미리 준비해야 하나요?",
+        "output": "가상 패치를 위한 준비 단계에서는 여러 가지 사항을 미리 준비해야 합니다. 먼저, 공급업체 알림 메일 목록에 등록하여 상용 소프트웨어의 취약점 정보와 패치 데이터를 받을 수 있도록 해야 합니다. 또한, 가상 패치의 빠른 적용을 위해 일반 소프트웨어 패치와 달리 가상 패치에 대한 사전 승인 절차를 간소화해야 합니다. 그리고 사고 발생 시 신속하게 대응할 수 있도록 ModSecurity WAF와 같은 가상 패치 도구를 미리 설치해두는 것이 좋습니다. 마지막으로, 사고 대응을 위해 필요한 HTTP 데이터를 충분히 수집할 수 있도록 로그 기록을 증가시켜야 합니다."
+    },
+    {
+        "instruction": "웹 애플리케이션의 소스 코드를 수정하지 않고도 보안 취약점을 해결할 수 있는 방법이 있을까요?",
+        "output": "네, 가상 패치(Virtual Patching)라는 방법이 있습니다. 가상 패치는 소스 코드를 직접 수정하지 않고도 보안 취약점을 해결할 수 있는 방법입니다. 이는 특히 개발 자원이 부족하거나, 제3자 소프트웨어를 사용하거나, 외부에 애플리케이션 개발을 위탁한 경우에 유용합니다. 코드 수준의 수정과 가상 패치는 상호 배타적인 것이 아니며, 서로 다른 팀에 의해 병행해서 실행될 수 있습니다."
+    },
+    {
+        "instruction": "특정 애플리케이션에 대해 Positive Security 모델을 사용한 가상 패치를 수동으로 생성하려고 합니다. 이 모델을 적용하기 위해 어떤 단계를 거쳐야 하나요?",
+        "output": "먼저 애플리케이션의 모든 페이지와 파라미터를 식별합니다. 그 다음, 각 파라미터에 대해 유효한 입력의 특성(예: 문자 집합, 길이 등)을 정의합니다. 이 규칙들을 기반으로 입력 검증 룰을 작성하여, 규칙에 맞지 않는 입력은 모두 거부되도록 설정합니다. 마지막으로, 이 룰들을 애플리케이션에 독립적인 보안 봉투로 적용하여 코드와 무관하게 애플리케이션을 보호합니다."
+    },
+    {
+        "instruction": "특정 익스플로잇 페이로드만을 차단하는 가상 패치를 구현하는 것이 현명한 방법인가요?",
+        "output": "특정 익스플로잇 페이로드만을 차단하는 가상 패치를 구현하는 것은 현명한 방법이 아닙니다. 즉각적인 보호를 제공할 수 있지만, 장기적인 가치는 크게 감소합니다."
+    },
+    {
+        "instruction": "WordPress Shopping Cart 플러그인에서 발견된 SQL Injection 취약점에 대해 설명해주세요.",
+        "output": "WordPress Shopping Cart 플러그인에서 발견된 SQL Injection 취약점은 `/wp-content/plugins/levelfourstorefront/scripts/administration/exportsubscribers.php` 스크립트의 `reqID` 파라미터에 대한 사용자 입력을 제대로 정제하지 않아 발생합니다. 이 문제로 인해 공격자가 백엔드 데이터베이스에 SQL 쿼리를 주입하거나 조작할 수 있으며, 이를 통해 임의의 데이터를 조작하거나 공개할 수 있습니다."
+    },
+    {
+        "instruction": "가상 패치를 통해 특정 URL에서 단일 따옴표 문자를 차단하는 방법은 무엇인가요?",
+        "output": "가상 패치를 통해 특정 URL에서 단일 따옴표 문자를 차단하려면, ModSecurity를 사용하여 SecRule을 설정할 수 있습니다. 예를 들어, 다음과 같은 규칙을 적용할 수 있습니다:\n\n```text\nSecRule REQUEST_URI \"@contains /wp-content/plugins/levelfourstorefront/scripts/administration/exportsubscribers.php\" \"chain,id:1,phase:2,t:none,t:Utf8toUnicode,t:urlDecodeUni,t:normalizePathWin,t:lowercase,block,msg:'Input Validation Error for \\'reqID\\' parameter.',logdata:'%{args.reqid}'\"\nSecRule ARGS:/reqID/ \"@pm '\"\n```\n\n이 규칙은 특정 URL에서 단일 따옴표 문자를 차단하여 SQL Injection 공격을 방지하는 데 도움이 됩니다."
+    },
+    {
+        "instruction": "공개된 취약점이 발견되었을 때, 즉시 대응해야 하나요?",
+        "output": "공개된 취약점이 발견되었을 때, 즉시 대응할 필요는 없습니다. 그러나 공개 취약점의 위협 수준은 더 많은 사람들이 해당 취약점을 알고 있기 때문에 높아집니다. 따라서 신속한 대응이 필요합니다."
+    },
+    {
+        "instruction": "가상 패치를 통해 보안 취약점을 신속하게 완화할 수 있는 방법은 무엇인가요?",
+        "output": "가상 패치를 통해 보안 취약점을 신속하게 완화할 수 있는 방법은 조직이 가상 패치 프레임워크를 따르는 것입니다. 이 프레임워크는 보호 조치의 신속한 구현을 극대화하기 위해 설계되었습니다."
+    },
+    {
+        "instruction": "가상 패치를 생성할 때 허위 양성 결과와 허위 음성 결과를 최소화하는 방법은 무엇인가요?",
+        "output": "가상 패치를 생성할 때 허위 양성 결과와 허위 음성 결과를 최소화하기 위해서는 정확한 공격 패턴을 분석하고, 이를 바탕으로 패치를 설계해야 합니다. 또한, 다양한 시나리오에서의 테스트를 통해 패치의 효과를 검증하고, 필요시 패치를 조정해야 합니다. 이를 통해 정상적인 트래픽을 차단하지 않으면서도 공격을 놓치지 않도록 할 수 있습니다."
+    },
+    {
+        "instruction": "가상 패치 규칙 ID 값을 제대로 로그에 기록하는 방법은 무엇인가요?",
+        "output": "가상 패치 규칙 ID 값을 제대로 로그에 기록하려면, 가상 패치 구현 과정에서 생성된 티켓 시스템을 업데이트하여 해당 값을 기록하면 됩니다. 이를 통해 가상 패치의 존재와 기능이 문서화되고, 다양한 취약점 유형에 대한 \"time-to-fix\" 메트릭을 식별하는 데 도움이 됩니다."
+    },
+    {
+        "instruction": "웹 애플리케이션의 소스 코드 리뷰를 통해 보안 취약점을 사전에 발견하는 방법에 대해 설명해주세요.",
+        "output": "웹 애플리케이션의 소스 코드 리뷰를 통해 보안 취약점을 사전에 발견하는 방법은 다음과 같습니다.\n    화이트햇 공격자들이 수동 또는 자동화된 방법을 사용하여 웹 애플리케이션의 소스 코드를 분석하여 취약점을 식별합니다."
+    },
+    {
+        "instruction": "특정 위치에서 발견된 취약점을 해결하기 위해 가상 패치를 적용할 때, 포지티브 시큐리티 모델을 선택적으로 사용하는 것이 좋은가요?",
+        "output": "네, 특정 위치에서 발견된 취약점을 해결하기 위해 가상 패치를 적용할 때, 포지티브 시큐리티 모델을 선택적으로 사용하는 것이 좋습니다. 포지티브 시큐리티 모델은 더 나은 보호를 제공하며, 특정 위치에 문제가 있는 경우 효과적으로 적용할 수 있습니다."
+    },
+    {
+        "instruction": "가상 패치를 생성할 때, 허용 목록(Allow List) 방식을 사용하여 `reqID` 파라미터에 정수 값만 허용하도록 설정하려면 어떻게 해야 하나요?",
+        "output": "가상 패치를 생성할 때, 허용 목록(Allow List) 방식을 사용하여 `reqID` 파라미터에 정수 값만 허용하도록 설정하려면, 다음과 같은 ModSecurity 규칙을 작성할 수 있습니다.\n\n```text\n##\n## Verify we only receive 1 parameter called \"reqID\"\n##\nSecRule REQUEST_URI \"@contains /wp-content/plugins/levelfourstorefront/scripts/administration/exportsubscribers.php\" \"chain,id:1,phase:2,t:none,t:Utf8toUnicode,t:urlDecodeUni,t:normalizePathWin,t:lowercase,block,msg:'Input Validation Error for \\'reqID\\' parameter - Duplicate Parameters Names Seen.',logdata:'%{matched_var}'\"\nSecRule &ARGS:/reqID/ \"!@eq 1\"\n\n##\n## Verify reqID's payload only contains integers\n##\nSecRule REQUEST_URI \"@contains /wp-content/plugins/levelfourstorefront/scripts/administration/exportsubscribers.php\" \"chain,id:2,phase:2,t:none,t:Utf8toUnicode,t:urlDecodeUni,t:normalizePathWin,t:lowercase,block,msg:'Input Validation Error for \\'reqID\\' parameter.',logdata:'%{args.reqid}'\"\nSecRule ARGS:/reqID/ \"!@rx ^[0-9]+$\"\n```\n\n이 규칙은 `reqID` 파라미터 값이 지정된 페이지에서 정수 값만 허용되도록 검사하며, 다른 문자가 입력되는 것을 방지합니다."
+    },
+    {
+        "instruction": "자동화된 방법을 통해 가상 패치를 생성하려면 어떤 도구와 프로세스를 사용할 수 있나요?",
+        "output": "자동화된 방법을 통해 가상 패치를 생성하려면 OWASP ModSecurity Core Rule Set (CRS) Scripts, ThreadFix Virtual Patching, 그리고 Direct Importing to WAF Device와 같은 도구와 프로세스를 사용할 수 있습니다. OWASP CRS는 OWASP ZAP과 같은 도구의 XML 출력을 ModSecurity 가상 패치로 자동 변환하는 스크립트를 포함하고 있으며, ThreadFix는 가져온 취약성 XML 데이터를 ModSecurity와 같은 보안 도구를 위한 가상 패치로 자동 변환하는 프로세스를 포함하고 있습니다. 또한, 많은 상용 WAF 제품은 DAST 도구 XML 보고서 데이터를 가져와 보호 프로파일을 자동으로 조정할 수 있는 기능을 제공합니다."
+    },
+    {
+        "instruction": "네거티브 시큐리티 모델을 사용한 가상 패치는 어떤 공격을 차단할 수 있나요?",
+        "output": "네거티브 시큐리티 모델(block list)을 사용한 가상 패치는 특정 알려진 공격을 탐지하여 차단할 수 있습니다."
+    },
+    {
+        "instruction": "가상 패치를 통해 공격 표면을 얼마나 줄일 수 있을까요?",
+        "output": "가상 패치를 통해 공격 표면을 얼마나 줄일 수 있는지는 상황에 따라 다릅니다. 예를 들어, 긍정적인 보안 입력 검증이 누락된 경우에는 100% 공격 표면 감소를 달성할 수 있습니다. 그러나 XSS 결함에 대한 출력 인코딩이 누락된 경우에는 노출을 제한하는 것만 가능할 수 있습니다. 중요한 점은 10분 내에 50% 감소시키는 것이 48시간 내에 100% 감소시키는 것보다 낫다는 것입니다."
+    },
+    {
+        "instruction": "가상 패치를 통해 웹 애플리케이션의 취약점을 어떻게 방지할 수 있나요?",
+        "output": "가상 패치는 웹 애플리케이션의 취약점을 방지하기 위해 WAF(Web Application Firewall)와 같은 보안 도구를 사용하여 악성 트래픽을 차단하고, 취약점이 악용되지 않도록 합니다. 예를 들어, ModSecurity와 같은 도구를 사용하여 특정 패턴의 요청을 필터링하고, 이를 통해 SQL Injection, XSS(Cross-Site Scripting) 등의 공격을 사전에 차단할 수 있습니다. 이를 통해 소스 코드를 수정하지 않고도 즉각적인 보호를 제공할 수 있습니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션에서 Authentication 로직을 구현할 때 주의해야 할 점은 무엇인가요?",
+        "output": "모바일 애플리케이션에서 Authentication 로직을 구현할 때는 매우 신중하게 작성하고 테스트해야 합니다. Authentication은 복잡한 주제이며, 많은 함정이 존재합니다. 자세한 내용은 [Authentication Cheat Sheet](Authentication_Cheat_Sheet.md)와 OWASP Mobile Top 10의 [M1: Insecure Authentication/Authorization](https://owasp.org/www-project-mobile-top-10/2023-risks/m1-insecure-authentication-authorization.html)을 참고하세요."
+    },
+    {
+        "instruction": "새로운 기기에서 로그인이 발생했을 때 사용자에게 알림을 보내는 방법은 무엇인가요?",
+        "output": "새로운 기기에서 로그인이 발생했을 때 사용자에게 알림을 보내는 방법은 다음과 같습니다: 로그인 시도가 감지되면 사용자의 등록된 이메일 주소나 전화번호로 알림을 전송하여 해당 활동을 확인할 수 있도록 합니다. 이를 통해 사용자는 자신의 계정에 대한 비정상적인 접근을 신속하게 인지하고 필요한 조치를 취할 수 있습니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션에서 인증 토큰을 안전하게 저장하는 방법은 무엇인가요?",
+        "output": "모바일 애플리케이션에서 인증 토큰을 안전하게 저장하는 방법으로는 다음과 같은 방법들이 있습니다:\n\n1. **Secure Storage**: 안드로이드의 경우 KeyStore, iOS의 경우 Keychain을 사용하여 토큰을 암호화하여 저장합니다.\n2. **HTTPOnly Cookies**: 서버 측에서 설정한 HTTPOnly 쿠키를 사용하여 클라이언트 측에서 직접 접근할 수 없도록 합니다.\n3. **Encrypted Preferences**: SharedPreferences나 UserDefaults를 사용할 때는 데이터를 암호화하여 저장합니다.\n4. **Avoid Local Storage**: 웹뷰를 사용하는 경우, localStorage나 sessionStorage에 토큰을 저장하지 않도록 합니다.\n5. **Token Expiration**: 토큰의 만료 시간을 짧게 설정하고, 필요 시 refresh token을 사용하여 새로운 토큰을 발급받도록 합니다."
+    },
+    {
+        "instruction": "코드 리뷰 과정에서 보안을 중점적으로 검토하는 방법에 대해 설명해 주세요.",
+        "output": "코드 리뷰 과정에서 보안을 중점적으로 검토하기 위해서는 다음과 같은 방법을 사용할 수 있습니다.\n    먼저, 코드 리뷰어가 보안에 대한 이해도를 높이기 위해 보안 교육을 받도록 합니다.\n    그 다음, 코드 리뷰 체크리스트에 보안 관련 항목을 포함시켜 필수적으로 검토하도록 합니다.\n    예를 들어, 입력 값 검증, 인증 및 권한 부여, 데이터 암호화 등의 항목을 포함할 수 있습니다.\n    또한, 자동화된 정적 분석 도구를 사용하여 잠재적인 보안 취약점을 사전에 발견하고, 이를 코드 리뷰 과정에서 검토합니다.\n    마지막으로, 보안 전문가와의 협업을 통해 복잡한 보안 이슈에 대해 심도 있는 검토를 진행합니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션에서 인증서 핀닝을 사용하는 것이 좋은가요?",
+        "output": "모바일 애플리케이션에서 인증서 핀닝(Certificate Pinning)을 사용하는 것은 장단점이 있습니다. 인증서 핀닝은 MITM(Man-In-The-Middle) 공격을 방지하는 데 효과적이지만, 인증서 갱신 시 관리가 복잡해질 수 있습니다. 자세한 내용은 [Pinning Cheat Sheet](Pinning_Cheat_Sheet.md)를 참고하세요."
+    },
+    {
+        "instruction": "모바일 애플리케이션에서 정적 분석 도구를 사용하여 취약점을 식별하는 방법은 무엇인가요?",
+        "output": "모바일 애플리케이션에서 정적 분석(Static Analysis) 도구를 사용하여 취약점을 식별하려면, 먼저 적절한 정적 분석 도구를 선택한 후, 소스 코드를 분석 도구에 입력합니다. 이 도구는 코드를 스캔하여 잠재적인 보안 취약점을 자동으로 감지하고, 이를 보고서 형태로 제공합니다. 개발자는 이 보고서를 바탕으로 코드의 취약점을 수정하고, 보안을 강화할 수 있습니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션에서 생체 인증을 구현할 때 플랫폼이 지원하는 방법을 사용해야 하나요?",
+        "output": "네, 모바일 애플리케이션에서 생체 인증을 구현할 때는 플랫폼이 지원하는 방법을 사용해야 합니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션에서 실시간 모니터링을 통해 위협을 감지하고 대응하는 방법은 무엇인가요?",
+        "output": "모바일 애플리케이션에서 실시간 모니터링을 통해 위협을 감지하고 대응하는 방법으로는 사용자 행동 분석, 비정상적인 트래픽 패턴 감지, 그리고 보안 이벤트 로그 모니터링 등이 있습니다. 이를 통해 잠재적인 보안 위협을 신속하게 식별하고, 필요한 조치를 취할 수 있습니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션에서 비밀번호와 PIN 정책을 설정할 때, 비밀번호 복잡성을 요구하고 짧은 PIN을 허용하지 않는 것이 중요한 이유는 무엇인가요?",
+        "output": "비밀번호 복잡성을 요구하고 짧은 PIN을 허용하지 않는 것은 모바일 애플리케이션의 보안을 강화하기 위해 필수적입니다. 복잡한 비밀번호는 브루트포스 공격과 같은 비밀번호 해킹 시도를 방지하는 데 효과적이며, 짧은 PIN은 쉽게 유추될 수 있어 보안에 취약합니다. 이를 통해 사용자 계정의 안전성을 높이고, 불법적인 접근을 방지할 수 있습니다."
+    },
+    {
+        "instruction": "보안 기능이 사용자 경험에 부정적인 영향을 미쳐 사용자가 보안 기능을 우회하지 않도록 테스트하는 방법은 무엇인가요?",
+        "output": "사용성 테스트를 통해 보안 기능이 사용자 경험에 부정적인 영향을 미치지 않도록 확인할 수 있습니다. 이를 통해 사용자가 보안 기능을 우회하는 상황을 방지할 수 있습니다."
+    },
+    {
+        "instruction": "모바일 앱에서 사용자 인증정보를 디바이스에 저장하지 않는 방법은 무엇인가요?",
+        "output": "모바일 앱에서 사용자 인증정보를 디바이스에 저장하지 않는 방법으로는 보안이 강화된 취소 가능한 액세스 토큰을 사용하는 것이 있습니다."
+    },
+    {
+        "instruction": "모바일 앱에서 백엔드 서비스와 통신할 때 OAuth2를 사용해야 하나요?",
+        "output": "네, 모바일 앱에서 백엔드 서비스와 통신할 때 OAuth2를 사용하는 것이 좋습니다. OAuth2는 안전한 인증을 제공하여 데이터의 보안을 강화할 수 있습니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션에서 Principle of Least Privilege를 적용하기 위해 어떤 권한만 요청해야 하나요?",
+        "output": "모바일 애플리케이션에서 Principle of Least Privilege를 적용하기 위해서는 애플리케이션이 필요로 하는 권한만 요청해야 합니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션에서 네트워크 통신을 할 때, 모든 네트워크 통신이 불안전하고 가로채질 될 수 있다고 가정해야 하나요?",
+        "output": "네, 모바일 애플리케이션에서 네트워크 통신을 할 때는 모든 네트워크 통신이 불안전하고 가로채질 될 수 있다고 가정해야 합니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션에서 Penetration Testing을 통해 암호화 관련 취약점을 어떻게 확인할 수 있나요?",
+        "output": "Penetration Testing을 통해 모바일 애플리케이션의 암호화 관련 취약점을 확인하려면, 먼저 애플리케이션의 통신 데이터를 분석하여 암호화가 제대로 적용되었는지 확인합니다. 이후, Cryptographic vulnerability assessment를 수행하여 암호화 알고리즘의 강도와 키 관리 방식을 검토합니다. 예를 들어, 약한 암호화 알고리즘이 사용되었거나, 키가 하드코딩되어 있는 경우를 찾아내어 보완할 수 있습니다."
+    },
+    {
+        "instruction": "앱에서 비밀번호를 변경하거나 결제 정보를 업데이트할 때 사용자에게 재인증을 요구해야 하나요?",
+        "output": "네, 앱에서 비밀번호를 변경하거나 결제 정보를 업데이트할 때는 사용자에게 re-authenticate를 요구해야 합니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션에서 사고가 발생했을 때 대응할 수 있는 명확한 인시던트 레스폰스 계획이 있나요?",
+        "output": "네, 모바일 애플리케이션에서 사고가 발생했을 때 대응할 수 있는 명확한 인시던트 레스폰스 계획이 마련되어 있습니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션 개발 시 보안 고려사항에 대해 알려주세요.",
+        "output": "모바일 애플리케이션 개발 시 보안 고려사항은 웹 애플리케이션과는 다른 독특한 도전 과제를 포함합니다. 이 체크 리스트는 모바일 앱 개발에서 고려해야 할 보안 사항에 대한 지침을 제공합니다. 이는 종합적인 가이드는 아니지만, 개발자들이 모바일 앱 개발 시 보안을 고려하는 데 있어 출발점이 될 수 있습니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션에서 어떻게 UI 데이터 마스킹을 구현할 수 있나요?",
+        "output": "모바일 애플리케이션에서 UI 데이터 마스킹을 구현하려면, 민감한 정보가 표시되는 UI 필드에 대해 마스킹 기능을 적용해야 합니다. 예를 들어, 비밀번호 입력 필드에서는 입력된 문자를 별표(*)로 표시하거나, 신용카드 번호의 일부분만 보이도록 처리할 수 있습니다. 이를 통해 숄더 서핑(shoulder surfing)과 같은 공격으로부터 사용자 정보를 보호할 수 있습니다."
+    },
+    {
+        "instruction": "자동화된 테스트를 활용하여 보안 기능이 예상대로 작동하고 있는지, 그리고 접근 제어가 적절히 강제되고 있는지 확인할 수 있나요?",
+        "output": "네, 자동화된 테스트를 활용하여 보안 기능이 예상대로 작동하고 있는지, 그리고 접근 제어가 적절히 강제되고 있는지 확인할 수 있습니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션에서 민감한 데이터를 저장할 때, 내부 저장소에 저장하고 데이터를 암호화하는 방법은 무엇인가요?",
+        "output": "모바일 애플리케이션에서 민감한 데이터를 저장할 때는 데이터를 암호화하여 내부 저장소에 저장해야 합니다. 이를 위해 플랫폼이 제공하는 API를 사용하여 데이터를 암호화하고, 자체적으로 암호화 알고리즘을 구현하지 않도록 해야 합니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션에서 HTTPS를 사용하지 않고 네트워크 통신을 할 때 발생할 수 있는 보안 문제는 무엇인가요?",
+        "output": "HTTPS를 사용하지 않고 네트워크 통신을 할 경우, 데이터가 중간에 가로채질 수 있으며, 이는 데이터 유출 및 변조의 위험을 초래합니다. 또한, 통신 내용이 평문으로 전송되므로 제3자가 쉽게 읽을 수 있어 민감한 정보가 노출될 가능성이 큽니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션 개발 초기 단계에서 NIST와 IETF의 보안 원칙을 따르는 것이 중요한가요?",
+        "output": "네, 모바일 애플리케이션 개발 초기 단계에서 NIST와 IETF의 보안 원칙을 따르는 것은 매우 중요합니다. 이는 보안을 처음부터 고려하여 설계하는 것을 의미하며, 이를 통해 나중에 발생할 수 있는 보안 문제를 예방할 수 있습니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션에서 Personally Identifiable Information(PII)를 최소화하는 방법에 대해 설명해주세요.",
+        "output": "모바일 애플리케이션에서 Personally Identifiable Information(PII)를 최소화하는 방법에는 여러 가지가 있습니다. 먼저, PII를 필요한 최소한으로 수집하도록 제한해야 합니다. 가능하다면 PII를 덜 중요한 정보로 대체하는 것도 좋은 방법입니다. 예를 들어, 위치 업데이트의 빈도를 줄이는 것도 PII를 줄이는 방법 중 하나입니다. 또한, PII의 자동 만료 및 삭제를 구현하여 보유 기간을 최소화할 수 있습니다. 마지막으로, PII를 수집하거나 사용하기 전에 사용자의 동의를 받는 것이 중요합니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션의 디버깅을 비활성화하는 방법에 대해 알려주세요.",
+        "output": "모바일 애플리케이션의 디버깅을 비활성화하려면 AndroidManifest.xml 파일에서 `android:debuggable` 속성을 `false`로 설정하거나, iOS의 경우 Xcode에서 Debug 빌드 설정을 Release 빌드 설정으로 변경하면 됩니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션에서 사용 중인 모든 서드파티 라이브러리가 안전하고 최신 상태인지 확인하는 방법을 알려주세요.",
+        "output": "모바일 애플리케이션에서 사용 중인 모든 서드파티 라이브러리가 안전하고 최신 상태인지 확인하기 위해서는 먼저 사용 중인 모든 라이브러리의 버전을 파악한 후, 각 라이브러리의 공식 웹사이트나 저장소에서 최신 버전을 확인해야 합니다. 또한, 보안 취약점 데이터베이스(예: CVE)를 검토하여 해당 라이브러리에 대한 최신 보안 업데이트나 패치 정보를 확인하는 것도 중요합니다. 정기적으로 의존성 관리 도구를 사용하여 라이브러리의 업데이트 상태를 모니터링하고, 필요시 즉시 업데이트하는 것이 좋습니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션에서 ATS를 사용하여 네트워크 통신의 보안 정책을 강화하는 방법은 무엇인가요?",
+        "output": "ATS(App Transport Security)를 사용하여 네트워크 통신의 보안 정책을 강화하려면, 애플리케이션의 Info.plist 파일에서 ATS 설정을 활성화하고, 최소 TLS(Transport Layer Security) 버전과 허용되는 암호화 알고리즘을 지정해야 합니다. 이를 통해 애플리케이션은 안전하지 않은 네트워크 연결을 차단하고, 데이터 전송 시 강력한 암호화를 적용할 수 있습니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션에서 출력 검증을 통해 인젝션 공격을 방지하는 방법은 무엇인가요?",
+        "output": "모바일 애플리케이션에서 출력 검증을 통해 인젝션 공격을 방지하려면 출력 데이터를 검증하고 정제하여 악의적인 코드가 실행되지 않도록 해야 합니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션에서 세션 타임아웃을 설정하지 않으면 어떤 보안 문제가 발생할 수 있나요?",
+        "output": "모바일 애플리케이션에서 세션 타임아웃을 설정하지 않으면, 사용자가 애플리케이션을 종료하지 않았더라도 장시간 비활성 상태가 되면 세션이 유효하게 남아 있어 다른 사용자가 해당 세션을 탈취하여 악용할 수 있는 위험이 있습니다. 이로 인해 개인 정보 유출이나 부정 접근과 같은 보안 문제가 발생할 수 있습니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션의 모든 라이브러리를 최신 상태로 유지하는 것이 보안에 얼마나 중요한가요?",
+        "output": "모바일 애플리케이션의 모든 라이브러리를 최신 상태로 유지하는 것은 매우 중요합니다. 이는 알려진 취약점을 패치하여 보안을 강화하는 데 필수적이기 때문입니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션에서 네트워크 통신을 할 때 항상 HTTPS를 사용해야 하나요?",
+        "output": "네, 모바일 애플리케이션에서 네트워크 통신을 할 때는 항상 HTTPS를 사용해야 합니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션에서 사용자 입력 값을 검증하고 정제하는 방법에 대해 설명해주세요.",
+        "output": "모바일 애플리케이션에서 사용자 입력 값을 검증하고 정제하는 방법은 Input Validation Cheat Sheet에 자세히 설명되어 있습니다. 이를 통해 사용자 입력 값을 검증하고 산화(sanitize)할 수 있습니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션에서 서드파티 라이브러리와 컴포넌트를 사용할 때 보안 위협을 최소화하기 위해 어떤 조치를 취해야 하나요?",
+        "output": "모바일 애플리케이션에서 서드파티 라이브러리와 컴포넌트를 사용할 때 보안 위협을 최소화하기 위해 앱 서명을 보장하고, 신뢰할 수 있고 검증된 서드파티 라이브러리와 컴포넌트만 사용해야 합니다. 또한, 앱 업데이트, 패치, 릴리스에 대한 보안 컨트롤을 수립하고, 사용 중인 서드파티 제품의 보안 사고를 모니터링하고 감지해야 합니다. 취약점이 발견되었을 때 서드파티 의존성을 관리하는 방법에 대한 추가 권장 사항은 [Vulnerable Dependency Management Cheat Sheet](Vulnerable_Dependency_Management_Cheat_Sheet.md)를 참고하세요."
+    },
+    {
+        "instruction": "모바일 애플리케이션에서 캐싱, 로깅, 백그라운드 스냅샷을 통해 민감한 데이터가 유출될 수 있는지 확인하는 방법을 알려주세요.",
+        "output": "모바일 애플리케이션에서 캐싱, 로깅, 백그라운드 스냅샷을 통해 민감한 데이터가 유출될 수 있는지 확인하기 위해서는 다음과 같은 방법을 사용할 수 있습니다.\n\n1. 캐싱: 애플리케이션의 캐시 메커니즘을 검토하여 민감한 데이터가 캐시에 저장되지 않도록 합니다. 캐시 데이터를 암호화하고, 필요 없는 데이터는 즉시 삭제합니다.\n2. 로깅: 로그 파일에 민감한 데이터가 포함되지 않도록 로깅 설정을 점검합니다. [Logging Cheat Sheet](Logging_Cheat_Sheet.md#data-to-exclude)에 명시된 데이터는 로깅하지 않도록 합니다.\n3. 백그라운드 스냅샷: 애플리케이션이 백그라운드로 전환될 때 스냅샷이 찍히지 않도록 설정합니다. 예를 들어, iOS에서는 `UIApplicationExitsOnSuspend` 키를 `Info.plist` 파일에 추가하여 백그라운드 스냅샷을 비활성화할 수 있습니다. Android에서는 `FLAG_SECURE` 플래그를 사용하여 화면 캡처를 방지할 수 있습니다."
+    },
+    {
+        "instruction": "모바일 앱 보안을 위해 정기적인 업데이트와 패치를 계획하는 것이 중요한 이유는 무엇인가요?",
+        "output": "모바일 앱의 경우, 패치가 출시된 후 앱 스토어 검토 과정과 사용자가 실제로 앱을 업데이트하는 데 걸리는 시간 차이로 인해 보안 취약점이 노출될 수 있습니다. 따라서 정기적인 업데이트와 패치를 계획하는 것이 중요합니다."
+    },
+    {
+        "instruction": "안드로이드 앱에서 민감한 데이터를 SharedPreferences에 저장하지 않는 방법은 무엇인가요?",
+        "output": "안드로이드 앱에서 민감한 데이터를 SharedPreferences에 저장하지 않기 위해서는 안드로이드 공식 문서에서 제공하는 데이터 보안 가이드라인을 참고하여 데이터를 안전하게 처리하는 방법을 사용해야 합니다. 예를 들어, EncryptedSharedPreferences를 사용하거나, 데이터를 암호화하여 안전하게 저장할 수 있습니다."
+    },
+    {
+        "instruction": "모바일 애플리케이션에서 클라이언트 측 인증을 신뢰하지 않는 이유는 무엇인가요?",
+        "output": "모바일 애플리케이션에서 클라이언트 측 인증을 신뢰하지 않는 이유는 클라이언트 측 컨트롤은 모두 우회될 수 있기 때문입니다. 따라서 서버 측에서도 인증/인가를 수행해야 합니다."
+    },
+    {
+        "instruction": "웹사이트의 인증서를 핀닝하려면 어떤 방법을 사용할 수 있나요?",
+        "output": "웹사이트의 인증서를 핀닝하려면 여러 가지 방법을 사용할 수 있습니다. 예를 들어, 웹사이트의 인증서를 별도로 가져와서 프로그램에 내장하거나, `openssl s_client`를 사용해 인증서를 검색할 수 있습니다. 런타임 중에 웹사이트나 서버의 인증서를 검색한 후, 이를 프로그램에 내장된 인증서와 비교합니다. 비교가 실패하면 메서드나 함수를 실패시키면 됩니다."
+    },
+    {
+        "instruction": "Electron 애플리케이션에서 SSL pinning을 구현하려면 어떤 라이브러리를 사용해야 하나요?",
+        "output": "Electron 애플리케이션에서 SSL pinning을 구현하려면 [electron-ssl-pinning](https://github.com/dialogs/electron-ssl-pinning) 라이브러리를 사용할 수 있습니다. 이 라이브러리는 Electron 기반 애플리케이션에서 SSL pinning을 쉽게 구현할 수 있는 API를 제공합니다. 또한, 필요한 호스트 기반으로 설정을 가져오는 도구도 제공합니다. 또 다른 방법으로는 [ses.setCertificateVerifyProc(proc)](https://electronjs.org/docs/api/session#sessetcertificateverifyprocproc)를 사용하여 직접 인증서를 검증할 수도 있습니다."
+    },
+    {
+        "instruction": "애플리케이션 개발 시 호스트나 서비스의 인증서나 공개 키를 추가하는 것과 처음 인증서나 공개 키를 만났을 때 추가하는 것 중 어느 쪽이 더 안전한가요?",
+        "output": "애플리케이션 개발 시 호스트나 서비스의 인증서나 공개 키를 추가하는 것이 더 안전합니다. 이 방법은 *preloading* 인증서나 공개 키를 *out of band* 방식으로 하기 때문에 공격자가 핀을 오염시킬 가능성이 적습니다."
+    },
+    {
+        "instruction": "공개키 핀닝을 사용할 때 발생할 수 있는 주요 단점은 무엇인가요?",
+        "output": "공개키 핀닝을 사용할 때 발생할 수 있는 주요 단점은 다음과 같습니다:\n    - 키를 추출해야 하므로 작업이 더 어렵습니다. 특히 Cocoa/CocoaTouch와 OpenSSL에서는 불편할 수 있습니다.\n    - 키가 정적이므로 키 회전 정책을 위반할 수 있습니다.\n    - 일부 서비스 제공자는 갱신 시 새로운 키를 생성합니다.\n    - 공개키를 익명화할 수 없습니다."
+    },
+    {
+        "instruction": "안드로이드 자바에서 인증서와 공개키 핀닝을 어떻게 설정할 수 있나요?",
+        "output": "안드로이드 자바에서 인증서와 공개키 핀닝을 설정하려면, 먼저 신뢰할 수 있는 인증서나 공개키를 정의한 후, 이를 네트워크 요청 시에 검증하도록 설정해야 합니다. 일반적으로 `OkHttpClient`를 사용하여 커스텀 `CertificatePinner`를 설정하거나, `HttpsURLConnection`을 사용하여 직접 인증서를 검증할 수 있습니다. 이 과정에서 인증서의 해시값을 하드코딩하거나, 리소스 파일에 저장하여 사용할 수 있습니다."
+    },
+    {
+        "instruction": "인증서 제공업체가 인증서를 회전할 때마다 무작위 키 쌍을 생성하고, 이 인증서가 언제 사용될지 제어할 수 없는 경우, 핀닝을 사용하면 어떤 문제가 발생할 수 있나요?",
+        "output": "핀닝을 사용하면 엔드포인트가 새로운 인증서를 제시할 때 클라이언트가 이미 다운타임을 경험한 후에야 업데이트할 수 있기 때문에 다운타임이 발생할 수 있습니다."
+    },
+    {
+        "instruction": "iOS에서 TrustKit를 사용하여 SSL pinning을 구현하려면 어떻게 해야 하나요?",
+        "output": "TrustKit는 iOS와 macOS용 오픈 소스 SSL pinning 라이브러리로, 쉽게 사용할 수 있는 API를 제공합니다. TrustKit를 사용하여 SSL pinning을 구현하려면 다음 단계를 따르세요:\n\n1. **TrustKit 설치**: CocoaPods를 사용하여 TrustKit를 설치합니다. `Podfile`에 다음 줄을 추가하고 `pod install` 명령어를 실행합니다.\n   ```ruby\n   pod 'TrustKit'\n   ```\n\n2. **TrustKit 설정**: `AppDelegate.swift` 파일에서 TrustKit를 설정합니다. 예를 들어, `application(_:didFinishLaunchingWithOptions:)` 메서드에서 다음과 같이 설정할 수 있습니다.\n   ```swift\n   import TrustKit\n\n   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {\n       let config = [\n           kTSKSwizzleNetworkDelegates: true,\n           kTSKPinnedDomains: [\n               \"yourdomain.com\": [\n                   kTSKIncludeSubdomains: true,\n                   kTSKEnforcePinning: true,\n                   kTSKPublicKeyAlgorithms: [kTSKAlgorithmRsa2048],\n                   kTSKPublicKeyHashes: [\n                       \"YOUR_PUBLIC_KEY_HASH_HERE\"\n                   ]\n               ]\n           ]\n       ] as [String : Any]\n\n       TrustKit.initSharedInstance(withConfiguration: config)\n\n       return true\n   }\n   ```\n\n3. **SSL 인증서 핀ning 테스트**: SSL pinning이 성공적으로 구현되었는지 확인하려면 OWASP Mobile Security Testing Guide (MSTG)의 네트워크 통신 테스트 섹션을 참고하세요.\n\n이 단계를 따르면 TrustKit를 사용하여 iOS 앱에 SSL pinning을 구현할 수 있습니다."
+    },
+    {
+        "instruction": "웹 애플리케이션에서 데이터 유출 방지(DLP) 전략의 일환으로 이그레스 필터링을 실시하고 있는 경우, 인터셉션 프록시를 만나게 되면 어떻게 해야 하나요?",
+        "output": "이그레스 필터링을 실시하는 조직에서 인터셉션 프록시를 만나게 되면, 인터셉션 프록시를 허용 목록(allow-list)에 추가하지 말고, 리스크 수용(Risk Acceptance) 담당자의 지시에 따라 인터셉션 프록시의 공개 키를 핀셋(pinset)에 추가하세요."
+    },
+    {
+        "instruction": "핀닝이란 무엇인가요?",
+        "output": "핀닝(Pinning)은 호스트와 그 호스트의 *expected* X509 인증서나 공개 키를 연관시키는 과정입니다. 인증서나 공개 키가 호스트에 대해 알려지거나 보이면, 그 인증서나 공개 키는 호스트에 '핀'되어 연관됩니다. 하나 이상의 인증서나 공개 키가 허용될 경우, 프로그램은 *pinset*을 가지게 됩니다. 이 경우, 광고된 신원은 *pinset*의 요소 중 하나와 일치해야 합니다."
+    },
+    {
+        "instruction": "프로그램에서 원격 호스트의 인증서나 공개 키를 검증하여 신원을 확인하는 방법은 무엇인가요?",
+        "output": "프로그램에서 원격 호스트의 인증서나 공개 키를 검증하여 신원을 확인하는 방법은 `OnConnect` 콜백을 사용하는 것입니다. 이 콜백을 통해 라이브러리, 프레임워크 또는 플랫폼이 제공하는 기능을 활용하여 원격 호스트의 인증서나 공개 키를 검증할 수 있습니다."
+    },
+    {
+        "instruction": "루트 CA, 중간 CA, 리프 인증서 중 어떤 것을 핀ning해야 하나요?",
+        "output": "루트 CA를 핀ning하는 것은 일반적으로 권장되지 않습니다. 이는 모든 중간 CA도 신뢰하게 되기 때문에 위험성이 크게 증가합니다. 중간 CA를 핀ning하면 위험성이 줄어들지만, 해당 CA가 발급한 모든 인증서를 신뢰하게 되므로 애플리케이션에 의도된 인증서만 신뢰하는 것은 아닙니다. 리프 인증서를 핀ning하는 것이 권장됩니다. 그러나 백업(예: 중간 CA)을 포함해야 합니다. 이렇게 하면 애플리케이션이 설계된 원격 호스트만 100% 신뢰하게 됩니다. 예를 들어, 애플리케이션은 원격 엔드포인트의 리프 인증서를 핀ning하지만 중간 CA에 대한 백업 핀을 포함합니다. 이는 더 많은 인증 기관을 신뢰하므로 위험성이 증가하지만, 리프 인증서에 문제가 있을 경우 애플리케이션이 중간 CA로 돌아갈 수 있으므로 애플리케이션이 고장 날 가능성이 줄어듭니다."
+    },
+    {
+        "instruction": "해시를 사용한 핀닝의 장점과 단점에 대해 설명해주세요.",
+        "output": "해시를 사용한 핀닝의 장점은 다음과 같습니다:\n    - 편리하게 사용할 수 있습니다. 다양한 라이브러리에서 디지스트된 인증서 지문을 네이티브 API로 제공하기 때문입니다.\n    - 해싱을 통해 인증서나 공개 키를 익명화할 수 있습니다. 이는 디컴파일 및 리엔지니어링 과정에서 정보 유출을 방지하는 데 중요할 수 있습니다.\n    - 조직은 주 신원이 타협될 경우를 대비해 예비 신원을 제공할 수 있습니다. 해싱을 통해 적이 예비 인증서나 공개 키를 미리 보지 못하도록 할 수 있습니다. 실제로, Google의 IETF 초안 *websec-key-pinning*에서도 이 기법을 사용합니다.\n\n    해시를 사용한 핀닝의 단점은 다음과 같습니다:\n    - 공개 키 매개변수나 알고리즘, OID와 같은 문맥 정보에 접근할 수 없습니다. 특정 사용 사례에서는 이러한 정보가 필요할 수 있습니다.\n    - 사이트가 인증서를 정기적으로 회전시키는 경우, 애플리케이션을 정기적으로 업데이트해야 합니다. 이 인증서가 언제 사용될지 제어할 수 없다면, 핀닝은 서비스 중단을 초래할 수 있습니다."
+    },
+    {
+        "instruction": "내가 사용하는 VPN이 안전한지 어떻게 확인할 수 있나요?",
+        "output": "VPN의 안전성을 확인하기 위해서는 몇 가지 방법을 사용할 수 있습니다. 첫째, VPN 제공업체의 평판과 리뷰를 확인하세요. 둘째, VPN이 사용하는 암호화 프로토콜과 알고리즘을 확인하여 최신 보안 기술을 사용하고 있는지 확인하세요. 셋째, VPN 서버의 위치와 로그 정책을 확인하여 개인정보가 안전하게 보호되는지 확인하세요. 마지막으로, VPN 연결 중에 발생하는 데이터 유출이나 공격을 모니터링하는 도구를 사용하여 실시간으로 보안 상태를 점검할 수 있습니다."
+    },
+    {
+        "instruction": "원격 호스트의 신원을 확실히 하고 싶거나 적대적인 환경에서 작업할 때 Pinning을 해야 하나요?",
+        "output": "네, Pinning을 해야 합니다."
+    },
+    {
+        "instruction": "Android N 이후 버전에서 핀닝을 구현하는 방법에 대해 설명해주세요.",
+        "output": "Android N 이후 버전에서 핀닝을 구현하는 방법은 Android의 Network Security Configuration 기능을 사용하는 것입니다. 이 기능을 통해 앱은 안전하고 선언적인 설정 파일을 통해 네트워크 보안 설정을 커스터마이즈할 수 있습니다. 핀닝을 활성화하려면 `<pin-set>` 설정을 사용할 수 있습니다."
+    },
+    {
+        "instruction": "Certificate Pinning을 통해 중간자 공격을 방지할 수 있는가요?",
+        "output": "네, Certificate Pinning을 통해 중간자 공격을 방지할 수 있습니다. Certificate Pinning은 클라이언트가 특정 인증서나 공개 키를 신뢰할 수 있는 인증서로 고정시키는 기술입니다. 이를 통해 공격자가 유효한 인증서를 발급받아도 클라이언트가 신뢰하지 않는 인증서는 거부되므로, 중간자 공격을 효과적으로 방지할 수 있습니다."
+    },
+    {
+        "instruction": "모바일 환경에서 인증서와 공개키 핀닝을 구현하는 방법에 대해 설명해주세요.",
+        "output": "모바일 환경에서 인증서와 공개키 핀닝을 구현하는 방법은 다음과 같습니다. 먼저, 신뢰할 수 있는 인증서나 공개키를 애플리케이션에 내장시킵니다. 그런 다음, 통신 채널을 설정할 때 서버로부터 받은 인증서나 공개키가 내장된 것과 일치하는지 확인합니다. 이를 통해 중간자 공격(MITM)을 방지하고, 신뢰할 수 있는 서버와의 안전한 통신을 보장할 수 있습니다. 구체적인 구현 방법은 사용하는 플랫폼과 프로그래밍 언어에 따라 다를 수 있으므로, 각 환경에 맞는 가이드를 참고하는 것이 좋습니다."
+    },
+    {
+        "instruction": "OpenSSL에서 인증서 핀닝을 수행하려면 SSL_get_verify_result와 SSL_get_peer_certificate를 어떻게 사용해야 하나요?",
+        "output": "OpenSSL에서 인증서 핀닝을 수행하려면 다음과 같이 SSL_get_verify_result와 SSL_get_peer_certificate를 사용해야 합니다.\n\n1. SSL_get_verify_result를 호출하여 반환 코드가 X509_V_OK인지 확인합니다.\n2. SSL_get_peer_certificate를 호출하여 인증서가 non-NULL인지 확인합니다."
+    },
+    {
+        "instruction": ".Net에서 `ServicePointManager`를 사용하여 Pinning을 설정하려면 어떻게 해야 하나요?",
+        "output": ".Net에서 `ServicePointManager`를 사용하여 Pinning을 설정하려면, 먼저 `ServicePointManager.ServerCertificateValidationCallback` 속성을 설정하여 인증서 검증 콜백을 정의해야 합니다. 그런 다음, `ServicePointManager.SecurityProtocol` 속성을 설정하여 사용할 보안 프로토콜을 지정합니다. 마지막으로, `ServicePointManager.PinPublicKey` 메서드를 사용하여 공개 키를 핀ning합니다. 자세한 예제는 OWASP MSTG 문서를 참고하거나 .Net 샘플 프로그램을 다운로드하여 확인할 수 있습니다."
+    },
+    {
+        "instruction": "문서와 창의 속성을 사용하기 전에 타입을 확인하는 방법은 무엇인가요?",
+        "output": "문서와 창의 속성을 사용하기 전에 타입을 확인하려면 [instance of] 연산자를 사용하여 속성의 타입을 검사해야 합니다. 예를 들어, 객체가 [HTMLElement] 인스턴스인지 확인할 수 있습니다."
+    },
+    {
+        "instruction": "글로벌 변수를 저장할 때 `document`와 `window` 객체를 사용하지 않는 방법은 무엇인가요?",
+        "output": "글로벌 변수를 저장할 때 `document`와 `window` 객체를 사용하지 않는 방법으로는, 별도의 네임스페이스 객체를 생성하여 사용하는 것이 있습니다. 예를 들어, `var MyApp = {};`와 같이 네임스페이스를 정의하고, 이를 통해 변수를 관리할 수 있습니다. 또한, ES6의 `let`과 `const`를 사용하여 블록 스코프를 활용하는 것도 좋은 방법입니다."
+    },
+    {
+        "instruction": "CSP를 사용하여 DOM clobbering 공격을 완전히 방지할 수 있나요?",
+        "output": "CSP를 사용하여 일부 변종의 DOM clobbering 공격을 완화할 수 있지만, 모든 공격을 완전히 방지할 수는 없습니다. 예를 들어, 이미 존재하는 코드가 `eval()`과 같은 코드 평가 구조를 통해 악용될 경우 CSP는 효과적이지 않습니다."
+    },
+    {
+        "instruction": "DOM Clobbering을 방지하기 위해 자바스크립트에서 strict mode를 사용하는 것이 좋은가요?",
+        "output": "네, 자바스크립트에서 `strict` mode를 사용하는 것이 DOM Clobbering을 방지하는 데 도움이 됩니다. `strict` mode를 사용하면 의도하지 않은 전역 변수 생성을 방지하고, 읽기 전용 속성을 덮어쓰려고 할 때 오류를 발생시켜 코드의 안전성을 높일 수 있습니다."
+    },
+    {
+        "instruction": "글로벌 변수를 사용할 때 DOM Clobbering에 취약해지는 이유는 무엇인가요?",
+        "output": "글로벌 변수는 전역적으로 접근 가능하기 때문에, DOM 요소와 이름이 충돌할 경우 쉽게 덮어쓰여질 수 있습니다. 이로 인해 DOM Clobbering 공격에 더 취약해집니다."
+    },
+    {
+        "instruction": "DOM Clobbering을 방지하기 위해 변수와 함수를 캡슐화하는 방법에 대해 설명해주세요.",
+        "output": "변수와 함수를 객체나 클래스 내부에 캡슐화하면, 외부에서 접근할 수 없도록 만들어 DOM Clobbering을 방지할 수 있습니다. 이를 통해 변수와 함수가 외부에서 덮어쓰이는 것을 막을 수 있습니다. 예를 들어, 변수와 함수를 private으로 설정하면 외부에서 접근할 수 없게 되어 더 안전해집니다."
+    },
+    {
+        "instruction": "DOM Clobbering을 방지하기 위한 코딩 가이드라인에 대해 설명해주세요.",
+        "output": "DOM Clobbering을 방지하기 위해서는 방어적인 프로그래밍과 몇 가지 코딩 패턴 및 가이드라인을 준수해야 합니다."
+    },
+    {
+        "instruction": "변수를 초기화할 때 `var`, `let`, `const` 중 하나를 사용하여 변수를 명시적으로 선언해야 하나요?",
+        "output": "네, 변수를 초기화할 때 `var`, `let`, `const` 중 하나를 사용하여 변수를 명시적으로 선언해야 합니다. 이는 변수의 클로버링을 방지하기 위함입니다."
+    },
+    {
+        "instruction": "문서의 내장 API를 검증하기 전에 신뢰해서는 안 되나요?",
+        "output": "네, 문서의 내장 API를 검증하기 전에 신뢰해서는 안 됩니다. 이는 DOM Clobbering으로 인해 문서 속성이 가려질 수 있기 때문입니다. 이는 named property visibility algorithm에 의해 발생하며, 여기서는 HTML 요소 참조가 document의 내장 API와 다른 속성 조회보다 우선적으로 처리됩니다."
+    },
+    {
+        "instruction": "프로덕션 환경에서 변수 이름을 고유하게 사용하는 것이 네임 충돌을 방지하는 데 도움이 되나요?",
+        "output": "네, 프로덕션 환경에서 변수 이름을 고유하게 사용하는 것이 네임 충돌을 방지하는 데 도움이 됩니다. 이를 통해 실수로 변수가 덮어쓰여지는 것을 예방할 수 있습니다."
+    },
+    {
+        "instruction": "사용자 입력을 통해 DOM Clobbering 공격을 방지하기 위해서는 어떤 방법을 사용해야 하나요?",
+        "output": "사용자 입력을 통해 DOM Clobbering 공격을 방지하기 위해서는 다음과 같은 방법을 사용할 수 있습니다:\n\n1. 사용자 입력을 신뢰하지 않고, 항상 검증하고 정제합니다.\n2. 글로벌 객체(예: window)에 직접 접근하지 않고, 로컬 변수를 사용합니다.\n3. 사용자 입력을 통해 생성된 요소의 ID나 name 속성을 피합니다.\n4. Content Security Policy(CSP)를 사용하여 스크립트 실행을 제한합니다.\n5. 사용자 입력을 통해 생성된 요소를 안전하게 처리하기 위해 라이브러리나 프레임워크를 사용합니다."
+    },
+    {
+        "instruction": "DOM Clobbering을 방지하기 위해 민감한 DOM 객체를 동결하는 방법에 대해 설명해주세요.",
+        "output": "DOM Clobbering을 방지하기 위해 민감한 DOM 객체를 동결하는 방법은 [Object.freeze()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze) 메서드를 사용하는 것입니다. 이 방법을 통해 개별 객체와 그 속성을 동결시키면, 이름이 같은 DOM 요소에 의해 객체의 속성이 덮어쓰이는 것을 방지할 수 있습니다. 그러나 모든 객체와 객체 속성을 동결시켜야 할지 결정하는 것이 쉽지 않기 때문에, 이 접근 방식의 유용성은 제한적일 수 있습니다."
+    },
+    {
+        "instruction": "사용자로부터 받은 데이터를 DOM tree에 삽입하기 전에 `id`와 `name` 속성을 반드시 검증해야 하나요?",
+        "output": "네, 사용자로부터 받은 데이터를 DOM tree에 삽입하기 전에 `id`와 `name` 속성을 반드시 검증해야 합니다."
+    },
+    {
+        "instruction": "DOM Clobbering을 방지하기 위해 HTML Sanitization을 사용할 때, 명명된 속성을 완전히 제거하는 것이 효과적인지 여부에 대해 설명해주세요.",
+        "output": "명명된 속성을 완전히 제거하는 것은 DOM Clobbering을 방지하는 데 효과적일 수 있습니다. 그러나 이 방법은 명명된 속성이 정상적인 기능에 필요할 때 사용성을 저해할 수 있습니다. 예를 들어, `id`와 `name`과 같은 속성은 JavaScript에서 요소를 선택하거나 폼 데이터를 처리할 때 자주 사용됩니다. 이러한 속성을 완전히 제거하면 이러한 기능이 제대로 작동하지 않을 수 있습니다. 따라서 명명된 속성을 제거하는 것은 효과적일 수 있지만, 사용 사례에 따라 사용성을 저해할 수 있는 점을 고려해야 합니다."
+    },
+    {
+        "instruction": "DOMPurify 라이브러리를 사용할 때, 사용자 정의 변수와 속성을 보호하기 위해 어떤 설정을 활성화해야 하나요?",
+        "output": "`SANITIZE_NAMED_PROPS` 설정을 활성화해야 합니다."
+    },
+    {
+        "instruction": "브라우저 내장 Sanitizer API를 사용하여 DOM Clobbering을 방지하려면 어떻게 설정해야 하나요?",
+        "output": "브라우저 내장 Sanitizer API를 사용하여 DOM Clobbering을 방지하려면, Sanitizer 인스턴스를 생성할 때 blockAttributes 옵션을 설정하여 id와 name 속성을 모든 요소에서 제거하도록 구성해야 합니다. 예를 들어, 다음과 같이 설정할 수 있습니다:\n\n```js\nconst sanitizerInstance = new Sanitizer({\nblockAttributes: [\n{'name': 'id', elements: '*'},\n{'name': 'name', elements: '*'}\n]\n});\ncontainerDOMElement.setHTML(input, {sanitizer: sanitizerInstance});\n```"
+    },
+    {
+        "instruction": "특정 브라우저에서만 지원되는 기능을 사용할 때, 이 기능이 지원되는지 확인하는 방법은 무엇인가요?",
+        "output": "특정 브라우저에서만 지원되는 기능을 사용할 때, 이 기능이 지원되는지 확인하는 방법은 Feature Detection을 사용하는 것입니다. Feature Detection을 통해 기능이 지원되는지 여부를 확인한 후 사용하면, 지원되지 않는 브라우저에서 발생할 수 있는 오류와 DOM Clobbering을 방지할 수 있습니다."
+    },
+    {
+        "instruction": "DOM Clobbering이 발생할 수 있는 상황에서 안전하게 변수명을 지정하는 방법은 무엇인가요?",
+        "output": "DOM Clobbering을 방지하기 위해 변수명을 안전하게 지정하는 방법은 다음과 같습니다:\n\n1. 글로벌 스코프에서 변수를 선언하지 않도록 합니다. 대신, 로컬 스코프나 모듈 스코프를 사용합니다.\n2. 변수명에 특수문자나 숫자를 포함시켜 유니크하게 만듭니다. 예를 들어, `userInput_123`와 같이 명명합니다.\n3. 변수명에 예약어나 브라우저 API와 충돌할 수 있는 이름을 사용하지 않습니다.\n4. `let`, `const` 키워드를 사용하여 변수를 선언하고, `var` 키워드는 피합니다.\n5. 객체나 배열을 사용하여 변수를 그룹화하고, 객체의 속성명을 사용하여 접근합니다. 예를 들어, `userData.inputValue`와 같이 사용합니다."
+    },
+    {
+        "instruction": "DOM Clobbering을 방지하기 위해 어떤 Content-Security Policy를 사용해야 하나요?",
+        "output": "Content-Security Policy를 사용하여 신뢰할 수 있는 소스에서만 스크립트를 실행하도록 설정하고, 외부 스크립트의 실행을 막아야 합니다. 예를 들어, `script-src 'self'`와 같은 정책을 사용하여 동일 출처에서만 스크립트를 허용할 수 있습니다. 또한, `object-src 'none'`을 사용하여 외부 객체의 로딩을 차단할 수 있습니다."
+    },
+    {
+        "instruction": "공격자가 DOM Clobbering을 통해 악성 스크립트를 실행할 수 있는 방법은 무엇인가요?",
+        "output": "공격자는 특정 ID나 name 속성을 가진 HTML 요소를 삽입하여 전역 변수나 DOM 요소를 오염시킬 수 있습니다. 예를 들어, `<a id=config><a id=config name=url href='malicious.js'>`와 같은 마크업을 삽입하면, JavaScript 코드에서 `window.config.url`을 참조할 때 악성 스크립트가 로드될 수 있습니다. 이를 통해 공격자는 임의의 클라이언트 측 코드 실행을 달성할 수 있습니다."
+    },
+    {
+        "instruction": "DOM Clobbering이 발생할 때 어떤 보안 위협이 있나요?",
+        "output": "DOM Clobbering이 발생할 때 공격자는 웹 페이지의 글로벌 객체나 요소를 조작할 수 있습니다. 이를 통해 XSS(Cross-Site Scripting) 공격을 수행하거나, 민감한 정보를 유출하고, 사용자의 세션을 하이재킹할 수 있습니다. 또한, 웹 애플리케이션의 동작을 변경하여 사용자에게 악성 코드를 실행시키거나, 피싱 공격을 수행할 수 있습니다."
+    }
+]

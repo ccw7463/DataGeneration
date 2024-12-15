@@ -1,0 +1,1442 @@
+[
+    {
+        "instruction": "flatpak으로 설치된 모든 애플리케이션과 런타임을 업데이트하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`flatpak update` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "프록스모크스 가상 환경에서 가상 머신의 디스크 크기를 50기가바이트 증가시키려면 어떻게 해야 하나요?",
+        "output": "`qm disk resize` 명령어를 사용하여 가상 머신의 디스크 크기를 50기가바이트 증가시킬 수 있습니다. 예를 들어, VM ID가 100이고 디스크 이름이 `scsi0`인 경우 다음 명령어를 사용합니다:\n\n`qm disk resize 100 scsi0 +50G`"
+    },
+    {
+        "instruction": "winetricks를 사용하여 특정 Windows DLL을 설치하려면 어떻게 해야 하나요?",
+        "output": "winetricks를 사용하여 특정 Windows DLL을 설치하려면 다음 명령어를 사용하면 됩니다:\n`winetricks {{package}}`"
+    },
+    {
+        "instruction": "Proxmox Virtual Environment에서 가상 머신을 중지할 때 --skiplock 옵션을 사용하면 데이터 손상이 발생할 수 있는 상황은 어떤 경우인가요?",
+        "output": "`--skiplock` 옵션을 사용하면 가상 머신의 잠금 상태를 확인하지 않고 중지하기 때문에, 다른 프로세스나 사용자가 동시에 해당 가상 머신을 수정하거나 접근할 경우 데이터 손상이 발생할 수 있습니다. 예를 들어, 가상 머신의 디스크 이미지나 설정 파일을 동시에 수정하는 경우, 잠금 체크를 건너뛰면 데이터의 일관성이 깨질 수 있습니다."
+    },
+    {
+        "instruction": "debchange --nmu 명령어를 사용하여 비유지보수자 업로드를 위한 새로운 버전을 추가하려면 어떻게 해야 하나요?",
+        "output": "`debchange --nmu` 명령어를 사용하여 비유지보수자 업로드를 위한 새로운 버전을 추가하려면, 터미널에서 해당 명령어를 실행하면 됩니다. 이 명령어는 현재 디렉토리의 debian/changelog 파일에 새로운 버전 정보를 추가합니다."
+    },
+    {
+        "instruction": "Engrampa를 사용하여 특정 파일과 디렉토리를 재귀적으로 압축하려면 어떻게 해야 하나요?",
+        "output": "Engrampa를 사용하여 특정 파일과 디렉토리를 재귀적으로 압축하려면 다음 명령어를 사용하세요:\n\n`engrampa --add-to={{path/to/compressed.tar}} {{path/to/file_or_directory1 path/to/file_or_directory2 ...}}`"
+    },
+    {
+        "instruction": "pacstrap 명령어를 사용하여 base 패키지와 Linux LTS 커널, 그리고 base-devel 빌드 도구를 설치하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`pacstrap {{path/to/new/root}} {{base}} {{base-devel}} {{linux-lts}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "wpa_cli를 사용해서 저장된 네트워크 목록을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`wpa_cli list_networks` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "debuild 명령어를 사용하여 현재 디렉토리에서 패키지를 빌드하려고 합니다. 이 과정에서 lintian을 실행하지 않도록 설정할 수 있나요?",
+        "output": "네, 가능합니다. `debuild --no-lintian` 명령어를 사용하면 패키지를 빌드한 후 lintian을 실행하지 않습니다."
+    },
+    {
+        "instruction": "aspell을 사용하여 특정 파일의 철자를 검사하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "aspell check {{path/to/file}}"
+    },
+    {
+        "instruction": "xeyes 명령어를 사용하여 원격 서버의 디스플레이에 접속할 수 있을까요?",
+        "output": "네, xeyes 명령어를 사용하여 원격 서버의 디스플레이에 접속할 수 있습니다. 예를 들어, 원격 서버의 디스플레이 0, 스크린 0에 접속하려면 `xeyes -display {{remote_host}}:{{0}}.{{0}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "sleep 명령어를 사용하여 30분 후에 \"echo 작업 완료\" 명령을 실행하려면 어떻게 해야 하나요?",
+        "output": "sleep 30m && echo 작업 완료"
+    },
+    {
+        "instruction": "새로운 파티션을 추가한 후에 addpart 명령어를 사용해야 하나요?",
+        "output": "네, 새로운 파티션을 추가한 후에는 addpart 명령어를 사용하여 Linux 커널에 해당 파티션의 존재를 알려야 합니다."
+    },
+    {
+        "instruction": "mate-about 명령어를 사용하여 MATE 데스크톱 환경의 버전을 확인하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`mate-about --version` 옵션을 사용하여 MATE 데스크톱 환경의 버전을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "새로운 GAID를 생성하려면 어떻게 해야 하나요?",
+        "output": "새로운 GAID를 생성하려면 `genid gaid {{real_id}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "busctl list 명령어를 실행했을 때, 모든 피어의 서비스 이름이 표시되나요?",
+        "output": "네, `busctl list` 명령어를 실행하면 버스에 있는 모든 피어의 서비스 이름이 표시됩니다."
+    },
+    {
+        "instruction": "raspi-config를 사용해서 Raspberry Pi의 설정을 변경하려고 합니다. 어떻게 실행해야 하나요?",
+        "output": "`sudo raspi-config` 명령어를 입력하여 `raspi-config`를 실행할 수 있습니다."
+    },
+    {
+        "instruction": "runcon 명령어를 사용하여 현재 SELinux 보안 컨텍스트를 확인하려면 어떻게 해야 하나요?",
+        "output": "`runcon` 명령어를 입력하면 현재 SELinux 보안 컨텍스트를 확인할 수 있습니다."
+    },
+    {
+        "instruction": "sxiv를 사용하여 이미지를 슬라이드쇼 형식으로 열려면 어떻게 해야하나요?",
+        "output": "`sxiv -S {{seconds}} {{path/to/file}}` 명령어를 사용하여 이미지를 슬라이드쇼 형식으로 열 수 있습니다."
+    },
+    {
+        "instruction": "macchanger를 사용하여 네트워크 인터페이스의 현재 MAC 주소를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "네트워크 인터페이스의 현재 MAC 주소를 확인하려면 `macchanger --show {{interface}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "mate-screenshot 명령어를 사용하여 특정 영역의 스크린샷을 캡처하려면 어떤 옵션을 사용해야 합니까?",
+        "output": "`mate-screenshot --area` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "특정 사용자의 마지막 로그인 기록을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "특정 사용자의 마지막 로그인 기록을 확인하려면 `lastlog --user {{username}}` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "pw-link 명령어를 사용하여 현재 시스템에서 사용 가능한 모든 오디오 출력 포트와 입력 포트를 나열하는 방법은 무엇인가요?",
+        "output": "`pw-link --output --input` 명령어를 사용하여 현재 시스템에서 사용 가능한 모든 오디오 출력 포트와 입력 포트를 나열할 수 있습니다."
+    },
+    {
+        "instruction": "현재 쉘에서 생성된 모든 프로세스와 그 프로세스 ID를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`jobs -l` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "특정 브랜치로 전환하면서 언스테이지된 변경 사항을 임시 저장하고 복원하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`git switch {{target_branch}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "readpe 명령어를 사용해서 특정 PE 파일의 모든 헤더 정보를 보여줄 수 있나요?",
+        "output": "네, 가능합니다. 다음 명령어를 사용하면 됩니다:\n`readpe --all-headers {{path/to/executable}}`"
+    },
+    {
+        "instruction": "현재 설정된 IP routing policy를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "현재 설정된 IP routing policy를 확인하려면 `ip rule show` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "arpspoof를 사용해서 wlan0 인터페이스에서 특정 호스트의 패킷을 가로채려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`sudo arpspoof -i wlan0 {{host_ip}}`를 사용하여 모든 호스트를 독살(poison)하여 패킷을 가로챌 수 있습니다."
+    },
+    {
+        "instruction": "btrfs 파일시스템에서 특정 경로에 있는 모든 subvolume와 snapshot을 나열하는 명령어는 무엇인가요?",
+        "output": "sudo btrfs subvolume list {{path/to/btrfs_filesystem}}"
+    },
+    {
+        "instruction": "deborphan 명령어를 사용하여 시스템에서 고아 패키지를 찾는 방법은 무엇인가요?",
+        "output": "`deborphan` 명령어를 사용하여 시스템에서 고아 패키지를 찾으려면 터미널에서 `deborphan`을 실행하면 됩니다. 이 명령어는 APT 패키지 관리자를 사용하는 운영 체제에서 라이브러리 패키지 중 다른 패키지에 의해 필요로 하지 않는 패키지를 표시합니다. 추가로, `deborphan --guess-all` 옵션을 사용하면 라이브러리 이름처럼 보이는 고아 패키지도 함께 표시할 수 있습니다."
+    },
+    {
+        "instruction": "apk update 명령어와 apk add 명령어의 차이점이 무엇인가요?",
+        "output": "`apk update` 명령어는 모든 원격 저장소에서 저장소 인덱스를 업데이트하는 데 사용됩니다. 반면에 `apk add` 명령어는 새로운 패키지를 설치하는 데 사용됩니다."
+    },
+    {
+        "instruction": "pkgadd 명령어를 사용하여 로컬 소프트웨어 패키지를 설치하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "pkgadd {{package}} 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "fixfiles -F 명령어를 사용하여 커스터마이징된 파일의 SELinux security context를 강제로 초기화하려면 어떻게 해야 하나요?",
+        "output": "fixfiles -F 명령어를 사용하여 커스터마이징된 파일의 SELinux security context를 강제로 초기화하려면, 터미널에서 루트 권한으로 다음 명령어를 실행하면 됩니다."
+    },
+    {
+        "instruction": "특정 가상 머신을 다른 호스트로 라이브 마이그레이션하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "특정 가상 머신을 다른 호스트로 라이브 마이그레이션하려면 `qm migrate {{vm_id}} {{target}} --online true` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "zile에서 파일을 열고 특정 줄 번호로 이동하려면 어떻게 해야 하나요?",
+        "output": "`zile +{{line_number}} {{path/to/file}}` 명령어를 사용하여 파일을 열고 특정 줄 번호로 이동할 수 있습니다."
+    },
+    {
+        "instruction": "ostree 저장소를 초기화하고 특정 브랜치에 커밋을 생성하는 방법은 무엇인가요?",
+        "output": "ostree 저장소를 초기화하려면 다음 명령어를 사용합니다:\n`ostree init --repo {{path/to/repo}}`\n\n그 후, 특정 브랜치에 커밋을 생성하려면 다음 명령어를 사용합니다:\n`ostree commit --repo {{path/to/repo}} --branch {{branch_name}}`"
+    },
+    {
+        "instruction": "특정 명령어에 대한 도움말을 자세히 표시하려면 어떻게 해야 하나요?",
+        "output": "`qm help {{command}} --verbose true` 명령어를 사용하여 특정 명령어에 대한 자세한 도움말을 표시할 수 있습니다."
+    },
+    {
+        "instruction": "loadkeys 명령어를 사용하여 콘솔에 특정 파일에서 키맵을 로드하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`loadkeys --console {{/dev/ttyN}} {{/path/to/file}}` 옵션을 사용하여 콘솔에 특정 파일에서 키맵을 로드할 수 있습니다."
+    },
+    {
+        "instruction": "nsxiv를 사용하여 특정 디렉토리 내의 모든 이미지를 재귀적으로 검색하여 볼 수 있는 명령어는 무엇인가요?",
+        "output": "`nsxiv -r {{path/to/directory}}` 명령어를 사용하면 특정 디렉토리 내의 모든 이미지를 재귀적으로 검색하여 볼 수 있습니다."
+    },
+    {
+        "instruction": "uname --all 명령어를 실행했을 때, 출력되는 정보 중에서 보안에 영향을 미칠 수 있는 항목은 무엇인가요?",
+        "output": "`uname --all` 명령어를 실행했을 때 출력되는 정보 중에서 보안에 영향을 미칠 수 있는 항목은 다음과 같습니다:\n\n- 현재 커널 버전 (`--kernel-version`): 커널 버전 정보는 공격자가 시스템의 취약점을 파악하는 데 사용될 수 있습니다.\n- 현재 운영체제 이름 (`--operating-system`): 운영체제 정보는 공격자가 특정 운영체제에 대한 공격 방법을 선택하는 데 도움이 될 수 있습니다.\n- 현재 머신 하드웨어 이름 (`--machine`): 하드웨어 정보는 공격자가 특정 하드웨어 취약점을 이용한 공격을 시도할 수 있습니다.\n\n이러한 정보는 시스템의 보안 상태를 노출시킬 수 있으므로 주의가 필요합니다."
+    },
+    {
+        "instruction": "mdbook init 명령어를 실행했을 때 생성되는 파일들에 대해 설명해주세요.",
+        "output": "`mdbook init` 명령어를 실행하면 현재 디렉토리에 새로운 mdbook 프로젝트가 생성됩니다. 이 명령어는 기본적인 디렉토리 구조와 파일들을 생성합니다. 생성되는 주요 파일과 디렉토리는 다음과 같습니다:\n\n1. `src` 디렉토리: 이 디렉토리에는 책의 내용이 될 Markdown 파일들이 위치합니다. 기본적으로 `src/SUMMARY.md` 파일이 생성되며, 이 파일은 책의 목차를 정의합니다.\n2. `book.toml` 파일: 이 파일은 mdbook의 설정 파일로, 책의 메타데이터와 빌드 옵션을 포함합니다.\n3. `theme` 디렉토리: 이 디렉토리는 책의 테마를 커스터마이징할 수 있는 파일들을 포함합니다. 기본적으로는 비어 있을 수 있습니다.\n\n이 파일들과 디렉토리들은 mdbook을 사용하여 온라인 책을 작성하고 빌드하는 데 필요한 기본 구조를 제공합니다."
+    },
+    {
+        "instruction": "현재 존재하는 모든 `toolbox` 컨테이너와 이미지를 출력하는 명령어는 무엇인가요?",
+        "output": "`toolbox list` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "colrm 명령어를 사용하여 파일의 첫 번째 열을 제거하려면 어떻게 해야 하나요?",
+        "output": "`colrm {{1 1}}` 명령어를 사용하여 파일의 첫 번째 열을 제거할 수 있습니다."
+    },
+    {
+        "instruction": "imgp 명령어를 사용하여 특정 디렉토리 내의 모든 JPEG 이미지를 1920x1080 해상도로 변환하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`imgp -x {{1920x1080}} {{path/to/directory}}` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "envycontrol을 사용하여 현재 GPU 모드를 확인하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "sudo envycontrol --query"
+    },
+    {
+        "instruction": "ruget을 사용하여 특정 URL의 내용을 지정된 파일로 다운로드하려면 어떻게 해야 하나요?",
+        "output": "ruget을 사용하여 특정 URL의 내용을 지정된 파일로 다운로드하려면 다음 명령어를 사용하면 됩니다:\n`ruget --output {{file_name}} {{https://example.com/file}}`"
+    },
+    {
+        "instruction": "xdg-user-dirs-update 명령어를 사용하여 DESKTOP 디렉토리를 변경하려고 합니다. 이 명령어를 실행할 때 실제로 디렉토리가 변경되지 않도록 dry-run-file을 사용하여 결과를 확인할 수 있나요?",
+        "output": "네, 가능합니다. 다음 명령어를 사용하여 DESKTOP 디렉토리를 변경하고, 결과를 dry-run-file에 저장할 수 있습니다:\n\n`xdg-user-dirs-update --dummy-output \"{{path/to/dry_run_file}}\" --set DESKTOP \"{{path/to/directory}}\"`"
+    },
+    {
+        "instruction": "tic 명령어를 사용하여 터미널 정보를 컴파일하고 설치하려고 합니다. 터미널 정보 파일에 오류가 있는지 확인하는 방법을 알려주세요.",
+        "output": "터미널 정보 파일에 오류가 있는지 확인하려면 다음 명령어를 사용하세요:\n`tic -c {{path/to/terminal.info}}`"
+    },
+    {
+        "instruction": "pdftoppm 명령어를 사용하여 PDF 파일을 이미지로 변환할 때, 특정 페이지 범위만 변환하는 방법은 무엇인가요?",
+        "output": "`pdftoppm -f {{N}} -l {{M}} {{path/to/file.pdf}} {{image_name_prefix}}` 명령어를 사용하여 특정 페이지 범위를 변환할 수 있습니다. 여기서 `{{N}}`은 시작 페이지 번호이고, `{{M}}`은 끝 페이지 번호입니다."
+    },
+    {
+        "instruction": "xmodmap을 사용해서 키보드의 특정 키를 비활성화하려면 어떻게 해야 할까요?",
+        "output": "`xmodmap -e 'keycode {{keycode}} ='` 명령어를 사용하여 키보드의 특정 키를 비활성화할 수 있습니다."
+    },
+    {
+        "instruction": "tlp 설정을 현재 전원 상태에 맞게 적용하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`sudo tlp start` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "mashtree를 사용하여 fastq 파일로부터 가장 빠르게 트리를 생성하는 명령어는 무엇인가요?",
+        "output": "mashtree를 사용하여 fastq 파일로부터 가장 빠르게 트리를 생성하는 명령어는 다음과 같습니다:\n`mashtree --numcpus {{12}} {{*.fastq.gz}} > {{mashtree.dnd}}`"
+    },
+    {
+        "instruction": "가상 머신을 리셋하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "가상 머신을 리셋하려면 `qm reset {{vm_id}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "pacman-key --init 명령어를 실행할 때 어떤 옵션을 추가로 사용할 수 있나요?",
+        "output": "`pacman-key --init` 명령어는 pacman 키링을 초기화하는 데 사용되며, 추가적인 옵션을 지정할 수 없습니다. 이 명령어는 단독으로 실행되어야 합니다."
+    },
+    {
+        "instruction": "sudo rmmod 명령어를 사용하여 커널에서 모듈을 제거할 때, 오류 메시지를 syslog로 보내려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`--syslog` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "fstrim 명령어를 사용하여 마운트된 파일 시스템에서 사용하지 않는 블록을 삭제하려면 어떻게 해야 하나요?",
+        "output": "`sudo fstrim --all` 명령어를 사용하여 모든 마운트된 파티션에서 사용하지 않는 블록을 삭제할 수 있습니다. 특정 파티션에서 사용하지 않는 블록을 삭제하려면 `sudo fstrim /` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "시스템에서 모든 지원되는 LVM 블록 장치에 대해 볼륨 그룹을 스캔하고 각 그룹에 대한 정보를 출력하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "sudo vgscan"
+    },
+    {
+        "instruction": "lxterminal을 사용하여 특정 디렉토리를 작업 디렉토리로 설정하고 열 수 있는 명령어는 무엇인가요?",
+        "output": "`lxterminal --working-directory={{path/to/directory}}` 명령어를 사용하면 특정 디렉토리를 작업 디렉토리로 설정하고 LXTerminal을 열 수 있습니다."
+    },
+    {
+        "instruction": "getopt 명령어를 사용하여 `--verbose` 옵션과 `--file` 옵션을 동시에 파싱하려면 어떻게 해야 하나요?",
+        "output": "`getopt --options vf: --longoptions verbose,file: -- --verbose --file=somefile` 명령어를 사용하여 `--verbose` 옵션과 `--file` 옵션을 동시에 파싱할 수 있습니다."
+    },
+    {
+        "instruction": "특정 가상 머신에 키 이벤트를 전송하려면 어떻게 해야 하나요?",
+        "output": "특정 가상 머신에 키 이벤트를 전송하려면 `qm sendkey {{vm_id}} {{key}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "protontricks를 사용해서 설치된 모든 게임 목록을 확인하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`protontricks -l` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "sudo sa 명령어를 사용하여 최근 사용된 리소스를 사용자별로 확인할 수 있나요?",
+        "output": "네, 가능합니다. `sudo sa --user-summary` 명령어를 사용하면 최근 사용된 리소스를 사용자별로 확인할 수 있습니다."
+    },
+    {
+        "instruction": "ncat 명령어를 사용해서 특정 포트에서 입력을 받아 파일에 저장하는 방법을 알려주세요.",
+        "output": "`ncat -l {{port}} > {{path/to/file}}` 명령어를 사용하여 특정 포트에서 입력을 받아 파일에 저장할 수 있습니다."
+    },
+    {
+        "instruction": "특정 패키지에 의존하는 패키지 목록을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`synopkg list --depend-on {{package}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "pluma 명령어를 사용하여 특정 파일을 UTF-8 인코딩으로 열려면 어떻게 해야 하나요?",
+        "output": "`pluma --encoding UTF-8 파일경로` 명령어를 사용하여 특정 파일을 UTF-8 인코딩으로 열 수 있습니다."
+    },
+    {
+        "instruction": "Debian 기반 OS에서 Apache의 현재 활성화된 가상 호스트 목록을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`sudo a2query -s` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "systemd-hwdb update 명령어를 실행했을 때 발생할 수 있는 보안 문제는 무엇인가요?",
+        "output": "`systemd-hwdb update` 명령어를 실행할 때 발생할 수 있는 보안 문제는 여러 가지가 있습니다. 첫째, 루트 권한이 필요하므로 권한 있는 사용자만 실행할 수 있어야 합니다. 둘째, 잘못된 하드웨어 데이터베이스 파일을 업데이트할 경우 시스템의 하드웨어 인식에 문제가 발생할 수 있습니다. 셋째, 악의적인 사용자가 데이터베이스 파일을 조작할 경우 시스템의 안정성과 보안에 심각한 영향을 미칠 수 있습니다. 따라서 데이터베이스 파일의 무결성을 유지하고, 권한 관리를 철저히 해야 합니다."
+    },
+    {
+        "instruction": "sqfscat 명령어를 사용하여 squashfs 파일시스템에서 특정 파일의 내용을 출력하려면 어떻게 해야 하나요?",
+        "output": "sqfscat 명령어를 사용하여 squashfs 파일시스템에서 특정 파일의 내용을 출력하려면 다음과 같이 입력합니다:\n`sqfscat {{filesystem.squashfs}} {{파일명}}`"
+    },
+    {
+        "instruction": "cloud-init status --wait 명령어를 실행했을 때, 클라우드 인스턴스 초기화가 완료되지 않았다면 어떤 메시지가 출력되나요?",
+        "output": "`cloud-init status --wait` 명령어를 실행했을 때, 클라우드 인스턴스 초기화가 완료되지 않았다면 \"status: running\" 메시지가 출력됩니다."
+    },
+    {
+        "instruction": "zipcloak 명령어를 사용하여 특정 zip 파일의 내용을 암호화하려면 어떻게 해야 하나요?",
+        "output": "`zipcloak {{path/to/archive.zip}}` 명령어를 사용하여 특정 zip 파일의 내용을 암호화할 수 있습니다."
+    },
+    {
+        "instruction": "볼륨 그룹 vg1에서 100%의 미할당 공간을 사용하는 논리 볼륨을 생성하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`lvcreate -l {{100%FREE}} -n {{mylv}} {{vg1}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "grim을 사용하여 특정 영역의 스크린샷을 캡처하려면 어떻게 해야 하나요?",
+        "output": "grim을 사용하여 특정 영역의 스크린샷을 캡처하려면 다음과 같은 명령어를 사용하면 됩니다:\n\n`grim -g \"<x_position>,<y_position> <width>x<height>\"`\n\n예를 들어, 좌표 (100, 150)에서 시작하여 가로 300픽셀, 세로 200픽셀 크기의 영역을 캡처하려면 다음과 같이 입력합니다:\n\n`grim -g \"100,150 300x200\"`"
+    },
+    {
+        "instruction": "특정 시간에 명령어를 실행하려면 어떻게 해야 하나요?",
+        "output": "`at` 명령어를 사용하여 특정 시간에 명령어를 실행할 수 있습니다. 예를 들어, `at {{hh:mm}}` 명령어를 사용하여 새로운 스케줄된 명령어 세트를 생성할 수 있습니다. 명령어를 입력한 후 `Ctrl + D`를 눌러 저장하고 종료할 수 있습니다."
+    },
+    {
+        "instruction": "pkgctl repo clone 명령어를 사용할 때 SSH 키를 설정하지 않고 패키지 저장소를 클론하는 방법은 무엇인가요?",
+        "output": "`pkgctl repo clone --protocol=https {{pkgname}}` 명령어를 사용하여 HTTPS를 통해 패키지 저장소를 클론할 수 있습니다."
+    },
+    {
+        "instruction": "ebuild 파일을 사용하여 패키지를 설치하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`ebuild {{path/to/file.ebuild}} merge` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "nuccore 데이터베이스의 마지막 업데이트 날짜를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`einfo -db {{nuccore}}` 명령어를 사용하여 nuccore 데이터베이스의 마지막 업데이트 날짜를 확인할 수 있습니다."
+    },
+    {
+        "instruction": "특정 서비스의 상태를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "특정 서비스의 상태를 확인하려면 `rc-service {{service_name}} status` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "jpegtran을 사용하여 이미지를 회전시키는 방법을 알려주세요.",
+        "output": "jpegtran을 사용하여 이미지를 90, 180, 또는 270도 시계 방향으로 회전시키려면 다음 명령어를 사용하면 됩니다:\n\n`jpegtran -rotate {90|180|270} {path/to/image.jpg} > {path/to/output.jpg}`"
+    },
+    {
+        "instruction": "blurlock을 사용하여 화면을 잠그고 마우스 포인터를 숨기지 않으려면 어떻게 해야 하나요?",
+        "output": "`blurlock --pointer default` 명령어를 사용하여 화면을 잠그고 마우스 포인터를 숨기지 않을 수 있습니다."
+    },
+    {
+        "instruction": "debugfs로 파일시스템을 읽기 전용 모드로 열려면 어떻게 해야 하나요?",
+        "output": "`debugfs {{/dev/sdXN}}` 명령어를 사용하여 파일시스템을 읽기 전용 모드로 열 수 있습니다."
+    },
+    {
+        "instruction": "distrobox를 사용하여 컨테이너를 생성할 때 보안에 어떤 점을 고려해야 하나요?",
+        "output": "distrobox를 사용하여 컨테이너를 생성할 때 보안에 고려해야 할 점은 여러 가지가 있습니다. 첫째, 컨테이너 이미지의 출처를 신뢰할 수 있는 곳에서 다운로드받아야 합니다. 둘째, 최소 권한 원칙을 적용하여 필요한 권한만 부여해야 합니다. 셋째, 컨테이너 내에서 실행되는 애플리케이션의 업데이트와 패치 관리를 철저히 해야 합니다. 넷째, 컨테이너 간의 네트워크 隔離를 통해 불필요한 통신을 차단해야 합니다. 다섯째, 컨테이너의 로그와 모니터링을 지속적으로 수행하여 이상 징후를 조기에 발견할 수 있도록 해야 합니다. 마지막으로, 컨테이너의 백업과 복구 계획을 마련하여 데이터 손실을 방지해야 합니다."
+    },
+    {
+        "instruction": "특정 디렉토리의 현재 압축 비율을 계산하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "sudo compsize {{path/to/file_or_directory}}"
+    },
+    {
+        "instruction": "cmus를 실행하고 특정 디렉토리를 작업 디렉토리로 설정하려면 어떻게 해야 하나요?",
+        "output": "cmus를 실행하고 특정 디렉토리를 작업 디렉토리로 설정하려면 다음 명령어를 사용하면 됩니다:\n    `cmus {{path/to/directory}}`"
+    },
+    {
+        "instruction": "setserial 명령어를 사용하여 /dev/ttyS0 장치의 모든 정보를 출력하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`setserial -a /dev/ttyS0` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "tcptraceroute를 사용하여 특정 호스트로의 경로를 추적하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "tcptraceroute {{host}}"
+    },
+    {
+        "instruction": "systemctl을 사용해서 부팅 시 자동으로 실행되도록 설정된 서비스 목록을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`systemctl list-unit-files --type=service` 명령어를 사용하면 부팅 시 자동으로 실행되도록 설정된 서비스 목록을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "rc-update 명령어를 사용하여 특정 서비스를 모든 runlevel에서 삭제하려면 어떻게 해야 하나요?",
+        "output": "sudo rc-update --all delete {{service_name}} 명령어를 사용하여 특정 서비스를 모든 runlevel에서 삭제할 수 있습니다."
+    },
+    {
+        "instruction": "특정 가상 머신의 구성을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "특정 가상 머신의 구성을 확인하려면 `qm config {{ID}}` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "sqfstar 명령어를 사용하여 gzip으로 압축된 tar 아카이브에서 squashfs 파일시스템을 생성하려고 합니다. 이 때, lzo 알고리즘을 사용하여 파일시스템을 압축하고 싶습니다. 어떻게 해야 할까요?",
+        "output": "zcat 아카이브.tar.gz | sqfstar -comp lzo 파일시스템.squashfs"
+    },
+    {
+        "instruction": "distrobox-list 명령어를 사용하여 모든 distrobox 컨테이너를 나열하는 방법을 알려주세요.",
+        "output": "distrobox-list 명령어를 사용하여 모든 distrobox 컨테이너를 나열하려면 터미널에 다음 명령어를 입력하면 됩니다:\n`distrobox-list`"
+    },
+    {
+        "instruction": "manpath --global 명령어를 실행했을 때, 전역 manpath에 포함된 디렉토리 중 특정 디렉토리를 제외하는 방법은 무엇인가요?",
+        "output": "`manpath --global` 명령어를 실행하여 전역 manpath에 포함된 디렉토리 중 특정 디렉토리를 제외하려면, `MANPATH` 환경 변수를 설정하여 원하지 않는 디렉토리를 제외한 경로를 지정할 수 있습니다. 예를 들어, `/usr/share/man` 디렉토리를 제외하려면 다음과 같이 설정할 수 있습니다:\n\n```bash\nexport MANPATH=$(manpath --global | sed 's|/usr/share/man||g')\n```\n\n이렇게 하면 `/usr/share/man` 디렉토리가 제외된 나머지 경로만 `MANPATH` 환경 변수에 설정됩니다."
+    },
+    {
+        "instruction": "bpftool prog list 명령어를 사용하여 현재 로드된 eBPF 프로그램 목록을 확인할 수 있나요?",
+        "output": "네, `bpftool prog list` 명령어를 사용하여 현재 로드된 eBPF 프로그램 목록을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "컴퓨터가 잠들지 않도록 하려면 어떻게 해야 하나요?",
+        "output": "`caffeinate` 명령어를 사용하면 됩니다. 종료하려면 `Ctrl + C`를 누르세요."
+    },
+    {
+        "instruction": "dconf로 /org/gnome/desktop/interface/ 경로의 모든 하위 디렉토리와 키를 출력하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`dconf list /org/gnome/desktop/interface/` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "특정 큐에 스크립트를 제출하려면 어떻게 해야 하나요?",
+        "output": "`qsub -q {{queue_name}} {{script.sh}}` 명령어를 사용하여 특정 큐에 스크립트를 제출할 수 있습니다."
+    },
+    {
+        "instruction": "netselect-apt 명령어를 사용하여 인도 미러 서버를 기준으로 가장 낮은 지연 시간을 가진 미러 서버를 찾아 sources.list 파일을 생성하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "sudo netselect-apt -c India"
+    },
+    {
+        "instruction": "atop 명령어를 사용하여 각 사용자별 프로세스 수를 확인하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`atop -au` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "cgroups를 사용하여 특정 프로세스의 CPU 사용량을 제한하는 방법을 알려주세요.",
+        "output": "cgroups를 사용하여 특정 프로세스의 CPU 사용량을 제한하려면 다음 단계를 따르세요.\n\n1. 먼저, cgroup을 생성합니다. 예를 들어, `cpu_limit`라는 이름의 cgroup을 생성합니다:\n   ```\n   sudo cgcreate -g cpu:/cpu_limit\n   ```\n\n2. 생성된 cgroup의 CPU 사용량 제한을 설정합니다. 예를 들어, CPU 사용량을 20%로 제한하려면:\n   ```\n   echo 20000 | sudo tee /sys/fs/cgroup/cpu/cpu_limit/cpu.cfs_quota_us\n   echo 100000 | sudo tee /sys/fs/cgroup/cpu/cpu_limit/cpu.cfs_period_us\n   ```\n\n3. 제한하려는 프로세스를 해당 cgroup에 추가합니다. 예를 들어, PID가 1234인 프로세스를 `cpu_limit` cgroup에 추가하려면:\n   ```\n   echo 1234 | sudo tee /sys/fs/cgroup/cpu/cpu_limit/tasks\n   ```\n\n이제 해당 프로세스의 CPU 사용량이 설정된 제한에 따라 제어됩니다."
+    },
+    {
+        "instruction": "특정 컨테이너에 적용된 프로파일을 변경하려면 어떻게 해야 하나요?",
+        "output": "특정 컨테이너에 적용된 프로파일을 변경하려면 `lxc profile assign {{container_name}} {{profile1,profile2}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "blastp 명령어를 사용하여 두 개의 단백질 서열을 정렬하고, e-value 임계값을 1e-9로 설정하며, 결과를 화면에 출력하려고 합니다. 이를 위해 어떤 명령어를 사용해야 하나요?",
+        "output": "blastp -query {{query.fa}} -subject {{subject.fa}} -evalue {{1e-9}}"
+    },
+    {
+        "instruction": "fail2ban-client를 사용하여 특정 IP를 jail 서비스의 ban list에서 제거하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`fail2ban-client set {{jail}} unbanip {{ip}}` 명령어를 사용하여 특정 IP를 jail 서비스의 ban list에서 제거할 수 있습니다."
+    },
+    {
+        "instruction": "mate-search-tool을 사용하여 특정 디렉토리 내에서 파일 이름에 특정 문자열이 포함된 파일을 검색하려면 어떻게 해야 하나요?",
+        "output": "`mate-search-tool --named={{string}} --path={{path/to/directory}}` 명령어를 사용하여 특정 디렉토리 내에서 파일 이름에 특정 문자열이 포함된 파일을 검색할 수 있습니다."
+    },
+    {
+        "instruction": "sar 명령어를 사용하여 5초마다 한 번씩 총 10번의 페이징 통계를 보고하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`sar -B {{5}} {{10}}`"
+    },
+    {
+        "instruction": "asciiart 명령어를 사용하여 이미지를 ASCII로 변환할 때, 출력 포맷을 HTML로 설정하고 색상을 추가하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`asciiart --format html --color {{path/to/image.jpg}}` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "telinit 명령어를 사용해서 시스템을 재부팅하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`telinit 6` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "특정 rpm spec 파일에서 생성되는 모든 바이너리 패키지의 요약 정보를 얻기 위해서는 어떤 명령어를 사용해야 하나요?",
+        "output": "`rpmspec --query --queryformat \"{{%{name}: %{summary}\\n}}\" {{path/to/rpm.spec}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "LVM 명령어를 사용하여 물리 볼륨을 초기화하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "물리 볼륨을 초기화하려면 다음 명령어를 입력해야 합니다:\n`sudo lvm pvcreate {{/dev/sdXY}}`"
+    },
+    {
+        "instruction": "ubuntu-security-status 명령어를 사용해서 현재 설치된 패키지 중 보안 지원이 종료된 패키지 목록을 확인하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`ubuntu-security-status --unavailable` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "xwinwrap을 사용하여 두 번째 모니터에 비디오를 재생하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "두 번째 모니터에 비디오를 재생하려면 다음 명령어를 사용하세요:\n\n`xwinwrap -g 1600x900+1920 -b -nf -ov -- {{mpv}} -wid {{wid}} --loop --no-audio --no-resume-playback --panscan={{1.0}} {{path/to/video.mkv}}`"
+    },
+    {
+        "instruction": "gnome-terminal을 사용하여 새로운 터미널 창을 열고 특정 명령어를 실행하려면 어떻게 해야 하나요?",
+        "output": "`gnome-terminal -- {{command}}` 명령어를 사용하여 새로운 터미널 창을 열고 특정 명령어를 실행할 수 있습니다."
+    },
+    {
+        "instruction": "ahost 유틸리티를 사용하여 example.com의 A 레코드를 조회하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "ahost example.com"
+    },
+    {
+        "instruction": "nmtui-hostname 명령어를 사용하여 호스트 이름을 변경하려면 어떻게 해야 하나요?",
+        "output": "`nmtui hostname` 명령어를 사용하여 호스트 이름을 변경할 수 있습니다. 터미널을 열고 `nmtui hostname`을 입력한 후, 화면에 나타나는 메뉴를 따라 호스트 이름을 변경하면 됩니다."
+    },
+    {
+        "instruction": "pacman --upgrade 명령어를 사용해서 패키지를 업그레이드할 때 --noconfirm 옵션을 사용하면 어떤 일이 발생하나요?",
+        "output": "`--noconfirm` 옵션을 사용하면 패키지 설치 시 사용자 확인 메시지 없이 자동으로 설치가 진행됩니다."
+    },
+    {
+        "instruction": "/usr 디렉토리의 파일 시스템 사용량을 duc를 사용하여 어떻게 시각화할 수 있나요?",
+        "output": "/usr 디렉토리의 파일 시스템 사용량을 duc를 사용하여 시각화하려면 다음 명령어를 사용하세요:\n\n`duc gui /usr`\n\n이 명령어는 파일 시스템을 sunburst 그래프를 사용하여 탐색할 수 있는 그래픽 인터페이스를 시작합니다."
+    },
+    {
+        "instruction": "dnsrecon 도구를 사용하여 example.com 도메인의 DNS 캐시 스누핑을 수행하려고 합니다. 이 작업을 위해 어떤 명령어를 사용해야 하나요?",
+        "output": "`dnsrecon --domain example.com --type snoop --name_server nameserver.example.com --dictionary path/to/dictionary.txt`를 사용하면 됩니다."
+    },
+    {
+        "instruction": "i3exit 명령어를 사용하여 시스템을 재부팅하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`i3exit reboot` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "xmount를 사용하여 .raw 이미지 파일을 DMG 컨테이너 파일로 마운트하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "xmount --in raw 이미지파일경로 --out dmg 마운트포인트를 사용하여 .raw 이미지 파일을 DMG 컨테이너 파일로 마운트할 수 있습니다."
+    },
+    {
+        "instruction": "swapoff 명령어를 사용하여 특정 파일의 swap 영역을 비활성화하려면 어떻게 해야 하나요?",
+        "output": "`swapoff {{path/to/file}}` 명령어를 사용하여 특정 파일의 swap 영역을 비활성화할 수 있습니다."
+    },
+    {
+        "instruction": "ytfzf를 사용하여 유튜브에서 특정 키워드로 동영상을 검색하고 썸네일 미리보기를 포함하여 결과를 보려면 어떻게 해야하나요?",
+        "output": "`ytfzf --show-thumbnails` 옵션을 사용하여 유튜브에서 특정 키워드로 동영상을 검색하고 썸네일 미리보기를 포함하여 결과를 볼 수 있습니다. 예를 들어, \"예시 키워드\"로 검색하려면 다음 명령어를 사용하세요: `ytfzf --show-thumbnails 예시 키워드`."
+    },
+    {
+        "instruction": "특정 설치 파일을 Red Hat 형식으로 변환하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`sudo alien --to-rpm {{path/to/file}}`"
+    },
+    {
+        "instruction": "특정 파일을 `see` 명령어를 사용하여 볼 수 있나요?",
+        "output": "네, 특정 파일을 `see` 명령어를 사용하여 볼 수 있습니다. 예를 들어, 파일명이 `example.jpg`인 경우 `see example.jpg`와 같이 입력하면 됩니다."
+    },
+    {
+        "instruction": "archey 명령어를 실행했을 때 시스템 정보가 화면에 출력되지 않습니다.",
+        "output": "archey 명령어를 실행했을 때 시스템 정보가 화면에 출력되지 않는 문제는 여러 가지 원인으로 발생할 수 있습니다. 먼저, archey가 올바르게 설치되었는지 확인해야 합니다. 터미널에서 `archey --version` 명령어를 입력하여 버전 정보가 출력되는지 확인하세요. 버전 정보가 출력되지 않으면 archey가 제대로 설치되지 않았을 가능성이 있습니다.\n\n또한, archey가 설치된 경로가 환경 변수 PATH에 포함되어 있는지도 확인해야 합니다. 터미널에서 `which archey` 명령어를 입력하여 archey의 경로를 확인할 수 있습니다. 경로가 출력되지 않으면 PATH 환경 변수에 archey의 설치 경로를 추가해야 합니다.\n\n마지막으로, archey가 실행되는 권한이 있는지도 확인해야 합니다. 터미널에서 `ls -l $(which archey)` 명령어를 입력하여 archey 파일의 권한을 확인하세요. 실행 권한이 없으면 `chmod +x $(which archey)` 명령어를 사용하여 실행 권한을 추가할 수 있습니다."
+    },
+    {
+        "instruction": "vigr 명령어를 사용하여 그룹 파일을 수정하려고 합니다.",
+        "output": "`vigr` 명령어를 사용하여 그룹 파일을 수정할 수 있습니다."
+    },
+    {
+        "instruction": "checkupdates 명령어를 사용해서 특정 pacman 데이터베이스를 지정하여 보류 중인 업데이트를 확인하려면 어떻게 해야 하나요?",
+        "output": "특정 pacman 데이터베이스를 지정하여 보류 중인 업데이트를 확인하려면 다음 명령어를 사용하세요:\n\n`CHECKUPDATES_DB={{path/to/directory}} checkupdates`"
+    },
+    {
+        "instruction": "특정 파일의 MIME type을 출력하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`mimetype {{path/to/file}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "Clear Linux에서 특정 패키지가 포함된 번들을 찾는 방법은 무엇인가요?",
+        "output": "Clear Linux에서 특정 패키지가 포함된 번들을 찾기 위해서는 `swupd search -b {{package}}` 명령어를 사용합니다."
+    },
+    {
+        "instruction": "balooctl을 사용하여 파일 인덱서를 일시 중지하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "balooctl suspend"
+    },
+    {
+        "instruction": "treetime ancestral 명령어를 사용하여 조상 서열을 추정할 때, 공동 가능도와 주변 가능도 중 어느 것을 최대화해야 하나요?",
+        "output": "`treetime ancestral` 명령어를 사용하여 조상 서열을 추정할 때, 공동 가능도(joint likelihood)와 주변 가능도(marginal likelihood) 중 어느 것을 최대화할지 선택할 수 있습니다."
+    },
+    {
+        "instruction": "특정 패키지를 현재 버전에서 고정하여 업데이트를 방지하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`sudo apt-mark hold {{package}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "rpmbuild 명령어를 사용하여 소스 패키지 없이 바이너리 패키지만 빌드하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`rpmbuild -bb {{path/to/spec_file}}` 옵션을 사용하여 소스 패키지 없이 바이너리 패키지만 빌드할 수 있습니다."
+    },
+    {
+        "instruction": "blkdiscard 명령어를 사용하여 디바이스의 첫 100MB를 디스카드하려면 어떻게 해야 하나요?",
+        "output": "`blkdiscard --length 100MB /dev/{{device}}` 명령어를 사용하여 디바이스의 첫 100MB를 디스카드할 수 있습니다."
+    },
+    {
+        "instruction": "mandb 명령어를 사용하여 특정 파일의 매뉴얼 페이지 엔트리를 업데이트하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`mandb --filename {{path/to/file}}` 옵션을 사용하여 특정 파일의 매뉴얼 페이지 엔트리를 업데이트할 수 있습니다."
+    },
+    {
+        "instruction": "collectd의 보안 설정을 테스트하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "collectd의 설정 파일을 테스트하려면 `collectd -t` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "x0vncserver를 사용하여 특정 포트를 지정해서 VNC 서버를 시작하려면 어떻게 해야 하나요?",
+        "output": "x0vncserver를 사용하여 특정 포트를 지정해서 VNC 서버를 시작하려면 다음 명령어를 사용하면 됩니다:\n`x0vncserver -display :0 -rfbport {{port}}`"
+    },
+    {
+        "instruction": "sudo a2enmod 명령어를 사용하여 Apache 모듈을 활성화하려면 어떻게 해야 하나요?",
+        "output": "Apache 모듈을 활성화하려면 `sudo a2enmod {{module}}` 명령어를 사용하면 됩니다. 예를 들어, `rewrite` 모듈을 활성화하려면 `sudo a2enmod rewrite`를 입력하면 됩니다."
+    },
+    {
+        "instruction": "genfstab 명령어를 사용하여 특정 볼륨의 UUID를 기반으로 fstab 파일에 자동으로 마운트되도록 추가하는 방법은 무엇인가요?",
+        "output": "특정 볼륨의 UUID를 기반으로 fstab 파일에 자동으로 마운트되도록 추가하려면 다음 명령어를 사용하면 됩니다:\n\n`genfstab -U {{path/to/mount_point}} | sudo tee -a /etc/fstab`"
+    },
+    {
+        "instruction": "feedreader를 사용하여 특정 피드의 모든 이미지를 다운로드하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`feedreader --url={{feed_url}} --grabImages={{article_path}}` 명령어를 사용하여 특정 피드의 모든 이미지를 다운로드할 수 있습니다."
+    },
+    {
+        "instruction": "shar 명령어를 사용하여 파일을 압축하고 쉘 스크립트로 추출할 수 있는 아카이브를 만드는 방법을 알려주세요.",
+        "output": "shar 명령어를 사용하여 파일을 압축하고 쉘 스크립트로 추출할 수 있는 아카이브를 만드는 방법은 다음과 같습니다.\n\n파일을 압축하여 아카이브를 생성하려면 다음 명령어를 사용합니다:\n`shar --compactor xz /path/to/file1 /path/to/file2 ... > /path/to/archive.sh`\n\n이 명령어는 지정된 파일들을 xz 압축 방식으로 압축하고, 이를 쉘 스크립트 형태의 아카이브 파일로 저장합니다. 이 아카이브 파일을 실행하면 압축된 파일들이 추출됩니다."
+    },
+    {
+        "instruction": "dolphin --daemon 명령어를 실행할 때 보안에 미치는 영향은 무엇인가요?",
+        "output": "`dolphin --daemon` 명령어는 Dolphin 파일 관리자의 DBus 인터페이스를 사용하기 위해 데몬을 실행합니다. 이 명령어는 별도의 보안 위협을 초래하지 않지만, DBus 인터페이스를 통해 다른 애플리케이션이 Dolphin과 상호작용할 수 있게 되므로, 시스템에 설치된 다른 소프트웨어의 신뢰성과 보안 상태를 확인하는 것이 중요합니다. 특히, 루트 권한으로 실행되는 경우 시스템 전체에 영향을 미칠 수 있으므로 주의가 필요합니다."
+    },
+    {
+        "instruction": "특정 가상 머신을 삭제하고 모든 위치에서 제거하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`qm destroy {{vm_id}} --purge` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "mkfs.vfat 명령어를 사용하여 /dev/sda1 파티션에 MS-DOS 파일 시스템을 생성하려고 합니다. 이 때, 볼륨 이름을 \"MYUSB\"로 설정하고 싶습니다. 어떻게 해야 할까요?",
+        "output": "`mkfs.vfat -n MYUSB /dev/sda1` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "현재 실행 중인 모든 로컬 컨테이너를 나열하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`lxc list` 명령어를 사용하여 현재 실행 중인 모든 로컬 컨테이너를 나열할 수 있습니다."
+    },
+    {
+        "instruction": "특정 포트로 WoL 패킷을 보내려면 어떻게 해야 하나요?",
+        "output": "`wol --port={{port_number}} {{mac_address}}` 명령어를 사용하여 특정 포트로 WoL 패킷을 보낼 수 있습니다."
+    },
+    {
+        "instruction": "chntpw를 사용하여 Windows SAM 파일에서 모든 사용자를 나열하려면 어떻게 해야 하나요?",
+        "output": "chntpw -l {{path/to/sam_file}} 명령어를 사용하여 Windows SAM 파일에서 모든 사용자를 나열할 수 있습니다."
+    },
+    {
+        "instruction": "ProtonVPN에 최속 서버를 사용하여 연결하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`protonvpn-cli connect --fastest` 명령어를 사용하면 ProtonVPN에 최속 서버를 사용하여 연결할 수 있습니다."
+    },
+    {
+        "instruction": "qm resize 명령어를 사용하여 가상 머신의 디스크 크기를 변경하려고 합니다. 이 명령어는 어떤 옵션을 사용해야 하나요?",
+        "output": "`qm resize` 명령어는 `qm-disk-resize`의 별칭입니다. 가상 머신의 디스크 크기를 변경하려면 다음과 같은 옵션을 사용할 수 있습니다:\n\n- `<vmid>`: 디스크 크기를 변경할 가상 머신의 ID를 지정합니다.\n- `<disk>`: 변경할 디스크를 지정합니다. 예를 들어, `scsi0`, `sata0` 등입니다.\n- `<size>`: 새로운 디스크 크기를 지정합니다. 예를 들어, `+2G`, `-500M` 등입니다.\n\n예시:\n```\nqm resize 100 scsi0 +2G\n```\n\n이 명령어는 VM ID가 100인 가상 머신의 `scsi0` 디스크 크기를 2GB 증가시킵니다. 더 자세한 정보는 `tldr qm-disk-resize` 명령어를 통해 확인할 수 있습니다."
+    },
+    {
+        "instruction": "a2disconf 명령어를 사용하여 Apache 설정 파일을 비활성화하려면 어떻게 해야 하나요?",
+        "output": "Apache 설정 파일을 비활성화하려면 `sudo a2disconf {{configuration_file}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "numlockx를 사용해서 현재 Num Lock 상태를 확인하는 방법은 무엇인가요?",
+        "output": "numlockx status 명령어를 사용하여 현재 Num Lock 상태를 확인할 수 있습니다."
+    },
+    {
+        "instruction": "smem --userfilter 특정유저의 메모리 사용량을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`smem --userfilter 특정유저` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "tune2fs 명령어를 사용하여 파일시스템의 최대 카운트 수를 2로 설정하려면 어떻게 해야 하나요?",
+        "output": "`tune2fs -c 2 /dev/sdXN` 명령어를 사용하여 파일시스템의 최대 카운트 수를 2로 설정할 수 있습니다."
+    },
+    {
+        "instruction": "cuyo 게임을 시작하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "cuyo 게임을 시작하려면 `cuyo` 명령어를 입력해야 합니다."
+    },
+    {
+        "instruction": "mktemp 명령어를 사용하여 /tmp/ 디렉토리에 임시 파일을 생성하고 그 절대 경로를 출력하는 방법은 무엇인가요?",
+        "output": "`mktemp` 명령어를 사용하여 `/tmp/` 디렉토리에 임시 파일을 생성하고 그 절대 경로를 출력하는 방법은 다음과 같습니다:\n`mktemp`"
+    },
+    {
+        "instruction": "picom을 실행할 때 백그라운드 프로세스로 설정하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`picom -b` 옵션을 사용하면 picom을 백그라운드 프로세스로 실행할 수 있습니다."
+    },
+    {
+        "instruction": "getconf -a 명령어를 사용하여 시스템의 모든 설정 값을 확인할 수 있나요?",
+        "output": "네, `getconf -a` 명령어를 사용하여 시스템의 모든 설정 값을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "backlight_control 명령어를 사용하여 리눅스 머신의 백라이트를 70%로 설정하려면 어떻게 해야 하나요?",
+        "output": "`backlight_control 70` 명령어를 사용하여 리눅스 머신의 백라이트를 70%로 설정할 수 있습니다."
+    },
+    {
+        "instruction": "systemd-delta 명령어를 사용하여 특정 유형의 오버라이드된 설정 파일만 보여줄 수 있나요?",
+        "output": "네, systemd-delta 명령어를 사용하여 특정 유형의 오버라이드된 설정 파일만 보여줄 수 있습니다. 예를 들어, 특정 유형의 파일만 보려면 --type 옵션을 사용하면 됩니다. 예시는 다음과 같습니다:\n\n`systemd-delta --type {{masked|equivalent|redirected|overridden|extended|unchanged}}`"
+    },
+    {
+        "instruction": "conky를 실행할 때 기본 설정 파일 대신 특정 설정 파일을 사용하려면 어떻게 해야 하나요?",
+        "output": "특정 설정 파일을 사용하여 conky를 실행하려면 다음 명령어를 사용하면 됩니다:\n`conky -c {{path/to/config}}`"
+    },
+    {
+        "instruction": "lsb_release -a 명령어를 실행했을 때 출력되는 정보 중에서 보안 패치 정보도 포함되나요?",
+        "output": "`lsb_release -a` 명령어를 실행했을 때 출력되는 정보에는 운영체제의 일반적인 정보와 LSB 정보가 포함되지만, 보안 패치 정보는 포함되지 않습니다. 보안 패치 정보를 확인하려면 별도의 명령어나 도구를 사용해야 합니다."
+    },
+    {
+        "instruction": "특정 파일의 ACL을 숫자 ID로 표시하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`getfacl -n {{path/to/file_or_directory}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "cryptcat를 사용하여 특정 IP 주소의 열린 포트를 스캔하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`cryptcat -v -z {{ip_address}} {{port}}` 명령어를 사용하여 특정 IP 주소의 열린 포트를 스캔할 수 있습니다."
+    },
+    {
+        "instruction": "fallocate 명령어를 사용하여 파일의 특정 위치에서 공간을 축소하려면 어떻게 해야 하나요?",
+        "output": "`fallocate --collapse-range --offset {{offset}} --length {{length}} {{path/to/file}}` 명령어를 사용하여 파일의 특정 위치에서 공간을 축소할 수 있습니다. 여기서 `{{offset}}`은 축소를 시작할 위치를 나타내며, `{{length}}`는 축소할 공간의 크기를 나타냅니다."
+    },
+    {
+        "instruction": "rig 명령어를 사용하여 특정 디렉토리에서 데이터 파일을 사용하여 5개의 여성 신원을 표시하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`rig -f -c 5 -d 경로/를/디렉토리`를 입력하면 됩니다."
+    },
+    {
+        "instruction": "fprintd의 설명을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`man fprintd` 명령어를 사용하여 fprintd의 설명을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "run-mailcap 명령어에서 --nopager 옵션은 어떤 역할을 하나요?",
+        "output": "--nopager 옵션은 \"copiousoutput\" 지시어를 무시하고 출력을 stdout으로 전달하는 역할을 합니다."
+    },
+    {
+        "instruction": "debtap --update 명령어를 실행할 때 sudo 권한이 필요한 이유는 무엇인가요?",
+        "output": "`debtap --update` 명령어를 실행할 때 sudo 권한이 필요한 이유는 debtap의 데이터베이스 파일이 시스템 디렉토리에 저장되기 때문입니다. 시스템 디렉토리에 접근하고 파일을 수정하려면 관리자 권한이 필요하므로 sudo 권한이 필요합니다."
+    },
+    {
+        "instruction": "특정 단백질과 생물종에 대한 논문을 검색한 후, 관련된 염기서열을 찾으려면 어떻게 해야 하나요?",
+        "output": "특정 단백질과 생물종에 대한 논문을 검색한 후, 관련된 염기서열을 찾으려면 다음과 같이 명령어를 사용하면 됩니다:\n\n`esearch -db pubmed -query \"{{단백질명 [PROT] AND 생물종명 [ORGN]}}\" | elink -target nuccore`"
+    },
+    {
+        "instruction": "특정 가상 머신의 모든 스토리지를 리스캔하고 디스크 크기와 사용하지 않는 디스크 이미지를 업데이트하려면 어떻게 해야 하나요?",
+        "output": "`qm rescan {{vm_id}}` 명령어를 사용하여 특정 가상 머신의 모든 스토리지를 리스캔하고 디스크 크기와 사용하지 않는 디스크 이미지를 업데이트할 수 있습니다."
+    },
+    {
+        "instruction": "steghide를 사용하여 BMP 파일에 데이터를 숨기고 싶은데, 어떤 명령어를 사용해야 하나요?",
+        "output": "steghide embed --coverfile {{path/to/image.bmp}} --embedfile {{path/to/data.txt}}"
+    },
+    {
+        "instruction": "hlint를 사용하여 특정 디렉토리 내의 모든 Haskell 파일을 검사하고 보고서를 생성하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`hlint {{path/to/directory}} --report` 명령어를 사용하여 특정 디렉토리 내의 모든 Haskell 파일을 검사하고 보고서를 생성할 수 있습니다."
+    },
+    {
+        "instruction": "ispell 명령어를 사용하여 특정 파일의 철자 오류를 확인하고 수정하려면 어떻게 해야 하나요?",
+        "output": "`ispell {{path/to/file}}` 명령어를 사용하여 특정 파일의 철자 오류를 확인하고 수정할 수 있습니다."
+    },
+    {
+        "instruction": "tac 명령어를 사용하여 특정 파일의 내용을 역순으로 출력하고 싶습니다.",
+        "output": "`tac {{path/to/file}}` 명령어를 사용하여 특정 파일의 내용을 역순으로 출력할 수 있습니다."
+    },
+    {
+        "instruction": "특정 사용자가 소유한 프로세스를 루트로 하는 모든 프로세스 트리를 표시하려면 어떻게 해야 하나요?",
+        "output": "`pstree {{user}}` 명령어를 사용하여 특정 사용자가 소유한 프로세스를 루트로 하는 모든 프로세스 트리를 표시할 수 있습니다."
+    },
+    {
+        "instruction": "toolbox enter 명령어를 사용하여 Fedora 38 컨테이너에 접속하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`toolbox enter --distro fedora --release f38` 명령어를 입력하면 Fedora 38 컨테이너에 접속할 수 있습니다."
+    },
+    {
+        "instruction": "특정 디렉토리가 mountpoint인지 확인하려면 어떻게 해야 하나요?",
+        "output": "특정 디렉토리가 mountpoint인지 확인하려면 `mountpoint {{path/to/directory}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "현재 터미널로 실행 중인 프로세스를 옮기려면 어떻게 해야 하나요?",
+        "output": "`reptyr {{pid}}` 명령어를 사용하여 현재 터미널로 실행 중인 프로세스를 옮길 수 있습니다."
+    },
+    {
+        "instruction": "현재 설치된 acpi_call 모듈의 버전을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`dkms status` 명령어를 사용하여 현재 설치된 acpi_call 모듈의 버전을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "laptop-detect 명령어를 사용하여 현재 시스템이 노트북인지 데스크탑인지 확인할 수 있나요?",
+        "output": "네, laptop-detect 명령어를 사용하여 현재 시스템이 노트북인지 데스크탑인지 확인할 수 있습니다. `laptop-detect` 명령을 실행하면 현재 장치가 노트북일 경우 종료 상태 코드(exit status) 0을 반환하고, 그렇지 않을 경우 1을 반환합니다. 또한, `laptop-detect --verbose` 옵션을 사용하면 현재 시스템의 장치 유형을 출력할 수 있습니다."
+    },
+    {
+        "instruction": "pidstat 명령어를 사용하여 특정 PID의 메모리 사용량을 확인하려면 어떻게 해야 하나요?",
+        "output": "`pidstat -p {{PID}} -r` 명령어를 사용하여 특정 PID의 메모리 사용량을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "yum을 사용해서 nginx 패키지를 설치하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`yum install nginx` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "arch-chroot 명령어를 사용하여 새로운 root 디렉토리에서 zsh 셸을 실행하려면 어떻게 해야 하나요?",
+        "output": "`arch-chroot {{path/to/new/root}} {{zsh}}` 명령어를 사용하여 새로운 root 디렉토리에서 zsh 셸을 실행할 수 있습니다. 단, 대상 시스템에 zsh 패키지가 설치되어 있어야 합니다."
+    },
+    {
+        "instruction": "shiny-mirrors를 사용하여 Manjaro Linux의 pacman mirror list를 생성하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "Manjaro Linux에서 shiny-mirrors를 사용하여 pacman mirror list를 생성하려면 먼저 데이터베이스를 동기화하고 시스템을 업데이트한 후, 다음 명령어를 입력하면 됩니다:\n\n`sudo pacman -Syyu`\n\n`sudo shiny-mirrors refresh`"
+    },
+    {
+        "instruction": "ip route list 명령어와 ip route show 명령어의 차이점이 무엇인가요?",
+        "output": "`ip route list` 명령어와 `ip route show` 명령어는 동일한 기능을 수행합니다. `ip route list`는 `ip route show`의 별칭(alias)입니다."
+    },
+    {
+        "instruction": "특정 PID의 메모리 맵을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`pmap {{pid}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "가상 머신을 원래 스토리지에서 특정 백업 파일로부터 복원하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`qmrestore {{path/to/vzdump-qemu-100.vma.lzo}} {{100}}` 명령어를 사용하여 가상 머신을 원래 스토리지에서 특정 백업 파일로부터 복원할 수 있습니다."
+    },
+    {
+        "instruction": "pw-loopback 명령어를 사용하여 스피커와 마이크로폰을 자동으로 연결하는 루프백 디바이스를 생성하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "스피커와 마이크로폰을 자동으로 연결하는 루프백 디바이스를 생성하려면 다음 옵션을 사용하세요:\n\n`pw-loopback -m '{{[FL FR]}}' --capture-props='{{media.class=Audio/Sink}}' --playback-props='{{media.class=Audio/Source}}'`"
+    },
+    {
+        "instruction": "현재 네트워크 인터페이스 eth0에 적용된 모든 트래픽 컨트롤 규칙을 삭제하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`tc qdisc del dev eth0 root` 명령어를 사용하여 현재 네트워크 인터페이스 eth0에 적용된 모든 트래픽 컨트롤 규칙을 삭제할 수 있습니다."
+    },
+    {
+        "instruction": "btrfs 파일시스템에 새로운 디바이스를 추가하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`sudo btrfs device add {{path/to/block_device1}} [{{path/to/block_device2}}] {{path/to/btrfs_filesystem}}` 명령어를 사용하여 btrfs 파일시스템에 새로운 디바이스를 추가할 수 있습니다."
+    },
+    {
+        "instruction": "script 명령어를 사용하여 현재 디렉토리에 typescript라는 이름의 파일로 새로운 세션을 기록하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`script` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "konsave를 사용하여 현재 설정을 프로필로 저장하고 기존 프로필을 덮어쓰려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`konsave -s {{profile_name}} --force` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "powertop을 사용하여 배터리 파워 사용량을 최적화하려면 어떻게 해야 하나요?",
+        "output": "`sudo powertop --auto-tune` 명령어를 사용하여 최적의 설정으로 튜닝할 수 있습니다."
+    },
+    {
+        "instruction": "avifenc 명령어를 사용하여 PNG 이미지를 AVIF 형식으로 변환하려고 합니다. 특정 속도로 인코딩하는 방법을 알려주세요.",
+        "output": "`avifenc --speed {{원하는 속도}} {{경로/입력.png}} {{경로/출력.avif}}` 명령어를 사용하여 특정 속도로 PNG 이미지를 AVIF 형식으로 변환할 수 있습니다. 속도 값은 0부터 10까지 설정할 수 있으며, 기본값은 6입니다. 값이 낮을수록 느리고 품질이 높아지며, 값이 높을수록 빠르고 품질이 낮아집니다."
+    },
+    {
+        "instruction": "현재 실행 중인 가상 머신의 전체 상태를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`qm list --full 1` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "links 명령어를 사용하여 익명 계정에 대한 제한을 적용하고 쿠키를 활성화하려면 어떻게 해야 하나요?",
+        "output": "links -anonymous -enable-cookies 1 https://example.com 명령어를 사용하여 익명 계정에 대한 제한을 적용하고 쿠키를 활성화할 수 있습니다."
+    },
+    {
+        "instruction": "vrms 명령어를 사용해서 현재 설치된 non-free 패키지 목록만 출력할 수 있을까요?",
+        "output": "네, `vrms --sparse` 명령어를 사용하면 현재 설치된 non-free 패키지 목록만 출력할 수 있습니다."
+    },
+    {
+        "instruction": "fcrackzip를 사용하여 길이가 6인 대소문자와 숫자, 특수문자를 포함한 비밀번호를 Brute-force 공격하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`fcrackzip --brute-force --length 6 --charset aA1! {{archive}}`"
+    },
+    {
+        "instruction": "http-prompt를 사용하여 http://example.com으로 세션을 시작하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`http-prompt http://example.com` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "openfortivpn을 사용하여 VPN에 연결할 때 특정 게이트웨이의 인증서를 신뢰하려면 어떻게 해야 하나요?",
+        "output": "openfortivpn을 사용하여 VPN에 연결할 때 특정 게이트웨이의 인증서를 신뢰하려면 `--trusted-cert` 옵션을 사용하여 해당 인증서의 sha256 체크섬을 전달하면 됩니다. 예를 들어, `openfortivpn --trusted-cert={{sha256_sum}}`와 같이 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "i3-scrot을 사용하여 화면 캡처를 할 때, 캡처된 이미지가 저장되는 기본 디렉토리를 변경하려면 어떻게 해야 하나요?",
+        "output": "`~/.config/i3-scrot.conf` 파일을 수정하여 기본 저장 위치를 변경할 수 있습니다."
+    },
+    {
+        "instruction": "latte-dock --clear-cache 명령어를 실행할 때 보안에 미치는 영향은 무엇인가요?",
+        "output": "`latte-dock --clear-cache` 명령어는 QML 캐시를 지우는 역할을 합니다. 이 명령어는 직접적인 보안 영향을 미치지 않지만, 캐시된 데이터가 포함된 잠재적인 민감한 정보를 제거하여 간접적으로 보안을 강화할 수 있습니다. 예를 들어, 악의적인 사용자가 캐시된 데이터를 통해 시스템 정보를 유추하는 것을 방지할 수 있습니다. 그러나 이 명령어는 주로 성능 최적화와 관련된 목적으로 사용됩니다."
+    },
+    {
+        "instruction": "disown 명령어를 사용하여 현재 쉘에서 실행 중인 모든 작업을 분리하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`disown -a` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "swaplabel 명령어를 사용하여 swap 영역의 UUID를 변경하려고 합니다.",
+        "output": "swaplabel 명령어를 사용하여 swap 영역의 UUID를 변경하려면 다음과 같은 명령어를 사용하면 됩니다:\n\n`swaplabel --uuid {{new_uuid}} {{path/to/file}}`\n\n여기서 `{{new_uuid}}`는 새로운 UUID를 의미하며, `{{path/to/file}}`는 swap 영역의 경로를 의미합니다. UUID는 `uuidgen` 명령어를 사용하여 생성할 수 있습니다."
+    },
+    {
+        "instruction": "xrdb를 사용하여 현재 설정된 값을 조회하는 명령어는 무엇인가요?",
+        "output": "`xrdb -query`"
+    },
+    {
+        "instruction": "cpufreq-info 명령어를 사용하여 현재 CPU 작업 주파수를 인간이 읽을 수 있는 형식으로 확인하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`cpufreq-info -f -m` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "btrfs 파일시스템의 슈퍼블록 정보와 그 복사본들의 정보를 모두 출력하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "sudo btrfs inspect-internal dump-super --all {{path/to/partition}}"
+    },
+    {
+        "instruction": "특정 배터리 상태에서 자동으로 실행되는 작업을 생성하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "특정 배터리 상태에서 자동으로 실행되는 작업을 생성하려면 다음 명령어를 사용하면 됩니다:\n\n`vso create-task --name \"{{string}}\" --description \"{{string}}\" --command \"{{command}}\" --{{on-low-battery|on-charge|on-battery|on-full-battery}}`"
+    },
+    {
+        "instruction": "systemd-path 명령어를 사용하여 현재 시스템에서 알려진 모든 경로와 그 값을 출력하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`systemd-path` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "systemd-umount 명령어를 사용하여 마운트된 파일 시스템을 언마운트하려면 어떻게 해야 하나요?",
+        "output": "`systemd-umount` 명령어는 `systemd-mount --umount`의 별칭입니다. 마운트된 파일 시스템을 언마운트하려면 다음과 같은 명령어를 사용하면 됩니다:\n\n```\nsudo systemd-umount /path/to/mountpoint\n```\n\n여기서 `/path/to/mountpoint`는 언마운트하려는 파일 시스템의 마운트 포인트 경로입니다."
+    },
+    {
+        "instruction": "blastn 명령어를 사용하여 두 개의 쿼리 시퀀스를 정렬하고, 결과를 파일로 출력하려고 합니다. 이 때, 출력 형식을 커스텀 탭 형식으로 설정하고, e-value 임계값을 1e-9로 지정하려고 합니다. 이를 위한 명령어는 무엇인가요?",
+        "output": "blastn -query {{query.fa}} -subject {{subject.fa}} -evalue {{1e-9}} -outfmt {{'6 qseqid qlen qstart qend sseqid slen sstart send bitscore evalue pident'}} -out {{output.tsv}}"
+    },
+    {
+        "instruction": "nsnake 게임을 실행하고 위쪽으로 이동하려면 어떻게 해야 하나요?",
+        "output": "nsnake 게임을 실행하려면 `nsnake` 명령어를 입력하고, 게임 중 위쪽으로 이동하려면 `Up arrow key`를 눌러야 합니다."
+    },
+    {
+        "instruction": "프록시모스에서 특정 PID의 상태를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "프록시모스에서 특정 PID의 상태를 확인하려면 `qm guest exec-status {{vm_id}} {{pid}}` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "addr2line 명령어를 사용해서 실행 파일의 주소를 파일 이름과 줄 번호로 변환하는 방법을 알려주세요.",
+        "output": "addr2line 명령어를 사용해서 실행 파일의 주소를 파일 이름과 줄 번호로 변환하려면 다음과 같은 명령어를 사용하면 됩니다:\n`addr2line --exe={{path/to/executable}} {{address}}`"
+    },
+    {
+        "instruction": "dget 명령어를 사용하여 바이너리 패키지를 다운로드하려면 어떻게 해야 하나요?",
+        "output": "`dget {{package}}` 명령어를 사용하여 바이너리 패키지를 다운로드할 수 있습니다."
+    },
+    {
+        "instruction": "sudo phpdismod -v 7.3 -s cli json 명령어를 실행했는데도 JSON 확장이 비활성화되지 않았습니다. 어떻게 해결해야 할까요?",
+        "output": "명령어를 실행한 후 서버를 재시작해보세요. 그래도 문제가 해결되지 않으면, PHP 설정 파일을 직접 확인하여 JSON 확장이 비활성화되었는지 확인해보세요. 또한, `php --ini` 명령어를 통해 현재 적용된 PHP 설정 파일의 위치를 확인하고, 해당 파일에서 JSON 확장이 비활성화되었는지 확인할 수 있습니다."
+    },
+    {
+        "instruction": "파일의 첫 부분 10줄을 출력하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`head --lines 10 {{path/to/file}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "qtchooser를 사용하여 현재 설치된 Qt 버전을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`qtchooser --list-versions` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "smbget을 사용하여 서버에서 파일을 다운로드하려면 어떻게 해야 하나요?",
+        "output": "`smbget` 유틸리티를 사용하여 서버에서 파일을 다운로드하려면 다음 명령어를 사용하면 됩니다:\n`smbget {{smb://server/share/file}}`"
+    },
+    {
+        "instruction": "특정 패턴에 맞는 설치된 패키지를 모두 나열하는 명령어는 무엇인가요?",
+        "output": "`dpkg-query --list '패턴'` 명령어를 사용하여 특정 패턴에 맞는 설치된 패키지를 모두 나열할 수 있습니다."
+    },
+    {
+        "instruction": "screenkey를 사용하여 키보드와 마우스 버튼이 동시에 화면에 표시되도록 설정하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`screenkey --mouse` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "srun 명령어를 사용하여 메모리 할당을 512MB로 설정하고, 코어 수를 4개로 설정한 인터랙티브 잡을 제출하려면 어떻게 해야 하나요?",
+        "output": "`srun --ntasks-per-node=4 --mem-per-cpu=512 --pty /bin/bash` 명령어를 사용하여 메모리 할당을 512MB로 설정하고, 코어 수를 4개로 설정한 인터랙티브 잡을 제출할 수 있습니다."
+    },
+    {
+        "instruction": "spi를 사용하여 설치된 모든 패키지를 최신 버전으로 업그레이드하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`spi --upgrade` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "apt moo 명령어는 무엇을 하는 명령어인가요?",
+        "output": "`apt moo` 명령어는 APT의 이스터 에그로, 소 그림을 출력하는 명령어입니다."
+    },
+    {
+        "instruction": "iwctl station list 명령어를 통해 나의 Wi-Fi 스테이션을 확인할 수 있나요?",
+        "output": "네, `iwctl station list` 명령어를 사용하여 현재 시스템에 있는 Wi-Fi 스테이션을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "ext3 또는 ext4 파티션에서 특정 시간 이후에 삭제된 모든 파일을 복구하려면 어떻게 해야 하나요?",
+        "output": "먼저 `date` 명령어를 사용하여 원하는 시간을 Unix time으로 변환한 후, `extundelete` 명령어를 사용하여 해당 시간 이후에 삭제된 모든 파일을 복구할 수 있습니다. 예를 들어, 2020년 1월 1일 이후에 삭제된 모든 파일을 복구하려면 다음과 같은 명령어를 사용합니다:\n\n`sudo extundelete /dev/sdXN --restore-all --after 1577840400`"
+    },
+    {
+        "instruction": "systemd-run을 사용하여 특정 명령어를 일정 주기로 실행하는 방법은 무엇인가요?",
+        "output": "`sudo systemd-run --on-calendar={{calendar_event}} {{command}} {{argument1 argument2 ...}}` 명령어를 사용하여 특정 명령어를 일정 주기로 실행할 수 있습니다. `{{calendar_event}}` 부분에는 주기를 설정하는 캘린더 이벤트 형식을 입력하면 됩니다. 예를 들어, 매일 오전 9시에 명령어를 실행하려면 `--on-calendar=\"daily\"`를 사용할 수 있습니다."
+    },
+    {
+        "instruction": "특정 디바이스의 전력 모드 상태를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "sudo hdparm -C /dev/{{device}}"
+    },
+    {
+        "instruction": "apt-add-repository 명령어를 사용하여 새로운 apt repository를 추가하고 패키지 캐시를 업데이트하는 방법은 무엇인가요?",
+        "output": "`apt-add-repository {{repository_spec}}` 명령어를 사용하여 새로운 apt repository를 추가한 후, `apt-add-repository --update {{repository_spec}}` 명령어를 사용하여 패키지 캐시를 업데이트할 수 있습니다."
+    },
+    {
+        "instruction": "po4a 명령어를 사용하여 지정된 설정 파일에 따라 PO 파일과 문서를 업데이트하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`po4a {{path/to/config_file}}` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "dconf write 명령어를 사용하여 /org/gnome/desktop/interface/clock-format 키에 문자열 값을 24시간 형식으로 설정하려면 어떻게 해야 하나요?",
+        "output": "```\ndconf write /org/gnome/desktop/interface/clock-format \"'24h'\"\n```"
+    },
+    {
+        "instruction": "특정 사용자의 모든 속성을 출력하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`loginctl show-user {{username}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "pkgfile을 사용하여 특정 파일을 소유한 패키지를 검색하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`pkgfile {{filename}}` 명령어를 사용하여 특정 파일을 소유한 패키지를 검색할 수 있습니다."
+    },
+    {
+        "instruction": "braa를 사용하여 특정 IP의 SNMP 트리에서 모든 OID를 조회하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "braa public@{{ip}}:{{.1.3.6.*}}"
+    },
+    {
+        "instruction": "sudo a2dissite 명령어를 사용하여 가상 호스트를 비활성화하려면 어떻게 해야 하나요?",
+        "output": "`sudo a2dissite {{virtual_host}}` 명령어를 사용하여 가상 호스트를 비활성화할 수 있습니다. 여기서 `{{virtual_host}}`는 비활성화하고자 하는 가상 호스트의 이름으로 대체해야 합니다. 예를 들어, 가상 호스트의 이름이 `example.com`이라면 `sudo a2dissite example.com`과 같이 입력하면 됩니다."
+    },
+    {
+        "instruction": "hwclock 명령어를 사용하여 현재 하드웨어 클럭 시간을 확인하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "hwclock 명령어를 사용하여 현재 하드웨어 클럭 시간을 확인하려면 `hwclock` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "nova list --all-tenants 명령어를 실행할 때 필요한 권한은 무엇인가요?",
+        "output": "nova list --all-tenants 명령어를 실행할 때 필요한 권한은 관리자 권한입니다."
+    },
+    {
+        "instruction": "dunstctl set-paused true 명령어를 실행했는데도 알림이 계속 나타납니다. 어떻게 해결해야 할까요?",
+        "output": "`dunstctl set-paused true` 명령어를 실행했음에도 알림이 계속 나타나는 경우, 다음과 같은 방법으로 해결해 보세요.\n\n1. `dunst` 서비스가 올바르게 실행되고 있는지 확인하세요.\n2. `dunstctl set-paused true` 명령어를 다시 실행해 보세요.\n3. `dunst` 설정 파일을 확인하여 알림 일시 중지 기능이 올바르게 설정되었는지 확인하세요.\n4. `dunst` 서비스를 재시작해 보세요.\n5. `dunstctl --help` 명령어를 통해 추가적인 옵션이 있는지 확인하세요."
+    },
+    {
+        "instruction": "eopkg를 사용해서 특정 패키지를 설치하려면 어떻게 해야 하나요?",
+        "output": "특정 패키지를 설치하려면 `sudo eopkg install {{package}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "특정 가상 머신의 현재 및 대기 중인 설정 값을 확인하려면 어떻게 해야 하나요?",
+        "output": "`qm pending {{vm_id}}` 명령어를 사용하여 특정 가상 머신의 현재 및 대기 중인 설정 값을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "nemo 명령어를 사용하여 특정 디렉토리를 새로운 탭으로 열 수 있는지 확인하려고 합니다.",
+        "output": "네, nemo 명령어를 사용하여 특정 디렉토리를 새로운 탭으로 열 수 있습니다. 다음 명령어를 사용하면 됩니다:\n\n`nemo --tabs {{path/to/directory1 path/to/directory2 ...}}`"
+    },
+    {
+        "instruction": "wtf -t comp WWW의 결과를 알려주세요.",
+        "output": "\"wtf -t comp WWW\" 명령어를 실행하면 \"World Wide Web\"라는 결과를 얻을 수 있습니다."
+    },
+    {
+        "instruction": "sudo tlp-stat -b 명령어를 실행했을 때 배터리 정보가 제대로 표시되지 않습니다.",
+        "output": "`sudo tlp-stat -b` 명령어를 실행했을 때 배터리 정보가 제대로 표시되지 않는 경우, 먼저 시스템에 TLP가 올바르게 설치되었는지 확인하세요. 또한, 루트 권한으로 명령어를 실행했는지 다시 한 번 확인해보세요. 배터리 정보가 여전히 표시되지 않는다면, TLP의 로그 파일을 확인하여 오류 메시지가 있는지 확인하거나, TLP의 최신 버전으로 업데이트해보세요."
+    },
+    {
+        "instruction": "bspc를 사용하여 현재 선택된 노드를 풀스크린 모드로 전환하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`bspc node --state ~fullscreen` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "Synology DSM 업그레이드 과정에서 패치 파일을 사용하여 업그레이드하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "Synology DSM 업그레이드 과정에서 패치 파일을 사용하여 업그레이드하려면 `sudo synoupgrade --patch {{/path/to/file.pat}}` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "gnome-software를 통해 시스템 업데이트를 진행할 수 있나요?",
+        "output": "네, gnome-software를 통해 시스템 업데이트를 진행할 수 있습니다. `gnome-software --mode updates` 명령어를 사용하여 업데이트 페이지로 이동할 수 있습니다."
+    },
+    {
+        "instruction": "ddcutil을 사용하여 연결된 모든 호환 가능한 디스플레이를 나열하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "연결된 모든 호환 가능한 디스플레이를 나열하려면 `ddcutil detect` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "udisksctl을 사용하여 /dev/sda1 파티션을 마운트하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`udisksctl mount --block-device /dev/sda1` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "lscpu 명령어를 사용하여 오프라인 CPU 정보만 표 형식으로 출력하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`lscpu --extended --offline` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "tracepath 명령어를 사용하여 특정 호스트까지의 경로를 추적하고 싶습니다. 초기 목적지 포트를 지정하고, 호스트명과 숫자 IP 주소를 모두 출력하며, 최대 TTL을 설정하고, 초기 패킷 길이를 지정하고, IPv6 주소만 사용하려고 합니다. 이를 위한 명령어는 무엇인가요?",
+        "output": "tracepath -6 -b -m {{max_hops}} -l {{packet_length}} -p {{destination_port}} {{host}}"
+    },
+    {
+        "instruction": "pyrit -r 캡처파일.cap attack_db 명령어를 실행했을 때, 어떤 과정을 통해 패스워드를 크래킹하나요?",
+        "output": "pyrit -r 캡처파일.cap attack_db 명령어를 실행하면, Pyrit은 캡처파일을 읽고, 이를 통해 수집된 데이터를 분석합니다. 그 후, 데이터베이스에 저장된 패스워드를 사용하여 WPA/WPA2 암호를 크래킹합니다. 이 과정에서 계산된 결과를 바탕으로 패스워드를 추정하고, 올바른 패스워드를 찾을 때까지 반복합니다."
+    },
+    {
+        "instruction": "mycli를 사용하여 원격 호스트에 있는 데이터베이스에 특정 사용자로 접속하려면 어떻게 해야 하나요?",
+        "output": "원격 호스트에 있는 데이터베이스에 특정 사용자로 접속하려면 다음 명령어를 사용하면 됩니다:\n\n`mycli -u {{user}} -h {{host}} {{database_name}}`"
+    },
+    {
+        "instruction": "apt-get upgrade와 apt-get dist-upgrade의 차이점이 궁금합니다.",
+        "output": "`apt-get upgrade`는 현재 설치된 모든 패키지를 최신 버전으로 업그레이드합니다. 그러나 새로운 패키지를 설치하거나 기존 패키지를 제거하지는 않습니다.\n\n반면, `apt-get dist-upgrade`는 현재 설치된 패키지를 최신 버전으로 업그레이드하면서, 새로운 의존성을 만족시키기 위해 필요한 추가 패키지를 설치하거나 더 이상 필요하지 않은 패키지를 제거할 수 있습니다. 따라서 `dist-upgrade`는 시스템의 의존성 문제를 해결하기 위해 더 큰 변화를 가져올 수 있습니다."
+    },
+    {
+        "instruction": "디렉토리를 복사할 때 파일이 복사되는 과정을 보여줄 수 있는 옵션은 무엇인가요?",
+        "output": "`-v` 옵션을 사용하면 파일이 복사되는 과정을 보여줄 수 있습니다. 예를 들어, `cp -vr {{path/to/source_directory}} {{path/to/target_directory}}` 명령어를 사용하면 디렉토리를 재귀적으로 복사하면서 파일이 복사되는 과정을 실시간으로 확인할 수 있습니다."
+    },
+    {
+        "instruction": "ascii 명령어를 사용해서 문자 'A'의 ASCII 별칭을 보여주세요.",
+        "output": "`ascii A`를 입력하여 문자 'A'의 ASCII 별칭을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "sfill 명령어를 사용하여 마운트된 디스크의 빈 공간과 inodes를 안전하게 덮어쓰려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`sfill {{/path/to/mounted_disk_directory}}` 명령어를 사용하면 됩니다. 이 명령어는 디스크의 빈 공간과 inodes를 38번 덮어쓰기 때문에 느리지만 안전합니다."
+    },
+    {
+        "instruction": "autopkgtest를 사용하여 현재 디렉토리에 있는 패키지를 빌드하고 시스템에서 직접 모든 테스트를 실행하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "현재 디렉토리에 있는 패키지를 빌드하고 시스템에서 직접 모든 테스트를 실행하려면 다음 명령어를 사용해야 합니다:\n`autopkgtest -- {{null}}`"
+    },
+    {
+        "instruction": "sic를 사용하여 특정 호스트에 연결할 때 비밀번호를 포함하는 것이 안전한가요?",
+        "output": "sic를 사용하여 특정 호스트에 연결할 때 비밀번호를 포함하는 것은 안전하지 않습니다. 비밀번호가 명령줄에 노출될 수 있으며, 이는 보안 위협을 초래할 수 있습니다. 대신, 비밀번호를 안전하게 저장하고 관리하는 방법을 사용하는 것이 좋습니다."
+    },
+    {
+        "instruction": "특정 파일시스템에서 모든 사용자와 그룹의 쿼터 사용량을 인간이 읽기 쉬운 형식으로 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`sudo repquota -augs` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "localectl을 사용하여 현재 시스템의 로케일 설정을 확인하려면 어떤 명령어를 입력해야 하나요?",
+        "output": "`localectl`을 입력하면 됩니다."
+    },
+    {
+        "instruction": "xvfb-run 명령어를 사용하여 가상 X 서버 환경에서 특정 명령어를 실행하려고 합니다. 이 때, 기본 서버 번호인 99가 사용 중일 경우 자동으로 다른 서버 번호를 할당받도록 설정하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`xvfb-run --auto-servernum {{command}}` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "UUIDv4를 생성하고 이를 파일에 저장하려면 어떻게 해야 하나요?",
+        "output": "UUIDv4를 생성하고 이를 파일에 저장하려면 다음 명령어를 사용하면 됩니다:\n`uuid -v 4 -o 파일경로/파일명`"
+    },
+    {
+        "instruction": "snap 패키지 설치 방법을 알려주세요.",
+        "output": "snap 패키지를 설치하려면 다음 명령어를 사용하면 됩니다:\n`snap install {{package}}`"
+    },
+    {
+        "instruction": "systemd-tty-ask-password-agent를 사용하여 현재 보류 중인 시스템 패스워드 요청을 모두 처리하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`systemd-tty-ask-password-agent --query` 명령어를 사용하여 현재 보류 중인 시스템 패스워드 요청을 모두 처리할 수 있습니다."
+    },
+    {
+        "instruction": "makepkg --skipchecksums 옵션을 사용할 때 발생할 수 있는 보안 문제는 무엇인가요?",
+        "output": "`makepkg --skipchecksums` 옵션을 사용하면 소스 파일의 해시 값을 검증하지 않기 때문에, 악의적으로 변조된 소스 파일이 포함될 가능성이 있습니다. 이로 인해 악성 코드가 포함된 패키지가 생성될 수 있으며, 시스템의 보안에 심각한 위협을 초래할 수 있습니다. 따라서 이 옵션은 신뢰할 수 있는 소스에서만 사용하거나, 필요한 경우에만 사용하는 것이 좋습니다."
+    },
+    {
+        "instruction": "apx init 명령어를 실행했을 때 어떤 컨테이너가 초기화되나요?",
+        "output": "`apx init` 명령어를 실행하면 특정 컨테이너가 초기화됩니다. 이 명령어는 지정된 컨테이너를 초기화하거나 재초기화하는 데 사용됩니다."
+    },
+    {
+        "instruction": "rankmirrors 명령어를 사용하여 특정 URL의 응답 시간만 출력하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`--times` 옵션과 함께 특정 URL을 `--url` 옵션으로 지정하면 됩니다.\n\n예시:\n`rankmirrors --times --url {{url}}`"
+    },
+    {
+        "instruction": "AUR 패키지의 보류 중인 업데이트 목록을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "AUR 패키지의 보류 중인 업데이트 목록을 확인하려면 `checkupdates-aur` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "ncal 명령어와 cal 명령어의 차이점이 무엇인가요?",
+        "output": "ncal 명령어는 cal 명령어의 별칭입니다. 따라서 두 명령어 간의 기능적인 차이는 없습니다. 더 자세한 정보는 `tldr cal` 명령어를 통해 확인할 수 있습니다."
+    },
+    {
+        "instruction": "특정 파일을 소유한 패키지를 찾으려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`pacman --files {{filename}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "authconfig 명령어를 사용하여 현재 시스템 인증 설정을 확인하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`authconfig --test` 옵션을 사용하여 현재 시스템 인증 설정을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "Samba 사용자의 비밀번호를 변경하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "현재 사용자의 SMB 비밀번호를 변경하려면 `smbpasswd` 명령어를 사용하고, 특정 사용자의 SMB 비밀번호를 변경하려면 `sudo smbpasswd {{username}}` 명령어를 사용합니다."
+    },
+    {
+        "instruction": "ip route show 명령어를 사용하여 특정 네트워크 인터페이스의 라우팅 테이블만 확인할 수 있나요?",
+        "output": "네, 가능합니다. `ip route show dev` 옵션을 사용하여 특정 네트워크 인터페이스의 라우팅 테이블만 확인할 수 있습니다. 예를 들어, `eth0` 인터페이스의 라우팅 테이블을 확인하려면 `ip route show dev eth0` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "grub-reboot 명령어를 사용해서 다음 부팅 시에만 특정 부팅 항목을 기본으로 설정하려면 어떻게 해야 하나요?",
+        "output": "`sudo grub-reboot` 명령어를 사용하여 부팅 항목의 번호, 이름 또는 식별자를 지정하면 됩니다. 예를 들어, 부팅 항목의 번호가 3인 경우 `sudo grub-reboot 3`을 입력하면 됩니다."
+    },
+    {
+        "instruction": "genie를 사용하여 WSL에서 systemd를 실행하려면 어떻게 해야 하나요?",
+        "output": "genie를 사용하여 WSL에서 systemd를 실행하려면 다음 단계를 따르세요.\n\n먼저, \"bottle\" namespace를 초기화합니다. 이 명령어는 한 번만 실행하면 됩니다:\n`wsl genie -i`\n\n그 다음, 초기화된 bottle 내부에서 login shell을 실행합니다:\n`wsl genie -s`\n\n마지막으로, 특정 명령어를 bottle 내부에서 실행하려면 다음 명령어를 사용합니다:\n`wsl genie -c {{command}}`"
+    },
+    {
+        "instruction": "현재 시스템에서 활성화된 swap 영역을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "현재 시스템에서 활성화된 swap 영역을 확인하려면 `swapon` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "새로운 창에서 특정 이미지 파일을 열려면 어떻게 해야 하나요?",
+        "output": "새로운 창에서 특정 이미지 파일을 열려면 `drawing --new-window {{path/to/image1 path/to/image2 ...}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "qm cleanup 명령어를 사용하여 VM이 종료된 후 남은 자원을 정리하려면 어떻게 해야 하나요?",
+        "output": "qm cleanup 명령어를 사용하여 VM이 종료된 후 남은 자원을 정리하려면, 다음과 같은 명령어를 입력하면 됩니다:\n\n`qm cleanup {{vm_id}} {{clean-shutdown}} {{guest-requested}}`\n\n여기서 `{{vm_id}}`는 정리하려는 VM의 ID를, `{{clean-shutdown}}`은 VM이 정상적으로 종료되었는지 여부를, `{{guest-requested}}`는 게스트 OS에서 요청된 종료인지 여부를 나타냅니다."
+    },
+    {
+        "instruction": "bspwm을 실행할 때 기존에 열려있는 다른 window manager가 있으면 어떻게 되나요?",
+        "output": "bspwm을 실행할 때 기존에 열려있는 다른 window manager가 있으면 bspwm이 정상적으로 실행되지 않습니다. 따라서 기존 window manager를 종료한 후 bspwm을 실행해야 합니다."
+    },
+    {
+        "instruction": "cgcreate 명령어를 사용하여 CPU와 메모리 리소스를 제한하는 cgroup을 생성하려고 합니다.",
+        "output": "`cgcreate -g cpu,memory:my_cgroup` 명령어를 사용하여 CPU와 메모리 리소스를 제한하는 cgroup을 생성할 수 있습니다."
+    },
+    {
+        "instruction": "zathura에서 문서를 열 때 필요한 backend는 무엇인가요?",
+        "output": "zathura에서 문서를 열 때 필요한 backend는 poppler, PostScript, 또는 DjVu입니다."
+    },
+    {
+        "instruction": "dex --autostart 명령어를 실행했을 때 자동 실행 폴더에 있는 모든 프로그램이 실행되나요?",
+        "output": "네, `dex --autostart` 명령어를 실행하면 자동 실행 폴더에 있는 모든 프로그램이 실행됩니다."
+    },
+    {
+        "instruction": "alpine을 통해 이메일을 보내려면 어떻게 해야 하나요?",
+        "output": "alpine을 실행한 후, 이메일을 작성하려면 `c` 키를 누르고 수신자 이메일 주소를 입력한 후 이메일을 작성하면 됩니다. 또는 터미널에서 바로 이메일을 보내려면 `alpine {{email@example.net}}` 명령어를 사용하여 alpine을 실행할 수 있습니다."
+    },
+    {
+        "instruction": "xdotool을 사용하여 현재 활성화된 창의 ID를 어떻게 얻을 수 있나요?",
+        "output": "`xdotool getactivewindow` 명령어를 사용하여 현재 활성화된 창의 ID를 얻을 수 있습니다."
+    },
+    {
+        "instruction": "xterm을 사용하여 배경색을 검정색으로, 글자색을 빨간색으로 설정하고 싶습니다.",
+        "output": "xterm -bg black -fg red"
+    },
+    {
+        "instruction": "gummy를 사용하여 두 번째 화면의 색온도를 4000K로 설정하고 픽셀 밝기를 70%로 설정하려면 어떻게 해야 하나요?",
+        "output": "`gummy --screen {{1}} --temperature {{4000}} --brightness {{70}}`를 입력하면 됩니다."
+    },
+    {
+        "instruction": "maim을 사용하여 현재 활성화된 창의 스크린샷을 캡처하려면 어떻게 해야 하나요?",
+        "output": "`maim --window $(xdotool getactivewindow) {{path/to/screenshot.png}}` 명령어를 사용하여 현재 활성화된 창의 스크린샷을 캡처할 수 있습니다. 이 명령어를 실행하기 위해서는 `xdotool`이 설치되어 있어야 합니다."
+    },
+    {
+        "instruction": "isosize 명령어를 사용하여 ISO 파일의 블록 수와 블록 크기를 확인하려면 어떻게 해야 하나요?",
+        "output": "`isosize --sectors {{path/to/file.iso}}` 명령어를 사용하여 ISO 파일의 블록 수와 블록 크기를 확인할 수 있습니다."
+    },
+    {
+        "instruction": "sreport를 사용해서 클러스터 사용 현황을 파이프 구분자로 나타내는 방법은 무엇인가요?",
+        "output": "`sreport --parsable cluster utilization` 명령어를 사용하면 클러스터 사용 현황을 파이프 구분자로 나타낼 수 있습니다."
+    },
+    {
+        "instruction": "특정 프로세스의 network namespace에서 명령어를 실행하려면 어떻게 해야 하나요?",
+        "output": "`nsenter --target {{pid}} --net {{command}} {{command_arguments}}` 명령어를 사용하여 특정 프로세스의 network namespace에서 명령어를 실행할 수 있습니다."
+    },
+    {
+        "instruction": "현재 사용자의 왼쪽 엄지손가락을 등록하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`fprintd-enroll --finger left-thumb`를 사용하여 현재 사용자의 왼쪽 엄지손가락을 등록할 수 있습니다."
+    },
+    {
+        "instruction": "gedit를 사용하여 UTF-8 인코딩으로 텍스트 파일을 열려면 어떻게 해야 하나요?",
+        "output": "`gedit --encoding=UTF-8 {{path/to/file}}` 명령어를 사용하여 gedit를 통해 UTF-8 인코딩으로 텍스트 파일을 열 수 있습니다."
+    },
+    {
+        "instruction": "특정 배포판을 위한 `toolbox` 컨테이너를 생성하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "특정 배포판을 위한 `toolbox` 컨테이너를 생성하려면 `toolbox create --distro {{distribution}}` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "setsid 명령어를 사용하여 새로운 세션에서 프로그램을 실행하고, 결과 출력과 에러를 버리는 방법은 무엇인가요?",
+        "output": "`setsid {{program}} > /dev/null 2>&1` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "nmtui를 사용해서 현재 활성화된 네트워크 연결을 비활성화하려면 어떻게 해야 하나요?",
+        "output": "`nmtui connect` 명령어를 사용하여 현재 활성화된 네트워크 연결을 비활성화할 수 있습니다. 화면에서 원하는 네트워크를 선택한 후, 비활성화 옵션을 선택하면 됩니다."
+    },
+    {
+        "instruction": "udevadm을 사용해서 모든 디바이스 이벤트를 모니터링하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "sudo udevadm monitor"
+    },
+    {
+        "instruction": "cockpit-bridge --packages 명령어를 실행했을 때, 출력되는 패키지 목록에서 보안 관련 패키지만 필터링하는 방법을 알려주세요.",
+        "output": "`cockpit-bridge --packages` 명령어를 실행하여 출력된 패키지 목록을 파일에 저장한 후, 해당 파일에서 보안 관련 패키지를 필터링할 수 있습니다. 예를 들어, 다음과 같은 명령어를 사용할 수 있습니다:\n\n```bash\ncockpit-bridge --packages | grep -i security\n```\n\n이 명령어는 패키지 목록 중에서 \"security\"라는 단어가 포함된 항목만 필터링하여 출력합니다."
+    },
+    {
+        "instruction": "lrunzip 명령어를 사용하여 파일을 압축 해제할 때 특정 수의 프로세서 스레드를 지정하려면 어떻게 해야 하나요?",
+        "output": "`lrunzip -p {{8}} {{filename.lrz}}` 명령어를 사용하여 특정 수의 프로세서 스레드를 지정할 수 있습니다."
+    },
+    {
+        "instruction": "특정 작업의 상태 정보를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`sstat --jobs={{job_id}}` 명령어를 사용하여 특정 작업의 상태 정보를 확인할 수 있습니다."
+    },
+    {
+        "instruction": "chrt 명령어를 사용하여 프로세스의 실시간 속성을 조작하려고 합니다. 특정 PID를 가진 프로세스의 모든 스레드의 속성을 표시하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`chrt --all-tasks --pid {{PID}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "namei 명령어를 사용하여 경로명을 따라가는 방법에 대해 설명해주세요.",
+        "output": "namei 명령어는 경로명을 따라가서 최종 지점(파일, 디렉토리, 문자 장치 등)을 찾을 때까지 경로를 추적합니다. 이 명령어는 심볼릭 링크가 너무 많이 연결된 문제를 찾는 데 유용합니다. 기본적으로 namei 명령어를 사용하려면 경로명을 인자로 지정하면 됩니다. 예를 들어, `namei /path/to/a /path/to/b /path/to/c`와 같이 사용합니다. 추가적으로 긴 목록 형식으로 결과를 표시하려면 `--long` 옵션을, 각 파일 유형의 모드 비트를 `ls` 스타일로 표시하려면 `--modes` 옵션을, 각 파일의 소유자와 그룹 이름을 표시하려면 `--owners` 옵션을, 심볼릭 링크를 따라가지 않도록 하려면 `--nosymlinks` 옵션을 사용할 수 있습니다."
+    },
+    {
+        "instruction": "pacman --database 명령어를 사용해서 설치된 패키지의 특정 속성을 수정하려면 어떻게 해야 하나요?",
+        "output": "`pacman --database` 명령어를 사용하여 설치된 패키지의 특정 속성을 수정하려면 다음과 같은 옵션을 사용할 수 있습니다.\n\n- 패키지를 암묵적으로 설치된 것으로 표시:\n`sudo pacman --database --asdeps {{package}}`\n\n- 패키지를 명시적으로 설치된 것으로 표시:\n`sudo pacman --database --asexplicit {{package}}`"
+    },
+    {
+        "instruction": "두 개의 모니터를 사용할 때, 주 모니터를 비활성화하고 보조 모니터만 활성화하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`mons -s` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "tuxi 명령어를 사용하여 Google 검색 결과를 스크래핑하는 방법은 무엇인가요?",
+        "output": "tuxi 명령어를 사용하여 Google 검색 결과를 스크래핑하려면 `tuxi {{search_terms}}` 형식으로 명령어를 입력하면 됩니다. 예를 들어, \"Python 프로그래밍\"에 대해 검색하려면 `tuxi Python 프로그래밍`을 입력하면 됩니다. 추가적으로, 검색 결과를 원시 형식으로 표시하려면 `tuxi -r {{search_terms}}`를 사용하고, \"Did you mean?\" 메시지나 인사말을 제외하고 검색 결과만 표시하려면 `tuxi -q {{search_terms}}`를 사용할 수 있습니다. 도움말을 보려면 `tuxi -h`를 입력하면 됩니다."
+    },
+    {
+        "instruction": "gpasswd 명령어를 사용하여 특정 그룹의 관리자를 설정하려면 어떻게 해야 하나요?",
+        "output": "`sudo gpasswd -A {{user1,user2}} {{group}}` 명령어를 사용하여 특정 그룹의 관리자를 설정할 수 있습니다."
+    },
+    {
+        "instruction": "특정 디렉토리와 그 내용을 재귀적으로 변경 불가능하게 설정하려면 어떻게 해야 하나요?",
+        "output": "`chattr -R +i {{path/to/directory}}` 명령어를 사용하여 특정 디렉토리와 그 내용을 재귀적으로 변경 불가능하게 설정할 수 있습니다."
+    },
+    {
+        "instruction": "trayer를 실행하고 특정 가장자리에 위치시키는 명령어는 무엇인가요?",
+        "output": "trayer를 실행하고 특정 가장자리에 위치시키려면 다음 명령어를 사용합니다:\n`trayer --edge {{left|right|top|bottom}}`"
+    },
+    {
+        "instruction": "fsck 명령어를 사용하여 /dev/sdX1 파일시스템의 무결성을 확인하고, 손상된 블록을 자동으로 수리하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "sudo fsck -a /dev/sdX1"
+    },
+    {
+        "instruction": "compopt 명령어를 사용하여 ls 명령어의 완성 옵션을 확인하려면 어떻게 해야 하나요?",
+        "output": "`compopt ls` 명령어를 사용하여 ls 명령어의 완성 옵션을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "rtcwake 명령어를 사용해서 현재 설정된 알람을 확인하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`sudo rtcwake -m show -v` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "pkgctl을 사용해서 특정 패키지의 PKGBUILD를 다운로드하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`pkgctl repo clone --protocol=https {{package_name}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "atool 명령어를 사용해서 현재 디렉토리에 있는 모든 zip과 rar 파일을 한번에 압축 해제하려면 어떻게 해야하나요?",
+        "output": "`atool --each --extract {{*.zip *.rar}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "i3status 명령어를 통해 현재 설정된 상태 라인을 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "i3status 명령어를 통해 현재 설정된 상태 라인을 확인하려면 `i3status` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "mount.smb3 명령어와 mount.cifs 명령어의 차이점이 궁금합니다.",
+        "output": "`mount.smb3` 명령어는 `mount.cifs` 명령어의 별칭입니다. 다만, SMB 버전 3 이전을 사용하려면 `mount.cifs`를 사용해야 합니다."
+    },
+    {
+        "instruction": "lnav를 사용하여 특정 원격 호스트의 로그 파일을 보려면 어떻게 해야 하나요?",
+        "output": "SSH 비밀번호 없는 로그인이 설정되어 있어야 하며, 다음과 같은 명령어를 사용하여 특정 원격 호스트의 로그 파일을 볼 수 있습니다:\n`lnav {{ssh}} {{user}}@{{host1.example.com}}:{{/var/log/syslog.log}}`"
+    },
+    {
+        "instruction": "lsblk 명령어를 사용하여 모든 스토리지 장치를 트리 형식으로 출력하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`lsblk` 명령어를 사용하여 모든 스토리지 장치를 트리 형식으로 출력하려면 옵션을 사용하지 않고 `lsblk`만 입력하면 됩니다."
+    },
+    {
+        "instruction": "특정 디바이스의 트레이를 열고 닫는 기능을 토글하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`eject -T {{/dev/cdrom}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "archivemount 명령어를 사용하여 특정 마운트 포인트에 아카이브를 마운트하려면 어떻게 해야 하나요?",
+        "output": "`archivemount {{path/to/archive}} {{path/to/mount_point}}` 명령어를 사용하여 특정 마운트 포인트에 아카이브를 마운트할 수 있습니다."
+    },
+    {
+        "instruction": "FAT32 파티션의 레이블을 확인하려면 어떻게 해야 하나요?",
+        "output": "FAT32 파티션의 레이블을 확인하려면 `fatlabel /dev/sda1` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "현재 사용자의 기본 그룹을 변경하려면 어떻게 해야 하나요?",
+        "output": "`newgrp {{group_name}}` 명령어를 사용하여 현재 사용자의 기본 그룹을 변경할 수 있습니다."
+    },
+    {
+        "instruction": "unix2dos 명령어를 사용해서 파일의 라인 엔딩을 DOS 스타일로 변환하려면 어떻게 해야 하나요?",
+        "output": "파일의 라인 엔딩을 DOS 스타일로 변환하려면 다음 명령어를 사용하세요:\n`unix2dos {{path/to/file}}`"
+    },
+    {
+        "instruction": "wmctrl을 사용하여 특정 윈도우를 다른 워크스페이스로 이동시키는 명령어는 무엇인가요?",
+        "output": "`wmctrl -r {{window_title}} -t {{workspace_number}}`"
+    },
+    {
+        "instruction": "특정 IP set에서 특정 IP 주소를 삭제하는 명령어는 무엇인가요?",
+        "output": "`ipset del {{set_name}} {{192.168.1.25}}` 명령어를 사용하여 특정 IP set에서 특정 IP 주소를 삭제할 수 있습니다."
+    },
+    {
+        "instruction": "uprecords 명령어를 사용하여 최근 재부팅 기록을 확인하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`uprecords -B` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "zip 명령어를 사용하여 특정 파일을 암호화된 압축 파일로 만드는 방법을 알려주세요.",
+        "output": "`zip -r --encrypt {{path/to/compressed.zip}} {{path/to/file_or_directory1 path/to/file_or_directory2 ...}}` 명령어를 사용하여 특정 파일을 암호화된 압축 파일로 만들 수 있습니다."
+    },
+    {
+        "instruction": "특정 가상 머신에서 fsfreeze-status 명령어를 실행하려면 어떻게 해야 하나요?",
+        "output": "특정 가상 머신에서 `fsfreeze-status` 명령어를 실행하려면 다음과 같이 입력하면 됩니다:\n\n`qm guest cmd {{virtual_machine_id}} fsfreeze-status`"
+    },
+    {
+        "instruction": "wall 명령어를 사용하여 현재 로그인된 모든 사용자에게 메시지를 보내려면 어떻게 해야 하나요?",
+        "output": "`wall` 명령어를 사용하여 현재 로그인된 모든 사용자에게 메시지를 보내려면 다음과 같이 입력하면 됩니다:\n\n`wall {{message}}`"
+    },
+    {
+        "instruction": "xsetwacom list 명령어를 사용해서 현재 연결된 Wacom 디바이스 목록을 확인할 수 있나요?",
+        "output": "네, xsetwacom list 명령어를 사용하여 현재 연결된 Wacom 디바이스 목록을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "dpkg-deb --info 명령어를 사용하여 특정 Debian 패키지 파일의 정보를 확인할 수 있나요?",
+        "output": "네, `dpkg-deb --info` 명령어를 사용하여 특정 Debian 패키지 파일의 정보를 확인할 수 있습니다."
+    },
+    {
+        "instruction": "po4a-updatepo 명령어를 사용하여 여러 PO 파일을 한 번에 업데이트하려면 어떻게 해야 하나요?",
+        "output": "`po4a-updatepo --format {{text}} --master {{path/to/master.txt}} --po {{path/to/po1.po}} --po {{path/to/po2.po}}` 명령어를 사용하여 여러 PO 파일을 한 번에 업데이트할 수 있습니다."
+    },
+    {
+        "instruction": "xfce4-screenshooter를 사용해서 화면의 특정 영역을 캡처하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`xfce4-screenshooter --region` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "특정 디렉토리의 SELinux 보안 컨텍스트를 재설정하고 변경된 라벨을 모두 표시하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "특정 디렉토리의 SELinux 보안 컨텍스트를 재설정하고 변경된 라벨을 모두 표시하려면 다음 명령어를 사용하면 됩니다:\n`restorecon -R -v {{path/to/directory}}`"
+    },
+    {
+        "instruction": "sudo lvdisplay 명령어를 사용하여 특정 볼륨 그룹 내의 모든 논리 볼륨의 정보를 확인하려면 어떻게 해야 하나요?",
+        "output": "sudo lvdisplay 명령어 뒤에 볼륨 그룹의 이름을 입력하면 됩니다. 예를 들어, 볼륨 그룹의 이름이 vg1이라면 `sudo lvdisplay vg1`을 입력하면 됩니다."
+    },
+    {
+        "instruction": "특정 프로그램의 마지막 코어 덤프를 디버거로 분석하려면 어떻게 해야 하나요?",
+        "output": "`coredumpctl debug {{program}}` 명령어를 사용하여 특정 프로그램의 마지막 코어 덤프를 디버거로 분석할 수 있습니다."
+    },
+    {
+        "instruction": "homectl을 사용하여 특정 사용자의 홈 디렉토리 크기를 50 GiB로 변경하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`sudo homectl resize {{username}} 50G`를 사용하여 특정 사용자의 홈 디렉토리 크기를 50 GiB로 변경할 수 있습니다."
+    },
+    {
+        "instruction": "pw-record 명령어를 사용하여 기본 타겟으로 샘플 녹음을 어떻게 진행하나요?",
+        "output": "`pw-record {{path/to/file.wav}}` 명령어를 사용하여 기본 타겟으로 샘플 녹음을 진행할 수 있습니다."
+    },
+    {
+        "instruction": "dmenu를 사용하여 현재 디렉토리의 파일 목록을 표시하고, 선택한 파일을 텍스트 파일에 저장하려면 어떻게 해야 하나요?",
+        "output": "`ls | dmenu > 선택한파일.txt` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "파티션을 언마운트하지 않고 e2fsck 명령어를 실행할 경우 어떤 문제가 발생할 수 있나요?",
+        "output": "파티션을 언마운트하지 않고 e2fsck 명령어를 실행할 경우, 파일시스템이 사용 중이기 때문에 데이터 손실이나 파일시스템 손상이 발생할 수 있습니다. 또한, e2fsck는 파일시스템이 마운트된 상태에서는 정확한 검사와 수리를 수행할 수 없으므로, 검사 결과가 불완전할 수 있습니다."
+    },
+    {
+        "instruction": "csplit 명령어를 사용하여 파일을 특정 라인에서 분할할 때 보안상 주의해야 할 점은 무엇인가요?",
+        "output": "csplit 명령어를 사용하여 파일을 특정 라인에서 분할할 때는 몇 가지 보안상 주의해야 할 점이 있습니다. 첫째, 분할된 파일이 민감한 정보를 포함하고 있는 경우, 파일의 접근 권한을 적절히 설정하여 무단 접근을 방지해야 합니다. 둘째, 분할된 파일의 이름이 예측 가능하므로, 파일 이름에 랜덤성을 부여하거나 접근 제어 리스트(ACL)를 사용하여 추가적인 보안 조치를 취할 수 있습니다. 셋째, 분할된 파일이 저장되는 디렉토리의 보안을 강화하여 무단 접근을 방지해야 합니다. 마지막으로, 분할된 파일을 암호화하여 저장하는 것도 좋은 방법입니다."
+    },
+    {
+        "instruction": "xfreerdp를 사용하여 원격 서버에 연결할 때 인증서 검증을 무시하는 방법은 무엇인가요?",
+        "output": "xfreerdp를 사용하여 원격 서버에 연결할 때 인증서 검증을 무시하려면 다음 명령어를 사용하면 됩니다:\n\n`xfreerdp /v:{{ip_address}} /u:{{username}} /p:{{password}} /cert:ignore`"
+    },
+    {
+        "instruction": "LibreOffice를 사용하여 현재 디렉토리에 있는 모든 `.doc` 파일을 PDF로 변환하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`libreoffice --convert-to pdf *.doc` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "pw-cat 명령어를 사용하여 재생 가능한 모든 타겟을 나열하는 방법은 무엇인가요?",
+        "output": "`pw-cat --playback --list-targets` 명령어를 사용하여 재생 가능한 모든 타겟을 나열할 수 있습니다."
+    },
+    {
+        "instruction": "img2txt 명령어에서 이미지의 밝기를 조절하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "img2txt 명령어에서 이미지의 밝기를 조절하려면 `--brightness` 옵션을 사용해야 합니다."
+    },
+    {
+        "instruction": "inxi 명령어를 사용해서 시스템의 CPU, 메모리, 하드 드라이브, 커널 정보를 출력하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`inxi` 명령어를 사용해서 시스템의 CPU, 메모리, 하드 드라이브, 커널 정보를 출력하려면 옵션을 사용하지 않고 `inxi`만 입력하면 됩니다."
+    },
+    {
+        "instruction": "pvs 명령어를 사용하여 물리적 볼륨의 상세 정보를 확인하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`pvs -v` 옵션을 사용하면 물리적 볼륨의 상세 정보를 확인할 수 있습니다."
+    },
+    {
+        "instruction": "gbp import-dsc를 사용하여 기존 Debian 패키지를 gbp로 변환하려면 어떻게 해야 하나요?",
+        "output": "`gbp import-dsc {{path/to/package.dsc}}` 명령어를 사용하여 기존 Debian 패키지를 gbp로 변환할 수 있습니다."
+    },
+    {
+        "instruction": "daemonize 명령어를 사용하여 특정 명령을 데몬으로 실행하고, 이 때 PID를 파일에 기록하려면 어떻게 해야 하나요?",
+        "output": "`daemonize -p {{path/to/pidfile}} {{command}} {{command_arguments}}` 명령어를 사용하여 특정 명령을 데몬으로 실행하고, PID를 파일에 기록할 수 있습니다."
+    },
+    {
+        "instruction": "sudo modprobe --dry-run 모듈이름 명령어는 실제로 모듈을 로드하지 않고 로드할 수 있는지만 확인하는 명령어인가요?",
+        "output": "네, 맞습니다. `sudo modprobe --dry-run 모듈이름` 명령어는 실제로 모듈을 로드하지 않고, 로드할 수 있는지만 확인하는 명령어입니다."
+    },
+    {
+        "instruction": "mklost+found 명령어를 사용하여 현재 디렉토리에 lost+found 디렉토리를 생성하려면 어떻게 해야 하나요?",
+        "output": "현재 디렉토리에 `lost+found` 디렉토리를 생성하려면 터미널에서 `mklost+found` 명령어를 입력하면 됩니다."
+    },
+    {
+        "instruction": "특정 스키마의 모든 키와 값을 출력하는 명령어는 무엇인가요?",
+        "output": "`gsettings list-recursively {{org.example.schema}}`"
+    },
+    {
+        "instruction": "efibootmgr 명령어를 사용해서 현재 부트 순서를 확인하고 싶습니다.",
+        "output": "`efibootmgr` 명령어를 사용하여 현재 부트 순서를 확인할 수 있습니다."
+    },
+    {
+        "instruction": "특정 패키지와 그 패키지에 의존하는 모든 패키지를 제거하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`sudo pacman --remove --cascade {{package}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "특정 파일에 `cap_net_raw` 캡빌리티를 설정하려면 어떻게 해야 하나요?",
+        "output": "`setcap 'cap_net_raw' 파일경로` 명령어를 사용하여 특정 파일에 `cap_net_raw` 캡빌리티를 설정할 수 있습니다."
+    },
+    {
+        "instruction": "sudo dmidecode 명령어를 사용하여 시스템의 메모리 정보를 확인하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`sudo dmidecode -t memory` 옵션을 사용하면 됩니다."
+    },
+    {
+        "instruction": "vnstat 명령어를 사용하여 eth0 인터페이스의 실시간 네트워크 트래픽을 어떻게 확인할 수 있나요?",
+        "output": "`vnstat -l -i eth0` 명령어를 사용하여 eth0 인터페이스의 실시간 네트워크 트래픽을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "sudo groupadd 명령어를 사용해서 새로운 시스템 그룹을 생성하려고 합니다. 시스템 그룹을 생성할 때 필요한 옵션은 무엇인가요?",
+        "output": "시스템 그룹을 생성할 때 필요한 옵션은 `--system`입니다."
+    },
+    {
+        "instruction": "tshark를 사용하여 HTTP GET 요청만 필터링하고, 결과를 JSON 형식으로 출력하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "`tshark -Y '{{http.request.method == \"GET\"}}' -T json`를 사용하면 됩니다."
+    },
+    {
+        "instruction": "테이프 드라이브의 상태를 확인하려면 어떤 명령어를 사용해야 하나요?",
+        "output": "테이프 드라이브의 상태를 확인하려면 `mt -f /dev/nstX status` 명령어를 사용해야 합니다."
+    },
+    {
+        "instruction": "btrfs version 명령어를 사용하여 btrfs-progs의 버전을 확인하려면 어떻게 해야 하나요?",
+        "output": "`btrfs version` 명령어를 입력하면 btrfs-progs의 버전을 확인할 수 있습니다."
+    },
+    {
+        "instruction": "xdg-settings를 사용하여 기본 웹 브라우저를 확인하는 방법은 무엇인가요?",
+        "output": "`xdg-settings get {{default-web-browser}}` 명령어를 사용하여 기본 웹 브라우저를 확인할 수 있습니다."
+    },
+    {
+        "instruction": "원격 호스트에서 사용자로 로그인하려면 어떻게 해야 하나요?",
+        "output": "원격 호스트에서 사용자로 로그인하려면 `login -h {{host}} {{user}}` 명령어를 사용하면 됩니다."
+    },
+    {
+        "instruction": "speedometer 명령어를 사용하여 eth0 인터페이스의 네트워크 트래픽 그래프를 터미널에 표시하려면 어떤 옵션을 사용해야 하나요?",
+        "output": "`speedometer -r eth0 -t eth0` 옵션을 사용하면 eth0 인터페이스의 네트워크 트래픽 그래프를 터미널에 표시할 수 있습니다."
+    },
+    {
+        "instruction": "fakeroot 명령어를 사용하여 특정 명령을 루트 권한으로 실행하고, 환경을 파일에 저장하려면 어떻게 해야 하나요?",
+        "output": "`fakeroot -s {{path/to/file}} -- {{command}} {{command_arguments}}` 명령어를 사용하여 특정 명령을 루트 권한으로 실행하고, 환경을 파일에 저장할 수 있습니다."
+    }
+]
